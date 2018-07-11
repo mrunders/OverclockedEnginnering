@@ -1,0 +1,8 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "overclockedengineering:items/hybride_engine5",
+        "layer1": "overclockedengineering:items/hybride_engine"
+    }
+
+}

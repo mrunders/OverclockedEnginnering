@@ -1,0 +1,25 @@
+{ 
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      " N ",
+      "NCN",
+      " N "  ],
+    "key": {
+      "N": [
+        {
+          "item": "draconicevolution:chaos_shard",
+          "data": 1
+        }
+      ],
+      "C": [
+        {
+          "item": "overclockedengineering:gear_awakened",
+          "data": 0
+        }
+      ]
+    },
+    "result": {
+      "item": "overclockedengineering:gear_chaotic",
+      "data": 0
+    }
+  }

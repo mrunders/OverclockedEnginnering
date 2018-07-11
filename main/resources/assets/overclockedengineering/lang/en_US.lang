@@ -1,0 +1,8 @@
+item.oewrench.name=OE Wrench
+item.oecircuitbas.name=Basic Electronic Circuit
+item.oecircuitadv.name=Advanced Electronic Circuit
+item.oecircuithyb.name=Hybride Electronic Circuit
+item.oecircuitult.name=Ultimate Electronic Circuit
+
+tile.overclockedengineering.machineblock.name=Machine Block
+tile.overclockedengineering.laserblock.name=Laser Block
