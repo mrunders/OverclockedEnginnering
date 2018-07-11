@@ -6,6 +6,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ItemStackHelper;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntityLockable;
@@ -184,8 +185,7 @@ public class TileOverclockedFurnace extends TileEntityLockable implements ITicka
 	}
 	
 	public ItemStack getRecipeResult() {
-	    return RecipesOverclockedFurnace.getRecipeResult(new ItemStack[] { this.getStackInSlot(0), this.getStackInSlot(1) });
-		//return FurnaceRecipes.instance().getSmeltingResult(this.getStackInSlot(0));
+	    return FocusManager.getRecipeResult(this.stacks.get(2).getItem(), new ItemStack[] { this.getStackInSlot(0), this.getStackInSlot(1) });
 	}
 	
 	public boolean canSmelt() {
