@@ -85,6 +85,6 @@ public class GrinderRecipes extends RecipeManager {
 	}
 	
 	private static void addRecipe(NonNullList<ItemStack> input, NonNullList<ItemStack> output) {
-		if ( !input.isEmpty() && !output.isEmpty() ) addRecipe(recipes, input.get(0), output.get(0)); 
+		if ( !input.isEmpty() && !output.isEmpty() ) addRecipe(recipes, input.get(0).copy(), output.get(0).copy()); 
 	}
 }

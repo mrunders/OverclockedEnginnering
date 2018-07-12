@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.brandon3055.draconicevolution.blocks.machines.Grinder;
 
+import fr.mru.OverclockedEngineering.Recipes.AlloyRecipes;
 import fr.mru.OverclockedEngineering.Recipes.GrinderRecipes;
 import fr.mru.OverclockedEngineering.Recipes.IRecipeManager;
 import fr.mru.OverclockedEngineering.Recipes.RecipeSmelter;
@@ -16,7 +17,8 @@ import net.minecraft.item.crafting.FurnaceRecipes;
 public class FocusManager extends Item {
 	
 	public static Item FOCUS_SMELTER = new SmelterFocus(),
-					   FOCUS_GRINDER = new GrinderFocus();
+					   FOCUS_GRINDER = new GrinderFocus(),
+					   FOCUS_ALLOY   = new AlloyFocus();
 	
 	public static ArrayList<Item> itemsList = new ArrayList<>();
 	
@@ -24,6 +26,7 @@ public class FocusManager extends Item {
 		
 		itemsList.add(FOCUS_SMELTER);
 		itemsList.add(FOCUS_GRINDER);
+		itemsList.add(FOCUS_ALLOY);
 		
 	}
 
@@ -41,6 +44,8 @@ public class FocusManager extends Item {
 			return FurnaceRecipes.instance().getSmeltingResult(ingredients[0]);
 		if (focus instanceof GrinderFocus)
 			return GrinderRecipes.getRecipeResult(ingredients);
+		if (focus instanceof AlloyFocus)
+			return AlloyRecipes.getRecipeResult(ingredients);
 		
 		return null;
 	}

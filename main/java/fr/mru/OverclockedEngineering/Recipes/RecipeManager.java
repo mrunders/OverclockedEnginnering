@@ -41,8 +41,8 @@ public abstract class RecipeManager implements IRecipeManager {
 	    if(key1.length != key2.length) return false;
 
 	    for(int i = 0; i < key1.length; i++) {
-	        ItemStack s1 = key1[0];
-	        ItemStack s2 = key2[0];
+	        ItemStack s1 = key1[i];
+	        ItemStack s2 = key2[i];
 	        if(s1.isEmpty() && !s2.isEmpty()) return false;
 	        if(!s1.isEmpty() && s2.isEmpty()) return false;
 	        if(s1.getItem() != s2.getItem()) return false;

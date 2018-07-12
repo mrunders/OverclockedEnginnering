@@ -3,6 +3,7 @@ package fr.mru.OverclockedEngineering;
 import org.apache.logging.log4j.Logger;
 
 import fr.mru.OverclockedEngineering.Machine.TileOverclockedFurnace;
+import fr.mru.OverclockedEngineering.Recipes.AlloyRecipes;
 import fr.mru.OverclockedEngineering.Recipes.GrinderRecipes;
 import fr.mru.OverclockedEngineeringProxy.OverclockedEngineeringCommon;
 import fr.mru.OverclockedengineeringBlocks.GuiHandler;
@@ -56,6 +57,7 @@ public class OverclockedEngineering {
 		proxy.init();
 		
 		GrinderRecipes.initialise();
+		AlloyRecipes.initialise();
 	}
 
 }
