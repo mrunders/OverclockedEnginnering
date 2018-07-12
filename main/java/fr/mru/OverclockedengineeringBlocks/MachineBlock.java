@@ -1,6 +1,7 @@
 package fr.mru.OverclockedengineeringBlocks;
 
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
+import fr.mru.OverclockedEngineering.Machine.TileOverclockedFurnace;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

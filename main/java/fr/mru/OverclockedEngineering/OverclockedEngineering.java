@@ -2,10 +2,10 @@ package fr.mru.OverclockedEngineering;
 
 import org.apache.logging.log4j.Logger;
 
+import fr.mru.OverclockedEngineering.Machine.TileOverclockedFurnace;
 import fr.mru.OverclockedEngineering.Recipes.GrinderRecipes;
 import fr.mru.OverclockedEngineeringProxy.OverclockedEngineeringCommon;
 import fr.mru.OverclockedengineeringBlocks.GuiHandler;
-import fr.mru.OverclockedengineeringBlocks.TileOverclockedFurnace;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;

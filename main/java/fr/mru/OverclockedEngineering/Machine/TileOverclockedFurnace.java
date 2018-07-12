@@ -1,4 +1,4 @@
-package fr.mru.OverclockedengineeringBlocks;
+package fr.mru.OverclockedEngineering.Machine;
 
 import fr.mru.OverclockedEngineeringItems.EngineManager;
 import fr.mru.OverclockedEngineeringItems.Focus.FocusManager;
@@ -16,14 +16,14 @@ import net.minecraftforge.event.entity.player.SleepingLocationCheckEvent;
 
 public class TileOverclockedFurnace extends TileEntityLockable implements ITickable {
 	
-	private NonNullList <ItemStack>stacks = NonNullList.withSize(5, ItemStack.EMPTY);
+	private NonNullList <ItemStack>stacks = NonNullList.withSize(6, ItemStack.EMPTY);
 	private String customName;
 	private int	timePassed = 0;
 	private int	burningTimeLeft	= 0;
 	
-	private static final int SLOT_ENGINE = 3,
-							 SLOT_FOCUS = 2,
-							 SLOT_OUTPUT = 4;
+	private static final int SLOT_FOCUS = 3,
+							 SLOT_ENGINE = 4,
+							 SLOT_OUTPUT = 5;
 	
 	@Override
 	public void readFromNBT(NBTTagCompound compound) {
@@ -171,7 +171,7 @@ public class TileOverclockedFurnace extends TileEntityLockable implements ITicka
 		if ( stacks.get(SLOT_ENGINE).isEmpty() || stacks.get(SLOT_FOCUS).isEmpty() )
 			return false;
 
-		return index < 2;
+		return index < 3;
 	}
 	
 	/** Vérifie la distance entre le joueur et le bloc et que le bloc soit toujours présent */
@@ -187,7 +187,7 @@ public class TileOverclockedFurnace extends TileEntityLockable implements ITicka
 	}
 	
 	public ItemStack getRecipeResult() {
-	    return FocusManager.getRecipeResult(this.stacks.get(SLOT_FOCUS).getItem(), new ItemStack[] { this.getStackInSlot(0), this.getStackInSlot(1) });
+	    return FocusManager.getRecipeResult(this.stacks.get(SLOT_FOCUS).getItem(), new ItemStack[] { this.getStackInSlot(0), this.getStackInSlot(1), this.getStackInSlot(2) });
 	}
 	
 	public boolean canSmelt() {
@@ -221,6 +221,7 @@ public class TileOverclockedFurnace extends TileEntityLockable implements ITicka
 	    // On enlève un item de chaque ingrédient
 	    this.decrStackSize(0, 1);
 	    this.decrStackSize(1, 1);
+	    this.decrStackSize(2, 1);
 	    // On récupère le slot de résultat
 	    ItemStack stack4 = this.getStackInSlot(SLOT_OUTPUT);
 	    // Si il est vide

@@ -1,4 +1,4 @@
-package fr.mru.OverclockedengineeringBlocks;
+package fr.mru.OverclockedEngineering.Recipes;
 
 import java.util.HashMap;
 import java.util.Iterator;

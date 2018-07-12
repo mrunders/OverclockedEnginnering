@@ -1,4 +1,4 @@
-package fr.mru.OverclockedengineeringBlocks;
+package fr.mru.OverclockedEngineering.Machine;
 
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;

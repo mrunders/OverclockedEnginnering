@@ -1,4 +1,4 @@
-package fr.mru.OverclockedengineeringBlocks;
+package fr.mru.OverclockedEngineering.Machine;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -22,13 +22,13 @@ public class ContainerOverclockedFurnace extends Container {
 	    this.tile = tile;
 
 	    int i;
-	    for(i = 0; i < 2; i++) {
+	    for(i = 0; i < 3; i++) {
 	        this.addSlotToContainer(new Slot(tile, i, 33 + i * 18, 7));
 	    }
 	    for(i = 0; i < 2; i++) {
-	        this.addSlotToContainer(new Slot(tile, i + 2, 42, 40 + i * 18));
+	        this.addSlotToContainer(new Slot(tile, i + 3, 42, 40 + i * 18));
 	    }
-	    this.addSlotToContainer(new SlotOutput(tile, 4, 116, 17));
+	    this.addSlotToContainer(new SlotOutput(tile, 5, 116, 17));
 
 	    for(i = 0; i < 3; ++i) {
 	        for(int j = 0; j < 9; ++j) {

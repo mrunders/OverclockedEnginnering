@@ -1,5 +1,8 @@
 package fr.mru.OverclockedengineeringBlocks;
 
+import fr.mru.OverclockedEngineering.Machine.ContainerOverclockedFurnace;
+import fr.mru.OverclockedEngineering.Machine.GuiOverclockedFurnace;
+import fr.mru.OverclockedEngineering.Machine.TileOverclockedFurnace;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;

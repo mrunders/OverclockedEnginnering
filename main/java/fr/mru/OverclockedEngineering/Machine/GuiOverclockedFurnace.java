@@ -1,4 +1,4 @@
-package fr.mru.OverclockedengineeringBlocks;
+package fr.mru.OverclockedEngineering.Machine;
 
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -30,7 +30,7 @@ public class GuiOverclockedFurnace extends GuiContainer {
 
 	    int timePassed = this.tile.getField(1);
 	    int textureWidth = (int) (23f / 200f * timePassed);
-	    this.drawTexturedModalRect(i + 81, j + 24, 177, 18, textureWidth, 7);
+	    this.drawTexturedModalRect(i + 81, j + 44, 177, 18, textureWidth, 7);
 
 	    if (this.tile.isBurning()) {
 	        int burningTime = this.tile.getField(0);
@@ -39,6 +39,6 @@ public class GuiOverclockedFurnace extends GuiContainer {
 	                177, 12 - textureHeight, 27, textureHeight);
 	    }
 
-	    this.fontRenderer.drawString(this.tile.getName(), i + 80, j + 45, 0xFFFFFF);
+	    //this.fontRenderer.drawString(this.tile.getName(), i + 80, j + 45, 0xFFFFFF);
 	}
 }
