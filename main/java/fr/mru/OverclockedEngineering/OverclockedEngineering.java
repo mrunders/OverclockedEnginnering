@@ -2,6 +2,7 @@ package fr.mru.OverclockedEngineering;
 
 import org.apache.logging.log4j.Logger;
 
+import fr.mru.OverclockedEngineering.Recipes.GrinderRecipes;
 import fr.mru.OverclockedEngineeringProxy.OverclockedEngineeringCommon;
 import fr.mru.OverclockedengineeringBlocks.GuiHandler;
 import fr.mru.OverclockedengineeringBlocks.TileOverclockedFurnace;
@@ -14,6 +15,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 @Mod(modid=OverclockedEngineering.MODID, name="Overclocked Engineering", version="0.1")
 public class OverclockedEngineering {
@@ -32,6 +34,8 @@ public class OverclockedEngineering {
 	public OverclockedEngineering() {
 		
 	    MinecraftForge.EVENT_BUS.register(new RegisteringHandler());
+	    
+	    
 	}
 
 	
@@ -51,7 +55,7 @@ public class OverclockedEngineering {
 		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 		proxy.init();
 		
-		
+		GrinderRecipes.initialise();
 	}
 
 }

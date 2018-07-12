@@ -12,6 +12,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntityLockable;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
+import net.minecraftforge.event.entity.player.SleepingLocationCheckEvent;
 
 public class TileOverclockedFurnace extends TileEntityLockable implements ITickable {
 	
@@ -19,6 +20,10 @@ public class TileOverclockedFurnace extends TileEntityLockable implements ITicka
 	private String customName;
 	private int	timePassed = 0;
 	private int	burningTimeLeft	= 0;
+	
+	private static final int SLOT_ENGINE = 3,
+							 SLOT_FOCUS = 2,
+							 SLOT_OUTPUT = 4;
 	
 	@Override
 	public void readFromNBT(NBTTagCompound compound) {
@@ -55,7 +60,7 @@ public class TileOverclockedFurnace extends TileEntityLockable implements ITicka
 
 	@Override
 	public String getName() {
-	    return hasCustomName() ? this.customName : "tile.overclockedFurnace";
+	    return hasCustomName() ? this.customName : "tile.overclockedMachine";
 	}
 
 	public void setCustomName(String name) {
@@ -162,14 +167,11 @@ public class TileOverclockedFurnace extends TileEntityLockable implements ITicka
 	
 	@Override
 	public boolean isItemValidForSlot(int index, ItemStack stack) {
-	    if (index == 2)
-	        return FocusManager.itemIsFocus(this.stacks.get(2).getItem());
-	    if (index == 3)
-	        return EngineManager.itemIsEngine(this.stacks.get(2).getItem());
-	    if (index == 4)
-	        return false;
+		
+		if ( stacks.get(SLOT_ENGINE).isEmpty() || stacks.get(SLOT_FOCUS).isEmpty() )
+			return false;
 
-	    return true;
+		return index < 2;
 	}
 	
 	/** Vérifie la distance entre le joueur et le bloc et que le bloc soit toujours présent */
@@ -181,11 +183,11 @@ public class TileOverclockedFurnace extends TileEntityLockable implements ITicka
 	}
 	
 	public boolean hasFuelEmpty() {
-	    return this.getStackInSlot(3).isEmpty();
+	    return this.getStackInSlot(SLOT_ENGINE).isEmpty();
 	}
 	
 	public ItemStack getRecipeResult() {
-	    return FocusManager.getRecipeResult(this.stacks.get(2).getItem(), new ItemStack[] { this.getStackInSlot(0), this.getStackInSlot(1) });
+	    return FocusManager.getRecipeResult(this.stacks.get(SLOT_FOCUS).getItem(), new ItemStack[] { this.getStackInSlot(0), this.getStackInSlot(1) });
 	}
 	
 	public boolean canSmelt() {
@@ -196,7 +198,7 @@ public class TileOverclockedFurnace extends TileEntityLockable implements ITicka
 	    if (result != null) {
 
 	        // On récupère le contenu du slot de résultat
-	        ItemStack slot4 = this.getStackInSlot(4);
+	        ItemStack slot4 = this.getStackInSlot(SLOT_OUTPUT);
 
 	        // Si il est vide on renvoie vrai
 	        if (slot4.isEmpty())
@@ -220,11 +222,11 @@ public class TileOverclockedFurnace extends TileEntityLockable implements ITicka
 	    this.decrStackSize(0, 1);
 	    this.decrStackSize(1, 1);
 	    // On récupère le slot de résultat
-	    ItemStack stack4 = this.getStackInSlot(4);
+	    ItemStack stack4 = this.getStackInSlot(SLOT_OUTPUT);
 	    // Si il est vide
 	    if (stack4.isEmpty()) {
 	        // On y insère une copie du résultat
-	        this.setInventorySlotContents(4, result.copy());
+	        this.setInventorySlotContents(SLOT_OUTPUT, result.copy());
 	    } else {
 	        // Sinon on augmente le nombre d'objets de l'ItemStack
 	        stack4.setCount(stack4.getCount() + result.getCount());
@@ -233,7 +235,7 @@ public class TileOverclockedFurnace extends TileEntityLockable implements ITicka
 	
 	/** Temps de cuisson de la recette */
 	public int getFullRecipeTime() {
-		return EngineManager.getFullTimeRecipe(this.stacks.get(3).getItem());
+		return EngineManager.getFullTimeRecipe(this.stacks.get(SLOT_ENGINE).getItem());
 		
 	}
 
@@ -245,7 +247,7 @@ public class TileOverclockedFurnace extends TileEntityLockable implements ITicka
 
 	/** Renvoie vrai si le feu est allumé */
 	public boolean isBurning() {
-	    return EngineManager.itemIsEngine(this.stacks.get(3).getItem());
+	    return EngineManager.itemIsEngine(this.stacks.get(SLOT_ENGINE).getItem());
 	}
 	
 	@Override

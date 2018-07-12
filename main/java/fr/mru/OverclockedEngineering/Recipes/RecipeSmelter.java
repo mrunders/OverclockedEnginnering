@@ -7,6 +7,8 @@ import java.util.Map.Entry;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.OreIngredient;
 
 public class RecipeSmelter extends RecipeManager {
 	
@@ -18,6 +20,7 @@ public class RecipeSmelter extends RecipeManager {
 	
 	public static ItemStack getRecipeResult(ItemStack[] ingredients) {
 	    return getRecipeResult(recipes, ingredients);
+	    
 	}
 	
 }

@@ -4,7 +4,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
 
-import net.minecraft.init.Items;
+import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -13,9 +14,27 @@ public abstract class RecipeManager implements IRecipeManager {
 	protected static void addRecipe(HashMap <ItemStack[], ItemStack> recipes, Item ingredient1, Item ingredient2, Item resultat1) {
 	    addRecipe(recipes, new ItemStack(ingredient1), new ItemStack(ingredient2), new ItemStack(resultat1));
 	}
+	
+	protected static void addRecipe(HashMap <ItemStack[], ItemStack> recipes, Item ingredient1, Item resultat1) {
+	    addRecipe(recipes, new ItemStack(ingredient1), new ItemStack(resultat1));
+	}
+	
+	protected static void addRecipe(HashMap <ItemStack[], ItemStack> recipes, Block ingredient1, Block ingredient2, Block resultat1) {
+	    addRecipe(recipes, new ItemStack(ingredient1), new ItemStack(ingredient2), new ItemStack(resultat1));
+	}
+	
+	protected static void addRecipe(HashMap <ItemStack[], ItemStack> recipes, Block ingredient1, Block resultat1) {
+	    addRecipe(recipes, new ItemStack(ingredient1), new ItemStack(resultat1));
+	}
+	
+	
 
 	protected static void addRecipe(HashMap <ItemStack[], ItemStack> recipes, ItemStack ingredient1, ItemStack ingredient2, ItemStack resultat1) {
 	    recipes.put(new ItemStack[]{ingredient1, ingredient2}, resultat1);
+	}
+	
+	protected static void addRecipe(HashMap <ItemStack[], ItemStack> recipes, ItemStack ingredient1, ItemStack resultat1) {
+	    recipes.put(new ItemStack[]{ingredient1}, resultat1);
 	}
 	
 	private static boolean areKeysEqual(ItemStack[] key1, ItemStack[] key2) {
@@ -42,4 +61,5 @@ public abstract class RecipeManager implements IRecipeManager {
 	    }
 	    return null;
 	}
+	
 }

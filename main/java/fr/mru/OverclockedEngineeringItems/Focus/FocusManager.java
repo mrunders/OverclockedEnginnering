@@ -2,6 +2,9 @@ package fr.mru.OverclockedEngineeringItems.Focus;
 
 import java.util.ArrayList;
 
+import com.brandon3055.draconicevolution.blocks.machines.Grinder;
+
+import fr.mru.OverclockedEngineering.Recipes.GrinderRecipes;
 import fr.mru.OverclockedEngineering.Recipes.IRecipeManager;
 import fr.mru.OverclockedEngineering.Recipes.RecipeSmelter;
 import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
@@ -12,13 +15,16 @@ import net.minecraft.item.crafting.FurnaceRecipes;
 
 public class FocusManager extends Item {
 	
-	public static Item FOCUS_SMELTER = new SmelterFocus();
+	public static Item FOCUS_SMELTER = new SmelterFocus(),
+					   FOCUS_GRINDER = new GrinderFocus();
 	
 	public static ArrayList<Item> itemsList = new ArrayList<>();
 	
 	static {
 		
 		itemsList.add(FOCUS_SMELTER);
+		itemsList.add(FOCUS_GRINDER);
+		
 	}
 
 	public FocusManager(String NAME) {
@@ -33,6 +39,8 @@ public class FocusManager extends Item {
 		
 		if (focus instanceof SmelterFocus)
 			return FurnaceRecipes.instance().getSmeltingResult(ingredients[0]);
+		if (focus instanceof GrinderFocus)
+			return GrinderRecipes.getRecipeResult(ingredients);
 		
 		return null;
 	}
