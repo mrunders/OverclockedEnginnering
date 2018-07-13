@@ -4,8 +4,10 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
 
+import codechicken.lib.util.ArrayUtils;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -37,21 +39,28 @@ public abstract class RecipeManager implements IRecipeManager {
 	    recipes.put(new ItemStack[]{ingredient1}, resultat1);
 	}
 	
-	private static boolean areKeysEqual(ItemStack[] key1, ItemStack[] key2) {
-	    if(key1.length != key2.length) return false;
+	private static boolean containsOreDict(ItemStack[] recipe, ItemStack item) {
+		
+		int index = 0;
+		while (index < recipe.length) 
+			if (item.getUnlocalizedName().equals(recipe[index].getUnlocalizedName())) break; 
+			else index++; 
+		
+		return index < recipe.length && recipe[index].getCount() <= item.getCount();
+	}
+	
+	private static boolean areKeysEqual(ItemStack[] recipe, ItemStack[] ingredients) {
+	    if(recipe.length != ingredients.length) return false;
 
-	    for(int i = 0; i < key1.length; i++) {
-	        ItemStack s1 = key1[i];
-	        ItemStack s2 = key2[i];
-	        if(s1.isEmpty() && !s2.isEmpty()) return false;
-	        if(!s1.isEmpty() && s2.isEmpty()) return false;
-	        if(s1.getItem() != s2.getItem()) return false;
-	        if(s1.getItemDamage() != s2.getItemDamage()) return false;
+	    for(int i = 0; i < ingredients.length; i++) {
+	        if (!containsOreDict(recipe, ingredients[i])) return false;
 	    }
+
 	    return true;
 	}
 	
 	public static ItemStack getRecipeResult(HashMap <ItemStack[], ItemStack> recipes, ItemStack[] ingredients) {
+		
 	    Iterator<Entry<ItemStack[], ItemStack>> it = recipes.entrySet().iterator();
 	    while(it.hasNext()) {
 	        Entry <ItemStack[], ItemStack>entry = it.next();
