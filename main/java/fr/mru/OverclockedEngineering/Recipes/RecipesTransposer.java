@@ -39,9 +39,9 @@ public class RecipesTransposer extends RecipeManager {
 		map2.put(in2, new RecipeRequest(output, in1, in2));
 	}
 	
-	public static ItemStack getRecipeResult(ItemStack[] ingredients) {
+	public static RecipeRequest getRecipeResult(ItemStack[] ingredients) {
 		if ( ingredients[0].isEmpty() || ingredients[1].isEmpty()) return null;
-		if ( ingredients[2].isEmpty() )  return getResult(new ItemStack[] {ingredients[0],ingredients[1]}).getResult();
+		if ( ingredients[2].isEmpty() )  return getResult(new ItemStack[] {ingredients[0],ingredients[1]});
 	    return null;
 	    
 	}

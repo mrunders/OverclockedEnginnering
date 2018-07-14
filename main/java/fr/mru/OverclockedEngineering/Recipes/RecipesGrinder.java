@@ -19,8 +19,8 @@ public class RecipesGrinder extends RecipeManager {
 		addRecipe(recipes, Blocks.GRAVEL, Blocks.SAND);
 	}
 	
-	public static ItemStack getRecipeResult(ItemStack[] ingredients) {
-	    return getRecipeResult(recipes, new ItemStack[] {ingredients[0]});
+	public static RecipeRequest getRecipeResult(ItemStack[] ingredients) {
+	    return new RecipeRequest(getRecipeResult(recipes, new ItemStack[] {ingredients[0]}), ingredients[0]);
 	    
 	}
 	

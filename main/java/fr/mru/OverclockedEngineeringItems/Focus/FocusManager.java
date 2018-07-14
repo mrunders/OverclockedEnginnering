@@ -2,8 +2,10 @@ package fr.mru.OverclockedEngineeringItems.Focus;
 
 import java.util.ArrayList;
 
+import fr.mru.OverclockedEngineering.Recipes.RecipeRequest;
 import fr.mru.OverclockedEngineering.Recipes.RecipesAlloy;
 import fr.mru.OverclockedEngineering.Recipes.RecipesGrinder;
+import fr.mru.OverclockedEngineering.Recipes.RecipesSmelter;
 import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -34,16 +36,16 @@ public class FocusManager extends Item {
 		OverclokedEngineeringItems.setItemName(this, NAME);
 	}
 	
-	public static ItemStack getRecipeResult(Item focus, ItemStack[] ingredients) {
+	public static RecipeRequest getRecipeResult(Item focus, ItemStack[] ingredients) {
 		
 		if (focus instanceof SmelterFocus)
-			return FurnaceRecipes.instance().getSmeltingResult(ingredients[0]);
+			return RecipesSmelter.getRecipeResult(ingredients);
 		if (focus instanceof GrinderFocus)
 			return RecipesGrinder.getRecipeResult(ingredients);
 		if (focus instanceof AlloyFocus) 
 			return RecipesAlloy.getRecipeResult(ingredients);
 		
-		return null;
+		return RecipeRequest.NULL;
 	}
 
 	public static boolean itemIsFocus(Item item) {

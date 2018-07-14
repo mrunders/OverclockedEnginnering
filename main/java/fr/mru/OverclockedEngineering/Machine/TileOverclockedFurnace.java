@@ -1,5 +1,6 @@
 package fr.mru.OverclockedEngineering.Machine;
 
+import fr.mru.OverclockedEngineering.Recipes.RecipeRequest;
 import fr.mru.OverclockedEngineeringItems.EngineManager;
 import fr.mru.OverclockedEngineeringItems.Focus.FocusManager;
 import net.minecraft.entity.player.EntityPlayer;
@@ -186,13 +187,13 @@ public class TileOverclockedFurnace extends TileEntityLockable implements ITicka
 	    return this.getStackInSlot(SLOT_ENGINE).isEmpty();
 	}
 	
-	public ItemStack getRecipeResult() {
+	public RecipeRequest getRecipeResult() {
 	    return FocusManager.getRecipeResult(this.stacks.get(SLOT_FOCUS).getItem(), new ItemStack[] { this.getStackInSlot(0), this.getStackInSlot(1), this.getStackInSlot(2) });
 	}
 	
 	public boolean canSmelt() {
 
-	    ItemStack result = this.getRecipeResult();
+	    ItemStack result = this.getRecipeResult().getResult();
 
 	    if (result != null) {
 
@@ -212,18 +213,18 @@ public class TileOverclockedFurnace extends TileEntityLockable implements ITicka
 	}
 	
 	public void smelt() {
-	    ItemStack result = this.getRecipeResult();
+	    RecipeRequest result = this.getRecipeResult();
 	    
-	    this.decrStackSize(0, 1);
-	    this.decrStackSize(1, 1);
-	    this.decrStackSize(2, 1);
+	    this.decrStackSize(0, result.getRequiredItemCount(0));
+	    this.decrStackSize(1, result.getRequiredItemCount(1));
+	    this.decrStackSize(2, result.getRequiredItemCount(2));
 	    
 	    ItemStack stack4 = this.getStackInSlot(SLOT_OUTPUT);
 	   
 	    if (stack4.isEmpty()) {
-	        this.setInventorySlotContents(SLOT_OUTPUT, result.copy());
+	        this.setInventorySlotContents(SLOT_OUTPUT, result.getResult().copy());
 	    } else {
-	        stack4.setCount(stack4.getCount() + result.getCount());
+	        stack4.setCount(stack4.getCount() + result.getResult().getCount());
 	    }
 	}
 	
