@@ -3,7 +3,8 @@ package fr.mru.OverclockedEngineering;
 import org.apache.logging.log4j.Logger;
 
 import fr.mru.OverclockedEngineering.Machine.TileOverclockedFurnace;
-import fr.mru.OverclockedEngineering.Recipes.AlloyRecipes;
+import fr.mru.OverclockedEngineering.Recipes.RecipesAlloy;
+import fr.mru.OverclockedEngineering.StackFurnace.TileStackFurnace;
 import fr.mru.OverclockedEngineering.Recipes.GrinderRecipes;
 import fr.mru.OverclockedEngineeringProxy.OverclockedEngineeringCommon;
 import fr.mru.OverclockedengineeringBlocks.GuiHandler;
@@ -16,7 +17,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.oredict.OreDictionary;
 
 @Mod(modid=OverclockedEngineering.MODID, name="Overclocked Engineering", version="0.1")
 public class OverclockedEngineering {
@@ -44,6 +44,7 @@ public class OverclockedEngineering {
 	public void preInit(FMLPreInitializationEvent event) {
 		
 		GameRegistry.registerTileEntity(TileOverclockedFurnace.class, MODID + ":tile_overclocked_furnace");
+		GameRegistry.registerTileEntity(TileStackFurnace.class, MODID + ":tile_stack_furnace");
 		
 		logger = event.getModLog();
 		proxy.preInit(event.getSuggestedConfigurationFile());
@@ -57,7 +58,7 @@ public class OverclockedEngineering {
 		proxy.init();
 		
 		GrinderRecipes.initialise();
-		AlloyRecipes.initialise();
+		RecipesAlloy.initialise();
 	}
 
 }

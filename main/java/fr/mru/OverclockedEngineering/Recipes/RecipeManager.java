@@ -4,15 +4,20 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
 
+import javax.annotation.Nonnull;
+
+import com.brandon3055.draconicevolution.client.model.tool.ToolOverrideList;
+
 import codechicken.lib.util.ArrayUtils;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 
 public abstract class RecipeManager implements IRecipeManager {
-	
+		
 	protected static void addRecipe(HashMap <ItemStack[], ItemStack> recipes, Item ingredient1, Item ingredient2, Item resultat1) {
 	    addRecipe(recipes, new ItemStack(ingredient1), new ItemStack(ingredient2), new ItemStack(resultat1));
 	}
@@ -39,7 +44,12 @@ public abstract class RecipeManager implements IRecipeManager {
 	    recipes.put(new ItemStack[]{ingredient1}, resultat1);
 	}
 	
-	private static boolean containsOreDict(ItemStack[] recipe, ItemStack item) {
+	protected static boolean ItemStackEquals(ItemStack recipe, ItemStack ingredient) {
+		
+		return !recipe.isEmpty() && !ingredient.isEmpty() && recipe.getItem() == ingredient.getItem() && recipe.getCount() <= ingredient.getCount();
+	}
+	
+	private static boolean containsOreDict(ItemStack[] recipe, ItemStack item, int i) {
 		
 		int index = 0;
 		while (index < recipe.length) 
@@ -53,7 +63,8 @@ public abstract class RecipeManager implements IRecipeManager {
 	    if(recipe.length != ingredients.length) return false;
 
 	    for(int i = 0; i < ingredients.length; i++) {
-	        if (!containsOreDict(recipe, ingredients[i])) return false;
+	        if (!containsOreDict(recipe, ingredients[i], i)) return false;
+	        
 	    }
 
 	    return true;
@@ -61,6 +72,7 @@ public abstract class RecipeManager implements IRecipeManager {
 	
 	public static ItemStack getRecipeResult(HashMap <ItemStack[], ItemStack> recipes, ItemStack[] ingredients) {
 		
+
 	    Iterator<Entry<ItemStack[], ItemStack>> it = recipes.entrySet().iterator();
 	    while(it.hasNext()) {
 	        Entry <ItemStack[], ItemStack>entry = it.next();
@@ -70,5 +82,4 @@ public abstract class RecipeManager implements IRecipeManager {
 	    }
 	    return null;
 	}
-	
 }

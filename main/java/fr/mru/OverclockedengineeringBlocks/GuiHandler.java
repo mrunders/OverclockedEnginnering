@@ -3,6 +3,9 @@ package fr.mru.OverclockedengineeringBlocks;
 import fr.mru.OverclockedEngineering.Machine.ContainerOverclockedFurnace;
 import fr.mru.OverclockedEngineering.Machine.GuiOverclockedFurnace;
 import fr.mru.OverclockedEngineering.Machine.TileOverclockedFurnace;
+import fr.mru.OverclockedEngineering.StackFurnace.ContainerStackFurnace;
+import fr.mru.OverclockedEngineering.StackFurnace.GuiStackFurnace;
+import fr.mru.OverclockedEngineering.StackFurnace.TileStackFurnace;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -16,6 +19,8 @@ public class GuiHandler implements IGuiHandler {
         TileEntity te = world.getTileEntity(new BlockPos(x, y, z));
         if(te instanceof TileOverclockedFurnace) {
             return new ContainerOverclockedFurnace((TileOverclockedFurnace)te, player.inventory);
+        } else if (te instanceof TileStackFurnace) {
+        	return new ContainerStackFurnace((TileStackFurnace)te, player.inventory);
         }
         return null;
     }
@@ -25,6 +30,8 @@ public class GuiHandler implements IGuiHandler {
         TileEntity te = world.getTileEntity(new BlockPos(x, y, z));
         if(te instanceof TileOverclockedFurnace) {
             return new GuiOverclockedFurnace((TileOverclockedFurnace)te, player.inventory);
+        } else if ( te instanceof TileStackFurnace ) {
+        	return new GuiStackFurnace((TileStackFurnace)te, player.inventory);
         }
         return null;
     }

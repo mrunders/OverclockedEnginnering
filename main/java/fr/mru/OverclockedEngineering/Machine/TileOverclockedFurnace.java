@@ -191,20 +191,16 @@ public class TileOverclockedFurnace extends TileEntityLockable implements ITicka
 	}
 	
 	public boolean canSmelt() {
-	    // On récupère le résultat de la recette
+
 	    ItemStack result = this.getRecipeResult();
 
-	    // Le résultat est null si il n'y a pas de recette associée, donc on retourne faux
 	    if (result != null) {
 
-	        // On récupère le contenu du slot de résultat
 	        ItemStack slot4 = this.getStackInSlot(SLOT_OUTPUT);
 
-	        // Si il est vide on renvoie vrai
 	        if (slot4.isEmpty())
 	            return true;
 
-	        // Sinon on vérifie que ce soit le même objet, les même métadata et que la taille finale ne sera pas trop grande
 	        if (slot4.getItem() == result.getItem() && slot4.getItemDamage() == result.getItemDamage()) {
 	            int newStackSize = slot4.getCount() + result.getCount();
 	            if (newStackSize <= this.getInventoryStackLimit() && newStackSize <= slot4.getMaxStackSize()) {
@@ -216,20 +212,17 @@ public class TileOverclockedFurnace extends TileEntityLockable implements ITicka
 	}
 	
 	public void smelt() {
-	    // Cette fonction n'est appelée que si result != null, c'est pourquoi on ne fait pas de null check
 	    ItemStack result = this.getRecipeResult();
-	    // On enlève un item de chaque ingrédient
+	    
 	    this.decrStackSize(0, 1);
 	    this.decrStackSize(1, 1);
 	    this.decrStackSize(2, 1);
-	    // On récupère le slot de résultat
+	    
 	    ItemStack stack4 = this.getStackInSlot(SLOT_OUTPUT);
-	    // Si il est vide
+	   
 	    if (stack4.isEmpty()) {
-	        // On y insère une copie du résultat
 	        this.setInventorySlotContents(SLOT_OUTPUT, result.copy());
 	    } else {
-	        // Sinon on augmente le nombre d'objets de l'ItemStack
 	        stack4.setCount(stack4.getCount() + result.getCount());
 	    }
 	}

@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "overclockedengineering:items/focus_alloy",
+        "layer0": "minecraft:items/ingot_iron",
         "layer1": "overclockedengineering:items/focus_manager"
     }
 

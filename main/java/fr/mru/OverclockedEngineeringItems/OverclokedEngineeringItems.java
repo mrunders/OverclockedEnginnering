@@ -21,7 +21,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class OverclokedEngineeringItems {
 	
 	
-	public static final Item MACHINE_BLOCK_ITEM = new ItemBlock(OverclockedEngineeringBlocks.MACHINE_BLOCK).setRegistryName(OverclockedEngineeringBlocks.MACHINE_BLOCK.getRegistryName());
+	public static final Item MACHINE_BLOCK_ITEM = new ItemBlock(OverclockedEngineeringBlocks.MACHINE_BLOCK).setRegistryName(OverclockedEngineeringBlocks.MACHINE_BLOCK.getRegistryName()),
+							 STACK_FURNACE_ITEM = new ItemBlock(OverclockedEngineeringBlocks.STACK_FURNACE).setRegistryName(OverclockedEngineeringBlocks.STACK_FURNACE.getRegistryName());
 	
 	public static ArrayList<Item> itemsList = new ArrayList<>();
 	
@@ -32,6 +33,7 @@ public class OverclokedEngineeringItems {
 		itemsList.addAll(FocusManager.itemsList);
 		
 		itemsList.add(MACHINE_BLOCK_ITEM);
+		itemsList.add(STACK_FURNACE_ITEM);
 		
 	}
 

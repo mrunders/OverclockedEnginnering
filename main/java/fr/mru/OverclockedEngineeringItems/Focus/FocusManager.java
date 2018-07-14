@@ -2,7 +2,7 @@ package fr.mru.OverclockedEngineeringItems.Focus;
 
 import java.util.ArrayList;
 
-import fr.mru.OverclockedEngineering.Recipes.AlloyRecipes;
+import fr.mru.OverclockedEngineering.Recipes.RecipesAlloy;
 import fr.mru.OverclockedEngineering.Recipes.GrinderRecipes;
 import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import net.minecraft.creativetab.CreativeTabs;
@@ -41,7 +41,7 @@ public class FocusManager extends Item {
 		if (focus instanceof GrinderFocus)
 			return GrinderRecipes.getRecipeResult(ingredients);
 		if (focus instanceof AlloyFocus) 
-			return AlloyRecipes.getRecipeResult(ingredients);
+			return RecipesAlloy.getRecipeResult(ingredients);
 		
 		return null;
 	}

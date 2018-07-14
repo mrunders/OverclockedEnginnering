@@ -1,0 +1,8 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "front": "overclockedengineering:blocks/machine_block_off",
+        "top": "overclockedengineering:blocks/machine_block_side",
+        "side": "overclockedengineering:blocks/machine_block_side"
+    }
+}
