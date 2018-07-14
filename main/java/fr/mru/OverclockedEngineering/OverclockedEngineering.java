@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 import fr.mru.OverclockedEngineering.Machine.TileOverclockedFurnace;
 import fr.mru.OverclockedEngineering.Recipes.RecipesAlloy;
 import fr.mru.OverclockedEngineering.StackFurnace.TileStackFurnace;
-import fr.mru.OverclockedEngineering.Recipes.GrinderRecipes;
+import fr.mru.OverclockedEngineering.Recipes.RecipesGrinder;
 import fr.mru.OverclockedEngineeringProxy.OverclockedEngineeringCommon;
 import fr.mru.OverclockedengineeringBlocks.GuiHandler;
 import net.minecraftforge.common.MinecraftForge;
@@ -57,7 +57,7 @@ public class OverclockedEngineering {
 		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 		proxy.init();
 		
-		GrinderRecipes.initialise();
+		RecipesGrinder.initialise();
 		RecipesAlloy.initialise();
 	}
 

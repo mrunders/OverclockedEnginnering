@@ -10,16 +10,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.OreIngredient;
 
-public class RecipeSmelter extends RecipeManager {
+public class RecipesSmelter extends RecipeManager {
 	
 	public static final HashMap <ItemStack[], ItemStack>recipes = new HashMap<ItemStack[], ItemStack>();
 	
 	static {
-	    addRecipe(recipes, Items.APPLE, Items.ARROW, Items.BAKED_POTATO);
+
 	}
 	
 	public static ItemStack getRecipeResult(ItemStack[] ingredients) {
-	    return getRecipeResult(recipes, ingredients);
+	    return null;
 	    
 	}
 	

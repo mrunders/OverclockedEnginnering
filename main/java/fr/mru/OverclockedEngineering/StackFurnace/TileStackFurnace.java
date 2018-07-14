@@ -18,15 +18,15 @@ import net.minecraftforge.event.entity.player.SleepingLocationCheckEvent;
 
 public class TileStackFurnace extends TileEntityLockable implements ITickable {
 	
-	private NonNullList <ItemStack>stacks = NonNullList.withSize(18, ItemStack.EMPTY);
+	private NonNullList <ItemStack>stacks = NonNullList.withSize(8, ItemStack.EMPTY);
 	private String customName;
 	private int currentInputSlot = START_INPUT_SLOT;
 	private ItemStack currentSlot = null;
 	
 	public static final int START_INPUT_SLOT = 0,
-							 END_INPUT_SLOT =  9,
-							 START_OUTPUT_SLOT = 9,
-							 END_OUTPUT_SLOT =  18;
+							 END_INPUT_SLOT =  3,
+							 START_OUTPUT_SLOT = 3,
+							 END_OUTPUT_SLOT =  8;
 	
 	@Override
 	public void readFromNBT(NBTTagCompound compound) {

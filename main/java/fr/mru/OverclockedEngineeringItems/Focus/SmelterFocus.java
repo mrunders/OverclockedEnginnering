@@ -1,6 +1,6 @@
 package fr.mru.OverclockedEngineeringItems.Focus;
 
-import fr.mru.OverclockedEngineering.Recipes.RecipeSmelter;
+import fr.mru.OverclockedEngineering.Recipes.RecipesSmelter;
 
 public class SmelterFocus extends FocusManager {
 
