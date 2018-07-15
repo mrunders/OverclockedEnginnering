@@ -3,6 +3,8 @@ package fr.mru.OverclockedEngineering.Recipes;
 import java.util.HashMap;
 import java.util.PriorityQueue;
 
+import org.apache.logging.log4j.core.util.Loader;
+
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -80,6 +82,10 @@ public class RecipesGrinder extends RecipeManager {
 		addRecipe(recipes, new ItemStack(Blocks.DIAMOND_ORE), new ItemStack(Items.DIAMOND, 2));
 		addRecipe(recipes, new ItemStack(Blocks.EMERALD_ORE), new ItemStack(Items.EMERALD, 2));
 		addRecipe(recipes, new ItemStack(Blocks.QUARTZ_ORE), new ItemStack(Items.QUARTZ, 4));
+		
+		if ( Loader.isClassAvailable("thermalexpansion") ) {
+			//addRecipe(recipes, new ItemStack(Blocks.OBSIDIAN), obsidianDust);
+		}
 		
 		return true;
 	}

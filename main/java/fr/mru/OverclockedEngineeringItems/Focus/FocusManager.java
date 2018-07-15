@@ -6,6 +6,7 @@ import fr.mru.OverclockedEngineering.Recipes.RecipeRequest;
 import fr.mru.OverclockedEngineering.Recipes.RecipesAlloy;
 import fr.mru.OverclockedEngineering.Recipes.RecipesGrinder;
 import fr.mru.OverclockedEngineering.Recipes.RecipesSmelter;
+import fr.mru.OverclockedEngineering.Recipes.RecipesTransposer;
 import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -16,7 +17,8 @@ public class FocusManager extends Item {
 	
 	public static Item FOCUS_SMELTER = new SmelterFocus(),
 					   FOCUS_GRINDER = new GrinderFocus(),
-					   FOCUS_ALLOY   = new AlloyFocus();
+					   FOCUS_ALLOY   = new AlloyFocus(),
+					   FOCUS_TRANSPOSER = new TransposerFocus();
 	
 	public static ArrayList<Item> itemsList = new ArrayList<>();
 	
@@ -25,6 +27,7 @@ public class FocusManager extends Item {
 		itemsList.add(FOCUS_SMELTER);
 		itemsList.add(FOCUS_GRINDER);
 		itemsList.add(FOCUS_ALLOY);
+		itemsList.add(FOCUS_TRANSPOSER);
 		
 	}
 
@@ -44,6 +47,8 @@ public class FocusManager extends Item {
 			return RecipesGrinder.getRecipeResult(ingredients);
 		if (focus instanceof AlloyFocus) 
 			return RecipesAlloy.getRecipeResult(ingredients);
+		if (focus instanceof TransposerFocus)
+			return RecipesTransposer.getRecipeResult(ingredients);
 		
 		return RecipeRequest.NULL;
 	}

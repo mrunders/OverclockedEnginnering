@@ -17,7 +17,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 
 public abstract class RecipeManager implements IRecipesManager {
-		
+	
+
 	protected static void addRecipe(HashMap <ItemStack[], ItemStack> recipes, Item ingredient1, Item ingredient2, Item resultat1) {
 	    addRecipe(recipes, new ItemStack(ingredient1), new ItemStack(ingredient2), new ItemStack(resultat1));
 	}
@@ -46,7 +47,10 @@ public abstract class RecipeManager implements IRecipesManager {
 	
 	protected static boolean ItemStackEquals(ItemStack recipe, ItemStack ingredient) {
 		
-		return !recipe.isEmpty() && !ingredient.isEmpty() && recipe.getItem() == ingredient.getItem() && recipe.getCount() <= ingredient.getCount();
+		return !recipe.isEmpty() && !ingredient.isEmpty() && 
+				recipe.getItem() == ingredient.getItem() && 
+				recipe.getMetadata() == ingredient.getMetadata() && 
+				recipe.getCount() <= ingredient.getCount();
 	}
 	
 	private static boolean containsOreDict(ItemStack[] recipe, ItemStack item, int i) {

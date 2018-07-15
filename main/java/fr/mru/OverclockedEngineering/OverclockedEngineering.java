@@ -6,6 +6,7 @@ import fr.mru.OverclockedEngineering.Machine.TileOverclockedFurnace;
 import fr.mru.OverclockedEngineering.Recipes.RecipesAlloy;
 import fr.mru.OverclockedEngineering.StackFurnace.TileStackFurnace;
 import fr.mru.OverclockedEngineering.Recipes.RecipesGrinder;
+import fr.mru.OverclockedEngineering.Recipes.RecipesTransposer;
 import fr.mru.OverclockedEngineeringProxy.OverclockedEngineeringCommon;
 import fr.mru.OverclockedengineeringBlocks.GuiHandler;
 import net.minecraftforge.common.MinecraftForge;
@@ -59,6 +60,7 @@ public class OverclockedEngineering {
 		
 		RecipesGrinder.initialise();
 		RecipesAlloy.initialise();
+		RecipesTransposer.initialise();
 	}
 
 }
