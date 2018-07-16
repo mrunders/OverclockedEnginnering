@@ -11,18 +11,14 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.oredict.OreDictionary;
+import scala.tools.nsc.transform.patmat.Logic.PropositionalLogic.Or;
 
 public class RecipesGrinder extends RecipeManager {
 	
-	public static final HashMap <ItemStack[], ItemStack>recipes = new HashMap<ItemStack[], ItemStack>();
-	
-	static {
-		addRecipe(recipes, Blocks.COBBLESTONE, Blocks.GRAVEL);
-		addRecipe(recipes, Blocks.GRAVEL, Blocks.SAND);
-	}
-	
 	public static RecipeRequest getRecipeResult(ItemStack[] ingredients) {
-	    return new RecipeRequest(getRecipeResult(recipes, new ItemStack[] {ingredients[0]}), ingredients[0]);
+		ItemStack ingr0 = ingredients[0].copy();
+		ingr0.setCount(1);
+	    return new RecipeRequest(getRecipeResult(recipes, new ItemStack[] {ingredients[0]}), ingr0);
 	    
 	}
 	
@@ -76,6 +72,8 @@ public class RecipesGrinder extends RecipeManager {
 			
 		}
 
+		addRecipe(recipes, Blocks.COBBLESTONE, Blocks.GRAVEL);
+		addRecipe(recipes, Blocks.GRAVEL, Blocks.SAND);
 		addRecipe(recipes, new ItemStack(Blocks.REDSTONE_ORE), new ItemStack(Items.REDSTONE,6));
 		addRecipe(recipes, new ItemStack(Blocks.COAL_ORE), new ItemStack(Items.COAL, 3));
 		addRecipe(recipes, new ItemStack(Blocks.LAPIS_ORE), new ItemStack(Items.DYE, 8, 4));	
@@ -84,7 +82,9 @@ public class RecipesGrinder extends RecipeManager {
 		addRecipe(recipes, new ItemStack(Blocks.QUARTZ_ORE), new ItemStack(Items.QUARTZ, 4));
 		
 		if ( Loader.isClassAvailable("thermalexpansion") ) {
-			//addRecipe(recipes, new ItemStack(Blocks.OBSIDIAN), obsidianDust);
+			ItemStack dustObsidian = OreDictionary.getOres("dustObsidian").get(0).copy();
+			dustObsidian.setCount(4);
+			addRecipe(recipes, OreDictionary.getOres("obsidian").get(0), dustObsidian);
 		}
 		
 		return true;

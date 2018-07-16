@@ -2,6 +2,8 @@ package fr.mru.OverclockedEngineeringItems.Focus;
 
 import java.util.ArrayList;
 
+import fr.mru.OverclockedEngineering.OverclockedEngineering;
+import fr.mru.OverclockedEngineering.Recipes.RecipeRecycler;
 import fr.mru.OverclockedEngineering.Recipes.RecipeRequest;
 import fr.mru.OverclockedEngineering.Recipes.RecipesAlloy;
 import fr.mru.OverclockedEngineering.Recipes.RecipesGrinder;
@@ -18,7 +20,8 @@ public class FocusManager extends Item {
 	public static Item FOCUS_SMELTER = new SmelterFocus(),
 					   FOCUS_GRINDER = new GrinderFocus(),
 					   FOCUS_ALLOY   = new AlloyFocus(),
-					   FOCUS_TRANSPOSER = new TransposerFocus();
+					   FOCUS_TRANSPOSER = new TransposerFocus(),
+					   FOCUS_RECYCLER = new RecyclerFocus();
 	
 	public static ArrayList<Item> itemsList = new ArrayList<>();
 	
@@ -28,13 +31,14 @@ public class FocusManager extends Item {
 		itemsList.add(FOCUS_GRINDER);
 		itemsList.add(FOCUS_ALLOY);
 		itemsList.add(FOCUS_TRANSPOSER);
+		itemsList.add(FOCUS_RECYCLER);
 		
 	}
 
 	public FocusManager(String NAME) {
 		super();
 		
-		setCreativeTab(CreativeTabs.MISC);
+		setCreativeTab(OverclockedEngineering.overclockedTab);
 		setMaxStackSize(1);
 		OverclokedEngineeringItems.setItemName(this, NAME);
 	}
@@ -49,6 +53,8 @@ public class FocusManager extends Item {
 			return RecipesAlloy.getRecipeResult(ingredients);
 		if (focus instanceof TransposerFocus)
 			return RecipesTransposer.getRecipeResult(ingredients);
+		if (focus instanceof RecyclerFocus)
+			return RecipeRecycler.getRecipeResult(ingredients);
 		
 		return RecipeRequest.NULL;
 	}

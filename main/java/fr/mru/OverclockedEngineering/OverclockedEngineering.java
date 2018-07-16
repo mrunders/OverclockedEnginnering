@@ -3,12 +3,11 @@ package fr.mru.OverclockedEngineering;
 import org.apache.logging.log4j.Logger;
 
 import fr.mru.OverclockedEngineering.Machine.TileOverclockedFurnace;
-import fr.mru.OverclockedEngineering.Recipes.RecipesAlloy;
+import fr.mru.OverclockedEngineering.Recipes.RecipeManager;
 import fr.mru.OverclockedEngineering.StackFurnace.TileStackFurnace;
-import fr.mru.OverclockedEngineering.Recipes.RecipesGrinder;
-import fr.mru.OverclockedEngineering.Recipes.RecipesTransposer;
 import fr.mru.OverclockedEngineeringProxy.OverclockedEngineeringCommon;
 import fr.mru.OverclockedengineeringBlocks.GuiHandler;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -32,6 +31,8 @@ public class OverclockedEngineering {
 	
 	public static OverclockedEngineeringCommon proxy;
 	public static Logger logger;
+	
+	public static CreativeTabs overclockedTab = new TabOverclocked(CreativeTabs.getNextID(), "Overclocked Tab");
 	
 	public OverclockedEngineering() {
 		
@@ -58,9 +59,7 @@ public class OverclockedEngineering {
 		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 		proxy.init();
 		
-		RecipesGrinder.initialise();
-		RecipesAlloy.initialise();
-		RecipesTransposer.initialise();
+		RecipeManager.initialise();
 	}
 
 }

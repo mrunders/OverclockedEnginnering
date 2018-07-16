@@ -20,6 +20,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @EventBusSubscriber(value = Side.CLIENT, modid = OverclockedEngineering.MODID)
 public class OverclokedEngineeringItems {
 	
+	public static final Item CIRCUIT = new Circuit(),
+							 CIRCUIT_LARGE = new CircuitLarge();
 	
 	public static final Item MACHINE_BLOCK_ITEM = new ItemBlock(OverclockedEngineeringBlocks.MACHINE_BLOCK).setRegistryName(OverclockedEngineeringBlocks.MACHINE_BLOCK.getRegistryName()),
 							 STACK_FURNACE_ITEM = new ItemBlock(OverclockedEngineeringBlocks.STACK_FURNACE).setRegistryName(OverclockedEngineeringBlocks.STACK_FURNACE.getRegistryName());
@@ -31,6 +33,9 @@ public class OverclokedEngineeringItems {
 		itemsList.addAll(EngineManager.itemsList);
 		itemsList.addAll(GearManager.itemsList);
 		itemsList.addAll(FocusManager.itemsList);
+		
+		itemsList.add(CIRCUIT);
+		itemsList.add(CIRCUIT_LARGE);
 		
 		itemsList.add(MACHINE_BLOCK_ITEM);
 		itemsList.add(STACK_FURNACE_ITEM);

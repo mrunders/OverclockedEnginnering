@@ -1,12 +1,8 @@
 package fr.mru.OverclockedEngineering.Recipes;
 
-import java.util.HashMap;
-
-import cofh.thermalexpansion.ThermalExpansion;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.Loader;
 
 public class RecipesTransposer extends AMultiItemsRecipe {
 

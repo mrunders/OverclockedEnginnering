@@ -13,18 +13,13 @@ import net.minecraftforge.oredict.OreIngredient;
 
 public class RecipesSmelter extends RecipeManager {
 	
-	public static final HashMap <ItemStack[], ItemStack>recipes = new HashMap<ItemStack[], ItemStack>();
-	
-	static {
-
-	}
-	
 	public static RecipeRequest getRecipeResult(ItemStack[] ingredients) {
 	    ItemStack res = FurnaceRecipes.instance().getSmeltingResult(ingredients[0]);
 	    if (res == null || res.getItem().equals(Items.AIR))
 	    	return RecipeRequest.NULL;
-	    return new RecipeRequest(res, ingredients[0]);
-	    
+	    ItemStack ingre0 = ingredients[0].copy();
+	    ingre0.setCount(1);
+	    return new RecipeRequest(res, ingre0); 
 	}
 	
 }

@@ -22,7 +22,7 @@ public class MachineBlock extends BlockContainer {
 		
 		OverclockedEngineeringBlocks.setBlockName(this, "machine_block");
 		
-		setCreativeTab(CreativeTabs.MISC);
+		setCreativeTab(OverclockedEngineering.overclockedTab);
 
 	}
 

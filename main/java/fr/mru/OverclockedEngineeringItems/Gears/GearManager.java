@@ -2,12 +2,11 @@ package fr.mru.OverclockedEngineeringItems.Gears;
 
 import java.util.ArrayList;
 
-import fr.mru.OverclockedEngineeringItems.IManager;
+import fr.mru.OverclockedEngineering.OverclockedEngineering;
 import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-public class GearManager extends Item implements IManager {
+public class GearManager extends Item {
 
 	public static final Item GEAR_WITHER = new GearWither(),
 			 GEAR_WYVERN = new GearWyvern(),
@@ -27,7 +26,7 @@ public class GearManager extends Item implements IManager {
 		super();
 		
 		OverclokedEngineeringItems.setItemName(this, NAME);
-		setCreativeTab(CreativeTabs.MISC);
+		setCreativeTab(OverclockedEngineering.overclockedTab);
 	}
 	
 }

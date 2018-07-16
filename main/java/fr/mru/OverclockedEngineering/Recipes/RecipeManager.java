@@ -4,20 +4,13 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
 
-import javax.annotation.Nonnull;
-
-import com.brandon3055.draconicevolution.client.model.tool.ToolOverrideList;
-
-import codechicken.lib.util.ArrayUtils;
 import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.NonNullList;
 
-public abstract class RecipeManager implements IRecipesManager {
+public abstract class RecipeManager {
 	
+	public static final HashMap <ItemStack[], ItemStack>recipes = new HashMap<ItemStack[], ItemStack>();
 
 	protected static void addRecipe(HashMap <ItemStack[], ItemStack> recipes, Item ingredient1, Item ingredient2, Item resultat1) {
 	    addRecipe(recipes, new ItemStack(ingredient1), new ItemStack(ingredient2), new ItemStack(resultat1));
@@ -85,5 +78,16 @@ public abstract class RecipeManager implements IRecipesManager {
 	        }
 	    }
 	    return null;
+	}
+
+	public static boolean initialise() {
+
+		RecipesGrinder.initialise();
+		RecipesAlloy.initialise();
+		RecipesTransposer.initialise();
+		RecipeRecycler.initialise();
+		
+		return true;
+		
 	}
 }

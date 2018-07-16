@@ -22,7 +22,7 @@ public class StackFurnace extends BlockContainer {
 		
 		OverclockedEngineeringBlocks.setBlockName(this, "stack_furnace");
 		
-		setCreativeTab(CreativeTabs.MISC);
+		setCreativeTab(OverclockedEngineering.overclockedTab);
 
 	}
 

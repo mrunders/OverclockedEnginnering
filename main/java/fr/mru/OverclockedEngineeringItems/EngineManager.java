@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-public class EngineManager extends Item implements IManager {
+public class EngineManager extends Item {
 
 	
 	public static final Item HYBRIDE_ENGINE1 = new EngineManager("hybride_engine1",200),
