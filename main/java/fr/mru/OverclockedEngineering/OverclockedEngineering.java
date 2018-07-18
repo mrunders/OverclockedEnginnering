@@ -5,8 +5,8 @@ import org.apache.logging.log4j.Logger;
 import fr.mru.OverclockedEngineering.Machine.TileOverclockedFurnace;
 import fr.mru.OverclockedEngineering.Recipes.RecipeManager;
 import fr.mru.OverclockedEngineering.StackFurnace.TileStackFurnace;
+import fr.mru.OverclockedEngineering.TreeFarmer.TileTreeFarmer;
 import fr.mru.OverclockedEngineeringProxy.OverclockedEngineeringCommon;
-import fr.mru.OverclockedengineeringBlocks.GuiHandler;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -47,6 +47,7 @@ public class OverclockedEngineering {
 		
 		GameRegistry.registerTileEntity(TileOverclockedFurnace.class, MODID + ":tile_overclocked_furnace");
 		GameRegistry.registerTileEntity(TileStackFurnace.class, MODID + ":tile_stack_furnace");
+		GameRegistry.registerTileEntity(TileTreeFarmer.class, MODID + ":tile_tree_farmer");
 		
 		logger = event.getModLog();
 		proxy.preInit(event.getSuggestedConfigurationFile());
@@ -60,6 +61,7 @@ public class OverclockedEngineering {
 		proxy.init();
 		
 		RecipeManager.initialise();
+
 	}
 
 }

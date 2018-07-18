@@ -1,4 +1,4 @@
-package fr.mru.OverclockedEngineering.StackFurnace;
+package fr.mru.OverclockedengineeringBlocks;
 
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;

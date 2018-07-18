@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
 
+import fr.mru.OverclockedengineeringBlocks.TreeFarmer;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -86,6 +87,7 @@ public abstract class RecipeManager {
 		RecipesAlloy.initialise();
 		RecipesTransposer.initialise();
 		RecipeRecycler.initialise();
+		RecipesTreeFarm.initialise();
 		
 		return true;
 		

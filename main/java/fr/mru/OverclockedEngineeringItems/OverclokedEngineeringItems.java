@@ -21,25 +21,29 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class OverclokedEngineeringItems {
 	
 	public static final Item CIRCUIT = new Circuit(),
-							 CIRCUIT_LARGE = new CircuitLarge();
+							 CIRCUIT_LARGE = new CircuitLarge(),
+							 
+							 MINING_PICKAXE = new MiningPickaxe();	
 	
 	public static final Item MACHINE_BLOCK_ITEM = new ItemBlock(OverclockedEngineeringBlocks.MACHINE_BLOCK).setRegistryName(OverclockedEngineeringBlocks.MACHINE_BLOCK.getRegistryName()),
-							 STACK_FURNACE_ITEM = new ItemBlock(OverclockedEngineeringBlocks.STACK_FURNACE).setRegistryName(OverclockedEngineeringBlocks.STACK_FURNACE.getRegistryName());
+							 STACK_FURNACE_ITEM = new ItemBlock(OverclockedEngineeringBlocks.STACK_FURNACE).setRegistryName(OverclockedEngineeringBlocks.STACK_FURNACE.getRegistryName()),
+							 TREE_FARMER_ITEM   = new ItemBlock(OverclockedEngineeringBlocks.TREE_FARMER).setRegistryName(OverclockedEngineeringBlocks.TREE_FARMER.getRegistryName());
 	
 	public static ArrayList<Item> itemsList = new ArrayList<>();
 	
 	static {
 
 		itemsList.addAll(EngineManager.itemsList);
-		itemsList.addAll(GearManager.itemsList);
+		//itemsList.addAll(GearManager.itemsList);
 		itemsList.addAll(FocusManager.itemsList);
 		
 		itemsList.add(CIRCUIT);
 		itemsList.add(CIRCUIT_LARGE);
+		itemsList.add(MINING_PICKAXE);
 		
 		itemsList.add(MACHINE_BLOCK_ITEM);
 		itemsList.add(STACK_FURNACE_ITEM);
-		
+		itemsList.add(TREE_FARMER_ITEM);
 	}
 
     public static void setItemName(Item item, String name) {
@@ -47,7 +51,8 @@ public class OverclokedEngineeringItems {
     	item.setRegistryName(OverclockedEngineering.MODID, name).setUnlocalizedName(OverclockedEngineering.MODID + "." + name);
     }
 
-    @SideOnly(Side.CLIENT)
+
+	@SideOnly(Side.CLIENT)
     @SubscribeEvent
     public static void registerItemModels(ModelRegistryEvent event) {
 

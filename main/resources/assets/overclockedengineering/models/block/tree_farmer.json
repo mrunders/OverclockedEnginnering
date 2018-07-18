@@ -1,7 +1,7 @@
 {
     "parent": "block/orientable",
     "textures": {
-        "front": "overclockedengineering:blocks/stack_furnace_off",
+        "front": "overclockedengineering:blocks/tree_farmer_off",
         "top": "overclockedengineering:blocks/machine_block_side",
         "side": "overclockedengineering:blocks/machine_block_side"
     }

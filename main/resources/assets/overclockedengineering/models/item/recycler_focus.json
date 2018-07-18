@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "minecraft:items/bucket_empty",
+        "layer0": "minecraft:items/iron_pickaxe",
         "layer1": "overclockedengineering:items/focus_manager"
     }
 
