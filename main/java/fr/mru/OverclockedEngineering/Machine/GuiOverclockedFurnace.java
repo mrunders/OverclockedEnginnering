@@ -32,13 +32,6 @@ public class GuiOverclockedFurnace extends GuiContainer {
 	    int textureWidth = (int) (23f / 200f * timePassed);
 	    this.drawTexturedModalRect(i + 81, j + 44, 177, 18, textureWidth, 7);
 
-	    if (this.tile.isBurning()) {
-	        int burningTime = this.tile.getField(0);
-	        int textureHeight = (int) (12f / this.tile.getFullBurnTime() * burningTime);
-	        this.drawTexturedModalRect(i + 37, j + 26 + 12 - textureHeight,
-	                177, 12 - textureHeight, 27, textureHeight);
-	    }
-
-	    //this.fontRenderer.drawString(this.tile.getName(), i + 80, j + 45, 0xFFFFFF);
+	    this.fontRenderer.drawString(this.tile.getName(), i + 60, j + 400, 0xFFFFFF);
 	}
 }

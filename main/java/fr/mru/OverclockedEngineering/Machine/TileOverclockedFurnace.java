@@ -242,7 +242,9 @@ public class TileOverclockedFurnace extends TileEntityLockable implements ITicka
 
 	/** Renvoie vrai si le feu est allumé */
 	public boolean isBurning() {
-	    return EngineManager.itemIsEngine(this.stacks.get(SLOT_ENGINE).getItem());
+	    return EngineManager.itemIsEngine(this.stacks.get(SLOT_ENGINE).getItem()) && 
+	    	   FocusManager.itemIsFocus(this.stacks.get(SLOT_FOCUS).getItem()) && 
+	    	   !this.stacks.get(0).isEmpty();
 	}
 	
 	@Override
