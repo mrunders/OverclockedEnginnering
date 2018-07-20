@@ -3,6 +3,8 @@ package fr.mru.OverclockedEngineeringItems;
 import java.util.ArrayList;
 
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
+import fr.mru.OverclockedEngineeringItems.AgingGun.AgingGunDecremantal;
+import fr.mru.OverclockedEngineeringItems.AgingGun.AgingGunIncremental;
 import fr.mru.OverclockedEngineeringItems.Focus.FocusManager;
 import fr.mru.OverclockedEngineeringItems.Gears.GearManager;
 import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
@@ -23,7 +25,9 @@ public class OverclokedEngineeringItems {
 	public static final Item CIRCUIT = new Circuit(),
 							 CIRCUIT_LARGE = new CircuitLarge(),
 							 
-							 MINING_PICKAXE = new MiningPickaxe();	
+							 MINING_PICKAXE = new MiningPickaxe(),
+							 AGING_GUN_INCR = new AgingGunIncremental(),
+							 AGING_GUN_DECR = new AgingGunDecremantal();
 	
 	public static final Item MACHINE_BLOCK_ITEM = new ItemBlock(OverclockedEngineeringBlocks.MACHINE_BLOCK).setRegistryName(OverclockedEngineeringBlocks.MACHINE_BLOCK.getRegistryName()),
 							 STACK_FURNACE_ITEM = new ItemBlock(OverclockedEngineeringBlocks.STACK_FURNACE).setRegistryName(OverclockedEngineeringBlocks.STACK_FURNACE.getRegistryName()),
@@ -40,6 +44,8 @@ public class OverclokedEngineeringItems {
 		itemsList.add(CIRCUIT);
 		itemsList.add(CIRCUIT_LARGE);
 		itemsList.add(MINING_PICKAXE);
+		itemsList.add(AGING_GUN_INCR);
+		itemsList.add(AGING_GUN_DECR);
 		
 		itemsList.add(MACHINE_BLOCK_ITEM);
 		itemsList.add(STACK_FURNACE_ITEM);
