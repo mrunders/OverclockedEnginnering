@@ -3,6 +3,7 @@ package fr.mru.OverclockedEngineeringItems.AgingGun;
 import java.util.HashMap;
 
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
+import fr.mru.OverclockedEngineeringItems.OverclockedEngineeringItemsBase;
 import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
@@ -15,19 +16,16 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public abstract class AgingGunManager extends Item {
+public abstract class AgingGunManager extends OverclockedEngineeringItemsBase {
 
 	private static final SoundEvent SOUND = SoundEvent.REGISTRY.getObject(new ResourceLocation("minecraft:entity.zombie_villager.converted"));
 	private HashMap<Block, Block> aging = new HashMap<Block, Block>();
 	
 	public AgingGunManager( String NAME, HashMap<Block, Block> aging) {
-		super();
+		super(NAME);
 		
 		this.aging = aging;
-		
-		setCreativeTab(OverclockedEngineering.overclockedTab);
 		setMaxStackSize(1);
-		OverclokedEngineeringItems.setItemName(this, NAME);
 	}
 	
 	@Override

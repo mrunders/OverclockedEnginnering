@@ -4,12 +4,10 @@ import fr.mru.OverclockedEngineering.OverclockedEngineering;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-public class Circuit extends Item {
+public class Circuit extends OverclockedEngineeringItemsBase {
 
 	public Circuit() {
-		super();
+		super("circuit");
 		
-		OverclokedEngineeringItems.setItemName(this, "circuit");
-		setCreativeTab(OverclockedEngineering.overclockedTab);
 	}
 }

@@ -3,12 +3,10 @@ package fr.mru.OverclockedEngineeringItems;
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
 import net.minecraft.item.Item;
 
-public class CircuitLarge extends Item {
+public class CircuitLarge extends OverclockedEngineeringItemsBase {
 
 	public CircuitLarge() {
-		super();
+		super("circuit_large");
 		
-		OverclokedEngineeringItems.setItemName(this, "circuit_large");
-		setCreativeTab(OverclockedEngineering.overclockedTab);
 	}
 }

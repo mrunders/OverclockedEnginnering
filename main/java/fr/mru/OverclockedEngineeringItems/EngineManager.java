@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-public class EngineManager extends Item {
+public class EngineManager extends OverclockedEngineeringItemsBase {
 
 	
 	public static final Item HYBRIDE_ENGINE1 = new EngineManager("hybride_engine1",200),
@@ -28,11 +28,10 @@ public class EngineManager extends Item {
 	
 	public EngineManager(String NAME, int full_time_recipe) {
 		
-		super();
+		super(NAME);
+		
 		this.full_time_recipe = full_time_recipe;
 		setMaxStackSize(1);
-		OverclokedEngineeringItems.setItemName(this, NAME);
-		setCreativeTab(CreativeTabs.MISC);
 	}
 
 	public int getFullTimeRecipe() {

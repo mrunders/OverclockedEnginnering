@@ -1,17 +1,14 @@
 package fr.mru.OverclockedEngineering.Recipes;
 
-import java.util.HashMap;
 import java.util.PriorityQueue;
 
 import org.apache.logging.log4j.core.util.Loader;
 
-import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.oredict.OreDictionary;
-import scala.tools.nsc.transform.patmat.Logic.PropositionalLogic.Or;
 
 public class RecipesGrinder extends RecipeManager {
 	
@@ -45,17 +42,24 @@ public class RecipesGrinder extends RecipeManager {
 		NonNullList<ItemStack> ore,dust,ingot,gem;
 		for (String gemElt : gemList) {
 			
-			gem = OreDictionary.getOres("gem"+gemElt);
+			gem = NonNullList.create();
+			for (ItemStack g : OreDictionary.getOres("gem"+gemElt)) 
+				gem.add(g.copy());
+			
 			if ( gem.isEmpty() ) continue;
 			
-			if ( !oreList.isEmpty() && oreList.contains(gemElt) )
+			if ( !oreList.isEmpty() && oreList.contains(gemElt) ) {
 				gem.get(0).setCount(2);
 				addRecipe(OreDictionary.getOres("ore"+dustList), gem);
+			}
 		}
 		
 		for (String dustElt : dustList ) {
 			
-			dust = OreDictionary.getOres("dust"+dustElt);
+			dust = NonNullList.create();
+			for (ItemStack g : OreDictionary.getOres("gem"+dustElt)) 
+				dust.add(g.copy());
+			
 			if ( dust.isEmpty() ) continue;
 			
 			if ( !oreList.isEmpty() && oreList.contains(dustElt) ) 
@@ -63,11 +67,9 @@ public class RecipesGrinder extends RecipeManager {
 				addRecipe(OreDictionary.getOres("ore"+dustElt), dust);
 			
 			if ( !gemList.isEmpty() && gemList.contains(dustElt) )
-				dust.get(0).setCount(1);
 				addRecipe(OreDictionary.getOres("gem"+dustElt), dust);
 			
 			if ( !ingotList.isEmpty() && ingotList.contains(dustElt) )
-				dust.get(0).setCount(1);
 				addRecipe(OreDictionary.getOres("ingot"+dustElt), dust);
 			
 		}
@@ -91,6 +93,8 @@ public class RecipesGrinder extends RecipeManager {
 	}
 	
 	private static void addRecipe(NonNullList<ItemStack> input, NonNullList<ItemStack> output) {
-		if ( !input.isEmpty() && !output.isEmpty() ) addRecipe(recipes, input.get(0).copy(), output.get(0).copy()); 
+		if ( input.isEmpty() || output.isEmpty() ) return;
+		for ( ItemStack in : input)
+			addRecipe(recipes, in , output.get(0).copy()); 
 	}
 }

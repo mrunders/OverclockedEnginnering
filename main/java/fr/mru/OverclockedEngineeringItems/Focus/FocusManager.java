@@ -9,13 +9,14 @@ import fr.mru.OverclockedEngineering.Recipes.RecipesAlloy;
 import fr.mru.OverclockedEngineering.Recipes.RecipesGrinder;
 import fr.mru.OverclockedEngineering.Recipes.RecipesSmelter;
 import fr.mru.OverclockedEngineering.Recipes.RecipesTransposer;
+import fr.mru.OverclockedEngineeringItems.OverclockedEngineeringItemsBase;
 import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 
-public class FocusManager extends Item {
+public class FocusManager extends OverclockedEngineeringItemsBase {
 	
 	public static Item FOCUS_SMELTER = new SmelterFocus(),
 					   FOCUS_GRINDER = new GrinderFocus(),
@@ -36,11 +37,8 @@ public class FocusManager extends Item {
 	}
 
 	public FocusManager(String NAME) {
-		super();
-		
-		setCreativeTab(OverclockedEngineering.overclockedTab);
+		super(NAME);
 		setMaxStackSize(1);
-		OverclokedEngineeringItems.setItemName(this, NAME);
 	}
 	
 	public static RecipeRequest getRecipeResult(Item focus, ItemStack[] ingredients) {

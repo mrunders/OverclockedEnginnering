@@ -6,7 +6,6 @@ import fr.mru.OverclockedEngineering.OverclockedEngineering;
 import fr.mru.OverclockedEngineeringItems.AgingGun.AgingGunDecremantal;
 import fr.mru.OverclockedEngineeringItems.AgingGun.AgingGunIncremental;
 import fr.mru.OverclockedEngineeringItems.Focus.FocusManager;
-import fr.mru.OverclockedEngineeringItems.Gears.GearManager;
 import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -31,14 +30,15 @@ public class OverclokedEngineeringItems {
 	
 	public static final Item MACHINE_BLOCK_ITEM = new ItemBlock(OverclockedEngineeringBlocks.MACHINE_BLOCK).setRegistryName(OverclockedEngineeringBlocks.MACHINE_BLOCK.getRegistryName()),
 							 STACK_FURNACE_ITEM = new ItemBlock(OverclockedEngineeringBlocks.STACK_FURNACE).setRegistryName(OverclockedEngineeringBlocks.STACK_FURNACE.getRegistryName()),
-							 TREE_FARMER_ITEM   = new ItemBlock(OverclockedEngineeringBlocks.TREE_FARMER).setRegistryName(OverclockedEngineeringBlocks.TREE_FARMER.getRegistryName());
+							 TREE_FARMER_ITEM   = new ItemBlock(OverclockedEngineeringBlocks.TREE_FARMER).setRegistryName(OverclockedEngineeringBlocks.TREE_FARMER.getRegistryName()),
+							 UNCRAFTING_TABLE_ITEM = new ItemBlock(OverclockedEngineeringBlocks.UNCRAFTING_TABLE).setRegistryName(OverclockedEngineeringBlocks.UNCRAFTING_TABLE.getRegistryName());
+							 
 	
 	public static ArrayList<Item> itemsList = new ArrayList<>();
 	
 	static {
 
 		itemsList.addAll(EngineManager.itemsList);
-		//itemsList.addAll(GearManager.itemsList);
 		itemsList.addAll(FocusManager.itemsList);
 		
 		itemsList.add(CIRCUIT);
@@ -50,6 +50,7 @@ public class OverclokedEngineeringItems {
 		itemsList.add(MACHINE_BLOCK_ITEM);
 		itemsList.add(STACK_FURNACE_ITEM);
 		itemsList.add(TREE_FARMER_ITEM);
+		itemsList.add(UNCRAFTING_TABLE_ITEM);
 	}
 
     public static void setItemName(Item item, String name) {
