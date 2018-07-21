@@ -1,4 +1,4 @@
-package fr.mru.OverclockedEngineering.StackFurnace;
+package fr.mru.OverclockedEngineering.Tiles.StackFurnace;
 
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
 import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;

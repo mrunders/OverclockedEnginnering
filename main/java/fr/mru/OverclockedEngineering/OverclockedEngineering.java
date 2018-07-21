@@ -2,10 +2,11 @@ package fr.mru.OverclockedEngineering;
 
 import org.apache.logging.log4j.Logger;
 
-import fr.mru.OverclockedEngineering.Machine.TileOverclockedFurnace;
 import fr.mru.OverclockedEngineering.Recipes.RecipeManager;
-import fr.mru.OverclockedEngineering.StackFurnace.TileStackFurnace;
-import fr.mru.OverclockedEngineering.TreeFarmer.TileTreeFarmer;
+import fr.mru.OverclockedEngineering.Tiles.DimensionalHole.TileDHole;
+import fr.mru.OverclockedEngineering.Tiles.Machine.TileOverclockedFurnace;
+import fr.mru.OverclockedEngineering.Tiles.StackFurnace.TileStackFurnace;
+import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.TileTreeFarmer;
 import fr.mru.OverclockedEngineeringProxy.OverclockedEngineeringCommon;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
@@ -48,6 +49,7 @@ public class OverclockedEngineering {
 		GameRegistry.registerTileEntity(TileOverclockedFurnace.class, MODID + ":tile_overclocked_furnace");
 		GameRegistry.registerTileEntity(TileStackFurnace.class, MODID + ":tile_stack_furnace");
 		GameRegistry.registerTileEntity(TileTreeFarmer.class, MODID + ":tile_tree_farmer");
+		GameRegistry.registerTileEntity(TileDHole.class, MODID + ":tile_dimensional_hole");
 		
 		logger = event.getModLog();
 		proxy.preInit(event.getSuggestedConfigurationFile());

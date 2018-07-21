@@ -26,12 +26,15 @@ public class OverclokedEngineeringItems {
 							 
 							 MINING_PICKAXE = new MiningPickaxe(),
 							 AGING_GUN_INCR = new AgingGunIncremental(),
-							 AGING_GUN_DECR = new AgingGunDecremantal();
+							 AGING_GUN_DECR = new AgingGunDecremantal(),
+							 
+							 DIMENSIONAL_HOLE = new DHoleItem();
 	
 	public static final Item MACHINE_BLOCK_ITEM = new ItemBlock(OverclockedEngineeringBlocks.MACHINE_BLOCK).setRegistryName(OverclockedEngineeringBlocks.MACHINE_BLOCK.getRegistryName()),
 							 STACK_FURNACE_ITEM = new ItemBlock(OverclockedEngineeringBlocks.STACK_FURNACE).setRegistryName(OverclockedEngineeringBlocks.STACK_FURNACE.getRegistryName()),
 							 TREE_FARMER_ITEM   = new ItemBlock(OverclockedEngineeringBlocks.TREE_FARMER).setRegistryName(OverclockedEngineeringBlocks.TREE_FARMER.getRegistryName()),
-							 UNCRAFTING_TABLE_ITEM = new ItemBlock(OverclockedEngineeringBlocks.UNCRAFTING_TABLE).setRegistryName(OverclockedEngineeringBlocks.UNCRAFTING_TABLE.getRegistryName());
+							 UNCRAFTING_TABLE_ITEM = new ItemBlock(OverclockedEngineeringBlocks.UNCRAFTING_TABLE).setRegistryName(OverclockedEngineeringBlocks.UNCRAFTING_TABLE.getRegistryName()),
+							 DIMENSIONAL_HOLE_ITEM = new ItemBlock(OverclockedEngineeringBlocks.DIMENSIONAL_HOLE).setRegistryName(OverclockedEngineeringBlocks.DIMENSIONAL_HOLE.getRegistryName());
 							 
 	
 	public static ArrayList<Item> itemsList = new ArrayList<>();
@@ -46,11 +49,13 @@ public class OverclokedEngineeringItems {
 		itemsList.add(MINING_PICKAXE);
 		itemsList.add(AGING_GUN_INCR);
 		itemsList.add(AGING_GUN_DECR);
+		itemsList.add(DIMENSIONAL_HOLE);
 		
 		itemsList.add(MACHINE_BLOCK_ITEM);
 		itemsList.add(STACK_FURNACE_ITEM);
 		itemsList.add(TREE_FARMER_ITEM);
 		itemsList.add(UNCRAFTING_TABLE_ITEM);
+		itemsList.add(DIMENSIONAL_HOLE_ITEM);
 	}
 
     public static void setItemName(Item item, String name) {

@@ -1,11 +1,11 @@
-package fr.mru.OverclockedEngineering.TreeFarmer;
+package fr.mru.OverclockedEngineering.Tiles.Machine;
 
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
-import fr.mru.OverclockedEngineering.Machine.TileOverclockedFurnace;
 import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.tileentity.TileEntity;
@@ -15,34 +15,36 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class TreeFarmer extends BlockContainer {
+public class MachineBlock extends BlockContainer {
 
-	public TreeFarmer() {		
+	public MachineBlock() {
 		super(Material.ANVIL);
-		OverclockedEngineeringBlocks.setBlockName(this, "tree_farmer");
+		
+		OverclockedEngineeringBlocks.setBlockName(this, "machine_block");
+		
 		setCreativeTab(OverclockedEngineering.overclockedTab);
 
 	}
-	
+
 	@Override
 	public boolean hasTileEntity() {
 	    return true;
 	}
-	
+
 	@Override
 	public TileEntity createNewTileEntity(World world, int metadata)  {
-	    return new TileTreeFarmer();
+	    return new TileOverclockedFurnace();
 	}
 	
 	@Override
 	public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
 	    TileEntity tileentity = worldIn.getTileEntity(pos);
-	
-	    if (tileentity instanceof TileTreeFarmer) {
+
+	    if (tileentity instanceof TileOverclockedFurnace) {
 	        InventoryHelper.dropInventoryItems(worldIn, pos,
-	                (TileTreeFarmer) tileentity);
+	                (TileOverclockedFurnace) tileentity);
 	    }
-	
+
 	    super.breakBlock(worldIn, pos, state);
 	}
 	
@@ -52,12 +54,12 @@ public class TreeFarmer extends BlockContainer {
 	        return true;
 	    } else {
 	        TileEntity tileentity = world.getTileEntity(pos);
-	
-	        if (tileentity instanceof TileTreeFarmer) {
+
+	        if (tileentity instanceof TileOverclockedFurnace) {
 	            player.openGui(OverclockedEngineering.instance, 0, world, pos.getX(),
 	                    pos.getY(), pos.getZ());
 	        }
-	
+
 	        return true;
 	    }
 	}
@@ -66,5 +68,4 @@ public class TreeFarmer extends BlockContainer {
 	public EnumBlockRenderType getRenderType(IBlockState state) {
 	    return EnumBlockRenderType.MODEL;
 	}
-	
 }

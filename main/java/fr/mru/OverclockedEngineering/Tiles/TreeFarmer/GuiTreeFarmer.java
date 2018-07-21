@@ -1,4 +1,4 @@
-package fr.mru.OverclockedEngineering.Machine;
+package fr.mru.OverclockedEngineering.Tiles.TreeFarmer;
 
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -10,13 +10,13 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
 
-public class GuiOverclockedFurnace extends GuiContainer {
+public class GuiTreeFarmer extends GuiContainer {
 	
-	private static final ResourceLocation background = new ResourceLocation(OverclockedEngineering.MODID,"textures/gui/container/overclocked_furnace.png");
-	private TileOverclockedFurnace tile;
+	private static final ResourceLocation background = new ResourceLocation(OverclockedEngineering.MODID,"textures/gui/container/tree_farmer.png");
+	private TileTreeFarmer tile;
 
-	public GuiOverclockedFurnace(TileOverclockedFurnace tile, InventoryPlayer playerInv) {
-        super(new ContainerOverclockedFurnace(tile, playerInv));
+	public GuiTreeFarmer(TileTreeFarmer tile, InventoryPlayer playerInv) {
+        super(new ContainerTreeFarmer(tile, playerInv));
         this.tile = tile;
 	}
 	
@@ -30,8 +30,9 @@ public class GuiOverclockedFurnace extends GuiContainer {
 
 	    int timePassed = this.tile.getField(1);
 	    int textureWidth = (int) (23f / 200f * timePassed);
-	    this.drawTexturedModalRect(i + 81, j + 44, 177, 18, textureWidth, 7);
+	    this.drawTexturedModalRect(i + 62, j + 37, 177, 18, textureWidth, 7);
 
-	    this.fontRenderer.drawString(this.tile.getName(), i + 60, j + 400, 0xFFFFFF);
+
+	    this.fontRenderer.drawString(this.tile.getName(), i + 60, j + 2, 0xFFFFFF);
 	}
 }

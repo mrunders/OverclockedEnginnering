@@ -1,4 +1,4 @@
-package fr.mru.OverclockedEngineering.UncraftingTable;
+package fr.mru.OverclockedEngineering.Tiles.UncraftingTable;
 
 import java.awt.List;
 

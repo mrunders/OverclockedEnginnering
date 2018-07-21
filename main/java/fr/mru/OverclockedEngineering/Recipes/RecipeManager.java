@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
 
-import fr.mru.OverclockedEngineering.TreeFarmer.TreeFarmer;
+import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.TreeFarmer;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

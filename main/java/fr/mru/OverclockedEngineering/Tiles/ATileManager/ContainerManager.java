@@ -1,33 +1,32 @@
-package fr.mru.OverclockedEngineering.Machine;
+package fr.mru.OverclockedEngineering.Tiles.ATileManager;
 
 import fr.mru.OverclockedengineeringBlocks.SlotOutput;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IContainerListener;
 import net.minecraft.inventory.Slot;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ContainerOverclockedFurnace extends Container {
+public abstract class ContainerManager extends Container {
 	
-	private TileOverclockedFurnace tile;
+	private TileManager tile;
 	private int	timePassed = 0;
 	private int	burnTimeLeft = 0;
+	
+	public abstract void displaySlots(TileManager tile, InventoryPlayer playerInventory);
 
-	public ContainerOverclockedFurnace(TileOverclockedFurnace tile, InventoryPlayer playerInventory) {
+	public ContainerManager(TileManager tile, InventoryPlayer playerInventory) {
 	    this.tile = tile;
 
+	    displaySlots(tile, playerInventory);
+	    
 	    int i;
-	    for(i = 0; i < 3; i++) {
-	        this.addSlotToContainer(new Slot(tile, i, 33 + i * 18, 7));
-	    }
-	    for(i = 0; i < 2; i++) {
-	        this.addSlotToContainer(new Slot(tile, i + 3, 42, 40 + i * 18));
-	    }
-	    this.addSlotToContainer(new SlotOutput(tile, 5, 116, 17));
-
 	    for(i = 0; i < 3; ++i) {
 	        for(int j = 0; j < 9; ++j) {
 	            this.addSlotToContainer(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));

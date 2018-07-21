@@ -1,4 +1,4 @@
-package fr.mru.OverclockedEngineering.StackFurnace;
+package fr.mru.OverclockedEngineering.Tiles.StackFurnace;
 
 import fr.mru.OverclockedEngineeringItems.EngineManager;
 import fr.mru.OverclockedEngineeringItems.Focus.FocusManager;

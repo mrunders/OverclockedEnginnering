@@ -1,34 +1,33 @@
-package fr.mru.OverclockedEngineering.TreeFarmer;
+package fr.mru.OverclockedEngineering.Tiles.StackFurnace;
 
 import fr.mru.OverclockedengineeringBlocks.SlotOutput;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IContainerListener;
 import net.minecraft.inventory.Slot;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ContainerTreeFarmer extends Container {
+public class ContainerStackFurnace extends Container {
 	
-	private TileTreeFarmer tile;
+	private TileStackFurnace tile;
 	private int	timePassed = 0;
 	private int	burnTimeLeft = 0;
 
-	public ContainerTreeFarmer(TileTreeFarmer tile, InventoryPlayer playerInventory) {
+	public ContainerStackFurnace(TileStackFurnace tile, InventoryPlayer playerInventory) {
 	    this.tile = tile;
 
-	    this.addSlotToContainer(new Slot(tile, tile.SAPLING_SLOT, 35, 15));
-	    this.addSlotToContainer(new Slot(tile, tile.FERTILIZER_SLOT, 35, 50));
-	    
-	    this.addSlotToContainer(new SlotOutput(tile, tile.WOOD_SLOT, 100 , 32));
-	    this.addSlotToContainer(new SlotOutput(tile, tile.LEAVES_SLOT, 122 , 32));
-	    
 	    int i;
+	    for(i = tile.START_INPUT_SLOT; i < tile.END_INPUT_SLOT; ++i) {
+	        this.addSlotToContainer(new Slot(tile, i, 62 + i * 18, 30));
+	    }
+	    
+	    for(i = tile.START_OUTPUT_SLOT; i < tile.END_OUTPUT_SLOT; ++i) {
+	        this.addSlotToContainer(new SlotOutput(tile, i, 44 + ((i - tile.START_OUTPUT_SLOT)* 18), 60));
+	    }
+	    
 	    for(i = 0; i < 3; ++i) {
 	        for(int j = 0; j < 9; ++j) {
 	            this.addSlotToContainer(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));

@@ -1,4 +1,4 @@
-package fr.mru.OverclockedEngineering.TreeFarmer;
+package fr.mru.OverclockedEngineering.Tiles.TreeFarmer;
 
 import java.util.HashMap;
 

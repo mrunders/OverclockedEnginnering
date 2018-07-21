@@ -1,4 +1,4 @@
-package fr.mru.OverclockedEngineering.Machine;
+package fr.mru.OverclockedEngineering.Tiles.Machine;
 
 import fr.mru.OverclockedEngineering.Recipes.RecipeRequest;
 import fr.mru.OverclockedEngineeringItems.EngineManager;

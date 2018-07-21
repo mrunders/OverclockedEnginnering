@@ -1,4 +1,4 @@
-package fr.mru.OverclockedEngineering.TreeFarmer;
+package fr.mru.OverclockedEngineering.Tiles.DimensionalHole;
 
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -10,13 +10,13 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
 
-public class GuiTreeFarmer extends GuiContainer {
+public class GuiDHole extends GuiContainer {
 	
-	private static final ResourceLocation background = new ResourceLocation(OverclockedEngineering.MODID,"textures/gui/container/tree_farmer.png");
-	private TileTreeFarmer tile;
+	private static final ResourceLocation background = new ResourceLocation(OverclockedEngineering.MODID,"textures/gui/container/dimensional_hole.png");
+	private TileDHole tile;
 
-	public GuiTreeFarmer(TileTreeFarmer tile, InventoryPlayer playerInv) {
-        super(new ContainerTreeFarmer(tile, playerInv));
+	public GuiDHole(TileDHole tile, InventoryPlayer playerInv) {
+        super(new ContainerDHole(tile, playerInv));
         this.tile = tile;
 	}
 	
