@@ -1,8 +1,7 @@
 {
     "parent": "block/orientable",
     "textures": {
-        "front": "overclockedengineering:blocks/uncrafting_table_off",
-        "top": "overclockedengineering:blocks/machine_block_side",
-        "side": "overclockedengineering:blocks/machine_block_side"
+        "all": "overclockedengineering:blocks/uncrafting_table"
+
     }
 }

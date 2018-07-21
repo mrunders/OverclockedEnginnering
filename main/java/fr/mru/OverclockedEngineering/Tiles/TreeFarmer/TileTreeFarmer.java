@@ -1,176 +1,32 @@
 package fr.mru.OverclockedEngineering.Tiles.TreeFarmer;
 
-import java.util.HashMap;
-
-import com.brandon3055.brandonscore.handlers.HandHelper;
-
-import fr.mru.OverclockedEngineering.Recipes.RecipeRequest;
 import fr.mru.OverclockedEngineering.Recipes.RecipesTreeFarm;
-import net.minecraft.block.BlockPlanks;
-import net.minecraft.block.BlockSapling;
+import fr.mru.OverclockedEngineering.Tiles.ATileManager.TileManager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.tileentity.TileEntityLockable;
-import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
 
-public class TileTreeFarmer extends TileEntityLockable implements ITickable {
+public class TileTreeFarmer extends TileManager {
 	
-	private NonNullList <ItemStack>stacks = NonNullList.withSize(4, ItemStack.EMPTY);
-	private String customName;
-	private int	timePassed = 0;
-	private int	burningTimeLeft	= 0;
+	public TileTreeFarmer() {
+		super(4);
+
+	}
 	
 	public static final int SAPLING_SLOT = 0,
 							 FERTILIZER_SLOT = 1,
 							 WOOD_SLOT = 2,
 							 LEAVES_SLOT = 3;
-	
-	@Override
-	public void readFromNBT(NBTTagCompound compound) {
-	    super.readFromNBT(compound);
-	    this.stacks = NonNullList.withSize(this.getSizeInventory(), ItemStack.EMPTY);
-	    ItemStackHelper.loadAllItems(compound, this.stacks);
 
-	    if (compound.hasKey("CustomName", 8)) {
-	        this.customName = compound.getString("CustomName");
-	    }
-	    
-	    this.burningTimeLeft = compound.getInteger("burningTimeLeft");
-	    this.timePassed = compound.getInteger("timePassed");
-	}
-
-	@Override
-	public NBTTagCompound writeToNBT(NBTTagCompound compound) {
-	    super.writeToNBT(compound);
-	    ItemStackHelper.saveAllItems(compound, this.stacks);
-
-	    if (this.hasCustomName()) {
-	        compound.setString("CustomName", this.customName);
-	    }
-
-	    compound.setInteger("burningTimeLeft", this.burningTimeLeft);
-	    compound.setInteger("timePassed", this.timePassed);
-
-	    return compound;
-	}
-	
-	@Override
-	public boolean hasCustomName() {
-	    return this.customName != null && !this.customName.isEmpty();
-	}
 
 	@Override
 	public String getName() {
 	    return hasCustomName() ? this.customName : "tile.treeFarmer";
-	}
-
-	public void setCustomName(String name) {
-	    this.customName = name;
-	}
-	
-	@Override
-	public int getField(int id) {
-	    switch (id) {
-	        case 0:
-	            return this.burningTimeLeft;
-	        case 1:
-	            return this.timePassed;
-	    }
-	    return 0;
-	}
-
-	@Override
-	public void setField(int id, int value) {
-	    switch (id) {
-	        case 0:
-	            this.burningTimeLeft = value;
-	            break;
-	        case 1:
-	            this.timePassed = value;
-	    }
-	}
-
-	@Override
-	public int getFieldCount() {
-	    return 2;
-	}
-	
-	@Override
-	public int getSizeInventory() {
-	    return this.stacks.size();
-	}
-
-	@Override
-	public ItemStack getStackInSlot(int index) {
-	    return this.stacks.get(index);
-	}
-
-	@Override
-	public ItemStack decrStackSize(int index, int count) {
-	    return ItemStackHelper.getAndSplit(this.stacks, index, count);
-	}
-
-	@Override
-	public ItemStack removeStackFromSlot(int index) {
-	    return ItemStackHelper.getAndRemove(stacks, index);
-	}
-
-	@Override
-	public void setInventorySlotContents(int index, ItemStack stack) {
-	    this.stacks.set(index, stack);
-
-	    if (stack.getCount() > this.getInventoryStackLimit()) {
-	        stack.setCount(this.getInventoryStackLimit());
-	    }
-	}
-
-	@Override
-	public int getInventoryStackLimit() {
-	    return 64;
-	}
-
-	@Override
-	public boolean isEmpty() {
-	    for(ItemStack stack : this.stacks) {
-	        if (!stack.isEmpty()) {
-	            return false;
-	        }
-	    }
-	    return true;
-	}
-
-	@Override
-	public void clear() {
-	    for(int i = 0; i < this.stacks.size(); i++) {
-	        this.stacks.set(i, ItemStack.EMPTY);
-	    }
-	}
-	
-	@Override
-	public void openInventory(EntityPlayer player) {
-		
-	}
-
-	@Override
-	public void closeInventory(EntityPlayer player) {
-		
-	}
-	
-	@Override
-	public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) {
-	    return null;
-	}
-
-	@Override
-	public String getGuiID() {
-	    return null;
 	}
 	
 	@Override

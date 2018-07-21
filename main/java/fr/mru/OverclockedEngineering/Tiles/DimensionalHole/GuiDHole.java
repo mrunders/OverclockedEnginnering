@@ -30,9 +30,9 @@ public class GuiDHole extends GuiContainer {
 
 	    int timePassed = this.tile.getField(1);
 	    int textureWidth = (int) (23f / 200f * timePassed);
-	    this.drawTexturedModalRect(i + 62, j + 37, 177, 18, textureWidth, 7);
+	    this.drawTexturedModalRect(i + 63, j + 57, 177, 18, textureWidth, 7);
 
 
-	    this.fontRenderer.drawString(this.tile.getName(), i + 60, j + 2, 0xFFFFFF);
+	    this.fontRenderer.drawString(this.tile.getName(), i + 60, j + 3, 0xFFFFFF);
 	}
 }

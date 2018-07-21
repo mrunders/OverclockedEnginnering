@@ -14,7 +14,7 @@ public class ContainerDHole extends ContainerManager {
 	@Override
 	public void displaySlots(TileManager tile, InventoryPlayer playerInventory) {
 		
-	    this.addSlotToContainer(new Slot(tile, 0, 35, 15));
+	    this.addSlotToContainer(new Slot(tile, 0, 80, 25));
 		
 	}
 	

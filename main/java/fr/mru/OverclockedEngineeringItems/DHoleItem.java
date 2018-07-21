@@ -1,6 +1,5 @@
 package fr.mru.OverclockedEngineeringItems;
 
-import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
@@ -19,6 +18,10 @@ public class DHoleItem extends OverclockedEngineeringItemsBase {
 		super("dimensional_hole_item");
 		
 		setMaxStackSize(1);
+	}
+	
+	public World getSelectedWorld() {
+		return this.targetedWorld;
 	}
 	
 	@Override

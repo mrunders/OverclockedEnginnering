@@ -14,10 +14,10 @@ import net.minecraft.util.NonNullList;
 
 public abstract class TileManager extends TileEntityLockable implements ITickable {
 	
-	private NonNullList <ItemStack>stacks;
-	private String customName;
-	private int	timePassed = 0;
-	private int	burningTimeLeft	= 0;
+	protected NonNullList <ItemStack>stacks;
+	protected String customName;
+	protected int	timePassed = 0;
+	protected int	burningTimeLeft	= 0;
 	
 	public TileManager(int stacksLenght) {
 		
@@ -33,6 +33,9 @@ public abstract class TileManager extends TileEntityLockable implements ITickabl
 	    if (compound.hasKey("CustomName", 8)) {
 	        this.customName = compound.getString("CustomName");
 	    }
+	    
+	    this.burningTimeLeft = compound.getInteger("burningTimeLeft");
+	    this.timePassed = compound.getInteger("timePassed");
 	}
 
 	@Override
@@ -43,6 +46,9 @@ public abstract class TileManager extends TileEntityLockable implements ITickabl
 	    if (this.hasCustomName()) {
 	        compound.setString("CustomName", this.customName);
 	    }
+	    
+	    compound.setInteger("burningTimeLeft", this.burningTimeLeft);
+	    compound.setInteger("timePassed", this.timePassed);
 
 	    return compound;
 	}
@@ -172,15 +178,11 @@ public abstract class TileManager extends TileEntityLockable implements ITickabl
 	    return false;
 	}
 	
-	public int getFullRecipeTime() {
-		return 200;
-		
-	}
-
 	public int getFullBurnTime() {
 		return 200;
 	}
-
+	
+	public abstract int getFullRecipeTime();
 	public abstract ItemStack getRecipeResult();
 	public abstract boolean canSmelt();
 	public abstract void smelt();
