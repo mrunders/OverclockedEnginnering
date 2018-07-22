@@ -38,40 +38,17 @@ public class TileDHole extends TileManager {
 		
 		return RecipeRequest.nullStack;
 	}
-	
-	public Entity getMobResult() {
-		
-		World world = ((DHoleItem)getStackInSlot(0).getItem()).getSelectedWorld();
-		
-		if (world == null) 
-			return null;
-		
-		List<SpawnListEntry> mobsList = world.getBiome(new BlockPos(1,1,1)).getSpawnableList(EnumCreatureType.MONSTER);
-		
-		if ( mobsList == null || mobsList.isEmpty())
-			return null;
-		
-		SpawnListEntry spawnElementEntity = mobsList.get((int) (Math.random() *100 % mobsList.size()));
-		
-		try {
-			EntityLiving entliving = spawnElementEntity.newInstance(world);
-			return entliving.getCommandSenderEntity();
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
 
 	@Override
 	public boolean canSmelt() {
 		
-		return !getStackInSlot(0).isEmpty() && getStackInSlot(0).getItem() instanceof DHoleItem;
+		return !getStackInSlot(0).isEmpty() && getStackInSlot(0).getItem() instanceof DHoleItem && ((DHoleItem) getStackInSlot(0).getItem()).hasTarget();
 	}
 
 	@Override
 	public void smelt() {
 		
-		Entity entity = getMobResult();
+		Entity entity = DHoleItem.getMobResult((DHoleItem) getStackInSlot(0).getItem());
 		
 		if (entity == null ) return;
 		
@@ -94,7 +71,7 @@ public class TileDHole extends TileManager {
 	@Override
 	public void update() {
 		
-	    if (!this.world.isRemote) {
+	    /*if (!this.world.isRemote) {
 
 	        if (this.canSmelt()) {
 	            this.timePassed++;
@@ -107,8 +84,7 @@ public class TileDHole extends TileManager {
 	        }
 	        
 	        this.markDirty();
-	    }
-		
+	    }*/
 	}
 
 	@Override

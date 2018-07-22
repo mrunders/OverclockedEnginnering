@@ -13,13 +13,13 @@
       ],
       "F": [
         {
-          "item": "minecraft:ingot_gold",
+          "item": "minecraft:gold_ingot",
           "data": 0
         }
       ]
     },
     "result": {
-      "item": "overclockedengineering:crusher_focus",
+      "item": "overclockedengineering:alloy_focus",
       "data": 0
     }
   }
