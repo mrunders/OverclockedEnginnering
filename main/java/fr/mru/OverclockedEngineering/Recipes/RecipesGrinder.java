@@ -21,6 +21,8 @@ public class RecipesGrinder extends RecipeManager {
 	
 	public static boolean initialise() {
 		
+		if ( recipes.isEmpty() ) return true;
+		
 		PriorityQueue<String> oreList = new PriorityQueue<>(),
 							  gemList = new PriorityQueue<>(),
 							  dustList = new PriorityQueue<>(),

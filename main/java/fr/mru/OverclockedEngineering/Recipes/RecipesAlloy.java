@@ -17,6 +17,8 @@ public class RecipesAlloy extends AMultiItemsRecipe {
 	}
 	
 	public static boolean initialise() {
+		
+		if ( recipes.isEmpty() ) return true;
 	
 		if ( OreDictionary.doesOreNameExist("ingotElectrum") ) 
 			addTwoIngotRecipe("ingotSilver", 1, "ingotGold", 1, "ingotElectrum", 2);

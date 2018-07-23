@@ -17,6 +17,8 @@ import net.minecraft.world.World;
 
 public class TreeFarmer extends BlockContainer {
 
+	public static final String DESCRIPTION = "Uncraft everything that was crafted with crafting table by right click on this block (cost 9 experience levels per uncraft)";
+
 	public TreeFarmer() {		
 		super(Material.ANVIL);
 		OverclockedEngineeringBlocks.setBlockName(this, "tree_farmer");

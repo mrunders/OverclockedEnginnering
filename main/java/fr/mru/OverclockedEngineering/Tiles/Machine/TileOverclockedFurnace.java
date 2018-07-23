@@ -93,6 +93,9 @@ public class TileOverclockedFurnace extends TileManager {
 	@Override
 	public void update() {
 	    if (!this.world.isRemote) {
+	    	
+	    	if ( getStackInSlot(0).isEmpty() ) this.setInventorySlotContents(0, removeStackFromSlot(1));
+	    	if ( getStackInSlot(1).isEmpty() ) this.setInventorySlotContents(1, removeStackFromSlot(2));
 
 	        if (!this.isBurning() && this.canSmelt() && !this.hasFuelEmpty()) {
 	            this.burningTimeLeft = this.getFullBurnTime();

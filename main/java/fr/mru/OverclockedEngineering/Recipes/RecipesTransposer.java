@@ -1,5 +1,7 @@
 package fr.mru.OverclockedEngineering.Recipes;
 
+import java.util.HashMap;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -24,5 +26,10 @@ public class RecipesTransposer extends AMultiItemsRecipe {
 
 		
 		return true;
+	}
+	
+	public static HashMap<ItemStack[], ItemStack> getRecipesList(){
+		
+		return recipes;
 	}
 }

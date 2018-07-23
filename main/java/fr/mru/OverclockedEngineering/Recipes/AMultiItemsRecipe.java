@@ -75,7 +75,7 @@ public abstract class AMultiItemsRecipe extends RecipeManager {
 	}
 	
 	protected static void addTwoIngotRecipe(String in1, int amount1, String in2, int amount2, String out, int amount) {
-		ItemStack output = OreDictionary.getOres(out).get(0);
+		ItemStack output = OreDictionary.getOres(out).get(0).copy();
 		output.setCount(amount);
 		for (ItemStack input1 : OreDictionary.getOres(in1)) {
 			input1.setCount(amount1);
