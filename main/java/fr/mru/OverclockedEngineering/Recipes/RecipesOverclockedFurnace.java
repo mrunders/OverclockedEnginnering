@@ -11,9 +11,6 @@ import net.minecraft.item.ItemStack;
 public class RecipesOverclockedFurnace {
 	
 	private static final HashMap <ItemStack[], ItemStack>recipes = new HashMap<ItemStack[], ItemStack>();
-	static {
-	    addRecipe(Items.APPLE, Items.ARROW, Items.BAKED_POTATO);
-	}
 	
 	private static void addRecipe(Item ingredient1, Item ingredient2, Item resultat1) {
 	    addRecipe(new ItemStack(ingredient1), new ItemStack(ingredient2), new ItemStack(resultat1));

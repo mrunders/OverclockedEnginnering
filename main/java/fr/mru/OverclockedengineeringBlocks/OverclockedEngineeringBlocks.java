@@ -15,7 +15,10 @@ public class OverclockedEngineeringBlocks {
 							  STACK_FURNACE = new StackFurnace(),
 							  TREE_FARMER   = new TreeFarmer(),
 							  UNCRAFTING_TABLE = new UncraftingTable(),
-							  DIMENSIONAL_HOLE = new DHole();
+							  DIMENSIONAL_HOLE = new DHole(),
+							  
+							  MACHINE_CASING = new MachineCasing(),
+							  MASS_ANVIL     = new MassAnvil();
 	
 	public static ArrayList<Block> blockList = new ArrayList<>();
 	
@@ -26,6 +29,9 @@ public class OverclockedEngineeringBlocks {
 		blockList.add(TREE_FARMER);
 		blockList.add(UNCRAFTING_TABLE);
 		blockList.add(DIMENSIONAL_HOLE);
+		
+		blockList.add(MACHINE_CASING);
+		blockList.add(MASS_ANVIL);
 	}
 	
 	public static void setBlockName(Block block, String name) {

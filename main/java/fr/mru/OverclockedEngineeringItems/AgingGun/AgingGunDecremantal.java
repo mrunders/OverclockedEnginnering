@@ -29,5 +29,9 @@ public class AgingGunDecremantal extends AgingGunManager {
 
 	}
 
+	public static HashMap<Block, Block> getRecipesList() {
+		return aging;
+	}
+
 
 }

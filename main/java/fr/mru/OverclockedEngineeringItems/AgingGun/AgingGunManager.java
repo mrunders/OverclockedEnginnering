@@ -5,6 +5,7 @@ import java.util.HashMap;
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
 import fr.mru.OverclockedEngineeringItems.OverclockedEngineeringItemsBase;
 import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
+import it.unimi.dsi.fastutil.Hash;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -17,6 +18,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public abstract class AgingGunManager extends OverclockedEngineeringItemsBase {
+	
+	public static final String DESCRIPTION = "Aging Gun is a powerfull block transmutater";
 
 	private static final SoundEvent SOUND = SoundEvent.REGISTRY.getObject(new ResourceLocation("minecraft:entity.zombie_villager.converted"));
 	private HashMap<Block, Block> aging = new HashMap<Block, Block>();

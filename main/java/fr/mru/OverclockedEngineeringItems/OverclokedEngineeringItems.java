@@ -34,7 +34,9 @@ public class OverclokedEngineeringItems {
 							 STACK_FURNACE_ITEM = new ItemBlock(OverclockedEngineeringBlocks.STACK_FURNACE).setRegistryName(OverclockedEngineeringBlocks.STACK_FURNACE.getRegistryName()),
 							 TREE_FARMER_ITEM   = new ItemBlock(OverclockedEngineeringBlocks.TREE_FARMER).setRegistryName(OverclockedEngineeringBlocks.TREE_FARMER.getRegistryName()),
 							 UNCRAFTING_TABLE_ITEM = new ItemBlock(OverclockedEngineeringBlocks.UNCRAFTING_TABLE).setRegistryName(OverclockedEngineeringBlocks.UNCRAFTING_TABLE.getRegistryName()),
-							 DIMENSIONAL_HOLE_ITEM = new ItemBlock(OverclockedEngineeringBlocks.DIMENSIONAL_HOLE).setRegistryName(OverclockedEngineeringBlocks.DIMENSIONAL_HOLE.getRegistryName());
+							 DIMENSIONAL_HOLE_ITEM = new ItemBlock(OverclockedEngineeringBlocks.DIMENSIONAL_HOLE).setRegistryName(OverclockedEngineeringBlocks.DIMENSIONAL_HOLE.getRegistryName()),
+							 MACHINE_CASING_ITEM = new ItemBlock(OverclockedEngineeringBlocks.MACHINE_CASING).setRegistryName(OverclockedEngineeringBlocks.MACHINE_CASING.getRegistryName()),
+							 MASS_ANVIL = new ItemBlock(OverclockedEngineeringBlocks.MASS_ANVIL).setRegistryName(OverclockedEngineeringBlocks.MASS_ANVIL.getRegistryName());
 							 
 	
 	public static ArrayList<Item> itemsList = new ArrayList<>();
@@ -56,6 +58,8 @@ public class OverclokedEngineeringItems {
 		itemsList.add(TREE_FARMER_ITEM);
 		itemsList.add(UNCRAFTING_TABLE_ITEM);
 		itemsList.add(DIMENSIONAL_HOLE_ITEM);
+		itemsList.add(MACHINE_CASING_ITEM);
+		itemsList.add(MASS_ANVIL);
 	}
 
     public static void setItemName(Item item, String name) {

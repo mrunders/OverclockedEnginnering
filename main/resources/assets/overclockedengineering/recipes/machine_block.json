@@ -1,0 +1,37 @@
+{ 
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "ICI",
+      "CBC",
+      "ILI"  ],
+    "key": {
+      "B": [
+        {
+          "item": "overclockedengineering:machine_casing",
+          "data": 0
+        }
+      ],
+      "L": [
+        {
+          "item": "overclockedengineering:circuit_large",
+          "data": 0
+        }
+      ],
+      "C": [
+        {
+          "item": "overclockedengineering:circuit",
+          "data": 0
+        }
+      ],
+      "I": [
+        {
+          "item": "minecraft:iron_ingot",
+          "data": 0
+        }
+      ]
+    },
+    "result": {
+      "item": "overclockedengineering:machine_block",
+      "data": 0
+    }
+  }

@@ -1,43 +1,52 @@
 package fr.mru.OverclockedEngineering.Recipes;
 
 import java.util.HashMap;
+import java.util.List;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class RecipesAlloy extends AMultiItemsRecipe {
 	
+	public static final RecipeRequestMap map = new RecipeRequestMap();
+	
 	public static RecipeRequest getRecipeResult(ItemStack[] ingredients) {
+		
 		if ( ingredients[0].isEmpty() || ingredients[1].isEmpty()) 
 			return RecipeRequest.NULL;
 		if ( ingredients[2].isEmpty() ) 
-			return getTwoIngotsRecipeResult(new ItemStack[] {ingredients[0],ingredients[1]});
+			return map.gett(ingredients[0], ingredients[1]);
+			//return getTwoIngotsRecipeResult(new ItemStack[] {ingredients[0],ingredients[1]});
 		
 	    return getThreeIngotsRecipeResult(ingredients);
 	}
 	
 	public static boolean initialise() {
 		
-		if ( recipes.isEmpty() ) return true;
-	
 		if ( OreDictionary.doesOreNameExist("ingotElectrum") ) 
-			addTwoIngotRecipe("ingotSilver", 1, "ingotGold", 1, "ingotElectrum", 2);
+			map.puttCopyOreDict("ingotElectrum", 2, "ingotSilver", 1, "ingotGold", 1);
 		
 		if ( OreDictionary.doesOreNameExist("ingotSteel") )
-			addTwoIngotRecipe("ingotIron", 1, "coal", 2, "ingotSteel", 1);
+			map.puttCopyOreDict("ingotSteel", 1, "ingotIron", 1, "coal", 2);
 		
 		if ( OreDictionary.doesOreNameExist("ingotInvar") )
-			addTwoIngotRecipe("ingotIron", 2, "ingotNickel", 1, "ingotInvar", 3);
+			map.puttCopyOreDict("ingotInvar", 3, "ingotIron", 2, "ingotNickel", 1);
 		
 		if ( OreDictionary.doesOreNameExist("ingotBronze") )
-			addTwoIngotRecipe("ingotTin", 1, "ingotCopper", 3, "ingotBronze", 4);
+			map.puttCopyOreDict("ingotBronze", 4, "ingotTin", 1, "ingotCopper", 3);
 		
 		if ( OreDictionary.doesOreNameExist("ingotConstantan") )
-			addTwoIngotRecipe("ingotNickel", 1, "ingotCopper", 1, "ingotConstantan", 2);
+			map.puttCopyOreDict("ingotConstantan", 2, "ingotNickel", 1, "ingotCopper", 1);
 		
-		if ( OreDictionary.doesOreNameExist("ingotSignalium") )
-			addThreeIngotRecipe("ingotCopper", 3, "ingotSilver", 1, "dustRedstone", 10, "ingotSignalium", 4);
-
 		return true;
 	}
+
+	public static RecipeRequestMap getRecipesList() {
+		return map;
+	}
+
+	public static RecipeRequest getResultForInputs(ItemStack... itemStack) {
+		return map.gett(itemStack);
+	}
+
 }

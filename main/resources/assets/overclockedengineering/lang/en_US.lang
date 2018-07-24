@@ -1,5 +1,5 @@
-item.overclockedengineering.circuit.name=Circuit
-item.overclockedengineering.circuit_large.name=Large Circuit 
+item.overclockedengineering.circuit.name=PCB
+item.overclockedengineering.circuit_large.name=Large PCB
 item.overclockedengineering.mining_pickaxe.name=Mining Pickaxe 
 item.overclockedengineering.hybride_engine1.name=Lava Water Engine 
 item.overclockedengineering.hybride_engine2.name=Ender Engine 
@@ -11,6 +11,8 @@ item.overclockedengineering.grinder_focus.name=Grinder Focus
 item.overclockedengineering.alloy_focus.name=Alloy Focus 
 item.overclockedengineering.transposer_focus.name=Transposer Focus 
 item.overclockedengineering.recycler_focus.name=Recycler Focus 
+item.overclockedengineering.aging_gun_incremantal.name=Aging Gun++
+item.overclockedengineering.aging_gun_decremantal.name=Aging Gun--
 
 tile.overclockedengineering.machine_block.name=Machine Block
 tile.overclockedengineering.stack_furnace.name=Stack Furnace

@@ -1,4 +1,4 @@
-package fr.mru.OverclockedEngineering.Integration.Jei.TreeFarmer;
+package fr.mru.OverclockedEngineering.Integration.Jei.AgingGun;
 
 import java.awt.Color;
 import java.util.Collections;
@@ -12,12 +12,12 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 
-public class RecipeWrapperTreeFarmer extends BlankRecipeWrapper {
+public class RecipeWrapperAgingGun extends BlankRecipeWrapper {
 	
 	private final List<List<ItemStack>> inputs;
 	private final ItemStack output;
 	
-	public RecipeWrapperTreeFarmer(List<ItemStack> inputs, ItemStack output) {
+	public RecipeWrapperAgingGun(List<ItemStack> inputs, ItemStack output) {
 		this.inputs = Collections.singletonList(inputs);
 		this.output = output;
 	}

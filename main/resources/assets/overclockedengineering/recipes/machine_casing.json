@@ -1,0 +1,32 @@
+{ 
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "ISI",
+      "SCS",
+      "ISI"  ],
+    "key": {
+      "C": [
+        {
+          "item": "overclockedengineering:circuit",
+          "data": 0
+        }
+      ],
+      "S": [
+        {
+          "item": "minecraft:stone",
+          "data": 0
+        }
+      ],
+      "I": [
+        {
+          "item": "minecraft:iron_block",
+          "data": 0
+        }
+      ]
+    },
+    "result": {
+      "item": "overclockedengineering:machine_casing",
+      "data": 0,
+      "count": 2
+    }
+  }

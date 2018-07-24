@@ -29,6 +29,10 @@ public class AgingGunIncremental extends AgingGunManager {
 		super("aging_gun_incremantal", aging);
 
 	}
+	
+	public static HashMap<Block, Block> getRecipesList() {
+		return aging;
+	}
 
 
 }

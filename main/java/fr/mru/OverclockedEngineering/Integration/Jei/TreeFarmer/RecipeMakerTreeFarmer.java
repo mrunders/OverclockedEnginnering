@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.mru.OverclockedEngineering.Recipes.RecipesTreeFarm;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 public class RecipeMakerTreeFarmer {

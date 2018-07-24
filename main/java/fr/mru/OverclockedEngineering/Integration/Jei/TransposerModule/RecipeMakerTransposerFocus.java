@@ -3,9 +3,7 @@ package fr.mru.OverclockedEngineering.Integration.Jei.TransposerModule;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.mru.OverclockedEngineering.Integration.Jei.TreeFarmer.RecipeWrapperTreeFarmer;
 import fr.mru.OverclockedEngineering.Recipes.RecipesTransposer;
-import fr.mru.OverclockedEngineering.Recipes.RecipesTreeFarm;
 import net.minecraft.item.ItemStack;
 
 public class RecipeMakerTransposerFocus {

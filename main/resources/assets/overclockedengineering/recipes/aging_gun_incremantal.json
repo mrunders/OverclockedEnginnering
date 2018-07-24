@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "overclockedengineering:aging_gun_decremantal"
+        }
+    ],
+    "result": {
+        "item": "overclockedengineering:aging_gun_incremantal"
+    }
+}

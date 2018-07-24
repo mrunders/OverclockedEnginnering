@@ -4,15 +4,13 @@ import java.util.HashMap;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class RecipesTreeFarm extends RecipeManager {
 	
 	private static final HashMap<ItemStack, ItemStack> treesLog = new HashMap<>();
 	
 	public static ItemStack getRecipeResult(ItemStack ingredient) {
-		
-	    //ItemStack result = treesLog.get(ingredient.getDisplayName().split(" ")[0]);
-	    //return result == null ? RecipeRequest.nullStack : result;
 		
 		for ( ItemStack sapling : treesLog.keySet() ) 
 			if ( ItemStackEquals(sapling, ingredient) ) 
@@ -22,7 +20,7 @@ public class RecipesTreeFarm extends RecipeManager {
 	}
 	
 	public static boolean initialise() {
-		
+
 		treesLog.put(new ItemStack(Blocks.SAPLING, 1, 0), new ItemStack(Blocks.LOG, 5, 0));
 		treesLog.put(new ItemStack(Blocks.SAPLING, 1, 1), new ItemStack(Blocks.LOG, 5, 1));
 		treesLog.put(new ItemStack(Blocks.SAPLING, 1, 2), new ItemStack(Blocks.LOG, 5, 2));

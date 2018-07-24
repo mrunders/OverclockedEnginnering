@@ -1,7 +1,6 @@
 package fr.mru.OverclockedEngineering.Integration.Jei.TransposerModule;
 
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
-import fr.mru.OverclockedEngineering.Integration.Jei.TreeFarmer.RecipeWrapperTreeFarmer;
 import fr.mru.OverclockedEngineeringItems.Focus.TransposerFocus;
 import mezz.jei.api.IGuiHelper;
 import mezz.jei.api.gui.IDrawable;
@@ -10,7 +9,6 @@ import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.recipe.BlankRecipeCategory;
 import net.minecraft.client.resources.I18n;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 

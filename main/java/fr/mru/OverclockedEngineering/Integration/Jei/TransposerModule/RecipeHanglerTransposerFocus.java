@@ -1,7 +1,6 @@
 package fr.mru.OverclockedEngineering.Integration.Jei.TransposerModule;
 
 import fr.mru.OverclockedEngineering.Integration.Jei.TreeFarmer.RecipeCategorieTreeFarmer;
-import fr.mru.OverclockedEngineering.Integration.Jei.TreeFarmer.RecipeWrapperTreeFarmer;
 import mezz.jei.api.recipe.IRecipeHandler;
 import mezz.jei.api.recipe.IRecipeWrapper;
 
@@ -15,7 +14,7 @@ public class RecipeHanglerTransposerFocus implements IRecipeHandler<RecipeWrappe
 
 	@Override
 	public String getRecipeCategoryUid(RecipeWrapperTransposerFocus arg0) {
-		return RecipeCategorieTreeFarmer.ID;
+		return RecipeCategorieTransposerFocus.ID;
 	}
 
 	@Override
