@@ -1,0 +1,37 @@
+{ 
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "IGI",
+      "CBC",
+      "IGI"  ],
+    "key": {
+      "B": [
+        {
+          "item": "overclockedengineering:machine_block",
+          "data": 0
+        }
+      ],
+      "C": [
+        {
+          "item": "overclockedengineering:smelter_focus",
+          "data": 0
+        }
+      ],
+      "I": [
+        {
+          "item": "minecraft:iron_ingot",
+          "data": 0
+        }
+      ],
+      "G": [
+        {
+          "item": "overclockedengineering:hybride_engine5",
+          "data": 0
+        }
+      ]
+    },
+    "result": {
+      "item": "overclockedengineering:stack_furnace",
+      "data": 0
+    }
+  }

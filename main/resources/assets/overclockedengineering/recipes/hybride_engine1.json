@@ -1,0 +1,43 @@
+{ 
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "ICI",
+      "WGL",
+      "ICI"  ],
+    "key": {
+      "W": [
+        {
+            "type": "minecraft:fluid",
+            "fluid": "water"
+        }
+      ],
+      "C": [
+        {
+            "item": "overclockedengineering:circuit",
+            "data": 0
+        }
+      ],
+      "I": [
+        {
+          "item": "minecraft:iron_ingot",
+          "data": 0
+        }
+      ],
+      "G": [
+        {
+          "item": "minecraft:gold_block",
+          "data": 0
+        }
+      ],
+      "L": [
+        {
+            "type": "minecraft:fluid",
+            "fluid": "lava"
+        }
+      ]
+    },
+    "result": {
+      "item": "overclockedengineering:hybride_engine1",
+      "data": 0
+    }
+  }
