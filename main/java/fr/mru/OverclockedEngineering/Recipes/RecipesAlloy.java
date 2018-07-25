@@ -6,19 +6,12 @@ import java.util.List;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class RecipesAlloy extends AMultiItemsRecipe {
+public class RecipesAlloy extends RecipeManager {
 	
 	public static final RecipeRequestMap map = new RecipeRequestMap();
 	
 	public static RecipeRequest getRecipeResult(ItemStack[] ingredients) {
-		
-		if ( ingredients[0].isEmpty() || ingredients[1].isEmpty()) 
-			return RecipeRequest.NULL;
-		if ( ingredients[2].isEmpty() ) 
-			return map.gett(ingredients[0], ingredients[1]);
-			//return getTwoIngotsRecipeResult(new ItemStack[] {ingredients[0],ingredients[1]});
-		
-	    return getThreeIngotsRecipeResult(ingredients);
+		return map.gett(ingredients[0], ingredients[1]);
 	}
 	
 	public static boolean initialise() {
@@ -45,8 +38,8 @@ public class RecipesAlloy extends AMultiItemsRecipe {
 		return map;
 	}
 
-	public static RecipeRequest getResultForInputs(ItemStack... itemStack) {
-		return map.gett(itemStack);
+	public static RecipeRequest getResultForInputs(List<ItemStack> a) {
+		return map.gett(a.get(0), a.get(1));
 	}
 
 }

@@ -12,14 +12,9 @@ public class RecipeMakerTreeFarmer {
 		
 		List<RecipeWrapperTreeFarmer> list = new ArrayList<>();
 		
-		for ( ItemStack a : RecipesTreeFarm.getRecipesMap().keySet() ) {
-			
-			List<ItemStack> inputs = new ArrayList<>();
-			
-			inputs.add(a);
-			
-			ItemStack output = RecipesTreeFarm.getRecipeResult(a);
-			
+		for ( List<ItemStack> inputs : RecipesTreeFarm.getRecipesMap().keySet() ) {
+
+			ItemStack output = RecipesTreeFarm.getRecipeResult(inputs.get(0)).getResult();
 			list.add(new RecipeWrapperTreeFarmer(inputs, output));
 		}
 		

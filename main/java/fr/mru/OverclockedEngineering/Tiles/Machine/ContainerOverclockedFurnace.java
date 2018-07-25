@@ -1,6 +1,6 @@
 package fr.mru.OverclockedEngineering.Tiles.Machine;
 
-import fr.mru.OverclockedengineeringBlocks.SlotOutput;
+import fr.mru.OverclockedEngineering.Tiles.ATileManager.SlotOutput;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;

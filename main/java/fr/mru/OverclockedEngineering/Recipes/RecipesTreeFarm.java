@@ -8,32 +8,28 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class RecipesTreeFarm extends RecipeManager {
 	
-	private static final HashMap<ItemStack, ItemStack> treesLog = new HashMap<>();
+	private static final RecipeRequestMap map = new RecipeRequestMap();
 	
-	public static ItemStack getRecipeResult(ItemStack ingredient) {
+	public static RecipeRequest getRecipeResult(ItemStack ingredient) {
 		
-		for ( ItemStack sapling : treesLog.keySet() ) 
-			if ( ItemStackEquals(sapling, ingredient) ) 
-				return treesLog.get(sapling);
-		
-		return RecipeRequest.nullStack;
+		return map.gett(ingredient);
 	}
 	
 	public static boolean initialise() {
 
-		treesLog.put(new ItemStack(Blocks.SAPLING, 1, 0), new ItemStack(Blocks.LOG, 5, 0));
-		treesLog.put(new ItemStack(Blocks.SAPLING, 1, 1), new ItemStack(Blocks.LOG, 5, 1));
-		treesLog.put(new ItemStack(Blocks.SAPLING, 1, 2), new ItemStack(Blocks.LOG, 5, 2));
-		treesLog.put(new ItemStack(Blocks.SAPLING, 1, 3), new ItemStack(Blocks.LOG, 5, 3));
-		treesLog.put(new ItemStack(Blocks.SAPLING, 1, 4), new ItemStack(Blocks.LOG2, 5, 0));
-		treesLog.put(new ItemStack(Blocks.SAPLING, 1, 5), new ItemStack(Blocks.LOG2, 5, 1));
+		map.putt(new ItemStack(Blocks.LOG, 5, 0), new ItemStack(Blocks.SAPLING, 1, 0));
+		map.putt(new ItemStack(Blocks.LOG, 5, 1), new ItemStack(Blocks.SAPLING, 1, 1));
+		map.putt(new ItemStack(Blocks.LOG, 5, 2), new ItemStack(Blocks.SAPLING, 1, 2));
+		map.putt(new ItemStack(Blocks.LOG, 5, 3), new ItemStack(Blocks.SAPLING, 1, 3));
+		map.putt(new ItemStack(Blocks.LOG2, 5, 0), new ItemStack(Blocks.SAPLING, 1, 4));
+		map.putt(new ItemStack(Blocks.LOG2, 5, 1), new ItemStack(Blocks.SAPLING, 1, 5));
 		
 		return true;
 	}
 	
-	public static HashMap<ItemStack, ItemStack> getRecipesMap() {
+	public static RecipeRequestMap getRecipesMap() {
 		
-		return treesLog;
+		return map;
 	}
 	
 

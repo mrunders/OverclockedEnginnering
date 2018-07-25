@@ -1,16 +1,11 @@
 package fr.mru.OverclockedEngineering.Integration.Jei.AgingGun;
 
-import java.awt.Color;
 import java.util.Collections;
 import java.util.List;
 
 import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.recipe.BlankRecipeWrapper;
-import mezz.jei.util.Translator;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.FurnaceRecipes;
 
 public class RecipeWrapperAgingGun extends BlankRecipeWrapper {
 	

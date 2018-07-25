@@ -1,0 +1,43 @@
+{ 
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "IIG",
+      " SF",
+      "  W"  ],
+    "key": {
+      "G": [
+        {
+          "item": "overclockedengineering:hybride_engine3",
+          "data": 0
+        }
+      ],
+      "F": [
+        {
+          "item": "overclockedengineering:smelter_focus",
+          "data": 0
+        }
+      ],
+      "W": [
+        {
+          "item": "minecraft:log",
+          "data": 0
+        }
+      ],
+      "I": [
+        {
+          "item": "minecraft:iron_ingot",
+          "data": 0
+        }
+      ],
+      "S": [
+        {
+          "item": "minecraft:stone",
+          "data": 0
+        }
+      ]
+    },
+    "result": {
+      "item": "overclockedengineering:aging_gun_incremantal",
+      "data": 0
+    }
+}

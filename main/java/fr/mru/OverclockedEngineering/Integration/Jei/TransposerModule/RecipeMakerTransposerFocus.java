@@ -12,15 +12,10 @@ public class RecipeMakerTransposerFocus {
 		
 		List<RecipeWrapperTransposerFocus> list = new ArrayList<>();
 		
-		for ( ItemStack[] a : RecipesTransposer.getRecipesList().keySet() ) {
+		for ( List<ItemStack> inputs : RecipesTransposer.getRecipesList().keySet() ) {
 			
-			/*List<ItemStack> inputs = new ArrayList<>();
-			
-			inputs.add(a[0]);
-			
-			ItemStack output = RecipesTransposer.getRecipeResult(a).getResult();
-			
-			list.add(new RecipeWrapperTransposerFocus(inputs, output));*/
+			ItemStack output = RecipesTransposer.getRecipeResult(inputs).getResult();
+			list.add(new RecipeWrapperTransposerFocus(inputs, output));
 		}
 		
 		return list;

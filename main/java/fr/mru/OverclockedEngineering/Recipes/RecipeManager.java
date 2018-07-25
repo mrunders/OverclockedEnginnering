@@ -11,79 +11,11 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+import scala.Array;
 
 public abstract class RecipeManager {
 	
 	public static final HashMap<String, List<String>> recipesOrdict = new HashMap<>();
-	public static final HashMap <ItemStack[], ItemStack>recipes = new HashMap<ItemStack[], ItemStack>();
-
-	protected static void addRecipe(HashMap <ItemStack[], ItemStack> recipes, Item ingredient1, Item ingredient2, Item resultat1) {
-	    addRecipe(recipes, new ItemStack(ingredient1), new ItemStack(ingredient2), new ItemStack(resultat1));
-	}
-	
-	protected static void addRecipe(HashMap <ItemStack[], ItemStack> recipes, Item ingredient1, Item resultat1) {
-	    addRecipe(recipes, new ItemStack(ingredient1), new ItemStack(resultat1));
-	}
-	
-	protected static void addRecipe(HashMap <ItemStack[], ItemStack> recipes, Block ingredient1, Block ingredient2, Block resultat1) {
-	    addRecipe(recipes, new ItemStack(ingredient1), new ItemStack(ingredient2), new ItemStack(resultat1));
-	}
-	
-	protected static void addRecipe(HashMap <ItemStack[], ItemStack> recipes, Block ingredient1, Block resultat1) {
-	    addRecipe(recipes, new ItemStack(ingredient1), new ItemStack(resultat1));
-	}
-	
-	
-
-	protected static void addRecipe(HashMap <ItemStack[], ItemStack> recipes, ItemStack ingredient1, ItemStack ingredient2, ItemStack resultat1) {
-	    recipes.put(new ItemStack[]{ingredient1, ingredient2}, resultat1);
-	}
-	
-	protected static void addRecipe(HashMap <ItemStack[], ItemStack> recipes, ItemStack ingredient1, ItemStack resultat1) {
-	    recipes.put(new ItemStack[]{ingredient1}, resultat1);
-	}
-	
-	protected static boolean ItemStackEquals(ItemStack recipe, ItemStack ingredient) {
-		
-		return !recipe.isEmpty() && !ingredient.isEmpty() && 
-				recipe.getItem() == ingredient.getItem() && 
-				recipe.getMetadata() == ingredient.getMetadata() && 
-				recipe.getCount() <= ingredient.getCount();
-	}
-	
-	private static boolean containsOreDict(ItemStack[] recipe, ItemStack item, int i) {
-		
-		int index = 0;
-		while (index < recipe.length) 
-			if (item.getUnlocalizedName().equals(recipe[index].getUnlocalizedName())) break; 
-			else index++; 
-		
-		return index < recipe.length && recipe[index].getCount() <= item.getCount();
-	}
-	
-	private static boolean areKeysEqual(ItemStack[] recipe, ItemStack[] ingredients) {
-	    if(recipe.length != ingredients.length) return false;
-
-	    for(int i = 0; i < ingredients.length; i++) {
-	        if (!containsOreDict(recipe, ingredients[i], i)) return false;
-	        
-	    }
-
-	    return true;
-	}
-	
-	public static ItemStack getRecipeResult(HashMap <ItemStack[], ItemStack> recipes, ItemStack[] ingredients) {
-		
-
-	    Iterator<Entry<ItemStack[], ItemStack>> it = recipes.entrySet().iterator();
-	    while(it.hasNext()) {
-	        Entry <ItemStack[], ItemStack>entry = it.next();
-	        if(areKeysEqual(entry.getKey(), ingredients)) {
-	            return entry.getValue();
-	        }
-	    }
-	    return null;
-	}
 
 	public static boolean initialise() {
 		
@@ -92,15 +24,20 @@ public abstract class RecipeManager {
 			     ingotsstr = new ArrayList<>(),
 			     blocksstr = new ArrayList<>(),
 			     gemsstr = new ArrayList<>(),
-			     nuggetsstr = new ArrayList<>();
+			     nuggetsstr = new ArrayList<>(),
+			     gearsstr = new ArrayList<>(),
+			     platesstr = new ArrayList<>();
 	
 		for ( String s : OreDictionary.getOreNames() ) {
+			System.out.println(s);
 			if (s.startsWith("ore")) oresstr.add(s.substring(3));
 			else if (s.startsWith("dust")) dustsstr.add(s.substring(4));
 			else if (s.startsWith("ingot")) ingotsstr.add(s.substring(5));
 			else if (s.startsWith("block")) blocksstr.add(s.substring(5));
 			else if (s.startsWith("gem")) gemsstr.add(s.substring(3));
 			else if (s.startsWith("nugget")) nuggetsstr.add(s.substring(6));
+			else if (s.startsWith("gear")) gearsstr.add(s.substring(4));
+			else if (s.startsWith("plate")) platesstr.add(s.substring(5));
 		}
 		
 		recipesOrdict.put("ore", oresstr);
@@ -109,6 +46,8 @@ public abstract class RecipeManager {
 		recipesOrdict.put("block", blocksstr);
 		recipesOrdict.put("gem", gemsstr);
 		recipesOrdict.put("nugget", nuggetsstr);
+		recipesOrdict.put("gear", gearsstr);
+		recipesOrdict.put("plate", platesstr);
 
 		RecipesGrinder.initialise();
 		RecipesAlloy.initialise();

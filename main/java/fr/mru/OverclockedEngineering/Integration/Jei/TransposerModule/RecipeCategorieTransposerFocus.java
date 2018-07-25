@@ -21,7 +21,7 @@ public class RecipeCategorieTransposerFocus extends BlankRecipeCategory<RecipeWr
 	
 	public RecipeCategorieTransposerFocus(IGuiHelper helper) {
 
-		background = helper.createDrawable(new ResourceLocation(OverclockedEngineering.MODID,"textures/gui/container/overclocked_furnace.png"), 30, 10, 120, 60);
+		background = helper.createDrawable(new ResourceLocation(OverclockedEngineering.MODID,"textures/gui/container/overclocked_furnace.png"), 25, 5, 120, 70);
 	}
 
 	@Override
@@ -49,16 +49,13 @@ public class RecipeCategorieTransposerFocus extends BlankRecipeCategory<RecipeWr
 		
 		IGuiItemStackGroup group = arg0.getItemStacks();
 		
-		group.init(0, true, 4, 4);
-		group.init(1, true, 4, 39);
-		group.init(2, true, 4, 50);
-		group.init(3, false, 69, 21);
+		group.init(0, true, 7, 1);
+		group.init(1, true, 25, 1);
+		group.init(2, false, 90, 11);
 		
-		group.set(0, arg2.getInputs(ItemStack.class).get(0));
-		group.set(1, arg2.getInputs(ItemStack.class).get(1));
-		group.set(2, new ItemStack(TransposerFocus.FOCUS_TRANSPOSER));
-		
-		group.set(3, arg2.getOutputs(ItemStack.class).get(0));
+		group.set(0, arg2.getInputs(ItemStack.class).get(0).get(0));
+		group.set(1, arg2.getInputs(ItemStack.class).get(0).get(1));
+		group.set(2, arg2.getOutputs(ItemStack.class).get(0));
 		
 	}
 

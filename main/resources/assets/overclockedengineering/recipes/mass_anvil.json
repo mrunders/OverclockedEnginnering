@@ -1,0 +1,25 @@
+{ 
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "   ",
+      " A ",
+      "OOO"  ],
+    "key": {
+      "O": [
+        {
+          "item": "minecraft:obsidian",
+          "data": 0
+        }
+      ],
+      "A": [
+        {
+          "item": "minecraft:anvil",
+          "data": 0
+        }
+      ]
+    },
+    "result": {
+      "item": "overclockedengineering:mass_anvil",
+      "data": 0
+    }
+  }

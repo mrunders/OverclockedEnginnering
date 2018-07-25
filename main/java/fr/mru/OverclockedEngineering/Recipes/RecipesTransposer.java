@@ -1,35 +1,35 @@
 package fr.mru.OverclockedEngineering.Recipes;
 
 import java.util.HashMap;
+import java.util.List;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-public class RecipesTransposer extends AMultiItemsRecipe {
+public class RecipesTransposer extends RecipeManager {
+	
+	private static final RecipeRequestMap map = new RecipeRequestMap();
 
 	public static RecipeRequest getRecipeResult(ItemStack[] ingredients) {
-		if ( ingredients[0].isEmpty() || ingredients[1].isEmpty()) 
-			return RecipeRequest.NULL;
-		
-		if ( ingredients[2].isEmpty() )
-			return getTwoIngotsRecipeResult(new ItemStack[] {ingredients[0],ingredients[1]});
-		
-	    return RecipeRequest.NULL;
+		return map.get(ingredients);
 	    
 	}
 	
 	public static boolean initialise() {
 		
-		addTwoIngotSideRecipe(new ItemStack(Blocks.CLAY), new ItemStack(Items.BUCKET), new ItemStack(Items.WATER_BUCKET));
-		addTwoIngotSideRecipe(new ItemStack(Blocks.MAGMA, 16), new ItemStack(Items.BUCKET), new ItemStack(Items.LAVA_BUCKET));
-
+		map.putt(new ItemStack(Items.WATER_BUCKET), new ItemStack(Blocks.CLAY), new ItemStack(Items.BUCKET));
+		map.putt(new ItemStack(Items.LAVA_BUCKET), new ItemStack(Blocks.MAGMA, 16), new ItemStack(Items.BUCKET));
 		
 		return true;
 	}
 	
-	public static HashMap<ItemStack[], ItemStack> getRecipesList(){
+	public static RecipeRequestMap getRecipesList(){
 		
-		return recipes;
+		return map;
+	}
+
+	public static RecipeRequest getRecipeResult(List<ItemStack> a) {
+		return map.gett(a.get(0), a.get(1));
 	}
 }

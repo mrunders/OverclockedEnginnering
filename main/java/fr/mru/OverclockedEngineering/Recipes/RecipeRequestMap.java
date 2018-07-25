@@ -12,21 +12,27 @@ public class RecipeRequestMap extends HashMap<List<ItemStack>, RecipeRequest> {
 	
 	public void puttCopyOreDict(String value, int count0, String input1, int count1, String input2, int count2) {
 		
-		ItemStack output = OreDictionary.getOres(value).get(0);
-		for (ItemStack in1 : OreDictionary.getOres(input1)) {
-			for (ItemStack in2 : OreDictionary.getOres(input2)) {
-				puttCopy(output, count0, in1, count1, in2, count2);
-				puttCopy(output, count0, in2, count2, in1, count1);
+		if ( OreDictionary.doesOreNameExist(value) && !OreDictionary.getOres(value).isEmpty() ) {
+			ItemStack output = OreDictionary.getOres(value).get(0);
+			for (ItemStack in1 : OreDictionary.getOres(input1)) {
+				for (ItemStack in2 : OreDictionary.getOres(input2)) {
+					puttCopy(output, count0, in1, count1, in2, count2);
+					puttCopy(output, count0, in2, count2, in1, count1);
+				}
 			}
-		}
+		} else
+			System.out.println("== Object " + value + " as no valide output !!!!!!!!");
 	}
 	
 	public void puttCopyOreDict(String value, int count0, String input1, int count1) {
 		
-		ItemStack output = OreDictionary.getOres(value).get(0);
-		for (ItemStack in1 : OreDictionary.getOres(input1)) {
-			puttCopy(output, count0, in1, count1);
-		}
+		if ( OreDictionary.doesOreNameExist(value) && !OreDictionary.getOres(value).isEmpty() ) {
+			ItemStack output = OreDictionary.getOres(value).get(0);
+			for (ItemStack in1 : OreDictionary.getOres(input1)) {
+				puttCopy(output, count0, in1, count1);
+			}
+		} else
+			System.out.println("== Object " + value + " as no valide output !!!!!!!!");
 	}
 	
 	public RecipeRequest puttCopy(ItemStack value, int count0, ItemStack input1, int count1, ItemStack input2, int count2) {

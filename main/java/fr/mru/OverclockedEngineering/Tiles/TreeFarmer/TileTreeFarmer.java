@@ -48,7 +48,7 @@ public class TileTreeFarmer extends TileManager {
 	}
 	
 	public ItemStack getRecipeResult() {
-	    return RecipesTreeFarm.getRecipeResult(getStackInSlot(SAPLING_SLOT));
+	    return RecipesTreeFarm.getRecipeResult(getStackInSlot(SAPLING_SLOT)).getResult();
 	}
 	
 	public boolean canSmelt() {
