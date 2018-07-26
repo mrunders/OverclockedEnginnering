@@ -1,4 +1,4 @@
-package fr.mru.OverclockedEngineering.TileTwoModuleMachine;
+package fr.mru.OverclockedEngineering.Tile.Cobble_form;
 
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
 import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
@@ -15,13 +15,12 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class TwoModulesMachine extends BlockContainer {
+public class CobbleForm extends BlockContainer {
 
-	public TwoModulesMachine() {
+	public CobbleForm() {
 		super(Material.ANVIL);
 		
-		OverclockedEngineeringBlocks.setBlockName(this, "two_modules_machine");
-		
+		OverclockedEngineeringBlocks.setBlockName(this, "cobble_form");
 		setCreativeTab(OverclockedEngineering.overclockedTab);
 
 	}
@@ -33,16 +32,16 @@ public class TwoModulesMachine extends BlockContainer {
 
 	@Override
 	public TileEntity createNewTileEntity(World world, int metadata)  {
-	    return new TileTwoModulesMachine();
+	    return new TileCobbleForm();
 	}
 	
 	@Override
 	public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
 	    TileEntity tileentity = worldIn.getTileEntity(pos);
 
-	    if (tileentity instanceof TileTwoModulesMachine) {
+	    if (tileentity instanceof TileCobbleForm) {
 	        InventoryHelper.dropInventoryItems(worldIn, pos,
-	                (TileTwoModulesMachine) tileentity);
+	                (TileCobbleForm) tileentity);
 	    }
 
 	    super.breakBlock(worldIn, pos, state);
@@ -55,7 +54,7 @@ public class TwoModulesMachine extends BlockContainer {
 	    } else {
 	        TileEntity tileentity = world.getTileEntity(pos);
 
-	        if (tileentity instanceof TileTwoModulesMachine) {
+	        if (tileentity instanceof TileCobbleForm) {
 	            player.openGui(OverclockedEngineering.instance, 0, world, pos.getX(),
 	                    pos.getY(), pos.getZ());
 	        }

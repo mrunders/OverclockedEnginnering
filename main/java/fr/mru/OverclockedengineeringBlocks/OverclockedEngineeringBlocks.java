@@ -2,13 +2,15 @@ package fr.mru.OverclockedengineeringBlocks;
 
 import java.util.ArrayList;
 
-import fr.mru.OverclockedEngineering.TileTwoModuleMachine.TwoModulesMachine;
+import fr.mru.OverclockedEngineering.Tile.Cobble_form.CobbleForm;
+import fr.mru.OverclockedEngineering.Tile.TwoModuleMachine.TwoModulesMachine;
 import fr.mru.OverclockedEngineering.Tiles.DimensionalHole.DHole;
 import fr.mru.OverclockedEngineering.Tiles.Machine.MachineBlock;
 import fr.mru.OverclockedEngineering.Tiles.StackFurnace.StackFurnace;
 import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.TreeFarmer;
 import fr.mru.OverclockedEngineering.Tiles.UncraftingTable.UncraftingTable;
 import net.minecraft.block.Block;
+import net.minecraft.network.handshake.client.C00Handshake;
 
 public class OverclockedEngineeringBlocks {
 	
@@ -19,7 +21,8 @@ public class OverclockedEngineeringBlocks {
 							  DIMENSIONAL_HOLE = new DHole(),
 							  MACHINE_CASING = new MachineCasing(),
 							  MASS_ANVIL     = new MassAnvil(),
-							  TWO_MODULES_MACHINE = new TwoModulesMachine();
+							  TWO_MODULES_MACHINE = new TwoModulesMachine(),
+							  COBBLE_FORM = new CobbleForm();
 	
 	public static ArrayList<Block> blockList = new ArrayList<>();
 	
@@ -33,6 +36,7 @@ public class OverclockedEngineeringBlocks {
 		blockList.add(MACHINE_CASING);
 		blockList.add(MASS_ANVIL);
 		blockList.add(TWO_MODULES_MACHINE);
+		blockList.add(COBBLE_FORM);
 	}
 	
 	public static void setBlockName(Block block, String name) {

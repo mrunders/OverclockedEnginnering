@@ -1,4 +1,4 @@
-package fr.mru.OverclockedEngineering.TileTwoModuleMachine;
+package fr.mru.OverclockedEngineering.Tile.TwoModuleMachine;
 
 import fr.mru.OverclockedEngineering.Recipes.RecipeRequest;
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.TileManager;

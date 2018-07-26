@@ -34,14 +34,16 @@ public abstract class AgingGunManager extends OverclockedEngineeringItemsBase {
 	@Override
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		
-		Block lookedBlock = worldIn.getBlockState(pos).getBlock();
-		Block result = aging.get(lookedBlock);
-
-		if ( result != null ) {
-			worldIn.playSound(player, pos, SOUND, null, 0.1f, 2.0f);
-			worldIn.setBlockState(pos, result.getBlockState().getBaseState());
+		if ( !worldIn.isRemote ) {
+			
+			Block lookedBlock = worldIn.getBlockState(pos).getBlock();
+			Block result = aging.get(lookedBlock);
+	
+			if ( result != null ) {
+				worldIn.playSound(player, pos, SOUND, null, 0.1f, 2.0f);
+				worldIn.setBlockState(pos, result.getBlockState().getBaseState());
+			}
 		}
-		
         return EnumActionResult.PASS;
     }
 

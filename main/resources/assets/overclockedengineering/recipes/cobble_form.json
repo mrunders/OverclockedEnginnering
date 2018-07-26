@@ -1,0 +1,49 @@
+{ 
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "IHI",
+      "SMP",
+      "IGI"  ],
+    "key": {
+      "M": [
+        {
+          "item": "overclockedengineering:machine_block",
+          "data": 0
+        }
+      ],
+      "H": [
+        {
+          "item": "overclockedengineering:hybride_engine4",
+          "data": 0
+        }
+      ],
+      "I": [
+        {
+          "item": "minecraft:iron_ingot",
+          "data": 0
+        }
+      ],
+      "G": [
+        {
+          "item": "overclockedengineering:hybride_engine1",
+          "data": 0
+        }
+      ],
+      "S": [
+        {
+          "item": "overclockedengineering:smelter_focus",
+          "data": 0
+        }
+      ],
+      "P": [
+        {
+          "item": "overclockedengineering:grinder_focus",
+          "data": 0
+        }
+      ]
+    },
+    "result": {
+      "item": "overclockedengineering:cobble_form",
+      "data": 0
+    }
+  }

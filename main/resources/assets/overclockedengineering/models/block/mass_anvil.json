@@ -1,6 +1,5 @@
 {
-    "parent": "block/block",
-
+	"parent": "block/block",
     "textures": {
 		"body": "minecraft:blocks/anvil_base",
 		"bottom": "minecraft:blocks/obsidian"

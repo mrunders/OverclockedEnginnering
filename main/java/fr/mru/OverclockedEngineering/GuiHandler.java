@@ -1,8 +1,11 @@
 package fr.mru.OverclockedEngineering;
 
-import fr.mru.OverclockedEngineering.TileTwoModuleMachine.ContainerTwoModulesMachine;
-import fr.mru.OverclockedEngineering.TileTwoModuleMachine.GuiTwoModulesMachine;
-import fr.mru.OverclockedEngineering.TileTwoModuleMachine.TileTwoModulesMachine;
+import fr.mru.OverclockedEngineering.Tile.Cobble_form.ContainerCobbleForm;
+import fr.mru.OverclockedEngineering.Tile.Cobble_form.GuiCobbleForm;
+import fr.mru.OverclockedEngineering.Tile.Cobble_form.TileCobbleForm;
+import fr.mru.OverclockedEngineering.Tile.TwoModuleMachine.ContainerTwoModulesMachine;
+import fr.mru.OverclockedEngineering.Tile.TwoModuleMachine.GuiTwoModulesMachine;
+import fr.mru.OverclockedEngineering.Tile.TwoModuleMachine.TileTwoModulesMachine;
 import fr.mru.OverclockedEngineering.Tiles.DimensionalHole.ContainerDHole;
 import fr.mru.OverclockedEngineering.Tiles.DimensionalHole.GuiDHole;
 import fr.mru.OverclockedEngineering.Tiles.DimensionalHole.TileDHole;
@@ -36,6 +39,8 @@ public class GuiHandler implements IGuiHandler {
         	return new ContainerDHole((TileDHole)te, player.inventory);
         } else if (te instanceof TileTwoModulesMachine) {
         	return new ContainerTwoModulesMachine((TileTwoModulesMachine)te, player.inventory);
+        } else if (te instanceof TileCobbleForm) {
+        	return new ContainerCobbleForm((TileCobbleForm)te, player.inventory);
         }
         return null;
     }
@@ -53,6 +58,8 @@ public class GuiHandler implements IGuiHandler {
         	return new GuiDHole((TileDHole)te, player.inventory);
         } else if ( te instanceof TileTwoModulesMachine ) {
         	return new GuiTwoModulesMachine((TileTwoModulesMachine)te, player.inventory);
+        } else if ( te instanceof TileCobbleForm ) {
+        	return new GuiCobbleForm((TileCobbleForm)te, player.inventory);
         }
         return null;
     }

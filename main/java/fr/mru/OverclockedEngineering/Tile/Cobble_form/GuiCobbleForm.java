@@ -1,22 +1,17 @@
-package fr.mru.OverclockedEngineering.TileTwoModuleMachine;
+package fr.mru.OverclockedEngineering.Tile.Cobble_form;
 
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
 import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.common.network.IGuiHandler;
 
-public class GuiTwoModulesMachine extends GuiContainer {
+public class GuiCobbleForm extends GuiContainer {
 	
 	private static final ResourceLocation background = new ResourceLocation(OverclockedEngineering.MODID,"textures/gui/container/two_modules_machine.png");
-	private TileTwoModulesMachine tile;
+	private TileCobbleForm tile;
 
-	public GuiTwoModulesMachine(TileTwoModulesMachine tile, InventoryPlayer playerInv) {
-        super(new ContainerTwoModulesMachine(tile, playerInv));
+	public GuiCobbleForm(TileCobbleForm tile, InventoryPlayer playerInv) {
+        super(new ContainerCobbleForm(tile, playerInv));
         this.tile = tile;
 	}
 	
@@ -28,6 +23,6 @@ public class GuiTwoModulesMachine extends GuiContainer {
 	    this.mc.getTextureManager().bindTexture(background);
 	    this.drawTexturedModalRect(i, j, 0, 0, this.xSize, this.ySize);
 
-	    this.fontRenderer.drawString(this.tile.getName(), i + 60, j + 400, 0xFFFFFF);
+	    //this.fontRenderer.drawString(this.tile.getName(), i + 80, j + 45, 0xFFFFFF);
 	}
 }

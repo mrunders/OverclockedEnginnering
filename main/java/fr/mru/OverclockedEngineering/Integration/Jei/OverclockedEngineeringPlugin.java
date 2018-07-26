@@ -27,13 +27,7 @@ import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.TreeFarmer;
 import fr.mru.OverclockedEngineeringItems.Circuit;
 import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import fr.mru.OverclockedEngineeringItems.AgingGun.AgingGunManager;
-import fr.mru.OverclockedEngineeringItems.Focus.AlloyFocus;
-import fr.mru.OverclockedEngineeringItems.Focus.CompresionFocus;
-import fr.mru.OverclockedEngineeringItems.Focus.DecompresionFocus;
 import fr.mru.OverclockedEngineeringItems.Focus.FocusManager;
-import fr.mru.OverclockedEngineeringItems.Focus.GrinderFocus;
-import fr.mru.OverclockedEngineeringItems.Focus.SmelterFocus;
-import fr.mru.OverclockedEngineeringItems.Focus.TransposerFocus;
 import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
 import mezz.jei.api.BlankModPlugin;
 import mezz.jei.api.IModRegistry;
@@ -53,8 +47,6 @@ public class OverclockedEngineeringPlugin extends BlankModPlugin {
 		registry.getRecipeTransferRegistry().addRecipeTransferHandler(ContainerOverclockedFurnace.class, RecipeCategorieTransposerFocus.ID, 0,3,8,36);
 		registry.getRecipeTransferRegistry().addRecipeTransferHandler(ContainerOverclockedFurnace.class, RecipeCategorieCompresionFocus.ID, 0,3,8,36);
 		registry.getRecipeTransferRegistry().addRecipeTransferHandler(ContainerOverclockedFurnace.class, RecipeCategorieDecompresionFocus.ID, 0,3,8,36);
-		
-		//registry.addRecipeClickArea(GuiTreeFarmer.class, 88, 32, 28, 23, RecipeCategorieTreeFarmer.ID);
 		
 		registry.addRecipeCategories(new RecipeCategorieTreeFarmer(registry.getJeiHelpers().getGuiHelper()));
 		registry.addRecipeCategories(new RecipeCategorieGrinderFocus(registry.getJeiHelpers().getGuiHelper()));

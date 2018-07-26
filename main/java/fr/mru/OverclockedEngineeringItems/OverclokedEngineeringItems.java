@@ -37,7 +37,8 @@ public class OverclokedEngineeringItems {
 							 DIMENSIONAL_HOLE_ITEM = new ItemBlock(OverclockedEngineeringBlocks.DIMENSIONAL_HOLE).setRegistryName(OverclockedEngineeringBlocks.DIMENSIONAL_HOLE.getRegistryName()),
 							 MACHINE_CASING_ITEM = new ItemBlock(OverclockedEngineeringBlocks.MACHINE_CASING).setRegistryName(OverclockedEngineeringBlocks.MACHINE_CASING.getRegistryName()),
 							 MASS_ANVIL = new ItemBlock(OverclockedEngineeringBlocks.MASS_ANVIL).setRegistryName(OverclockedEngineeringBlocks.MASS_ANVIL.getRegistryName()),
-							 TWO_MODULES_MACHINE = new ItemBlock(OverclockedEngineeringBlocks.TWO_MODULES_MACHINE).setRegistryName(OverclockedEngineeringBlocks.TWO_MODULES_MACHINE.getRegistryName());
+							 TWO_MODULES_MACHINE = new ItemBlock(OverclockedEngineeringBlocks.TWO_MODULES_MACHINE).setRegistryName(OverclockedEngineeringBlocks.TWO_MODULES_MACHINE.getRegistryName()),
+							 COBBLE_FORM_ITEM = new ItemBlock(OverclockedEngineeringBlocks.COBBLE_FORM).setRegistryName(OverclockedEngineeringBlocks.COBBLE_FORM.getRegistryName());
 							 
 	
 	public static ArrayList<Item> itemsList = new ArrayList<>();
@@ -62,6 +63,7 @@ public class OverclokedEngineeringItems {
 		itemsList.add(MACHINE_CASING_ITEM);
 		itemsList.add(MASS_ANVIL);
 		itemsList.add(TWO_MODULES_MACHINE);
+		itemsList.add(COBBLE_FORM_ITEM);
 	}
 
     public static void setItemName(Item item, String name) {
