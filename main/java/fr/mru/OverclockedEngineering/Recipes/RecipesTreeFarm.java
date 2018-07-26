@@ -1,6 +1,8 @@
 package fr.mru.OverclockedEngineering.Recipes;
 
 import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -8,7 +10,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class RecipesTreeFarm extends RecipeManager {
 	
-	private static final RecipeRequestMap map = new RecipeRequestMap();
+	private static RecipeRequestMap map = new RecipeRequestMap();
 	
 	public static RecipeRequest getRecipeResult(ItemStack ingredient) {
 		
@@ -27,9 +29,8 @@ public class RecipesTreeFarm extends RecipeManager {
 		return true;
 	}
 	
-	public static RecipeRequestMap getRecipesMap() {
-		
-		return map;
+	public static Set<List<ItemStack>> getRecipesMap() {
+		return map.keySet();
 	}
 	
 

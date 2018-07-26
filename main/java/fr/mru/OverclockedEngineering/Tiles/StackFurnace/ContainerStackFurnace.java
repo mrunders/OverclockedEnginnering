@@ -20,14 +20,9 @@ public class ContainerStackFurnace extends Container {
 	    this.tile = tile;
 
 	    int i;
-	    for(i = tile.START_INPUT_SLOT; i < tile.END_INPUT_SLOT; ++i) {
-	        this.addSlotToContainer(new Slot(tile, i, 62 + i * 18, 30));
-	    }
-	    
-	    for(i = tile.START_OUTPUT_SLOT; i < tile.END_OUTPUT_SLOT; ++i) {
-	        this.addSlotToContainer(new SlotOutput(tile, i, 44 + ((i - tile.START_OUTPUT_SLOT)* 18), 60));
-	    }
-	    
+	    this.addSlotToContainer(new Slot(tile, 0, 44, 30));
+	    this.addSlotToContainer(new SlotOutput(tile, 1, 116, 30));
+	 
 	    for(i = 0; i < 3; ++i) {
 	        for(int j = 0; j < 9; ++j) {
 	            this.addSlotToContainer(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));

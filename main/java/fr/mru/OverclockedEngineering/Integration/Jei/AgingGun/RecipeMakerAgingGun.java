@@ -16,13 +16,13 @@ public class RecipeMakerAgingGun {
 		
 		List<RecipeWrapperAgingGun> list = new ArrayList<>();
 		
-		for ( Block a : AgingGunIncremental.getRecipesList().keySet() ) {
+		for ( Block a : AgingGunIncremental.getRecipesList() ) {
 			
 			List<ItemStack> inputs = new ArrayList<>();
 			
 			inputs.add(new ItemStack(a));
 			
-			ItemStack output = new ItemStack(AgingGunIncremental.getRecipesList().get(a));
+			ItemStack output = new ItemStack(AgingGunIncremental.getResult(a));
 			
 			list.add(new RecipeWrapperAgingGun(inputs, output));
 		}

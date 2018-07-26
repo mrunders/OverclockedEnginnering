@@ -1,0 +1,25 @@
+{ 
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      " F ",
+      " N ",
+      "   "  ],
+    "key": {
+      "N": [
+        {
+          "item": "overclockedengineering:circuit",
+          "data": 0
+        }
+      ],
+      "F": [
+        {
+          "item": "minecraft:crafting_table",
+          "data": 0
+        }
+      ]
+    },
+    "result": {
+      "item": "overclockedengineering:compresion_focus",
+      "data": 0
+    }
+  }

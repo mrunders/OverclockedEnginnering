@@ -12,7 +12,7 @@ public class RecipeMakerGrinderFocus {
 		
 		List<RecipeWrapperGrinderFocus> list = new ArrayList<>();
 		
-		for ( List<ItemStack> inputs : RecipesGrinder.getRecipesList().keySet() ) {
+		for ( List<ItemStack> inputs : RecipesGrinder.getRecipesList()) {
 			
 			ItemStack output = RecipesGrinder.getResultForInput(inputs.get(0)).getResult();
 			list.add(new RecipeWrapperGrinderFocus(inputs, output));

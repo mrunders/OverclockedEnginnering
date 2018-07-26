@@ -12,7 +12,7 @@ public class RecipeMakerAlloyFocus {
 		
 		List<RecipeWrapperAlloyFocus> list = new ArrayList<>();
 		
-		for ( List<ItemStack> inputs : RecipesAlloy.getRecipesList().keySet() ) {
+		for ( List<ItemStack> inputs : RecipesAlloy.getRecipesList() ) {
 			
 			ItemStack output = RecipesAlloy.getResultForInputs(inputs).getResult();
 			list.add(new RecipeWrapperAlloyFocus(inputs, output));

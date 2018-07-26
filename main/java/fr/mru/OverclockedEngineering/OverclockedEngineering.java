@@ -3,6 +3,7 @@ package fr.mru.OverclockedEngineering;
 import org.apache.logging.log4j.Logger;
 
 import fr.mru.OverclockedEngineering.Recipes.RecipeManager;
+import fr.mru.OverclockedEngineering.TileTwoModuleMachine.TileTwoModulesMachine;
 import fr.mru.OverclockedEngineering.Tiles.DimensionalHole.TileDHole;
 import fr.mru.OverclockedEngineering.Tiles.Machine.TileOverclockedFurnace;
 import fr.mru.OverclockedEngineering.Tiles.StackFurnace.TileStackFurnace;
@@ -50,6 +51,7 @@ public class OverclockedEngineering {
 		GameRegistry.registerTileEntity(TileStackFurnace.class, MODID + ":tile_stack_furnace");
 		GameRegistry.registerTileEntity(TileTreeFarmer.class, MODID + ":tile_tree_farmer");
 		GameRegistry.registerTileEntity(TileDHole.class, MODID + ":tile_dimensional_hole");
+		GameRegistry.registerTileEntity(TileTwoModulesMachine.class	, MODID + ":tile_two_modules_machine");
 		
 		logger = event.getModLog();
 		proxy.preInit(event.getSuggestedConfigurationFile());

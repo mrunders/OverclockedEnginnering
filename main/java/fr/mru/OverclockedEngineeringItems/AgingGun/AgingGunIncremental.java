@@ -1,6 +1,7 @@
 package fr.mru.OverclockedEngineeringItems.AgingGun;
 
 import java.util.HashMap;
+import java.util.Set;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -30,8 +31,12 @@ public class AgingGunIncremental extends AgingGunManager {
 
 	}
 	
-	public static HashMap<Block, Block> getRecipesList() {
-		return aging;
+	public static Set<Block> getRecipesList() {
+		return aging.keySet();
+	}
+	
+	public static Block getResult(Block block) {
+		return aging.get(block);
 	}
 
 

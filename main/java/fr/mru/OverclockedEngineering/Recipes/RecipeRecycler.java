@@ -8,8 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class RecipeRecycler extends RecipeManager {
-	
-	private static final RecipeRequestMap map = new RecipeRequestMap();
+
 	private static final HashMap<String, Integer>toolsTab = new HashMap<>();
 
 	public static RecipeRequest getRecipeResult(ItemStack[] ingredients) {

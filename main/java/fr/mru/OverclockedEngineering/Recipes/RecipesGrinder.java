@@ -2,6 +2,7 @@ package fr.mru.OverclockedEngineering.Recipes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -12,7 +13,7 @@ import net.minecraftforge.oredict.OreDictionary;
 public class RecipesGrinder extends RecipeManager {
 	
 	private static RecipeRequestMap map = new RecipeRequestMap();
-	
+
 	public static RecipeRequest getRecipeResult(ItemStack[] ingredients) {
 		return map.gett(ingredients[0]);
 	    
@@ -45,8 +46,8 @@ public class RecipesGrinder extends RecipeManager {
 		return true;
 	}
 
-	public static RecipeRequestMap getRecipesList() {
-		return map;
+	public static Set<List<ItemStack>> getRecipesList() {
+		return map.keySet();
 	}
 	
 	public static RecipeRequest getResultForInput(ItemStack... inputs) {

@@ -2,6 +2,7 @@ package fr.mru.OverclockedEngineering.Recipes;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -9,8 +10,8 @@ import net.minecraft.item.ItemStack;
 
 public class RecipesTransposer extends RecipeManager {
 	
-	private static final RecipeRequestMap map = new RecipeRequestMap();
-
+	private static RecipeRequestMap map = new RecipeRequestMap();
+	
 	public static RecipeRequest getRecipeResult(ItemStack[] ingredients) {
 		return map.get(ingredients);
 	    
@@ -24,9 +25,8 @@ public class RecipesTransposer extends RecipeManager {
 		return true;
 	}
 	
-	public static RecipeRequestMap getRecipesList(){
-		
-		return map;
+	public static Set<List<ItemStack>> getRecipesList(){
+		return map.keySet();
 	}
 
 	public static RecipeRequest getRecipeResult(List<ItemStack> a) {

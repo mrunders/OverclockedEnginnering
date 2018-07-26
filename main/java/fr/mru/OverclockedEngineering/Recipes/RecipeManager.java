@@ -2,16 +2,9 @@ package fr.mru.OverclockedEngineering.Recipes;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map.Entry;
 
-import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.TreeFarmer;
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-import scala.Array;
 
 public abstract class RecipeManager {
 	
@@ -29,7 +22,6 @@ public abstract class RecipeManager {
 			     platesstr = new ArrayList<>();
 	
 		for ( String s : OreDictionary.getOreNames() ) {
-			System.out.println(s);
 			if (s.startsWith("ore")) oresstr.add(s.substring(3));
 			else if (s.startsWith("dust")) dustsstr.add(s.substring(4));
 			else if (s.startsWith("ingot")) ingotsstr.add(s.substring(5));
@@ -54,6 +46,7 @@ public abstract class RecipeManager {
 		RecipesTransposer.initialise();
 		RecipeRecycler.initialise();
 		RecipesTreeFarm.initialise();
+		RecipeCompresion.initialise();
 		
 		return true;
 	}

@@ -56,6 +56,8 @@ public class UncraftingTable extends Block {
 		playerIn.addExperienceLevel(-9);
 		worldIn.playSound(playerIn, pos, SOUND, null, 0.2F, 0);
 		
+		r.getIngredients().forEach(System.out::print);
+		
 		for (Ingredient ingr : r.getIngredients()) {
 			if ( ingr.getMatchingStacks().length == 0 ) continue;
 			

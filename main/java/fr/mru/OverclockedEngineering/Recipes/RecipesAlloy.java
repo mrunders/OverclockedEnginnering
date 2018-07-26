@@ -2,16 +2,17 @@ package fr.mru.OverclockedEngineering.Recipes;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class RecipesAlloy extends RecipeManager {
 	
-	public static final RecipeRequestMap map = new RecipeRequestMap();
+	private static RecipeRequestMap map = new RecipeRequestMap();
 	
 	public static RecipeRequest getRecipeResult(ItemStack[] ingredients) {
-		return map.gett(ingredients[0], ingredients[1]);
+		return map.get(ingredients);
 	}
 	
 	public static boolean initialise() {
@@ -34,8 +35,8 @@ public class RecipesAlloy extends RecipeManager {
 		return true;
 	}
 
-	public static RecipeRequestMap getRecipesList() {
-		return map;
+	public static Set<List<ItemStack>> getRecipesList() {
+		return map.keySet();
 	}
 
 	public static RecipeRequest getResultForInputs(List<ItemStack> a) {
