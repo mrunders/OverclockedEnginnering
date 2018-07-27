@@ -1,0 +1,25 @@
+{ 
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      " F ",
+      "FNF",
+      " F "  ],
+    "key": {
+      "N": [
+        {
+          "item": "overclockedengineering:circuit",
+          "data": 0
+        }
+      ],
+      "F": [
+        {
+          "item": "minecraft:iron_ingot",
+          "data": 0
+        }
+      ]
+    },
+    "result": {
+      "item": "overclockedengineering:gear_focus",
+      "data": 0
+    }
+  }

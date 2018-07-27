@@ -47,6 +47,8 @@ public abstract class ARecipeManager {
 		RecipeRecycler.initialise();
 		RecipesTreeFarm.initialise();
 		RecipeCompresion.initialise();
+		RecipesGear.initialise();
+		RecipesPlate.initialise();
 		
 		return true;
 	}

@@ -6,7 +6,9 @@ import fr.mru.OverclockedEngineering.Recipes.RecipeCompresion;
 import fr.mru.OverclockedEngineering.Recipes.RecipeRecycler;
 import fr.mru.OverclockedEngineering.Recipes.RecipeRequest;
 import fr.mru.OverclockedEngineering.Recipes.RecipesAlloy;
+import fr.mru.OverclockedEngineering.Recipes.RecipesGear;
 import fr.mru.OverclockedEngineering.Recipes.RecipesGrinder;
+import fr.mru.OverclockedEngineering.Recipes.RecipesPlate;
 import fr.mru.OverclockedEngineering.Recipes.RecipesSmelter;
 import fr.mru.OverclockedEngineering.Recipes.RecipesTransposer;
 import fr.mru.OverclockedEngineeringItems.OverclockedEngineeringItemsBase;
@@ -21,7 +23,9 @@ public class FocusManager extends OverclockedEngineeringItemsBase {
 					   FOCUS_TRANSPOSER = new TransposerFocus(),
 					   FOCUS_RECYCLER = new RecyclerFocus(),
 					   FOCUS_COMPRESION = new CompresionFocus(),
-					   FOCUS_DECOMPRESION = new DecompresionFocus();
+					   FOCUS_DECOMPRESION = new DecompresionFocus(),
+					   FOCUS_GEAR = new GearFocus(),
+					   FOCUS_PLATE = new PlateFocus();
 	
 	public static ArrayList<Item> itemsList = new ArrayList<>();
 	
@@ -34,6 +38,8 @@ public class FocusManager extends OverclockedEngineeringItemsBase {
 		itemsList.add(FOCUS_RECYCLER);
 		itemsList.add(FOCUS_COMPRESION);
 		itemsList.add(FOCUS_DECOMPRESION);
+		itemsList.add(FOCUS_GEAR);
+		itemsList.add(FOCUS_PLATE);
 	}
 
 	public FocusManager(String NAME) {
@@ -57,6 +63,10 @@ public class FocusManager extends OverclockedEngineeringItemsBase {
 			return RecipeCompresion.getRecipeResult(ingredients);
 		if (focus instanceof DecompresionFocus)
 			return RecipeCompresion.getReversedRecipeResult(ingredients);
+		if (focus instanceof GearFocus)
+			return RecipesGear.getRecipeResult(ingredients);
+		if (focus instanceof PlateFocus)
+			return RecipesPlate.getRecipeResult(ingredients);
 		
 		return RecipeRequest.NULL;
 	}

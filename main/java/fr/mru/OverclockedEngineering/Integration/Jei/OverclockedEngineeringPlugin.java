@@ -12,9 +12,15 @@ import fr.mru.OverclockedEngineering.Integration.Jei.CompresionModule.RecipeWrap
 import fr.mru.OverclockedEngineering.Integration.Jei.DecompresionModule.RecipeCategorieDecompresionFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.DecompresionModule.RecipeMakerDecompresionModule;
 import fr.mru.OverclockedEngineering.Integration.Jei.DecompresionModule.RecipeWrapperDecompresionFocus;
+import fr.mru.OverclockedEngineering.Integration.Jei.GearModule.RecipeCategorieGearFocus;
+import fr.mru.OverclockedEngineering.Integration.Jei.GearModule.RecipeMakerGearFocus;
+import fr.mru.OverclockedEngineering.Integration.Jei.GearModule.RecipeWrapperGearFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.GrinderModule.RecipeCategorieGrinderFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.GrinderModule.RecipeMakerGrinderFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.GrinderModule.RecipeWrapperGrinderFocus;
+import fr.mru.OverclockedEngineering.Integration.Jei.PlateModule.RecipeCategoriePlateFocus;
+import fr.mru.OverclockedEngineering.Integration.Jei.PlateModule.RecipeMakerPlateFocus;
+import fr.mru.OverclockedEngineering.Integration.Jei.PlateModule.RecipeWrapperPlateFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.TransposerModule.RecipeCategorieTransposerFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.TransposerModule.RecipeMakerTransposerFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.TransposerModule.RecipeWrapperTransposerFocus;
@@ -47,6 +53,8 @@ public class OverclockedEngineeringPlugin extends BlankModPlugin {
 		registry.getRecipeTransferRegistry().addRecipeTransferHandler(ContainerOverclockedFurnace.class, RecipeCategorieTransposerFocus.ID, 0,3,8,36);
 		registry.getRecipeTransferRegistry().addRecipeTransferHandler(ContainerOverclockedFurnace.class, RecipeCategorieCompresionFocus.ID, 0,3,8,36);
 		registry.getRecipeTransferRegistry().addRecipeTransferHandler(ContainerOverclockedFurnace.class, RecipeCategorieDecompresionFocus.ID, 0,3,8,36);
+		registry.getRecipeTransferRegistry().addRecipeTransferHandler(ContainerOverclockedFurnace.class, RecipeCategorieGearFocus.ID, 0,3,8,36);
+		registry.getRecipeTransferRegistry().addRecipeTransferHandler(ContainerOverclockedFurnace.class, RecipeCategoriePlateFocus.ID, 0,3,8,36);
 		
 		registry.addRecipeCategories(new RecipeCategorieTreeFarmer(registry.getJeiHelpers().getGuiHelper()));
 		registry.addRecipeCategories(new RecipeCategorieGrinderFocus(registry.getJeiHelpers().getGuiHelper()));
@@ -55,6 +63,8 @@ public class OverclockedEngineeringPlugin extends BlankModPlugin {
 		registry.addRecipeCategories(new RecipeCategorieTransposerFocus(registry.getJeiHelpers().getGuiHelper()));
 		registry.addRecipeCategories(new RecipeCategorieCompresionFocus(registry.getJeiHelpers().getGuiHelper()));
 		registry.addRecipeCategories(new RecipeCategorieDecompresionFocus(registry.getJeiHelpers().getGuiHelper()));
+		registry.addRecipeCategories(new RecipeCategorieGearFocus(registry.getJeiHelpers().getGuiHelper()));
+		registry.addRecipeCategories(new RecipeCategoriePlateFocus(registry.getJeiHelpers().getGuiHelper()));
 		
 		registry.addRecipeHandlers(new RecipeHandlerGeneric<RecipeWrapperTreeFarmer>(RecipeWrapperTreeFarmer.class, RecipeCategorieTreeFarmer.ID));
 		registry.addRecipeHandlers(new RecipeHandlerGeneric<RecipeWrapperGrinderFocus>(RecipeWrapperGrinderFocus.class, RecipeCategorieGrinderFocus.ID));
@@ -63,6 +73,8 @@ public class OverclockedEngineeringPlugin extends BlankModPlugin {
 		registry.addRecipeHandlers(new RecipeHandlerGeneric<RecipeWrapperTransposerFocus>(RecipeWrapperTransposerFocus.class, RecipeCategorieTransposerFocus.ID));
 		registry.addRecipeHandlers(new RecipeHandlerGeneric<RecipeWrapperCompresionFocus>(RecipeWrapperCompresionFocus.class, RecipeCategorieCompresionFocus.ID));
 		registry.addRecipeHandlers(new RecipeHandlerGeneric<RecipeWrapperDecompresionFocus>(RecipeWrapperDecompresionFocus.class, RecipeCategorieDecompresionFocus.ID));
+		registry.addRecipeHandlers(new RecipeHandlerGeneric<RecipeWrapperGearFocus>(RecipeWrapperGearFocus.class, RecipeCategorieGearFocus.ID));
+		registry.addRecipeHandlers(new RecipeHandlerGeneric<RecipeWrapperPlateFocus>(RecipeWrapperPlateFocus.class, RecipeCategoriePlateFocus.ID));
 		
 		registry.addRecipes(RecipeMakerTreeFarmer.getRecipes());
 		registry.addRecipes(RecipeMakerGrinderFocus.getRecipes());
@@ -71,6 +83,8 @@ public class OverclockedEngineeringPlugin extends BlankModPlugin {
 		registry.addRecipes(RecipeMakerTransposerFocus.getRecipes());
 		registry.addRecipes(RecipeMakerCompresionFocus.getRecipes());
 		registry.addRecipes(RecipeMakerDecompresionModule.getRecipes());
+		registry.addRecipes(RecipeMakerGearFocus.getRecipes());
+		registry.addRecipes(RecipeMakerPlateFocus.getRecipes());
 
 		registry.addRecipeCategoryCraftingItem(new ItemStack(OverclockedEngineeringBlocks.STACK_FURNACE), VanillaRecipeCategoryUid.SMELTING);
 		registry.addRecipeCategoryCraftingItem(new ItemStack(OverclockedEngineeringBlocks.TREE_FARMER), RecipeCategorieTreeFarmer.ID);
@@ -81,6 +95,8 @@ public class OverclockedEngineeringPlugin extends BlankModPlugin {
 		registry.addRecipeCategoryCraftingItem(new ItemStack(FocusManager.FOCUS_ALLOY),   RecipeCategorieAlloyFocus.ID);
 		registry.addRecipeCategoryCraftingItem(new ItemStack(FocusManager.FOCUS_COMPRESION),   RecipeCategorieCompresionFocus.ID);
 		registry.addRecipeCategoryCraftingItem(new ItemStack(FocusManager.FOCUS_DECOMPRESION),   RecipeCategorieDecompresionFocus.ID);
+		registry.addRecipeCategoryCraftingItem(new ItemStack(FocusManager.FOCUS_GEAR),   RecipeCategorieGearFocus.ID);
+		registry.addRecipeCategoryCraftingItem(new ItemStack(FocusManager.FOCUS_PLATE),   RecipeCategoriePlateFocus.ID);
 		
 		registry.addRecipeCategoryCraftingItem(new ItemStack(OverclokedEngineeringItems.AGING_GUN_INCR), RecipeCategorieAgingGun.ID);
 		registry.addRecipeCategoryCraftingItem(new ItemStack(OverclokedEngineeringItems.AGING_GUN_DECR), RecipeCategorieAgingGun.ID);

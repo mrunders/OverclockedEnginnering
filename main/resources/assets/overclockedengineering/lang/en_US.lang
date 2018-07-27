@@ -13,6 +13,7 @@ item.overclockedengineering.transposer_focus.name=Transposer Focus
 item.overclockedengineering.recycler_focus.name=Recycler Focus 
 item.overclockedengineering.compresion_focus.name=Compresion Focus 
 item.overclockedengineering.decompresion_focus.name=Decompresion Focus 
+item.overclockedengineering.gear_focus.name=Gear Focus 
 item.overclockedengineering.aging_gun_incremantal.name=Aging Gun++
 item.overclockedengineering.aging_gun_decremantal.name=Aging Gun--
 item.overclockedengineering.dimensional_hole_item.name=DHole Gateway (WIP)
