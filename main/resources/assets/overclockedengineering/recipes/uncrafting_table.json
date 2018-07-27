@@ -1,0 +1,31 @@
+{ 
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "ICI",
+      "CDC",
+      "ICI"  ],
+    "key": {
+      "D": [
+        {
+          "item": "overclockedengineering:decompresion_focus",
+          "data": 0
+        }
+      ],
+      "C": [
+        {
+          "item": "minecraft:crafting_table",
+          "data": 0
+        }
+      ],
+      "I": [
+        {
+          "item": "minecraft:iron_ingot",
+          "data": 0
+        }
+      ]
+    },
+    "result": {
+      "item": "overclockedengineering:uncrafting_table",
+      "data": 0
+    }
+  }
