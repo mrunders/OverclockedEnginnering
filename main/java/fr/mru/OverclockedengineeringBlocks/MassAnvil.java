@@ -11,6 +11,7 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -48,6 +49,18 @@ public class MassAnvil extends BlockFalling {
 
     public void onBroken(World worldIn, BlockPos pos) {
         worldIn.playEvent(1029, pos, 0);
+    }
+    
+    public EnumBlockRenderType getRenderType(IBlockState state) {
+        return EnumBlockRenderType.MODEL;
+    }
+
+    public boolean isFullCube(IBlockState state) {
+        return false;
+    }
+
+    public boolean isOpaqueCube(IBlockState state) {
+        return false;
     }
     
 }

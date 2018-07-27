@@ -2,12 +2,12 @@ package fr.mru.OverclockedengineeringBlocks;
 
 import java.util.ArrayList;
 
-import fr.mru.OverclockedEngineering.Tile.Cobble_form.CobbleForm;
-import fr.mru.OverclockedEngineering.Tile.TwoModuleMachine.TwoModulesMachine;
+import fr.mru.OverclockedEngineering.Tiles.Cobble_form.CobbleForm;
 import fr.mru.OverclockedEngineering.Tiles.DimensionalHole.DHole;
 import fr.mru.OverclockedEngineering.Tiles.Machine.MachineBlock;
 import fr.mru.OverclockedEngineering.Tiles.StackFurnace.StackFurnace;
 import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.TreeFarmer;
+import fr.mru.OverclockedEngineering.Tiles.TwoModuleMachine.TwoModulesMachine;
 import fr.mru.OverclockedEngineering.Tiles.UncraftingTable.UncraftingTable;
 import net.minecraft.block.Block;
 import net.minecraft.network.handshake.client.C00Handshake;

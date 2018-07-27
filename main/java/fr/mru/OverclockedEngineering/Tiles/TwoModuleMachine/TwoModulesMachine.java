@@ -1,4 +1,4 @@
-package fr.mru.OverclockedEngineering.Tile.TwoModuleMachine;
+package fr.mru.OverclockedEngineering.Tiles.TwoModuleMachine;
 
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
 import fr.mru.OverclockedengineeringBlocks.ABlockContainerManager;

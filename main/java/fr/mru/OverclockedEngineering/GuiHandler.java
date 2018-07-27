@@ -1,11 +1,8 @@
 package fr.mru.OverclockedEngineering;
 
-import fr.mru.OverclockedEngineering.Tile.Cobble_form.ContainerCobbleForm;
-import fr.mru.OverclockedEngineering.Tile.Cobble_form.GuiCobbleForm;
-import fr.mru.OverclockedEngineering.Tile.Cobble_form.TileCobbleForm;
-import fr.mru.OverclockedEngineering.Tile.TwoModuleMachine.ContainerTwoModulesMachine;
-import fr.mru.OverclockedEngineering.Tile.TwoModuleMachine.GuiTwoModulesMachine;
-import fr.mru.OverclockedEngineering.Tile.TwoModuleMachine.TileTwoModulesMachine;
+import fr.mru.OverclockedEngineering.Tiles.Cobble_form.ContainerCobbleForm;
+import fr.mru.OverclockedEngineering.Tiles.Cobble_form.GuiCobbleForm;
+import fr.mru.OverclockedEngineering.Tiles.Cobble_form.TileCobbleForm;
 import fr.mru.OverclockedEngineering.Tiles.DimensionalHole.ContainerDHole;
 import fr.mru.OverclockedEngineering.Tiles.DimensionalHole.GuiDHole;
 import fr.mru.OverclockedEngineering.Tiles.DimensionalHole.TileDHole;
@@ -18,6 +15,9 @@ import fr.mru.OverclockedEngineering.Tiles.StackFurnace.TileStackFurnace;
 import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.ContainerTreeFarmer;
 import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.GuiTreeFarmer;
 import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.TileTreeFarmer;
+import fr.mru.OverclockedEngineering.Tiles.TwoModuleMachine.ContainerTwoModulesMachine;
+import fr.mru.OverclockedEngineering.Tiles.TwoModuleMachine.GuiTwoModulesMachine;
+import fr.mru.OverclockedEngineering.Tiles.TwoModuleMachine.TileTwoModulesMachine;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;

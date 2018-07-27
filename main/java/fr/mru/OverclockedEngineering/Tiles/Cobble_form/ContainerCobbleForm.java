@@ -1,4 +1,4 @@
-package fr.mru.OverclockedEngineering.Tile.Cobble_form;
+package fr.mru.OverclockedEngineering.Tiles.Cobble_form;
 
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.ContainerManager;
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.SlotOutput;

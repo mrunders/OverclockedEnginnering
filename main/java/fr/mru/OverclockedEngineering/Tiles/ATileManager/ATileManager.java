@@ -1,7 +1,5 @@
 package fr.mru.OverclockedEngineering.Tiles.ATileManager;
 
-import fr.mru.OverclockedEngineering.Recipes.RecipeRequest;
-import fr.mru.OverclockedEngineeringItems.DHoleItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -11,9 +9,11 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntityLockable;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
+import net.minecraft.world.World;
 
 public abstract class ATileManager extends TileEntityLockable implements ITickable {
 	
+	protected boolean redstoneControl = false;
 	protected NonNullList <ItemStack>stacks;
 	protected String customName, name;
 	protected int	timePassed = 0;

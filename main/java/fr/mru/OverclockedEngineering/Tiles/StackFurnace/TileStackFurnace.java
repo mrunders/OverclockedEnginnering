@@ -65,6 +65,9 @@ public class TileStackFurnace extends ATileInstantProcessingManager {
 	
 	@Override
 	public void update() {
+		
+		if ( redstoneControl ) return;
+		
 	    if (!this.world.isRemote) {
 	    	
 	    	if ( !getStackInSlot(INPUT_SLOT).isEmpty() && canSmelt() ) smelt();

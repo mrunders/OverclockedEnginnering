@@ -1,4 +1,4 @@
-package fr.mru.OverclockedEngineering.Tile.TwoModuleMachine;
+package fr.mru.OverclockedEngineering.Tiles.TwoModuleMachine;
 
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileManager;
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.ContainerManager;

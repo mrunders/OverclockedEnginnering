@@ -3,12 +3,12 @@ package fr.mru.OverclockedEngineering;
 import org.apache.logging.log4j.Logger;
 
 import fr.mru.OverclockedEngineering.Recipes.ARecipeManager;
-import fr.mru.OverclockedEngineering.Tile.Cobble_form.TileCobbleForm;
-import fr.mru.OverclockedEngineering.Tile.TwoModuleMachine.TileTwoModulesMachine;
+import fr.mru.OverclockedEngineering.Tiles.Cobble_form.TileCobbleForm;
 import fr.mru.OverclockedEngineering.Tiles.DimensionalHole.TileDHole;
 import fr.mru.OverclockedEngineering.Tiles.Machine.TileOverclockedFurnace;
 import fr.mru.OverclockedEngineering.Tiles.StackFurnace.TileStackFurnace;
 import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.TileTreeFarmer;
+import fr.mru.OverclockedEngineering.Tiles.TwoModuleMachine.TileTwoModulesMachine;
 import fr.mru.OverclockedEngineeringProxy.OverclockedEngineeringCommon;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
