@@ -14,13 +14,13 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public abstract class ContainerManager extends Container {
 	
-	private TileManager tile;
+	private ATileManager tile;
 	private int	timePassed = 0;
 	private int	burnTimeLeft = 0;
 	
-	public abstract void displaySlots(TileManager tile, InventoryPlayer playerInventory);
+	public abstract void displaySlots(ATileManager tile, InventoryPlayer playerInventory);
 
-	public ContainerManager(TileManager tile, InventoryPlayer playerInventory) {
+	public ContainerManager(ATileManager tile, InventoryPlayer playerInventory) {
 	    this.tile = tile;
 
 	    displaySlots(tile, playerInventory);

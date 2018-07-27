@@ -3,7 +3,7 @@ package fr.mru.OverclockedEngineering.Tiles.DimensionalHole;
 import java.util.List;
 
 import fr.mru.OverclockedEngineering.Recipes.RecipeRequest;
-import fr.mru.OverclockedEngineering.Tiles.ATileManager.TileManager;
+import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileManager;
 import fr.mru.OverclockedEngineeringItems.DHoleItem;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -16,15 +16,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome.SpawnListEntry;
 
-public class TileDHole extends TileManager {
+public class TileDHole extends ATileManager {
 
 	public TileDHole() {
-		super(1);
-	}
-
-	@Override
-	public String getName() {
-		 return "tile.dimensional_hole";
+		super(1, "tile.dimensional_hole");
 	}
 
 	@Override

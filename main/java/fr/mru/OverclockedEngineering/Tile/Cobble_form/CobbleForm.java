@@ -1,6 +1,7 @@
 package fr.mru.OverclockedEngineering.Tile.Cobble_form;
 
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
+import fr.mru.OverclockedengineeringBlocks.ABlockContainerManager;
 import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -15,20 +16,12 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class CobbleForm extends BlockContainer {
+public class CobbleForm extends ABlockContainerManager {
 
 	public CobbleForm() {
-		super(Material.ANVIL);
-		
-		OverclockedEngineeringBlocks.setBlockName(this, "cobble_form");
-		setCreativeTab(OverclockedEngineering.overclockedTab);
-
+		super("cobble_form");
 	}
 
-	@Override
-	public boolean hasTileEntity() {
-	    return true;
-	}
 
 	@Override
 	public TileEntity createNewTileEntity(World world, int metadata)  {
@@ -62,9 +55,5 @@ public class CobbleForm extends BlockContainer {
 	        return true;
 	    }
 	}
-	
-	@Override
-	public EnumBlockRenderType getRenderType(IBlockState state) {
-	    return EnumBlockRenderType.MODEL;
-	}
+
 }

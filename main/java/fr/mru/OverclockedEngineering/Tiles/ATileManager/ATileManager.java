@@ -12,15 +12,15 @@ import net.minecraft.tileentity.TileEntityLockable;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
 
-public abstract class TileManager extends TileEntityLockable implements ITickable {
+public abstract class ATileManager extends TileEntityLockable implements ITickable {
 	
 	protected NonNullList <ItemStack>stacks;
-	protected String customName;
+	protected String customName, name;
 	protected int	timePassed = 0;
 	protected int	burningTimeLeft	= 0;
 	
-	public TileManager(int stacksLenght) {
-		
+	public ATileManager(int stacksLenght, String name) {
+		this.name = name;
 		stacks = NonNullList.withSize(stacksLenght, ItemStack.EMPTY);
 	}
 	
@@ -57,9 +57,11 @@ public abstract class TileManager extends TileEntityLockable implements ITickabl
 	public boolean hasCustomName() {
 	    return this.customName != null && !this.customName.isEmpty();
 	}
-
+	
 	@Override
-	public abstract String getName();
+	public String getName() {
+	    return hasCustomName() ? this.customName : name;
+	}
 
 	public void setCustomName(String name) {
 	    this.customName = name;

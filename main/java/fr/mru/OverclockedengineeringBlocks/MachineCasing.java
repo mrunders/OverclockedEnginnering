@@ -4,13 +4,10 @@ import fr.mru.OverclockedEngineering.OverclockedEngineering;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
-public class MachineCasing extends Block {
+public class MachineCasing extends OverclockedEngineeringBlocksBase {
 	
 	public MachineCasing() {
-		super(Material.ANVIL);
-		
-		OverclockedEngineeringBlocks.setBlockName(this, "machine_casing");
-		setCreativeTab(OverclockedEngineering.overclockedTab);
+		super("machine_casing");
 	}
 
 }

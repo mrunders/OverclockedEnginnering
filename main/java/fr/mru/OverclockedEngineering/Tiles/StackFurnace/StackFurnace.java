@@ -1,6 +1,7 @@
 package fr.mru.OverclockedEngineering.Tiles.StackFurnace;
 
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
+import fr.mru.OverclockedengineeringBlocks.ABlockContainerManager;
 import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -15,20 +16,10 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class StackFurnace extends BlockContainer {
+public class StackFurnace extends ABlockContainerManager {
 
 	public StackFurnace() {
-		super(Material.ANVIL);
-		
-		OverclockedEngineeringBlocks.setBlockName(this, "stack_furnace");
-		
-		setCreativeTab(OverclockedEngineering.overclockedTab);
-
-	}
-
-	@Override
-	public boolean hasTileEntity() {
-	    return true;
+		super("stack_furnace");
 	}
 
 	@Override
@@ -63,9 +54,5 @@ public class StackFurnace extends BlockContainer {
 	        return true;
 	    }
 	}
-	
-	@Override
-	public EnumBlockRenderType getRenderType(IBlockState state) {
-	    return EnumBlockRenderType.MODEL;
-	}
+
 }

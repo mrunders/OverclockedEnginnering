@@ -1,7 +1,7 @@
 package fr.mru.OverclockedEngineering.Tiles.TreeFarmer;
 
 import fr.mru.OverclockedEngineering.Recipes.RecipesTreeFarm;
-import fr.mru.OverclockedEngineering.Tiles.ATileManager.TileManager;
+import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileManager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Items;
@@ -11,10 +11,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.NonNullList;
 
-public class TileTreeFarmer extends TileManager {
+public class TileTreeFarmer extends ATileManager {
 	
 	public TileTreeFarmer() {
-		super(4);
+		super(4, "tile.treeFarmer");
 
 	}
 	
@@ -23,28 +23,10 @@ public class TileTreeFarmer extends TileManager {
 							 WOOD_SLOT = 2,
 							 LEAVES_SLOT = 3;
 
-
-	@Override
-	public String getName() {
-	    return hasCustomName() ? this.customName : "tile.treeFarmer";
-	}
-	
 	@Override
 	public boolean isItemValidForSlot(int index, ItemStack stack) {
 		
 		return index == FERTILIZER_SLOT && stack.getItem().equals(Items.BONE);
-	}
-	
-
-	public boolean isUsableByPlayer(EntityPlayer player) {
-	    return this.world.getTileEntity(this.pos) != this ? false : player
-	            .getDistanceSq((double) this.pos.getX() + 0.5D,
-	                    (double) this.pos.getY() + 0.5D,
-	                    (double) this.pos.getZ() + 0.5D) <= 64.0D;
-	}
-	
-	public boolean hasFuelEmpty() {
-	    return false;
 	}
 	
 	public ItemStack getRecipeResult() {
@@ -85,15 +67,7 @@ public class TileTreeFarmer extends TileManager {
 	        stack4.setCount(stack4.getCount() + result.getCount());
 	    }
 	}
-	
-	public int getFullRecipeTime() {
-		return 200;
-		
-	}
 
-	public int getFullBurnTime() {
-		return 200;
-	}
 
 	public boolean isBurning() {
 		ItemStack fertiliserSlot = getStackInSlot(FERTILIZER_SLOT);
@@ -121,5 +95,10 @@ public class TileTreeFarmer extends TileManager {
 	        
 	        this.markDirty();
 	    }
+	}
+
+	@Override
+	public int getFullRecipeTime() {
+		return 200;
 	}
 }

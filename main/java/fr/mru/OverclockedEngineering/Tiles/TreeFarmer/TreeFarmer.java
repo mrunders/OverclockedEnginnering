@@ -2,6 +2,7 @@ package fr.mru.OverclockedEngineering.Tiles.TreeFarmer;
 
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
 import fr.mru.OverclockedEngineering.Tiles.Machine.TileOverclockedFurnace;
+import fr.mru.OverclockedengineeringBlocks.ABlockContainerManager;
 import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -15,22 +16,14 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class TreeFarmer extends BlockContainer {
+public class TreeFarmer extends ABlockContainerManager {
 
 	public static final String DESCRIPTION = "Uncraft everything that was crafted with crafting table by right click on this block (cost 9 experience levels per uncraft)";
 
 	public TreeFarmer() {		
-		super(Material.ANVIL);
-		OverclockedEngineeringBlocks.setBlockName(this, "tree_farmer");
-		setCreativeTab(OverclockedEngineering.overclockedTab);
+		super("tree_farmer");
+	}
 
-	}
-	
-	@Override
-	public boolean hasTileEntity() {
-	    return true;
-	}
-	
 	@Override
 	public TileEntity createNewTileEntity(World world, int metadata)  {
 	    return new TileTreeFarmer();
@@ -62,11 +55,6 @@ public class TreeFarmer extends BlockContainer {
 	
 	        return true;
 	    }
-	}
-	
-	@Override
-	public EnumBlockRenderType getRenderType(IBlockState state) {
-	    return EnumBlockRenderType.MODEL;
 	}
 	
 }

@@ -1,6 +1,6 @@
 item.overclockedengineering.circuit.name=PCB
 item.overclockedengineering.circuit_large.name=Large PCB
-item.overclockedengineering.mining_pickaxe.name=Mining Pickaxe 
+item.overclockedengineering.mining_pickaxe.name=Mining Pickaxe (WIP)
 item.overclockedengineering.hybride_engine1.name=Lava Water Engine 
 item.overclockedengineering.hybride_engine2.name=Ender Engine 
 item.overclockedengineering.hybride_engine3.name=Wither Engine 
@@ -15,7 +15,7 @@ item.overclockedengineering.compresion_focus.name=Compresion Focus
 item.overclockedengineering.decompresion_focus.name=Decompresion Focus 
 item.overclockedengineering.aging_gun_incremantal.name=Aging Gun++
 item.overclockedengineering.aging_gun_decremantal.name=Aging Gun--
-item.overclockedengineering.dimensional_hole_item.name=DHole Gateway
+item.overclockedengineering.dimensional_hole_item.name=DHole Gateway (WIP)
 
 tile.overclockedengineering.machine_block.name=Machine Block
 tile.overclockedengineering.stack_furnace.name=Stack Furnace

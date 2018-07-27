@@ -7,7 +7,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-public class RecipeCompresion extends RecipeManager {
+public class RecipeCompresion extends ARecipeManager {
 	
 	private static RecipeRequestMap map = new RecipeRequestMap();
 	private static RecipeRequestMap reversedmap = new RecipeRequestMap();

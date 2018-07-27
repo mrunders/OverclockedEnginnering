@@ -2,7 +2,7 @@ package fr.mru.OverclockedEngineering.Tiles.Machine;
 
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.ContainerManager;
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.SlotOutput;
-import fr.mru.OverclockedEngineering.Tiles.ATileManager.TileManager;
+import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileManager;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Slot;
 
@@ -17,7 +17,7 @@ public class ContainerOverclockedFurnace extends ContainerManager {
 	}
 
 	@Override
-	public void displaySlots(TileManager tile, InventoryPlayer playerInventory) {
+	public void displaySlots(ATileManager tile, InventoryPlayer playerInventory) {
 		
 	    int i;
 	    for(i = 0; i < 3; i++) {

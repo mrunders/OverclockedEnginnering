@@ -1,7 +1,7 @@
 package fr.mru.OverclockedEngineering.Tiles.Machine;
 
 import fr.mru.OverclockedEngineering.Recipes.RecipeRequest;
-import fr.mru.OverclockedEngineering.Tiles.ATileManager.TileManager;
+import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileManager;
 import fr.mru.OverclockedEngineeringItems.EngineManager;
 import fr.mru.OverclockedEngineeringItems.Focus.FocusManager;
 import net.minecraft.entity.player.EntityPlayer;
@@ -10,20 +10,16 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
 
-public class TileOverclockedFurnace extends TileManager {
+public class TileOverclockedFurnace extends ATileManager {
 	
 	public TileOverclockedFurnace() {
-		super(6);
+		super(6, "tile.overclockedMachine");
 
 	}
 	
 	private static final int SLOT_FOCUS = 3,
 							 SLOT_ENGINE = 4,
 							 SLOT_OUTPUT = 5;
-	@Override
-	public String getName() {
-	    return hasCustomName() ? this.customName : "tile.overclockedMachine";
-	}
 
 	@Override
 	public boolean isItemValidForSlot(int index, ItemStack stack) {

@@ -2,6 +2,7 @@ package fr.mru.OverclockedEngineering.Tiles.DimensionalHole;
 
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
 import fr.mru.OverclockedEngineering.Tiles.Machine.TileOverclockedFurnace;
+import fr.mru.OverclockedengineeringBlocks.ABlockContainerManager;
 import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -15,18 +16,10 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class DHole extends BlockContainer {
+public class DHole extends ABlockContainerManager {
 
 	public DHole() {		
-		super(Material.ANVIL);
-		OverclockedEngineeringBlocks.setBlockName(this, "dimensional_hole");
-		setCreativeTab(OverclockedEngineering.overclockedTab);
-
-	}
-	
-	@Override
-	public boolean hasTileEntity() {
-	    return true;
+		super("dimensional_hole");
 	}
 	
 	@Override
@@ -60,11 +53,6 @@ public class DHole extends BlockContainer {
 	
 	        return true;
 	    }
-	}
-	
-	@Override
-	public EnumBlockRenderType getRenderType(IBlockState state) {
-	    return EnumBlockRenderType.MODEL;
 	}
 	
 }

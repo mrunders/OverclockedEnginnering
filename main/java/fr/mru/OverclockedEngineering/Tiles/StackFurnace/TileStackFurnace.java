@@ -1,6 +1,7 @@
 package fr.mru.OverclockedEngineering.Tiles.StackFurnace;
 
-import fr.mru.OverclockedEngineering.Tiles.ATileManager.TileManager;
+import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileInstantProcessingManager;
+import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileManager;
 import fr.mru.OverclockedEngineeringItems.EngineManager;
 import fr.mru.OverclockedEngineeringItems.Focus.FocusManager;
 import net.minecraft.entity.player.EntityPlayer;
@@ -17,19 +18,15 @@ import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.event.entity.player.SleepingLocationCheckEvent;
 
-public class TileStackFurnace extends TileManager {
+public class TileStackFurnace extends ATileInstantProcessingManager {
 	
 	public TileStackFurnace() {
-		super(2);
+		super(2, "tile.stack_furnace");
 	}
 
 	private ItemStack currentSlot = null;
 	public static final int INPUT_SLOT = 0, OUTPUT_SLOT = 1;
-	
-	@Override
-	public String getName() {
-	    return hasCustomName() ? this.customName : "tile.stackFurnace";
-	}
+
 
 	@Override
 	public boolean isItemValidForSlot(int index, ItemStack stack) {
@@ -72,18 +69,5 @@ public class TileStackFurnace extends TileManager {
 	    	
 	    	if ( !getStackInSlot(INPUT_SLOT).isEmpty() && canSmelt() ) smelt();
 	    }
-	}
-
-
-	@Override
-	public int getFullRecipeTime() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public boolean isBurning() {
-		// TODO Auto-generated method stub
-		return false;
 	}
 }

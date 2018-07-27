@@ -8,7 +8,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class RecipesTreeFarm extends RecipeManager {
+public class RecipesTreeFarm extends ARecipeManager {
 	
 	private static RecipeRequestMap map = new RecipeRequestMap();
 	

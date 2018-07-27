@@ -8,7 +8,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-public class RecipesTransposer extends RecipeManager {
+public class RecipesTransposer extends ARecipeManager {
 	
 	private static RecipeRequestMap map = new RecipeRequestMap();
 	

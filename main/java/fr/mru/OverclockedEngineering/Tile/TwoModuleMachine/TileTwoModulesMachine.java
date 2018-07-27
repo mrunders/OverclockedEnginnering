@@ -1,14 +1,15 @@
 package fr.mru.OverclockedEngineering.Tile.TwoModuleMachine;
 
 import fr.mru.OverclockedEngineering.Recipes.RecipeRequest;
-import fr.mru.OverclockedEngineering.Tiles.ATileManager.TileManager;
+import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileInstantProcessingManager;
+import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileManager;
 import fr.mru.OverclockedEngineeringItems.Focus.FocusManager;
 import net.minecraft.item.ItemStack;
 
-public class TileTwoModulesMachine extends TileManager {
+public class TileTwoModulesMachine extends ATileInstantProcessingManager {
 
 	public TileTwoModulesMachine() {
-		super(5);
+		super(5, "tile.two_modules_machine");
 	}
 	
 	public static final int INPUT_SLOT = 0,
@@ -16,11 +17,6 @@ public class TileTwoModulesMachine extends TileManager {
 							MIDDLE_SLOT = 2,
 							SECOND_MODULE_SLOT = 3,
 							OUTPUT_SLOT = 4;
-
-	@Override
-	public String getName() {
-		return "tile.two_modules_machine";
-	}
 
 	@Override
 	public boolean isItemValidForSlot(int index, ItemStack stack) {
@@ -85,9 +81,6 @@ public class TileTwoModulesMachine extends TileManager {
 	}
 	
 	@Override
-	public int getFullRecipeTime() {return 0;}
-
-	@Override
 	public ItemStack getRecipeResult() {return null;}
 
 	@Override
@@ -96,7 +89,5 @@ public class TileTwoModulesMachine extends TileManager {
 	@Override
 	public void smelt() {}
 
-	@Override
-	public boolean isBurning() {return true;}
 
 }

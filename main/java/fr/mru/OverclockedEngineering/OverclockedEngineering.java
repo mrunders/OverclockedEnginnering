@@ -2,7 +2,7 @@ package fr.mru.OverclockedEngineering;
 
 import org.apache.logging.log4j.Logger;
 
-import fr.mru.OverclockedEngineering.Recipes.RecipeManager;
+import fr.mru.OverclockedEngineering.Recipes.ARecipeManager;
 import fr.mru.OverclockedEngineering.Tile.Cobble_form.TileCobbleForm;
 import fr.mru.OverclockedEngineering.Tile.TwoModuleMachine.TileTwoModulesMachine;
 import fr.mru.OverclockedEngineering.Tiles.DimensionalHole.TileDHole;
@@ -66,7 +66,7 @@ public class OverclockedEngineering {
 		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 		proxy.init();
 		
-		RecipeManager.initialise();
+		ARecipeManager.initialise();
 
 	}
 

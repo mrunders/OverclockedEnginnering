@@ -1,10 +1,11 @@
 package fr.mru.OverclockedEngineering.Tile.Cobble_form;
 
-import fr.mru.OverclockedEngineering.Tiles.ATileManager.TileManager;
+import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileInstantProcessingManager;
+import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileManager;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-public class TileCobbleForm extends TileManager {
+public class TileCobbleForm extends ATileInstantProcessingManager {
 	
 	public static final int COBBLE_SLOT = 0,
 						GRAVEL_SLOT = 1,
@@ -13,24 +14,14 @@ public class TileCobbleForm extends TileManager {
 						STONE_SLOT  = 4;
 
 	public TileCobbleForm() {
-		super(5);
-	}
-
-	@Override
-	public String getName() {
-		return "tile.cobble_form";
+		super(5, "tile.cobble_form");
 	}
 
 	@Override
 	public boolean isItemValidForSlot(int index, ItemStack stack) {
 		return false;
 	}
-
-	@Override
-	public int getFullRecipeTime() {
-		return 0;
-	}
-
+	
 	@Override
 	public ItemStack getRecipeResult() {
 		return null;
@@ -82,16 +73,11 @@ public class TileCobbleForm extends TileManager {
 	}
 
 	@Override
-	public boolean isBurning() {
-		return true;
-	}
-
-	@Override
 	public void update() {
 		
 		if ( !this.world.isRemote ) {
 			
-			if ( canSmelt() ) smelt();
+			smelt();
 		}
 		
 	}

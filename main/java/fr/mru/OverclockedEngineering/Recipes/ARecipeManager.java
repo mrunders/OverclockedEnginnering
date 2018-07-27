@@ -6,7 +6,7 @@ import java.util.List;
 
 import net.minecraftforge.oredict.OreDictionary;
 
-public abstract class RecipeManager {
+public abstract class ARecipeManager {
 	
 	public static final HashMap<String, List<String>> recipesOrdict = new HashMap<>();
 

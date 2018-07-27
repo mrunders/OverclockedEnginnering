@@ -11,7 +11,7 @@ import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.OreIngredient;
 
-public class RecipesSmelter extends RecipeManager {
+public class RecipesSmelter extends ARecipeManager {
 	
 	public static RecipeRequest getRecipeResult(ItemStack[] ingredients) {
 	    ItemStack res = FurnaceRecipes.instance().getSmeltingResult(ingredients[0]);

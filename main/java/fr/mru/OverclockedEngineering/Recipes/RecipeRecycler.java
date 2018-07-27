@@ -7,7 +7,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class RecipeRecycler extends RecipeManager {
+public class RecipeRecycler extends ARecipeManager {
 
 	private static final HashMap<String, Integer>toolsTab = new HashMap<>();
 

@@ -4,6 +4,7 @@ import java.awt.List;
 
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
 import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
+import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocksBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -19,15 +20,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
-public class UncraftingTable extends Block {
+public class UncraftingTable extends OverclockedEngineeringBlocksBase {
 	
 	private static final SoundEvent SOUND = SoundEvent.REGISTRY.getObject(new ResourceLocation("minecraft:entity.experience_orb.pickup"));
 
 	public UncraftingTable() {
-		super(Material.ANVIL);
-		
-		OverclockedEngineeringBlocks.setBlockName(this, "uncrafting_table");
-		setCreativeTab(OverclockedEngineering.overclockedTab);
+		super("uncrafting_table");
 	}
 	
 	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par2List, boolean par4) {
