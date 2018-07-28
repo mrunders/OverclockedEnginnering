@@ -1,0 +1,8 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "minecraft:blocks/iron_ore",
+        "layer1": "overclockedengineering:items/focus_manager"
+    }
+
+}

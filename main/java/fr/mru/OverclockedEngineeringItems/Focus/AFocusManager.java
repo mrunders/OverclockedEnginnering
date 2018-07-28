@@ -2,20 +2,25 @@ package fr.mru.OverclockedEngineeringItems.Focus;
 
 import java.util.ArrayList;
 
+import fr.mru.OverclockedEngineering.Recipes.ARecipeManager;
 import fr.mru.OverclockedEngineering.Recipes.RecipeCompresion;
 import fr.mru.OverclockedEngineering.Recipes.RecipeRecycler;
 import fr.mru.OverclockedEngineering.Recipes.RecipeRequest;
 import fr.mru.OverclockedEngineering.Recipes.RecipesAlloy;
+import fr.mru.OverclockedEngineering.Recipes.RecipesExtraction;
 import fr.mru.OverclockedEngineering.Recipes.RecipesGear;
 import fr.mru.OverclockedEngineering.Recipes.RecipesGrinder;
 import fr.mru.OverclockedEngineering.Recipes.RecipesPlate;
 import fr.mru.OverclockedEngineering.Recipes.RecipesSmelter;
 import fr.mru.OverclockedEngineering.Recipes.RecipesTransposer;
+import fr.mru.OverclockedEngineeringItems.EngineManager;
 import fr.mru.OverclockedEngineeringItems.OverclockedEngineeringItemsBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class FocusManager extends OverclockedEngineeringItemsBase {
+public abstract class AFocusManager extends OverclockedEngineeringItemsBase {
+	
+	public abstract RecipeRequest getRecipeResult(ItemStack... ingredients);
 	
 	public static Item FOCUS_SMELTER = new SmelterFocus(),
 					   FOCUS_GRINDER = new GrinderFocus(),
@@ -25,7 +30,8 @@ public class FocusManager extends OverclockedEngineeringItemsBase {
 					   FOCUS_COMPRESION = new CompresionFocus(),
 					   FOCUS_DECOMPRESION = new DecompresionFocus(),
 					   FOCUS_GEAR = new GearFocus(),
-					   FOCUS_PLATE = new PlateFocus();
+					   FOCUS_PLATE = new PlateFocus(),
+					   FOCUS_EXTRACTION = new ExtractionFocus();
 	
 	public static ArrayList<Item> itemsList = new ArrayList<>();
 	
@@ -40,14 +46,15 @@ public class FocusManager extends OverclockedEngineeringItemsBase {
 		itemsList.add(FOCUS_DECOMPRESION);
 		itemsList.add(FOCUS_GEAR);
 		itemsList.add(FOCUS_PLATE);
+		itemsList.add(FOCUS_EXTRACTION);
 	}
 
-	public FocusManager(String NAME) {
+	public AFocusManager(String NAME) {
 		super(NAME);
 		setMaxStackSize(1);
 	}
 	
-	public static RecipeRequest getRecipeResult(Item focus, ItemStack[] ingredients) {
+	public static RecipeRequest getRecipeResult(Item focus, ItemStack... ingredients) {
 		
 		if (focus instanceof SmelterFocus)
 			return RecipesSmelter.getRecipeResult(ingredients);
@@ -67,13 +74,14 @@ public class FocusManager extends OverclockedEngineeringItemsBase {
 			return RecipesGear.getRecipeResult(ingredients);
 		if (focus instanceof PlateFocus)
 			return RecipesPlate.getRecipeResult(ingredients);
+		if (focus instanceof ExtractionFocus)
+			return RecipesExtraction.getRecipeResult(ingredients);
 		
 		return RecipeRequest.NULL;
 	}
 
 	public static boolean itemIsFocus(Item item) {
-		
-		return item instanceof FocusManager;
+		return item instanceof AFocusManager;
 	}
 
 	public static RecipeRequest getRecipeResult2( Item focus, ItemStack... ingredients) {

@@ -9,8 +9,9 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class RecipeRecycler extends ARecipeManager {
 
+	private static RecipeRequestMap map = new RecipeRequestMap();
 	private static final HashMap<String, Integer>toolsTab = new HashMap<>();
-
+	
 	public static RecipeRequest getRecipeResult(ItemStack[] ingredients) {
 		if ( ingredients[0].isEmpty()) return RecipeRequest.NULL;
 

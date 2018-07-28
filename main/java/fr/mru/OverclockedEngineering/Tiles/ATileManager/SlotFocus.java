@@ -1,7 +1,7 @@
 package fr.mru.OverclockedEngineering.Tiles.ATileManager;
 
 import fr.mru.OverclockedEngineeringItems.EngineManager;
-import fr.mru.OverclockedEngineeringItems.Focus.FocusManager;
+import fr.mru.OverclockedEngineeringItems.Focus.AFocusManager;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
@@ -15,7 +15,7 @@ public class SlotFocus extends Slot {
 	
 	@Override
     public boolean isItemValid(ItemStack stack) {
-        return FocusManager.itemIsFocus(stack.getItem());
+        return AFocusManager.itemIsFocus(stack.getItem());
     }
 
 }

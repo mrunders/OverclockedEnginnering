@@ -3,7 +3,7 @@ package fr.mru.OverclockedEngineering.Tiles.StackFurnace;
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileInstantProcessingManager;
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileManager;
 import fr.mru.OverclockedEngineeringItems.EngineManager;
-import fr.mru.OverclockedEngineeringItems.Focus.FocusManager;
+import fr.mru.OverclockedEngineeringItems.Focus.AFocusManager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Items;

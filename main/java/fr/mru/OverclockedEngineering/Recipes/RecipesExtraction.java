@@ -6,7 +6,7 @@ import java.util.Set;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-public class RecipesPlate extends ARecipeManager {
+public class RecipesExtraction extends ARecipeManager {
 
 	private static RecipeRequestMap map = new RecipeRequestMap();
 	
@@ -16,14 +16,17 @@ public class RecipesPlate extends ARecipeManager {
 	
 	public static boolean initialise() {
 		
-		List<String> ingots = recipesOrdict.get("ingot");
-		for (String plate : recipesOrdict.get("plate") ){
+		List<String> blocks = recipesOrdict.get("block");
+		for (String ore : recipesOrdict.get("ore") ){
 			
-			if ( ingots.contains(plate) ) {
-				map.puttCopyOreDict("plate"+plate, 1, "ingot"+plate, 1);
+			if ( blocks.contains(ore) ) {
+				map.puttCopyOreDict("block"+ore, 1, "ore"+ore, 3);
 			}
 			
 		}
+		
+		map.remove(new ItemStack(Blocks.QUARTZ_ORE), 3);
+		map.puttCopyOreDict("blockQuartz", 1, "oreQuartz", 1);
 		
 		return true;
 	}

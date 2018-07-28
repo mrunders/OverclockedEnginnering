@@ -3,7 +3,7 @@ package fr.mru.OverclockedEngineering.Tiles.TwoModuleMachine;
 import fr.mru.OverclockedEngineering.Recipes.RecipeRequest;
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileInstantProcessingManager;
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileManager;
-import fr.mru.OverclockedEngineeringItems.Focus.FocusManager;
+import fr.mru.OverclockedEngineeringItems.Focus.AFocusManager;
 import net.minecraft.item.ItemStack;
 
 public class TileTwoModulesMachine extends ATileInstantProcessingManager {
@@ -25,11 +25,11 @@ public class TileTwoModulesMachine extends ATileInstantProcessingManager {
 	}
 
 	public RecipeRequest getFirstResult() {
-		return FocusManager.getRecipeResult2(getStackInSlot(FIRST_MODULE_SLOT).getItem(), getStackInSlot(INPUT_SLOT));
+		return AFocusManager.getRecipeResult2(getStackInSlot(FIRST_MODULE_SLOT).getItem(), getStackInSlot(INPUT_SLOT));
 	}
 	
 	public RecipeRequest getSecondResult() {
-		return FocusManager.getRecipeResult2(getStackInSlot(SECOND_MODULE_SLOT).getItem(), getStackInSlot(MIDDLE_SLOT));
+		return AFocusManager.getRecipeResult2(getStackInSlot(SECOND_MODULE_SLOT).getItem(), getStackInSlot(MIDDLE_SLOT));
 	}
 	
 	public boolean canSmeltInSlot(ItemStack result, int slot) {

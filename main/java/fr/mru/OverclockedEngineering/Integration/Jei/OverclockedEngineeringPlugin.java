@@ -1,7 +1,5 @@
 package fr.mru.OverclockedEngineering.Integration.Jei;
 
-import java.util.List;
-
 import fr.mru.OverclockedEngineering.Integration.Jei.AgingGun.RecipeCategorieAgingGun;
 import fr.mru.OverclockedEngineering.Integration.Jei.AgingGun.RecipeMakerAgingGun;
 import fr.mru.OverclockedEngineering.Integration.Jei.AgingGun.RecipeWrapperAgingGun;
@@ -14,6 +12,9 @@ import fr.mru.OverclockedEngineering.Integration.Jei.CompresionModule.RecipeWrap
 import fr.mru.OverclockedEngineering.Integration.Jei.DecompresionModule.RecipeCategorieDecompresionFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.DecompresionModule.RecipeMakerDecompresionModule;
 import fr.mru.OverclockedEngineering.Integration.Jei.DecompresionModule.RecipeWrapperDecompresionFocus;
+import fr.mru.OverclockedEngineering.Integration.Jei.ExtractionModule.RecipeCategorieExtractionFocus;
+import fr.mru.OverclockedEngineering.Integration.Jei.ExtractionModule.RecipeMakerExtractionFocus;
+import fr.mru.OverclockedEngineering.Integration.Jei.ExtractionModule.RecipeWrapperExtractionFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.GearModule.RecipeCategorieGearFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.GearModule.RecipeMakerGearFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.GearModule.RecipeWrapperGearFocus;
@@ -35,13 +36,12 @@ import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.TreeFarmer;
 import fr.mru.OverclockedEngineeringItems.Circuit;
 import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import fr.mru.OverclockedEngineeringItems.AgingGun.AgingGunManager;
-import fr.mru.OverclockedEngineeringItems.Focus.FocusManager;
+import fr.mru.OverclockedEngineeringItems.Focus.AFocusManager;
 import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
 import mezz.jei.api.BlankModPlugin;
 import mezz.jei.api.IGuiHelper;
 import mezz.jei.api.IModRegistry;
 import mezz.jei.api.JEIPlugin;
-import mezz.jei.api.recipe.BlankRecipeWrapper;
 import mezz.jei.api.recipe.VanillaRecipeCategoryUid;
 import net.minecraft.item.ItemStack;
 
@@ -61,6 +61,7 @@ public class OverclockedEngineeringPlugin extends BlankModPlugin {
 		registry.getRecipeTransferRegistry().addRecipeTransferHandler(ContainerOverclockedFurnace.class, RecipeCategorieDecompresionFocus.ID, 0,3,8,36);
 		registry.getRecipeTransferRegistry().addRecipeTransferHandler(ContainerOverclockedFurnace.class, RecipeCategorieGearFocus.ID, 0,3,8,36);
 		registry.getRecipeTransferRegistry().addRecipeTransferHandler(ContainerOverclockedFurnace.class, RecipeCategoriePlateFocus.ID, 0,3,8,36);
+		registry.getRecipeTransferRegistry().addRecipeTransferHandler(ContainerOverclockedFurnace.class, RecipeCategorieExtractionFocus.ID, 0,3,8,36);
 		
 		registry.addRecipeCategories(new RecipeCategorieTreeFarmer(guiHelper),
 									 new RecipeCategorieGrinderFocus(guiHelper),
@@ -70,18 +71,20 @@ public class OverclockedEngineeringPlugin extends BlankModPlugin {
 									 new RecipeCategorieCompresionFocus(guiHelper),
 									 new RecipeCategorieDecompresionFocus(guiHelper),
 									 new RecipeCategorieGearFocus(guiHelper),
-									 new RecipeCategoriePlateFocus(guiHelper)
+									 new RecipeCategoriePlateFocus(guiHelper),
+									 new RecipeCategorieExtractionFocus(guiHelper)
 		);
 		
-		registry.addRecipeHandlers( new RecipeHandlerGeneric<RecipeWrapperTreeFarmer>(RecipeWrapperTreeFarmer.class, RecipeCategorieTreeFarmer.ID),
-				                    new RecipeHandlerGeneric<RecipeWrapperGrinderFocus>(RecipeWrapperGrinderFocus.class, RecipeCategorieGrinderFocus.ID),
-									new RecipeHandlerGeneric<RecipeWrapperAlloyFocus>(RecipeWrapperAlloyFocus.class, RecipeCategorieAlloyFocus.ID),
-									new RecipeHandlerGeneric<RecipeWrapperAgingGun>(RecipeWrapperAgingGun.class, RecipeCategorieAgingGun.ID),
-									new RecipeHandlerGeneric<RecipeWrapperTransposerFocus>(RecipeWrapperTransposerFocus.class, RecipeCategorieTransposerFocus.ID),
-									new RecipeHandlerGeneric<RecipeWrapperCompresionFocus>(RecipeWrapperCompresionFocus.class, RecipeCategorieCompresionFocus.ID),
-									new RecipeHandlerGeneric<RecipeWrapperDecompresionFocus>(RecipeWrapperDecompresionFocus.class, RecipeCategorieDecompresionFocus.ID),
-									new RecipeHandlerGeneric<RecipeWrapperGearFocus>(RecipeWrapperGearFocus.class, RecipeCategorieGearFocus.ID),
-									new RecipeHandlerGeneric<RecipeWrapperPlateFocus>(RecipeWrapperPlateFocus.class, RecipeCategoriePlateFocus.ID)
+		registry.addRecipeHandlers(  new RecipeHandlerGeneric<RecipeWrapperTreeFarmer>(RecipeWrapperTreeFarmer.class, RecipeCategorieTreeFarmer.ID),
+				                     new RecipeHandlerGeneric<RecipeWrapperGrinderFocus>(RecipeWrapperGrinderFocus.class, RecipeCategorieGrinderFocus.ID),
+									 new RecipeHandlerGeneric<RecipeWrapperAlloyFocus>(RecipeWrapperAlloyFocus.class, RecipeCategorieAlloyFocus.ID),
+									 new RecipeHandlerGeneric<RecipeWrapperAgingGun>(RecipeWrapperAgingGun.class, RecipeCategorieAgingGun.ID),
+									 new RecipeHandlerGeneric<RecipeWrapperTransposerFocus>(RecipeWrapperTransposerFocus.class, RecipeCategorieTransposerFocus.ID),
+									 new RecipeHandlerGeneric<RecipeWrapperCompresionFocus>(RecipeWrapperCompresionFocus.class, RecipeCategorieCompresionFocus.ID),
+									 new RecipeHandlerGeneric<RecipeWrapperDecompresionFocus>(RecipeWrapperDecompresionFocus.class, RecipeCategorieDecompresionFocus.ID),
+									 new RecipeHandlerGeneric<RecipeWrapperGearFocus>(RecipeWrapperGearFocus.class, RecipeCategorieGearFocus.ID),
+									 new RecipeHandlerGeneric<RecipeWrapperPlateFocus>(RecipeWrapperPlateFocus.class, RecipeCategoriePlateFocus.ID),
+									 new RecipeHandlerGeneric<RecipeWrapperExtractionFocus>(RecipeWrapperExtractionFocus.class, RecipeCategorieExtractionFocus.ID)
 		);
 		
 
@@ -89,14 +92,15 @@ public class OverclockedEngineeringPlugin extends BlankModPlugin {
 							 new ItemStack(OverclockedEngineeringBlocks.TREE_FARMER),
 							 new ItemStack(OverclokedEngineeringItems.AGING_GUN_INCR),
 							 new ItemStack(OverclokedEngineeringItems.AGING_GUN_DECR),
-							 new ItemStack(FocusManager.FOCUS_TRANSPOSER),
-							 new ItemStack(FocusManager.FOCUS_SMELTER),
-							 new ItemStack(FocusManager.FOCUS_GRINDER),
-							 new ItemStack(FocusManager.FOCUS_ALLOY),
-							 new ItemStack(FocusManager.FOCUS_COMPRESION),
-							 new ItemStack(FocusManager.FOCUS_DECOMPRESION),
-							 new ItemStack(FocusManager.FOCUS_GEAR),
-							 new ItemStack(FocusManager.FOCUS_PLATE),
+							 new ItemStack(AFocusManager.FOCUS_TRANSPOSER),
+							 new ItemStack(AFocusManager.FOCUS_SMELTER),
+							 new ItemStack(AFocusManager.FOCUS_GRINDER),
+							 new ItemStack(AFocusManager.FOCUS_ALLOY),
+							 new ItemStack(AFocusManager.FOCUS_COMPRESION),
+							 new ItemStack(AFocusManager.FOCUS_DECOMPRESION),
+							 new ItemStack(AFocusManager.FOCUS_GEAR),
+							 new ItemStack(AFocusManager.FOCUS_PLATE),
+							 new ItemStack(AFocusManager.FOCUS_EXTRACTION),
 		};
 		
 		String[] id = {
@@ -112,6 +116,7 @@ public class OverclockedEngineeringPlugin extends BlankModPlugin {
 				RecipeCategorieDecompresionFocus.ID,
 				RecipeCategorieGearFocus.ID,
 				RecipeCategoriePlateFocus.ID,
+				RecipeCategorieExtractionFocus.ID,
 		};
 		
 		for ( int i = 0; i < id.length; ++i )
@@ -127,6 +132,7 @@ public class OverclockedEngineeringPlugin extends BlankModPlugin {
 		registry.addRecipes(RecipeMakerDecompresionModule.getRecipes());
 		registry.addRecipes(RecipeMakerGearFocus.getRecipes());
 		registry.addRecipes(RecipeMakerPlateFocus.getRecipes());
+		registry.addRecipes(RecipeMakerExtractionFocus.getRecipes());
 		
 		registry.addDescription(new ItemStack(OverclockedEngineeringBlocks.UNCRAFTING_TABLE), TreeFarmer.DESCRIPTION);
 		registry.addDescription(new ItemStack(OverclokedEngineeringItems.AGING_GUN_INCR), AgingGunManager.DESCRIPTION);

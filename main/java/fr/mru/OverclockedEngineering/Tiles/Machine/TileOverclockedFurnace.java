@@ -3,7 +3,7 @@ package fr.mru.OverclockedEngineering.Tiles.Machine;
 import fr.mru.OverclockedEngineering.Recipes.RecipeRequest;
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileManager;
 import fr.mru.OverclockedEngineeringItems.EngineManager;
-import fr.mru.OverclockedEngineeringItems.Focus.FocusManager;
+import fr.mru.OverclockedEngineeringItems.Focus.AFocusManager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -35,7 +35,7 @@ public class TileOverclockedFurnace extends ATileManager {
 	}
 	
 	public RecipeRequest getRecipeResultRequest() {
-	    return FocusManager.getRecipeResult(this.stacks.get(SLOT_FOCUS).getItem(), new ItemStack[] { this.getStackInSlot(0), this.getStackInSlot(1), this.getStackInSlot(2) });
+	    return AFocusManager.getRecipeResult(this.stacks.get(SLOT_FOCUS).getItem(), this.getStackInSlot(0), this.getStackInSlot(1), this.getStackInSlot(2));
 	}
 	
 	public boolean canSmelt() {
@@ -82,7 +82,7 @@ public class TileOverclockedFurnace extends ATileManager {
 
 	public boolean isBurning() {
 	    return EngineManager.itemIsEngine(this.stacks.get(SLOT_ENGINE).getItem()) && 
-	    	   FocusManager.itemIsFocus(this.stacks.get(SLOT_FOCUS).getItem()) && 
+	    	   AFocusManager.itemIsFocus(this.stacks.get(SLOT_FOCUS).getItem()) && 
 	    	   !this.stacks.get(0).isEmpty();
 	}
 	

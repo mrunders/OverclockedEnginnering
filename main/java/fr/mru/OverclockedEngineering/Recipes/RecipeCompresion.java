@@ -40,7 +40,7 @@ public class RecipeCompresion extends ARecipeManager {
 		}
 		
 		map.puttCopyOreDict("blockDiamond", 1, "gemDiamond", 9);
-		map.puttCopyOreDict("blockEmerald", 1, "dustEmerald", 9);
+		map.puttCopyOreDict("blockEmerald", 1, "gemEmerald", 9);
 		map.puttCopyOreDict("blockRedstone", 1, "dustRedstone", 9);
 		map.puttCopyOreDict("blockLapis", 1, "gemLapis", 9);
 		map.puttCopyOreDict("blockQuartz", 1, "gemQuartz", 4);
@@ -48,7 +48,7 @@ public class RecipeCompresion extends ARecipeManager {
 		map.puttCopy(new ItemStack(Blocks.BRICK_BLOCK), 1, new ItemStack(Items.BRICK), 4);
 		
 		reversedmap.puttCopyOreDict("gemDiamond", 9,"blockDiamond", 1);
-		reversedmap.puttCopyOreDict("dustEmerald", 9, "blockEmerald", 1);
+		reversedmap.puttCopyOreDict("gemEmerald", 9, "blockEmerald", 1);
 		reversedmap.puttCopyOreDict("dustRedstone", 9, "blockRedstone", 1);
 		reversedmap.puttCopyOreDict("gemLapis", 9, "blockLapis", 1);
 		reversedmap.puttCopyOreDict("gemQuartz", 4, "blockQuartz", 1);

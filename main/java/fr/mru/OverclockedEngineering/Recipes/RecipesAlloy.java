@@ -11,7 +11,7 @@ public class RecipesAlloy extends ARecipeManager {
 	
 	private static RecipeRequestMap map = new RecipeRequestMap();
 	
-	public static RecipeRequest getRecipeResult(ItemStack[] ingredients) {
+	public static RecipeRequest getRecipeResult(ItemStack... ingredients) {
 		return map.get(ingredients);
 	}
 	

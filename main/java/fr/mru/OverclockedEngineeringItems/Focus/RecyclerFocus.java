@@ -1,11 +1,18 @@
 package fr.mru.OverclockedEngineeringItems.Focus;
 
-public class RecyclerFocus extends FocusManager {
+import fr.mru.OverclockedEngineering.Recipes.RecipeRecycler;
+import fr.mru.OverclockedEngineering.Recipes.RecipeRequest;
+import net.minecraft.item.ItemStack;
+
+public class RecyclerFocus extends AFocusManager {
 
 	public RecyclerFocus() {
 		super("recycler_focus");
-		
-		/* Armor & tool to back ingot */
+	}
+	
+	@Override
+	public RecipeRequest getRecipeResult(ItemStack... ingredients) {
+		return RecipeRecycler.getRecipeResult(ingredients);
 	}
 
 }

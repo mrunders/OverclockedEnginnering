@@ -1,11 +1,21 @@
 package fr.mru.OverclockedEngineeringItems.Focus;
 
-public class TransposerFocus extends FocusManager {
+import fr.mru.OverclockedEngineering.Recipes.RecipeRequest;
+import fr.mru.OverclockedEngineering.Recipes.RecipesAlloy;
+import fr.mru.OverclockedEngineering.Recipes.RecipesTransposer;
+import net.minecraft.item.ItemStack;
+
+public class TransposerFocus extends AFocusManager {
 
 	public TransposerFocus() {
 		super("transposer_focus");
 	}
 	
-	/* Bucket + EmptyCell = Filled Cell */
+	@Override
+	public RecipeRequest getRecipeResult(ItemStack... ingredients) {
+		
+		if ( ingredients.length == 2) return RecipesTransposer.getRecipeResult(ingredients[0], ingredients[1]);
+		return RecipesTransposer.getRecipeResult(ingredients);
+	}
 
 }

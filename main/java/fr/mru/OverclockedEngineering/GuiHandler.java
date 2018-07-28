@@ -42,6 +42,7 @@ public class GuiHandler implements IGuiHandler {
         } else if (te instanceof TileCobbleForm) {
         	return new ContainerCobbleForm((TileCobbleForm)te, player.inventory);
         }
+
         return null;
     }
 
@@ -61,6 +62,7 @@ public class GuiHandler implements IGuiHandler {
         } else if ( te instanceof TileCobbleForm ) {
         	return new GuiCobbleForm((TileCobbleForm)te, player.inventory);
         }
+
         return null;
     }
 }

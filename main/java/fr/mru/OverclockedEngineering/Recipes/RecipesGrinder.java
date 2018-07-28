@@ -14,8 +14,8 @@ public class RecipesGrinder extends ARecipeManager {
 	
 	private static RecipeRequestMap map = new RecipeRequestMap();
 
-	public static RecipeRequest getRecipeResult(ItemStack[] ingredients) {
-		return map.gett(ingredients[0]);
+	public static RecipeRequest getRecipeResult(ItemStack... ingredient) {
+		return map.get(ingredient);
 	    
 	}
 	

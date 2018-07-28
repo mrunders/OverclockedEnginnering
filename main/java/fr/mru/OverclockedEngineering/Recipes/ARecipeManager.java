@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 public abstract class ARecipeManager {
 	
 	public static final HashMap<String, List<String>> recipesOrdict = new HashMap<>();
-
+	
 	public static boolean initialise() {
 		
 		List<String> oresstr = new ArrayList<>(),
@@ -49,6 +50,7 @@ public abstract class ARecipeManager {
 		RecipeCompresion.initialise();
 		RecipesGear.initialise();
 		RecipesPlate.initialise();
+		RecipesExtraction.initialise();
 		
 		return true;
 	}

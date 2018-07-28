@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
 import fr.mru.OverclockedEngineeringItems.AgingGun.AgingGunDecremantal;
 import fr.mru.OverclockedEngineeringItems.AgingGun.AgingGunIncremental;
-import fr.mru.OverclockedEngineeringItems.Focus.FocusManager;
+import fr.mru.OverclockedEngineeringItems.Focus.AFocusManager;
 import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -46,7 +46,7 @@ public class OverclokedEngineeringItems {
 	static {
 
 		itemsList.addAll(EngineManager.itemsList);
-		itemsList.addAll(FocusManager.itemsList);
+		itemsList.addAll(AFocusManager.itemsList);
 		
 		itemsList.add(CIRCUIT);
 		itemsList.add(CIRCUIT_LARGE);
