@@ -1,6 +1,7 @@
 package fr.mru.OverclockedengineeringBlocks;
 
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
+import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.material.Material;
@@ -25,6 +26,7 @@ public abstract class ABlockContainerManager extends BlockContainer {
 		
 		OverclockedEngineeringBlocks.setBlockName(this, name);
 		setCreativeTab(OverclockedEngineering.overclockedTab);
+		OverclokedEngineeringItems.registerItemBlock(this);
 	}
 	
 	@Override

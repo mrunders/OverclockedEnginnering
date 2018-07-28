@@ -23,6 +23,7 @@ public class MassAnvil extends BlockFalling {
 		
 		OverclockedEngineeringBlocks.setBlockName(this, "mass_anvil");
 		setCreativeTab(OverclockedEngineering.overclockedTab);
+		OverclokedEngineeringItems.registerItemBlock(this);
 	}
 	
 	

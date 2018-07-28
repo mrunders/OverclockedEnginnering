@@ -1,5 +1,6 @@
 package fr.mru.OverclockedEngineering;
 
+import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileManager;
 import fr.mru.OverclockedEngineering.Tiles.Cobble_form.ContainerCobbleForm;
 import fr.mru.OverclockedEngineering.Tiles.Cobble_form.GuiCobbleForm;
 import fr.mru.OverclockedEngineering.Tiles.Cobble_form.TileCobbleForm;
@@ -29,40 +30,12 @@ public class GuiHandler implements IGuiHandler {
     @Override
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         TileEntity te = world.getTileEntity(new BlockPos(x, y, z));
-        if(te instanceof TileOverclockedFurnace) {
-            return new ContainerOverclockedFurnace((TileOverclockedFurnace)te, player.inventory);
-        } else if (te instanceof TileStackFurnace) {
-        	return new ContainerStackFurnace((TileStackFurnace)te, player.inventory);
-        } else if (te instanceof TileTreeFarmer) {
-        	return new ContainerTreeFarmer((TileTreeFarmer)te, player.inventory);
-        } else if (te instanceof TileDHole) {
-        	return new ContainerDHole((TileDHole)te, player.inventory);
-        } else if (te instanceof TileTwoModulesMachine) {
-        	return new ContainerTwoModulesMachine((TileTwoModulesMachine)te, player.inventory);
-        } else if (te instanceof TileCobbleForm) {
-        	return new ContainerCobbleForm((TileCobbleForm)te, player.inventory);
-        }
-
-        return null;
+        return ((ATileManager)te).getServerGuiElement(te, player.inventory);
     }
 
     @Override
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         TileEntity te = world.getTileEntity(new BlockPos(x, y, z));
-        if(te instanceof TileOverclockedFurnace) {
-            return new GuiOverclockedFurnace((TileOverclockedFurnace)te, player.inventory);
-        } else if ( te instanceof TileStackFurnace ) {
-        	return new GuiStackFurnace((TileStackFurnace)te, player.inventory);
-        } else if ( te instanceof TileTreeFarmer ) {
-        	return new GuiTreeFarmer((TileTreeFarmer)te, player.inventory);
-        } else if ( te instanceof TileDHole ) {
-        	return new GuiDHole((TileDHole)te, player.inventory);
-        } else if ( te instanceof TileTwoModulesMachine ) {
-        	return new GuiTwoModulesMachine((TileTwoModulesMachine)te, player.inventory);
-        } else if ( te instanceof TileCobbleForm ) {
-        	return new GuiCobbleForm((TileCobbleForm)te, player.inventory);
-        }
-
-        return null;
+        return ((ATileManager)te).getClientGuiElement(te, player.inventory);
     }
 }

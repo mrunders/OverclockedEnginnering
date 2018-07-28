@@ -9,6 +9,7 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.NonNullList;
 
 public class TileTreeFarmer extends ATileManager {
@@ -100,5 +101,15 @@ public class TileTreeFarmer extends ATileManager {
 	@Override
 	public int getFullRecipeTime() {
 		return 200;
+	}
+
+	@Override
+	public Object getServerGuiElement(TileEntity te, InventoryPlayer inventory) {
+		return new ContainerTreeFarmer((TileTreeFarmer)te, inventory);
+	}
+
+	@Override
+	public Object getClientGuiElement(TileEntity te, InventoryPlayer inventory) {
+    	return new GuiTreeFarmer((TileTreeFarmer)te, inventory);
 	}
 }

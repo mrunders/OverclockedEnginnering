@@ -1,6 +1,7 @@
 package fr.mru.OverclockedengineeringBlocks;
 
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
+import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -12,6 +13,8 @@ public class OverclockedEngineeringBlocksBase extends Block {
 		
 		OverclockedEngineeringBlocks.setBlockName(this, name);
 		setCreativeTab(OverclockedEngineering.overclockedTab);
+		OverclokedEngineeringItems.registerItemBlock(this);
+
 	}
 	
     public boolean isFullCube(IBlockState state) {

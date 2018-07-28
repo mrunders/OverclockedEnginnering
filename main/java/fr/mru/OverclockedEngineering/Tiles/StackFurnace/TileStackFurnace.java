@@ -13,6 +13,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityLockable;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
@@ -72,5 +73,15 @@ public class TileStackFurnace extends ATileInstantProcessingManager {
 	    	
 	    	if ( !getStackInSlot(INPUT_SLOT).isEmpty() && canSmelt() ) smelt();
 	    }
+	}
+
+	@Override
+	public Object getServerGuiElement(TileEntity te, InventoryPlayer inventory) {
+		return new ContainerStackFurnace((TileStackFurnace)te, inventory);
+	}
+
+	@Override
+	public Object getClientGuiElement(TileEntity te, InventoryPlayer inventory) {
+		return new GuiStackFurnace((TileStackFurnace)te, inventory);
 	}
 }

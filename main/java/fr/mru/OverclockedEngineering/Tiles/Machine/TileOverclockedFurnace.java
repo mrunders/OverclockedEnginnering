@@ -4,11 +4,9 @@ import fr.mru.OverclockedEngineering.Recipes.RecipeRequest;
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileManager;
 import fr.mru.OverclockedEngineeringItems.EngineManager;
 import fr.mru.OverclockedEngineeringItems.Focus.AFocusManager;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.Container;
-import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 
 public class TileOverclockedFurnace extends ATileManager {
 	
@@ -115,6 +113,16 @@ public class TileOverclockedFurnace extends ATileManager {
 	@Override
 	public ItemStack getRecipeResult() {
 		return RecipeRequest.nullStack;
+	}
+
+	@Override
+	public Object getServerGuiElement(TileEntity te, InventoryPlayer inventory) {
+		return new ContainerOverclockedFurnace((TileOverclockedFurnace)te, inventory);
+	}
+
+	@Override
+	public Object getClientGuiElement(TileEntity te, InventoryPlayer inventory) {
+		return new GuiOverclockedFurnace((TileOverclockedFurnace)te, inventory);
 	}
 
 }

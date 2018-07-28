@@ -2,9 +2,10 @@ package fr.mru.OverclockedEngineering.Tiles.TwoModuleMachine;
 
 import fr.mru.OverclockedEngineering.Recipes.RecipeRequest;
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileInstantProcessingManager;
-import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileManager;
 import fr.mru.OverclockedEngineeringItems.Focus.AFocusManager;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 
 public class TileTwoModulesMachine extends ATileInstantProcessingManager {
 
@@ -90,6 +91,16 @@ public class TileTwoModulesMachine extends ATileInstantProcessingManager {
 
 	@Override
 	public void smelt() {}
+
+	@Override
+	public Object getServerGuiElement(TileEntity te, InventoryPlayer inventory) {
+    	return new ContainerTwoModulesMachine((TileTwoModulesMachine)te, inventory);
+	}
+
+	@Override
+	public Object getClientGuiElement(TileEntity te, InventoryPlayer inventory) {
+		return new GuiTwoModulesMachine((TileTwoModulesMachine)te, inventory);
+	}
 
 
 }

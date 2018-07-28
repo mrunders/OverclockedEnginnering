@@ -2,8 +2,10 @@ package fr.mru.OverclockedEngineering.Tiles.Cobble_form;
 
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileInstantProcessingManager;
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileManager;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 
 public class TileCobbleForm extends ATileInstantProcessingManager {
 	
@@ -80,6 +82,16 @@ public class TileCobbleForm extends ATileInstantProcessingManager {
 			smelt();
 		}
 		
+	}
+
+	@Override
+	public Object getServerGuiElement(TileEntity te, InventoryPlayer inventory) {
+		return new ContainerCobbleForm((TileCobbleForm)te, inventory);
+	}
+
+	@Override
+	public Object getClientGuiElement(TileEntity te, InventoryPlayer inventory) {
+		return new GuiCobbleForm((TileCobbleForm)te, inventory);
 	}
 
 }

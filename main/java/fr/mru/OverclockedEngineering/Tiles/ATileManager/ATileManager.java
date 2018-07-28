@@ -1,17 +1,16 @@
 package fr.mru.OverclockedEngineering.Tiles.ATileManager;
 
+import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityLockable;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
-import net.minecraft.util.datafix.walkers.ItemStackData;
-import net.minecraft.world.World;
 
 public abstract class ATileManager extends TileEntityLockable implements ITickable {
 	
@@ -20,6 +19,9 @@ public abstract class ATileManager extends TileEntityLockable implements ITickab
 	protected String customName, name;
 	protected int	timePassed = 0;
 	protected int	burningTimeLeft	= 0;
+
+	public abstract Object getServerGuiElement(TileEntity te, InventoryPlayer inventory);
+	public abstract Object getClientGuiElement(TileEntity te, InventoryPlayer inventory);
 	
 	public ATileManager(int stacksLenght, String name) {
 		this.name = name;
