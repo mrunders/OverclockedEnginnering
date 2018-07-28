@@ -13,7 +13,7 @@ public class CompresionFocus extends AFocusManager {
 	
 	@Override
 	public RecipeRequest getRecipeResult(ItemStack... ingredients) {
-		return RecipeCompresion.getRecipeResult(ingredients);
+		return RecipeCompresion.getRecipeResult(ingredients[0]);
 	}
 
 }

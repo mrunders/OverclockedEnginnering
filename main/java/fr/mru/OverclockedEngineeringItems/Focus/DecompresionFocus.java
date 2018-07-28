@@ -12,7 +12,7 @@ public class DecompresionFocus extends AFocusManager {
 	
 	@Override
 	public RecipeRequest getRecipeResult(ItemStack... ingredients) {
-		return RecipesDecompresion.getRecipeResult(ingredients);
+		return RecipesDecompresion.getRecipeResult(ingredients[0]);
 	}
 
 }

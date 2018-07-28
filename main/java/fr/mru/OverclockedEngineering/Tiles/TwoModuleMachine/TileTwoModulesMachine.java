@@ -25,11 +25,13 @@ public class TileTwoModulesMachine extends ATileInstantProcessingManager {
 	}
 
 	public RecipeRequest getFirstResult() {
-		return AFocusManager.getRecipeResult2(getStackInSlot(FIRST_MODULE_SLOT).getItem(), getStackInSlot(INPUT_SLOT));
+		if ( getStackInSlot(FIRST_MODULE_SLOT).isEmpty() ) return RecipeRequest.NULL;
+		return AFocusManager.getRecipeResult(getStackInSlot(FIRST_MODULE_SLOT).getItem(), getStackInSlot(INPUT_SLOT));
 	}
 	
 	public RecipeRequest getSecondResult() {
-		return AFocusManager.getRecipeResult2(getStackInSlot(SECOND_MODULE_SLOT).getItem(), getStackInSlot(MIDDLE_SLOT));
+		if ( getStackInSlot(SECOND_MODULE_SLOT).isEmpty() ) return RecipeRequest.NULL;
+		return AFocusManager.getRecipeResult(getStackInSlot(SECOND_MODULE_SLOT).getItem(), getStackInSlot(MIDDLE_SLOT));
 	}
 	
 	public boolean canSmeltInSlot(ItemStack result, int slot) {

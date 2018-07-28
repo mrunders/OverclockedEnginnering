@@ -55,36 +55,11 @@ public abstract class AFocusManager extends OverclockedEngineeringItemsBase {
 	}
 	
 	public static RecipeRequest getRecipeResult(Item focus, ItemStack... ingredients) {
-		
-		if (focus instanceof SmelterFocus)
-			return RecipesSmelter.getRecipeResult(ingredients);
-		if (focus instanceof GrinderFocus)
-			return RecipesGrinder.getRecipeResult(ingredients);
-		if (focus instanceof AlloyFocus) 
-			return RecipesAlloy.getRecipeResult(ingredients);
-		if (focus instanceof TransposerFocus)
-			return RecipesTransposer.getRecipeResult(ingredients);
-		if (focus instanceof RecyclerFocus)
-			return RecipeRecycler.getRecipeResult(ingredients);
-		if (focus instanceof CompresionFocus)
-			return RecipeCompresion.getRecipeResult(ingredients);
-		if (focus instanceof DecompresionFocus)
-			return RecipeCompresion.getReversedRecipeResult(ingredients);
-		if (focus instanceof GearFocus)
-			return RecipesGear.getRecipeResult(ingredients);
-		if (focus instanceof PlateFocus)
-			return RecipesPlate.getRecipeResult(ingredients);
-		if (focus instanceof ExtractionFocus)
-			return RecipesExtraction.getRecipeResult(ingredients);
-		
-		return RecipeRequest.NULL;
+		return ( itemIsFocus(focus) )? ((AFocusManager)focus).getRecipeResult(ingredients) : RecipeRequest.NULL;
+
 	}
 
 	public static boolean itemIsFocus(Item item) {
 		return item instanceof AFocusManager;
-	}
-
-	public static RecipeRequest getRecipeResult2( Item focus, ItemStack... ingredients) {
-		return getRecipeResult(focus, ingredients);
 	}
 }

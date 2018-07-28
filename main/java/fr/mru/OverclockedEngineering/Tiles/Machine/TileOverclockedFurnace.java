@@ -35,6 +35,8 @@ public class TileOverclockedFurnace extends ATileManager {
 	}
 	
 	public RecipeRequest getRecipeResultRequest() {
+		
+		if ( getStackInSlot(SLOT_FOCUS).isEmpty() ) return RecipeRequest.NULL;
 	    return AFocusManager.getRecipeResult(this.stacks.get(SLOT_FOCUS).getItem(), this.getStackInSlot(0), this.getStackInSlot(1), this.getStackInSlot(2));
 	}
 	
@@ -90,8 +92,8 @@ public class TileOverclockedFurnace extends ATileManager {
 	public void update() {
 	    if (!this.world.isRemote) {
 	    	
-	    	if ( getStackInSlot(0).isEmpty() ) this.setInventorySlotContents(0, removeStackFromSlot(1));
-	    	if ( getStackInSlot(1).isEmpty() ) this.setInventorySlotContents(1, removeStackFromSlot(2));
+	    	moveOnSlot(2, 1);
+	    	moveOnSlot(1, 0);
 
 	        if (!this.isBurning() && this.canSmelt() && !this.hasFuelEmpty()) {
 	            this.burningTimeLeft = this.getFullBurnTime();

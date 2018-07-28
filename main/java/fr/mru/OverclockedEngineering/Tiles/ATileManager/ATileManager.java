@@ -2,6 +2,7 @@ package fr.mru.OverclockedEngineering.Tiles.ATileManager;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
@@ -9,6 +10,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntityLockable;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.datafix.walkers.ItemStackData;
 import net.minecraft.world.World;
 
 public abstract class ATileManager extends TileEntityLockable implements ITickable {
@@ -22,6 +24,34 @@ public abstract class ATileManager extends TileEntityLockable implements ITickab
 	public ATileManager(int stacksLenght, String name) {
 		this.name = name;
 		stacks = NonNullList.withSize(stacksLenght, ItemStack.EMPTY);
+	}
+	
+	public boolean moveOnSlot(int from, int to) {
+		
+        ItemStack froms = getStackInSlot(from);
+        ItemStack tos = getStackInSlot(to);
+        int maxdpl = froms.getCount() + tos.getCount();
+        
+        if ( tos.isEmpty() ) {
+        	setInventorySlotContents(to, removeStackFromSlot(from));
+        	return true;
+        }
+        
+        if ( froms.getItem() == tos.getItem() && froms.getItemDamage() == tos.getItemDamage()) {
+        
+	        if ( maxdpl <= tos.getMaxStackSize() ) {
+	        	removeStackFromSlot(from);
+	        	tos.setCount(maxdpl);
+	        	return true;
+	        	
+	        } else {
+	        	maxdpl = maxdpl % tos.getMaxStackSize();
+	        	froms.setCount(maxdpl);
+	        	tos.setCount(tos.getMaxStackSize());
+	        	return true;
+	        }
+        }
+		return false;
 	}
 	
 	@Override
