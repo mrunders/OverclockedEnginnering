@@ -90,6 +90,8 @@ public class TileOverclockedFurnace extends ATileManager {
 	public void update() {
 	    if (!this.world.isRemote) {
 	    	
+	    	if ( redstoneControl ) return;
+	    	
 	    	moveOnSlot(2, 1);
 	    	moveOnSlot(1, 0);
 

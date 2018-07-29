@@ -72,6 +72,8 @@ public class TileTwoModulesMachine extends ATileInstantProcessingManager {
 		
 	    if (!this.world.isRemote) {
 	    	
+	    	if ( redstoneControl ) return;
+	    	
 	    	if ( this.canSmeltInSlot(this.getSecondResult().getResult(), OUTPUT_SLOT)) {
 	    		this.smeltInSlot(this.getSecondResult(), MIDDLE_SLOT, OUTPUT_SLOT);
 	    	}

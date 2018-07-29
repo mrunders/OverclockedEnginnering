@@ -68,6 +68,7 @@ public abstract class ATileManager extends TileEntityLockable implements ITickab
 	    
 	    this.burningTimeLeft = compound.getInteger("burningTimeLeft");
 	    this.timePassed = compound.getInteger("timePassed");
+	    this.redstoneControl = compound.getBoolean("redstoneControl");
 	}
 
 	@Override
@@ -81,6 +82,7 @@ public abstract class ATileManager extends TileEntityLockable implements ITickab
 	    
 	    compound.setInteger("burningTimeLeft", this.burningTimeLeft);
 	    compound.setInteger("timePassed", this.timePassed);
+	    compound.setBoolean("redstoneControl", this.redstoneControl);
 
 	    return compound;
 	}
@@ -216,10 +218,15 @@ public abstract class ATileManager extends TileEntityLockable implements ITickab
 		return 200;
 	}
 	
+	public void setRedstoneControl(boolean blockPowered) {
+		redstoneControl = blockPowered;
+	}
+	
 	public abstract int getFullRecipeTime();
 	public abstract ItemStack getRecipeResult();
 	public abstract boolean canSmelt();
 	public abstract void smelt();
 	public abstract boolean isBurning();
 	public abstract void update();
+	
 }

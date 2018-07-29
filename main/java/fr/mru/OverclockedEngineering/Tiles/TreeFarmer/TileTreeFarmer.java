@@ -79,6 +79,8 @@ public class TileTreeFarmer extends ATileManager {
 	@Override
 	public void update() {
 	    if (!this.world.isRemote) {
+
+	    	if ( redstoneControl ) return;
 	    	
 	        if (!this.isBurning() && this.canSmelt() && !this.hasFuelEmpty()) {
 	            this.burningTimeLeft = this.getFullBurnTime();

@@ -62,6 +62,8 @@ public class TileDHole extends ATileManager {
 	public void update() {
 		
 	    /*if (!this.world.isRemote) {
+	      
+	       if ( redstoneControl ) return;
 
 	        if (this.canSmelt()) {
 	            this.timePassed++;
