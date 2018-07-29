@@ -15,6 +15,7 @@ import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityLockable;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.event.entity.player.SleepingLocationCheckEvent;
@@ -83,5 +84,20 @@ public class TileStackFurnace extends ATileInstantProcessingManager {
 	@Override
 	public Object getClientGuiElement(TileEntity te, InventoryPlayer inventory) {
 		return new GuiStackFurnace((TileStackFurnace)te, inventory);
+	}
+
+	@Override
+	public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
+		return index == OUTPUT_SLOT;
+	}
+
+	@Override
+	public int[] getInputSlots() {
+		return new int[] {0};
+	}
+
+	@Override
+	public int[] getOutputSlots() {
+		return new int[] {1};
 	}
 }

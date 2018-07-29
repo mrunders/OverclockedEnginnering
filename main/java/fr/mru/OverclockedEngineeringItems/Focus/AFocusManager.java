@@ -31,7 +31,8 @@ public abstract class AFocusManager extends OverclockedEngineeringItemsBase {
 					   FOCUS_DECOMPRESION = new DecompresionFocus(),
 					   FOCUS_GEAR = new GearFocus(),
 					   FOCUS_PLATE = new PlateFocus(),
-					   FOCUS_EXTRACTION = new ExtractionFocus();
+					   FOCUS_EXTRACTION = new ExtractionFocus(),
+					   FOCUS_PCB = new PCBFocus();
 	
 	public static ArrayList<Item> itemsList = new ArrayList<>();
 	
@@ -47,6 +48,7 @@ public abstract class AFocusManager extends OverclockedEngineeringItemsBase {
 		itemsList.add(FOCUS_GEAR);
 		itemsList.add(FOCUS_PLATE);
 		itemsList.add(FOCUS_EXTRACTION);
+		itemsList.add(FOCUS_PCB);
 	}
 
 	public AFocusManager(String NAME) {

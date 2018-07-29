@@ -6,6 +6,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
 
 public class TileCobbleForm extends ATileInstantProcessingManager {
 	
@@ -92,6 +93,21 @@ public class TileCobbleForm extends ATileInstantProcessingManager {
 	@Override
 	public Object getClientGuiElement(TileEntity te, InventoryPlayer inventory) {
 		return new GuiCobbleForm((TileCobbleForm)te, inventory);
+	}
+
+	@Override
+	public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
+		return true;
+	}
+
+	@Override
+	public int[] getInputSlots() {
+		return NONE;
+	}
+
+	@Override
+	public int[] getOutputSlots() {
+		return new int[] {0,1,2,3,4};
 	}
 
 }

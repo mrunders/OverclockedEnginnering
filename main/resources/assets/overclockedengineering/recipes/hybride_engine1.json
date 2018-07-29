@@ -7,8 +7,7 @@
     "key": {
       "W": [
         {
-            "type": "minecraft:fluid",
-            "fluid": "water"
+          "item": "minecraft:water_bucket"
         }
       ],
       "C": [
@@ -31,8 +30,7 @@
       ],
       "L": [
         {
-            "type": "minecraft:fluid",
-            "fluid": "lava"
+          "item": "minecraft:lava_bucket"
         }
       ]
     },

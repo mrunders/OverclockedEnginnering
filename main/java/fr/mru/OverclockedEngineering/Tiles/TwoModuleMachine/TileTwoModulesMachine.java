@@ -6,6 +6,7 @@ import fr.mru.OverclockedEngineeringItems.Focus.AFocusManager;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
 
 public class TileTwoModulesMachine extends ATileInstantProcessingManager {
 
@@ -102,6 +103,21 @@ public class TileTwoModulesMachine extends ATileInstantProcessingManager {
 	@Override
 	public Object getClientGuiElement(TileEntity te, InventoryPlayer inventory) {
 		return new GuiTwoModulesMachine((TileTwoModulesMachine)te, inventory);
+	}
+
+	@Override
+	public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
+		return index == OUTPUT_SLOT;
+	}
+
+	@Override
+	public int[] getInputSlots() {
+		return new int[] {INPUT_SLOT};
+	}
+
+	@Override
+	public int[] getOutputSlots() {
+		return new int[] {OUTPUT_SLOT};
 	}
 
 

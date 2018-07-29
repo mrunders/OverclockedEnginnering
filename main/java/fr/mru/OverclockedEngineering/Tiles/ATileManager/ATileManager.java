@@ -1,6 +1,5 @@
 package fr.mru.OverclockedEngineering.Tiles.ATileManager;
 
-import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -9,10 +8,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityLockable;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
 
 public abstract class ATileManager extends TileEntityLockable implements ITickable {
+	
+	protected final int[] NONE = new int[] {};
 	
 	protected boolean redstoneControl = false;
 	protected NonNullList <ItemStack>stacks;
@@ -222,11 +224,19 @@ public abstract class ATileManager extends TileEntityLockable implements ITickab
 		redstoneControl = blockPowered;
 	}
 	
+    public int[] getSlotsForFace(EnumFacing side) {
+    	
+        return (side == EnumFacing.UP)? getInputSlots() : getOutputSlots();
+    }
+	
 	public abstract int getFullRecipeTime();
 	public abstract ItemStack getRecipeResult();
 	public abstract boolean canSmelt();
 	public abstract void smelt();
 	public abstract boolean isBurning();
 	public abstract void update();
+    public abstract boolean canExtractItem(int index, ItemStack stack, EnumFacing direction);
+    public abstract int[] getInputSlots();
+    public abstract int[] getOutputSlots();
 	
 }

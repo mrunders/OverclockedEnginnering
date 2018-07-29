@@ -16,6 +16,7 @@ item.overclockedengineering.decompresion_focus.name=Decompresion Focus
 item.overclockedengineering.gear_focus.name=Gear Focus 
 item.overclockedengineering.plate_focus.name=Plate Focus 
 item.overclockedengineering.extraction_focus.name=Extraction Focus 
+item.overclockedengineering.pcb_focus.name=PCB Focus 
 item.overclockedengineering.aging_gun_incremantal.name=Aging Gun++
 item.overclockedengineering.aging_gun_decremantal.name=Aging Gun--
 item.overclockedengineering.dimensional_hole_item.name=DHole Gateway (WIP)

@@ -7,6 +7,7 @@ import fr.mru.OverclockedEngineeringItems.Focus.AFocusManager;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
 
 public class TileOverclockedFurnace extends ATileManager {
 	
@@ -125,6 +126,21 @@ public class TileOverclockedFurnace extends ATileManager {
 	@Override
 	public Object getClientGuiElement(TileEntity te, InventoryPlayer inventory) {
 		return new GuiOverclockedFurnace((TileOverclockedFurnace)te, inventory);
+	}
+
+	@Override
+	public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
+		return index == SLOT_OUTPUT;
+	}
+
+	@Override
+	public int[] getInputSlots() {
+		return new int[] {0,1,2};
+	}
+
+	@Override
+	public int[] getOutputSlots() {
+		return new int[] {SLOT_OUTPUT};
 	}
 
 }

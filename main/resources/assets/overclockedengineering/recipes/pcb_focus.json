@@ -1,0 +1,25 @@
+{ 
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      " F ",
+      " N ",
+      "   "  ],
+    "key": {
+      "N": [
+        {
+          "item": "overclockedengineering:circuit",
+          "data": 0
+        }
+      ],
+      "F": [
+        {
+            "item": "overclockedengineering:mass_anvil",
+            "data": 0
+        }
+      ]
+    },
+    "result": {
+      "item": "overclockedengineering:pcb_focus",
+      "data": 0
+    }
+  }

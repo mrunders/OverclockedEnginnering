@@ -21,6 +21,9 @@ import fr.mru.OverclockedEngineering.Integration.Jei.GearModule.RecipeWrapperGea
 import fr.mru.OverclockedEngineering.Integration.Jei.GrinderModule.RecipeCategorieGrinderFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.GrinderModule.RecipeMakerGrinderFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.GrinderModule.RecipeWrapperGrinderFocus;
+import fr.mru.OverclockedEngineering.Integration.Jei.PCBFocus.RecipeCategoriePCBFocus;
+import fr.mru.OverclockedEngineering.Integration.Jei.PCBFocus.RecipeMakerPCBFocus;
+import fr.mru.OverclockedEngineering.Integration.Jei.PCBFocus.RecipeWrapperPCBFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.PlateModule.RecipeCategoriePlateFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.PlateModule.RecipeMakerPlateFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.PlateModule.RecipeWrapperPlateFocus;
@@ -62,6 +65,7 @@ public class OverclockedEngineeringPlugin extends BlankModPlugin {
 		registry.getRecipeTransferRegistry().addRecipeTransferHandler(ContainerOverclockedFurnace.class, RecipeCategorieGearFocus.ID, 0,3,8,36);
 		registry.getRecipeTransferRegistry().addRecipeTransferHandler(ContainerOverclockedFurnace.class, RecipeCategoriePlateFocus.ID, 0,3,8,36);
 		registry.getRecipeTransferRegistry().addRecipeTransferHandler(ContainerOverclockedFurnace.class, RecipeCategorieExtractionFocus.ID, 0,3,8,36);
+		registry.getRecipeTransferRegistry().addRecipeTransferHandler(ContainerOverclockedFurnace.class, RecipeCategoriePCBFocus.ID, 0,3,8,36);
 		
 		registry.addRecipeCategories(new RecipeCategorieTreeFarmer(guiHelper),
 									 new RecipeCategorieGrinderFocus(guiHelper),
@@ -72,7 +76,8 @@ public class OverclockedEngineeringPlugin extends BlankModPlugin {
 									 new RecipeCategorieDecompresionFocus(guiHelper),
 									 new RecipeCategorieGearFocus(guiHelper),
 									 new RecipeCategoriePlateFocus(guiHelper),
-									 new RecipeCategorieExtractionFocus(guiHelper)
+									 new RecipeCategorieExtractionFocus(guiHelper),
+									 new RecipeCategoriePCBFocus(guiHelper)
 		);
 		
 		registry.addRecipeHandlers(  new RecipeHandlerGeneric<RecipeWrapperTreeFarmer>(RecipeWrapperTreeFarmer.class, RecipeCategorieTreeFarmer.ID),
@@ -84,7 +89,8 @@ public class OverclockedEngineeringPlugin extends BlankModPlugin {
 									 new RecipeHandlerGeneric<RecipeWrapperDecompresionFocus>(RecipeWrapperDecompresionFocus.class, RecipeCategorieDecompresionFocus.ID),
 									 new RecipeHandlerGeneric<RecipeWrapperGearFocus>(RecipeWrapperGearFocus.class, RecipeCategorieGearFocus.ID),
 									 new RecipeHandlerGeneric<RecipeWrapperPlateFocus>(RecipeWrapperPlateFocus.class, RecipeCategoriePlateFocus.ID),
-									 new RecipeHandlerGeneric<RecipeWrapperExtractionFocus>(RecipeWrapperExtractionFocus.class, RecipeCategorieExtractionFocus.ID)
+									 new RecipeHandlerGeneric<RecipeWrapperExtractionFocus>(RecipeWrapperExtractionFocus.class, RecipeCategorieExtractionFocus.ID),
+									 new RecipeHandlerGeneric<RecipeWrapperPCBFocus>(RecipeWrapperPCBFocus.class, RecipeCategoriePCBFocus.ID)
 		);
 		
 
@@ -101,6 +107,7 @@ public class OverclockedEngineeringPlugin extends BlankModPlugin {
 							 new ItemStack(AFocusManager.FOCUS_GEAR),
 							 new ItemStack(AFocusManager.FOCUS_PLATE),
 							 new ItemStack(AFocusManager.FOCUS_EXTRACTION),
+							 new ItemStack(AFocusManager.FOCUS_PCB),
 		};
 		
 		String[] id = {
@@ -117,6 +124,7 @@ public class OverclockedEngineeringPlugin extends BlankModPlugin {
 				RecipeCategorieGearFocus.ID,
 				RecipeCategoriePlateFocus.ID,
 				RecipeCategorieExtractionFocus.ID,
+				RecipeCategoriePCBFocus.ID,
 		};
 		
 		for ( int i = 0; i < id.length; ++i )
@@ -133,6 +141,7 @@ public class OverclockedEngineeringPlugin extends BlankModPlugin {
 		registry.addRecipes(RecipeMakerGearFocus.getRecipes());
 		registry.addRecipes(RecipeMakerPlateFocus.getRecipes());
 		registry.addRecipes(RecipeMakerExtractionFocus.getRecipes());
+		registry.addRecipes(RecipeMakerPCBFocus.getRecipes());
 		
 		registry.addDescription(new ItemStack(OverclockedEngineeringBlocks.UNCRAFTING_TABLE), TreeFarmer.DESCRIPTION);
 		registry.addDescription(new ItemStack(OverclokedEngineeringItems.AGING_GUN_INCR), AgingGunManager.DESCRIPTION);

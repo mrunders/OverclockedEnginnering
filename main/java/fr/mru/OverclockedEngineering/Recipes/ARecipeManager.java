@@ -33,6 +33,9 @@ public abstract class ARecipeManager {
 			else if (s.startsWith("plate")) platesstr.add(s.substring(5));
 		}
 		
+		oresstr.remove("Quartz");
+		gemsstr.remove("Quartz");
+		
 		recipesOrdict.put("ore", oresstr);
 		recipesOrdict.put("dust", dustsstr);
 		recipesOrdict.put("ingot", ingotsstr);
@@ -51,6 +54,7 @@ public abstract class ARecipeManager {
 		RecipesGear.initialise();
 		RecipesPlate.initialise();
 		RecipesExtraction.initialise();
+		RecipesPCB.initialise();
 		
 		return true;
 	}

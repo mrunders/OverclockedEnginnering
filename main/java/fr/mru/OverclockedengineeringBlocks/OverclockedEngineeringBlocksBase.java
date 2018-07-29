@@ -13,7 +13,6 @@ public class OverclockedEngineeringBlocksBase extends Block {
 		
 		OverclockedEngineeringBlocks.setBlockName(this, name);
 		setCreativeTab(OverclockedEngineering.overclockedTab);
-		OverclokedEngineeringItems.registerItemBlock(this);
 
 	}
 	

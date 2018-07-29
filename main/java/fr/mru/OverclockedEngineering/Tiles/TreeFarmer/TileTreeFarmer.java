@@ -10,6 +10,7 @@ import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
 
 public class TileTreeFarmer extends ATileManager {
@@ -113,5 +114,20 @@ public class TileTreeFarmer extends ATileManager {
 	@Override
 	public Object getClientGuiElement(TileEntity te, InventoryPlayer inventory) {
     	return new GuiTreeFarmer((TileTreeFarmer)te, inventory);
+	}
+
+	@Override
+	public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
+		return WOOD_SLOT <= index;
+	}
+
+	@Override
+	public int[] getInputSlots() {
+		return new int[] {1};
+	}
+
+	@Override
+	public int[] getOutputSlots() {
+		return new int[] {2,3};
 	}
 }

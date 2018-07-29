@@ -47,12 +47,24 @@ public class OverclokedEngineeringItems {
 		itemsList.add(AGING_GUN_INCR);
 		itemsList.add(AGING_GUN_DECR);
 		itemsList.add(DIMENSIONAL_HOLE);
-
+		
+		registerItemBlock(OverclockedEngineeringBlocks.TWO_MODULES_MACHINE,
+				          OverclockedEngineeringBlocks.TREE_FARMER,
+				          OverclockedEngineeringBlocks.STACK_FURNACE,
+				          OverclockedEngineeringBlocks.MACHINE_BLOCK,
+				          OverclockedEngineeringBlocks.DIMENSIONAL_HOLE,
+				          OverclockedEngineeringBlocks.COBBLE_FORM,
+				          
+				          OverclockedEngineeringBlocks.MACHINE_CASING,
+				          OverclockedEngineeringBlocks.MASS_ANVIL,
+				          OverclockedEngineeringBlocks.UNCRAFTING_TABLE
+				          );
 	}
 	
-	public static void registerItemBlock(Block block) {
+	public static void registerItemBlock(Block... block) {
 		
-		itemsList.add(new ItemBlock(block).setRegistryName(block.getRegistryName()));
+		for (Block b : block)
+			itemsList.add(new ItemBlock(b).setRegistryName(b.getRegistryName()));
 	}
 
     public static void setItemName(Item item, String name) {

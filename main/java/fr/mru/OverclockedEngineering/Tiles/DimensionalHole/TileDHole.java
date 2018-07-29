@@ -9,6 +9,7 @@ import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 
 public class TileDHole extends ATileManager {
@@ -92,6 +93,21 @@ public class TileDHole extends ATileManager {
 	@Override
 	public Object getClientGuiElement(TileEntity te, InventoryPlayer inventory) {
 		return new GuiDHole((TileDHole)te, inventory);
+	}
+
+	@Override
+	public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
+		return false;
+	}
+
+	@Override
+	public int[] getInputSlots() {
+		return NONE;
+	}
+
+	@Override
+	public int[] getOutputSlots() {
+		return NONE;
 	}
 	
 	

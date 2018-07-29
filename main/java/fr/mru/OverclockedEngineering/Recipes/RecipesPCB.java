@@ -3,11 +3,13 @@ package fr.mru.OverclockedEngineering.Recipes;
 import java.util.List;
 import java.util.Set;
 
+import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-public class RecipesExtraction extends ARecipeManager {
-
+public class RecipesPCB extends ARecipeManager {
+	
 	private static RecipeRequestMap map = new RecipeRequestMap();
 	
 	public static RecipeRequest getRecipeResult(ItemStack... ingredients) {
@@ -15,16 +17,9 @@ public class RecipesExtraction extends ARecipeManager {
 	}
 	
 	public static boolean initialise() {
-		
-		List<String> blocks = recipesOrdict.get("block");
-		for (String ore : recipesOrdict.get("ore") ){
-			
-			if ( blocks.contains(ore) ) {
-				map.puttCopyOreDict("block"+ore, 1, "ore"+ore, 3);
-			}
-		}
-		
-		map.puttCopyOreDict("blockQuartz", 1, "oreQuartz", 1);
+
+		map.puttCopy(new ItemStack(OverclokedEngineeringItems.CIRCUIT), 1, new ItemStack(Items.IRON_INGOT), 1);
+		map.puttCopy(new ItemStack(OverclokedEngineeringItems.CIRCUIT_LARGE), 1, new ItemStack(Blocks.IRON_BLOCK), 1);
 		
 		return true;
 	}
