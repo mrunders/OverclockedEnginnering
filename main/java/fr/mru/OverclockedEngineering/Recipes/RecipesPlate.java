@@ -32,7 +32,4 @@ public class RecipesPlate extends ARecipeManager {
 		return map.keySet();
 	}
 
-	public static RecipeRequest getRecipeResultForInput(ItemStack... itemStack) {
-		return getRecipeResult(itemStack);
-	}
 }

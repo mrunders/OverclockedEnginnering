@@ -49,9 +49,4 @@ public class RecipesGrinder extends ARecipeManager {
 	public static Set<List<ItemStack>> getRecipesList() {
 		return map.keySet();
 	}
-	
-	public static RecipeRequest getResultForInput(ItemStack... inputs) {
-		return map.gett(inputs);
-		
-	}
 }

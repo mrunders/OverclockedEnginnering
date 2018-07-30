@@ -32,8 +32,4 @@ public class RecipesExtraction extends ARecipeManager {
 	public static Set<List<ItemStack>> getRecipesMap() {
 		return map.keySet();
 	}
-
-	public static RecipeRequest getRecipeResultForInput(ItemStack... itemStack) {
-		return getRecipeResult(itemStack);
-	}
 }

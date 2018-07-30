@@ -14,7 +14,7 @@ public class RecipeMakerExtractionFocus {
 		
 		for ( List<ItemStack> inputs : RecipesExtraction.getRecipesMap() ) {
 			
-			ItemStack output = RecipesExtraction.getRecipeResultForInput(inputs.get(0)).getResult();
+			ItemStack output = RecipesExtraction.getRecipeResult(inputs.get(0)).getResult();
 			list.add(new RecipeWrapperExtractionFocus(inputs, output));
 		}
 		

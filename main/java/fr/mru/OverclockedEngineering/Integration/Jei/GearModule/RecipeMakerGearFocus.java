@@ -16,7 +16,7 @@ public class RecipeMakerGearFocus {
 		
 		for ( List<ItemStack> inputs : RecipesGear.getRecipesMap() ) {
 			
-			ItemStack output = RecipesGear.getRecipeResultForInput(inputs.get(0)).getResult();
+			ItemStack output = RecipesGear.getRecipeResult(inputs.get(0)).getResult();
 			list.add(new RecipeWrapperGearFocus(inputs, output));
 		}
 		

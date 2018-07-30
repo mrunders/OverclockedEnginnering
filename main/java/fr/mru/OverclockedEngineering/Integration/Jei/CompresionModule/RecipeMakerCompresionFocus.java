@@ -16,7 +16,7 @@ public class RecipeMakerCompresionFocus {
 		
 		for ( List<ItemStack> inputs : RecipeCompresion.getRecipesList() ) {
 			
-			ItemStack output = RecipeCompresion.getResultForInput(inputs.get(0)).getResult();
+			ItemStack output = RecipeCompresion.getRecipeResult(inputs.get(0)).getResult();
 			list.add(new RecipeWrapperCompresionFocus(inputs, output));
 		}
 		

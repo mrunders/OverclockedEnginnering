@@ -4,9 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.mru.OverclockedEngineering.Recipes.RecipeCompresion;
-import fr.mru.OverclockedEngineering.Recipes.RecipesGrinder;
+import fr.mru.OverclockedEngineering.Recipes.RecipesDecompresion;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.RecipesMapCloning;
 
 public class RecipeMakerDecompresionModule {
 	
@@ -16,7 +15,7 @@ public class RecipeMakerDecompresionModule {
 		
 		for ( List<ItemStack> inputs : RecipeCompresion.getReversedRecipesList() ) {
 			
-			ItemStack output = RecipeCompresion.getReversedResultForInput(inputs.get(0)).getResult();
+			ItemStack output = RecipesDecompresion.getRecipeResult(inputs.get(0)).getResult();
 			list.add(new RecipeWrapperDecompresionFocus(inputs, output));
 		}
 		

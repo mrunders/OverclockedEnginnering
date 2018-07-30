@@ -39,8 +39,6 @@ public class RecipesAlloy extends ARecipeManager {
 		return map.keySet();
 	}
 
-	public static RecipeRequest getResultForInputs(List<ItemStack> a) {
-		return map.gett(a.get(0), a.get(1));
-	}
+
 
 }

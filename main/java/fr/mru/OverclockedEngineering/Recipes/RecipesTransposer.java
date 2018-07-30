@@ -29,7 +29,4 @@ public class RecipesTransposer extends ARecipeManager {
 		return map.keySet();
 	}
 
-	public static RecipeRequest getRecipeResult(List<ItemStack> a) {
-		return map.gett(a.get(0), a.get(1));
-	}
 }

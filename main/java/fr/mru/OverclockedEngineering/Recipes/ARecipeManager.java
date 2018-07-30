@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
-public abstract class ARecipeManager {
+public abstract class ARecipeManager implements IRecipeManager {
 	
 	public static final HashMap<String, List<String>> recipesOrdict = new HashMap<>();
 	
@@ -55,6 +54,7 @@ public abstract class ARecipeManager {
 		RecipesPlate.initialise();
 		RecipesExtraction.initialise();
 		RecipesPCB.initialise();
+		RecipesSawmill.initialise();
 		
 		return true;
 	}

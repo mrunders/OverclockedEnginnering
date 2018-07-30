@@ -1,4 +1,4 @@
-package fr.mru.OverclockedEngineering.Integration.Jei.PCBFocus;
+package fr.mru.OverclockedEngineering.Integration.Jei.PCBModule;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ public class RecipeMakerPCBFocus {
 		
 		for ( List<ItemStack> inputs : RecipesPCB.getRecipesMap() ) {
 			
-			ItemStack output = RecipesPCB.getRecipeResultForInput(inputs.get(0)).getResult();
+			ItemStack output = RecipesPCB.getRecipeResult(inputs.get(0)).getResult();
 			list.add(new RecipeWrapperPCBFocus(inputs, output));
 		}
 		

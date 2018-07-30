@@ -54,8 +54,8 @@ public class RecipeCompresion extends ARecipeManager {
 		reversedmap.puttCopyOreDict("gemLapis", 9, "blockLapis", 1);
 		reversedmap.puttCopyOreDict("gemQuartz", 4, "blockQuartz", 1);
 		reversedmap.puttCopyOreDict("gemPrismarine", 4, "blockPrismarine", 1);
-		reversedmap.puttCopy(new ItemStack(Items.BRICK), 4, new ItemStack(Blocks.BRICK_BLOCK), 1);
-		reversedmap.puttCopy(new ItemStack(OverclokedEngineeringItems.CIRCUIT), 9, new ItemStack(OverclokedEngineeringItems.CIRCUIT_LARGE), 1);
+		reversedmap.putt(new ItemStack(Items.BRICK, 4), new ItemStack(Blocks.BRICK_BLOCK, 1));
+		reversedmap.putt(new ItemStack(OverclokedEngineeringItems.CIRCUIT, 9), new ItemStack(OverclokedEngineeringItems.CIRCUIT_LARGE, 1));
 		
 		return true;
 		
@@ -67,14 +67,6 @@ public class RecipeCompresion extends ARecipeManager {
 
 	public static Set<List<ItemStack>> getReversedRecipesList() {
 		return reversedmap.keySet();
-	}
-	
-	public static RecipeRequest getResultForInput(ItemStack... itemStack) {
-		return getRecipeResult(itemStack);
-	}
-	
-	public static RecipeRequest getReversedResultForInput(ItemStack... itemStack) {
-		return getReversedRecipeResult(itemStack);
 	}
 
 }

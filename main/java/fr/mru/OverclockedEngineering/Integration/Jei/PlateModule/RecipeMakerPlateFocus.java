@@ -14,7 +14,7 @@ public class RecipeMakerPlateFocus {
 		
 		for ( List<ItemStack> inputs : RecipesPlate.getRecipesMap() ) {
 			
-			ItemStack output = RecipesPlate.getRecipeResultForInput(inputs.get(0)).getResult();
+			ItemStack output = RecipesPlate.getRecipeResult(inputs.get(0)).getResult();
 			list.add(new RecipeWrapperPlateFocus(inputs, output));
 		}
 		

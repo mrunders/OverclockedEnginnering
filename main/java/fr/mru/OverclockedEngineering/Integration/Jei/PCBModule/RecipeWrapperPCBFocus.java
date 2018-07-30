@@ -1,4 +1,4 @@
-package fr.mru.OverclockedEngineering.Integration.Jei.PCBFocus;
+package fr.mru.OverclockedEngineering.Integration.Jei.PCBModule;
 
 import java.util.Collections;
 import java.util.List;

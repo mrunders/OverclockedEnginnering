@@ -1,4 +1,4 @@
-package fr.mru.OverclockedEngineering.Integration.Jei.PCBFocus;
+package fr.mru.OverclockedEngineering.Integration.Jei.SawmillModule;
 
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
 import mezz.jei.api.IGuiHelper;
@@ -11,14 +11,14 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
-public class RecipeCategoriePCBFocus extends BlankRecipeCategory<RecipeWrapperPCBFocus>{
+public class RecipeCategorieSawmillFocus extends BlankRecipeCategory<RecipeWrapperSawmillFocus>{
 	
-	public static final String ID = "overclockedengineering.pcbfocus";
-	public static final String TITLE = I18n.format("PCB Focus");
+	public static final String ID = "overclockedengineering.sawmillfocus";
+	public static final String TITLE = I18n.format("Sawmill Focus");
 	
 	private IDrawable background = null;
 	
-	public RecipeCategoriePCBFocus(IGuiHelper helper) {
+	public RecipeCategorieSawmillFocus(IGuiHelper helper) {
 
 		background = helper.createDrawable(new ResourceLocation(OverclockedEngineering.MODID,"textures/gui/container/overclocked_furnace.png"), 25, 5, 120, 70);
 	}
@@ -44,7 +44,7 @@ public class RecipeCategoriePCBFocus extends BlankRecipeCategory<RecipeWrapperPC
 	}
 
 	@Override
-	public void setRecipe(IRecipeLayout arg0, RecipeWrapperPCBFocus arg1, IIngredients arg2) {
+	public void setRecipe(IRecipeLayout arg0, RecipeWrapperSawmillFocus arg1, IIngredients arg2) {
 		
 		IGuiItemStackGroup group = arg0.getItemStacks();
 		

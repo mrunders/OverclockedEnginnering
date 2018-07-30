@@ -14,7 +14,7 @@ public class RecipeMakerAlloyFocus {
 		
 		for ( List<ItemStack> inputs : RecipesAlloy.getRecipesList() ) {
 			
-			ItemStack output = RecipesAlloy.getResultForInputs(inputs).getResult();
+			ItemStack output = RecipesAlloy.getRecipeResult(inputs.toArray(new ItemStack[] {})).getResult();
 			list.add(new RecipeWrapperAlloyFocus(inputs, output));
 		}
 		

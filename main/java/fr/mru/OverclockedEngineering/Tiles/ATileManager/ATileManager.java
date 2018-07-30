@@ -1,8 +1,11 @@
 package fr.mru.OverclockedEngineering.Tiles.ATileManager;
 
+import java.util.stream.IntStream;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
+import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -12,7 +15,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
 
-public abstract class ATileManager extends TileEntityLockable implements ITickable {
+public abstract class ATileManager extends TileEntityLockable implements ITickable,  ISidedInventory {
 	
 	protected final int[] NONE = new int[] {};
 	
@@ -220,6 +223,12 @@ public abstract class ATileManager extends TileEntityLockable implements ITickab
 		return 200;
 	}
 	
+
+	@Override
+	public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction) {
+		return direction.equals(EnumFacing.UP) && IntStream.of(getInputSlots()).anyMatch(x -> x == index);
+	}
+	
 	public void setRedstoneControl(boolean blockPowered) {
 		redstoneControl = blockPowered;
 	}
@@ -227,6 +236,21 @@ public abstract class ATileManager extends TileEntityLockable implements ITickab
     public int[] getSlotsForFace(EnumFacing side) {
     	
         return (side == EnumFacing.UP)? getInputSlots() : getOutputSlots();
+    }
+    
+    
+    net.minecraftforge.items.IItemHandler handlerTop = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, net.minecraft.util.EnumFacing.UP);
+    net.minecraftforge.items.IItemHandler handlerBottom = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, net.minecraft.util.EnumFacing.DOWN);
+
+    @SuppressWarnings("unchecked")
+    @Override
+    @javax.annotation.Nullable
+    public <T> T getCapability(net.minecraftforge.common.capabilities.Capability<T> capability, @javax.annotation.Nullable net.minecraft.util.EnumFacing facing)
+    {
+        if (facing != null && capability == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+            return (facing == EnumFacing.UP)? (T) handlerTop : (T) handlerBottom;
+
+        return super.getCapability(capability, facing);
     }
 	
 	public abstract int getFullRecipeTime();

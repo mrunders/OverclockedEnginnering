@@ -21,20 +21,21 @@ import fr.mru.OverclockedEngineering.Integration.Jei.GearModule.RecipeWrapperGea
 import fr.mru.OverclockedEngineering.Integration.Jei.GrinderModule.RecipeCategorieGrinderFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.GrinderModule.RecipeMakerGrinderFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.GrinderModule.RecipeWrapperGrinderFocus;
-import fr.mru.OverclockedEngineering.Integration.Jei.PCBFocus.RecipeCategoriePCBFocus;
-import fr.mru.OverclockedEngineering.Integration.Jei.PCBFocus.RecipeMakerPCBFocus;
-import fr.mru.OverclockedEngineering.Integration.Jei.PCBFocus.RecipeWrapperPCBFocus;
+import fr.mru.OverclockedEngineering.Integration.Jei.PCBModule.RecipeCategoriePCBFocus;
+import fr.mru.OverclockedEngineering.Integration.Jei.PCBModule.RecipeMakerPCBFocus;
+import fr.mru.OverclockedEngineering.Integration.Jei.PCBModule.RecipeWrapperPCBFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.PlateModule.RecipeCategoriePlateFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.PlateModule.RecipeMakerPlateFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.PlateModule.RecipeWrapperPlateFocus;
+import fr.mru.OverclockedEngineering.Integration.Jei.SawmillModule.RecipeCategorieSawmillFocus;
+import fr.mru.OverclockedEngineering.Integration.Jei.SawmillModule.RecipeMakerSawmillFocus;
+import fr.mru.OverclockedEngineering.Integration.Jei.SawmillModule.RecipeWrapperSawmillFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.TransposerModule.RecipeCategorieTransposerFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.TransposerModule.RecipeMakerTransposerFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.TransposerModule.RecipeWrapperTransposerFocus;
 import fr.mru.OverclockedEngineering.Integration.Jei.TreeFarmer.RecipeCategorieTreeFarmer;
 import fr.mru.OverclockedEngineering.Integration.Jei.TreeFarmer.RecipeMakerTreeFarmer;
 import fr.mru.OverclockedEngineering.Integration.Jei.TreeFarmer.RecipeWrapperTreeFarmer;
-import fr.mru.OverclockedEngineering.Tiles.Machine.ContainerOverclockedFurnace;
-import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.ContainerTreeFarmer;
 import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.TreeFarmer;
 import fr.mru.OverclockedEngineeringItems.Circuit;
 import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
@@ -66,7 +67,8 @@ public class OverclockedEngineeringPlugin extends BlankModPlugin {
 									 new RecipeCategorieGearFocus(guiHelper),
 									 new RecipeCategoriePlateFocus(guiHelper),
 									 new RecipeCategorieExtractionFocus(guiHelper),
-									 new RecipeCategoriePCBFocus(guiHelper)
+									 new RecipeCategoriePCBFocus(guiHelper),
+									 new RecipeCategorieSawmillFocus(guiHelper)
 		);
 		
 		registry.addRecipeHandlers(  new RecipeHandlerGeneric<RecipeWrapperTreeFarmer>(RecipeWrapperTreeFarmer.class, RecipeCategorieTreeFarmer.ID),
@@ -79,7 +81,8 @@ public class OverclockedEngineeringPlugin extends BlankModPlugin {
 									 new RecipeHandlerGeneric<RecipeWrapperGearFocus>(RecipeWrapperGearFocus.class, RecipeCategorieGearFocus.ID),
 									 new RecipeHandlerGeneric<RecipeWrapperPlateFocus>(RecipeWrapperPlateFocus.class, RecipeCategoriePlateFocus.ID),
 									 new RecipeHandlerGeneric<RecipeWrapperExtractionFocus>(RecipeWrapperExtractionFocus.class, RecipeCategorieExtractionFocus.ID),
-									 new RecipeHandlerGeneric<RecipeWrapperPCBFocus>(RecipeWrapperPCBFocus.class, RecipeCategoriePCBFocus.ID)
+									 new RecipeHandlerGeneric<RecipeWrapperPCBFocus>(RecipeWrapperPCBFocus.class, RecipeCategoriePCBFocus.ID),
+									 new RecipeHandlerGeneric<RecipeWrapperSawmillFocus>(RecipeWrapperSawmillFocus.class, RecipeCategorieSawmillFocus.ID)
 		);
 		
 
@@ -97,6 +100,7 @@ public class OverclockedEngineeringPlugin extends BlankModPlugin {
 							 new ItemStack(AFocusManager.FOCUS_PLATE),
 							 new ItemStack(AFocusManager.FOCUS_EXTRACTION),
 							 new ItemStack(AFocusManager.FOCUS_PCB),
+							 new ItemStack(AFocusManager.FOCUS_SAWMILL),
 		};
 		
 		String[] id = {
@@ -114,6 +118,7 @@ public class OverclockedEngineeringPlugin extends BlankModPlugin {
 				RecipeCategoriePlateFocus.ID,
 				RecipeCategorieExtractionFocus.ID,
 				RecipeCategoriePCBFocus.ID,
+				RecipeCategorieSawmillFocus.ID,
 		};
 		
 		for ( int i = 0; i < id.length; ++i )
@@ -131,6 +136,7 @@ public class OverclockedEngineeringPlugin extends BlankModPlugin {
 		registry.addRecipes(RecipeMakerPlateFocus.getRecipes());
 		registry.addRecipes(RecipeMakerExtractionFocus.getRecipes());
 		registry.addRecipes(RecipeMakerPCBFocus.getRecipes());
+		registry.addRecipes(RecipeMakerSawmillFocus.getRecipes());
 		
 		registry.addDescription(new ItemStack(OverclockedEngineeringBlocks.UNCRAFTING_TABLE), TreeFarmer.DESCRIPTION);
 		registry.addDescription(new ItemStack(OverclokedEngineeringItems.AGING_GUN_INCR), AgingGunManager.DESCRIPTION);
