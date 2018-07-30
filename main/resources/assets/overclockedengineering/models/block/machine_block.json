@@ -1,8 +1,11 @@
 {
     "parent": "block/orientable",
     "textures": {
-        "front": "overclockedengineering:blocks/machine_block_off",
-        "top": "overclockedengineering:blocks/machine_block_side",
-        "side": "overclockedengineering:blocks/machine_block_side"
+        "north": "overclockedengineering:blocks/machine_block_off",
+        "down": "overclockedengineering:blocks/machine_block_bottom",
+        "up": "overclockedengineering:blocks/machine_block_top",
+        "east": "overclockedengineering:blocks/machine_block_side",
+        "west": "overclockedengineering:blocks/machine_block_side",
+        "south": "overclockedengineering:blocks/machine_block_side"
     }
 }
