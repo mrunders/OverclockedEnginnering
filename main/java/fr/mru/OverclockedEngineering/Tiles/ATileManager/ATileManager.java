@@ -46,13 +46,13 @@ public abstract class ATileManager extends TileEntityLockable implements ITickab
         
         if ( froms.getItem() == tos.getItem() && froms.getItemDamage() == tos.getItemDamage()) {
         
-	        if ( maxdpl <= tos.getMaxStackSize() ) {
+	        if ( maxdpl < tos.getMaxStackSize() ) {
 	        	removeStackFromSlot(from);
 	        	tos.setCount(maxdpl);
 	        	return true;
 	        	
 	        } else {
-	        	maxdpl = maxdpl % tos.getMaxStackSize();
+	        	maxdpl = maxdpl - tos.getMaxStackSize();
 	        	froms.setCount(maxdpl);
 	        	tos.setCount(tos.getMaxStackSize());
 	        	return true;
