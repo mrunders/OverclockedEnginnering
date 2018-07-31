@@ -23,6 +23,7 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 public class UncraftingTable extends OverclockedEngineeringBlocksBase {
 	
 	private static final SoundEvent SOUND = SoundEvent.REGISTRY.getObject(new ResourceLocation("minecraft:entity.experience_orb.pickup"));
+	public static final String DESCRIPTION = "Uncraft everything that was crafted with crafting table by right click on this block (cost 9 experience levels per uncraft)";
 
 	public UncraftingTable() {
 		super("uncrafting_table");

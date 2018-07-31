@@ -37,6 +37,7 @@ import fr.mru.OverclockedEngineering.Integration.Jei.TreeFarmer.RecipeCategorieT
 import fr.mru.OverclockedEngineering.Integration.Jei.TreeFarmer.RecipeMakerTreeFarmer;
 import fr.mru.OverclockedEngineering.Integration.Jei.TreeFarmer.RecipeWrapperTreeFarmer;
 import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.TreeFarmer;
+import fr.mru.OverclockedEngineering.Tiles.UncraftingTable.UncraftingTable;
 import fr.mru.OverclockedEngineeringItems.Circuit;
 import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import fr.mru.OverclockedEngineeringItems.AgingGun.AgingGunManager;
@@ -138,7 +139,7 @@ public class OverclockedEngineeringPlugin extends BlankModPlugin {
 		registry.addRecipes(RecipeMakerPCBFocus.getRecipes());
 		registry.addRecipes(RecipeMakerSawmillFocus.getRecipes());
 		
-		registry.addDescription(new ItemStack(OverclockedEngineeringBlocks.UNCRAFTING_TABLE), TreeFarmer.DESCRIPTION);
+		registry.addDescription(new ItemStack(OverclockedEngineeringBlocks.UNCRAFTING_TABLE), UncraftingTable.DESCRIPTION);
 		registry.addDescription(new ItemStack(OverclokedEngineeringItems.AGING_GUN_INCR), AgingGunManager.DESCRIPTION);
 		registry.addDescription(new ItemStack(OverclokedEngineeringItems.AGING_GUN_DECR), AgingGunManager.DESCRIPTION);
 		registry.addDescription(new ItemStack(OverclokedEngineeringItems.CIRCUIT), Circuit.DESCRIPTION);

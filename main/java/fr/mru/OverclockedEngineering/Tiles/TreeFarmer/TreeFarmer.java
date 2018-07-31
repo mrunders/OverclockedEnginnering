@@ -3,6 +3,7 @@ package fr.mru.OverclockedEngineering.Tiles.TreeFarmer;
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
 import fr.mru.OverclockedEngineering.Tiles.Machine.TileOverclockedFurnace;
 import fr.mru.OverclockedengineeringBlocks.ABlockContainerManager;
+import fr.mru.OverclockedengineeringBlocks.AOrientableBlockContainerManager;
 import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -16,9 +17,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class TreeFarmer extends ABlockContainerManager {
-
-	public static final String DESCRIPTION = "Uncraft everything that was crafted with crafting table by right click on this block (cost 9 experience levels per uncraft)";
+public class TreeFarmer extends AOrientableBlockContainerManager {
 
 	public TreeFarmer() {		
 		super("tree_farmer");

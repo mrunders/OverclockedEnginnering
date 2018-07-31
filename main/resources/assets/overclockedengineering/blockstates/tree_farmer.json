@@ -1,7 +1,9 @@
+
 {
     "variants": {
-        "normal": {
-            "model": "overclockedengineering:tree_farmer"
-        }
+        "facing=north": { "model": "overclockedengineering:tree_farmer" },
+        "facing=south": { "model": "overclockedengineering:tree_farmer", "y": 180 },
+        "facing=west":  { "model": "overclockedengineering:tree_farmer", "y": 270 },
+        "facing=east":  { "model": "overclockedengineering:tree_farmer", "y": 90 }
     }
 }

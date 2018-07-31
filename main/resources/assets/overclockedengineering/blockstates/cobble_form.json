@@ -1,7 +1,9 @@
+
 {
     "variants": {
-        "normal": {
-            "model": "overclockedengineering:cobble_form"
-        }
+        "facing=north": { "model": "overclockedengineering:cobble_form" },
+        "facing=south": { "model": "overclockedengineering:cobble_form", "y": 180 },
+        "facing=west":  { "model": "overclockedengineering:cobble_form", "y": 270 },
+        "facing=east":  { "model": "overclockedengineering:cobble_form", "y": 90 }
     }
 }

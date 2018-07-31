@@ -2,6 +2,7 @@ package fr.mru.OverclockedEngineering.Tiles.StackFurnace;
 
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
 import fr.mru.OverclockedengineeringBlocks.ABlockContainerManager;
+import fr.mru.OverclockedengineeringBlocks.AOrientableBlockContainerManager;
 import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -16,7 +17,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class StackFurnace extends ABlockContainerManager {
+public class StackFurnace extends AOrientableBlockContainerManager {
 
 	public StackFurnace() {
 		super("stack_furnace");

@@ -1,7 +1,8 @@
 {
     "variants": {
-        "normal": {
-            "model": "overclockedengineering:stack_furnace"
-        }
+        "facing=north": { "model": "overclockedengineering:stack_furnace" },
+        "facing=south": { "model": "overclockedengineering:stack_furnace", "y": 180 },
+        "facing=west":  { "model": "overclockedengineering:stack_furnace", "y": 270 },
+        "facing=east":  { "model": "overclockedengineering:stack_furnace", "y": 90 }
     }
 }

@@ -1,7 +1,9 @@
+
 {
     "variants": {
-        "normal": {
-            "model": "overclockedengineering:two_modules_machine"
-        }
+        "facing=north": { "model": "overclockedengineering:two_modules_machine" },
+        "facing=south": { "model": "overclockedengineering:two_modules_machine", "y": 180 },
+        "facing=west":  { "model": "overclockedengineering:two_modules_machine", "y": 270 },
+        "facing=east":  { "model": "overclockedengineering:two_modules_machine", "y": 90 }
     }
 }
