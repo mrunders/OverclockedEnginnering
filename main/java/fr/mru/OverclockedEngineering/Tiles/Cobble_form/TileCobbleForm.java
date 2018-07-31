@@ -80,7 +80,7 @@ public class TileCobbleForm extends ATileInstantProcessingManager {
 		
 		if ( !this.world.isRemote ) {
 			
-			if ( !redstoneControl ) smelt();
+			if ( redstoneControl ) smelt();
 		}
 		
 	}

@@ -2,7 +2,8 @@
 	"parent": "block/block",
     "textures": {
 		"body": "minecraft:blocks/anvil_base",
-		"bottom": "minecraft:blocks/obsidian"
+		"bottom": "minecraft:blocks/obsidian",
+		"particle": "minecraft:blocks/anvil_base"
     },
 
 	"credit": "Made with Blockbench",

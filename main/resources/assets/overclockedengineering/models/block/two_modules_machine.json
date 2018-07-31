@@ -6,6 +6,7 @@
         "up": "overclockedengineering:blocks/machine_block_top",
         "east": "overclockedengineering:blocks/machine_block_side",
         "west": "overclockedengineering:blocks/machine_block_side",
-        "south": "overclockedengineering:blocks/machine_block_side"
+        "south": "overclockedengineering:blocks/machine_block_side",
+        "particle": "overclockedengineering:blocks/machine_block_side"
     }
 }

@@ -7,7 +7,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class GuiCobbleForm extends GuiContainer {
 	
-	private static final ResourceLocation background = new ResourceLocation(OverclockedEngineering.MODID,"textures/gui/container/two_modules_machine.png");
+	private static final ResourceLocation background = new ResourceLocation(OverclockedEngineering.MODID,"textures/gui/container/cobble_form.png");
 	private TileCobbleForm tile;
 
 	public GuiCobbleForm(TileCobbleForm tile, InventoryPlayer playerInv) {

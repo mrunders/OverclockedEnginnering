@@ -26,7 +26,6 @@ public class TileDHole extends ATileManager {
 
 	@Override
 	public ItemStack getRecipeResult() {
-		
 		return RecipeRequest.nullStack;
 	}
 
@@ -39,7 +38,7 @@ public class TileDHole extends ATileManager {
 	@Override
 	public void smelt() {
 		
-		Entity entity = DHoleItem.getMobResult((DHoleItem) getStackInSlot(0).getItem());
+		Entity entity = DHoleItem.getMobResult(getStackInSlot(0));
 		
 		if (entity == null ) return;
 		
@@ -62,7 +61,7 @@ public class TileDHole extends ATileManager {
 	@Override
 	public void update() {
 		
-	    /*if (!this.world.isRemote) {
+	    if (!this.world.isRemote) {
 	      
 	       if ( redstoneControl ) return;
 
@@ -77,7 +76,7 @@ public class TileDHole extends ATileManager {
 	        }
 	        
 	        this.markDirty();
-	    }*/
+	    }
 	}
 
 	@Override
