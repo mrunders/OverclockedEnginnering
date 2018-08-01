@@ -1,0 +1,19 @@
+{ 
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "NNN",
+      "NNN",
+      "NNN"  ],
+    "key": {
+      "N": [
+        {
+          "item": "overclockedengineering:ingot_steel",
+          "data": 0
+        }
+      ]
+    },
+    "result": {
+      "item": "overclockedengineering:block_steel",
+      "data": 0
+    }
+  }

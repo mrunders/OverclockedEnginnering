@@ -9,7 +9,9 @@ import fr.mru.OverclockedEngineering.Tiles.Machine.TileOverclockedFurnace;
 import fr.mru.OverclockedEngineering.Tiles.StackFurnace.TileStackFurnace;
 import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.TileTreeFarmer;
 import fr.mru.OverclockedEngineering.Tiles.TwoModuleMachine.TileTwoModulesMachine;
+import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import fr.mru.OverclockedEngineeringProxy.OverclockedEngineeringCommon;
+import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -20,6 +22,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 @Mod(modid=OverclockedEngineering.MODID, name="Overclocked Engineering", version="0.1")
 public class OverclockedEngineering {
@@ -55,6 +58,9 @@ public class OverclockedEngineering {
 		GameRegistry.registerTileEntity(TileTwoModulesMachine.class	, MODID + ":tile_two_modules_machine");
 		GameRegistry.registerTileEntity(TileCobbleForm.class, MODID + ":tile_cobble_form");
 		
+		OreDictionary.registerOre("ingotSteel", OverclokedEngineeringItems.INGOT_STEEL);
+		OreDictionary.registerOre("blockSteel", OverclockedEngineeringBlocks.BLOCK_STEEL);
+		
 		logger = event.getModLog();
 		proxy.preInit(event.getSuggestedConfigurationFile());
 		
@@ -65,7 +71,6 @@ public class OverclockedEngineering {
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 		proxy.init();
-		
 		ARecipeManager.initialise();
 
 	}

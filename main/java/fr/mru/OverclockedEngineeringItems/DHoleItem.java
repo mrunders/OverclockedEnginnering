@@ -1,6 +1,5 @@
 package fr.mru.OverclockedEngineeringItems;
 
-import cofh.cofhworld.util.numbers.world.WorldValueProvider;
 import fr.mru.OverclockedEngineering.Recipes.RecipesDHole;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -13,8 +12,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldProvider;
-import net.minecraft.world.storage.WorldInfo;
 import net.minecraftforge.common.DimensionManager;
 
 public class DHoleItem extends OverclockedEngineeringItemsBase {

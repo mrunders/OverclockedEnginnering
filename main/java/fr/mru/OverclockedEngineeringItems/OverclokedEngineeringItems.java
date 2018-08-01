@@ -25,7 +25,7 @@ public class OverclokedEngineeringItems {
 	
 	public static final Item CIRCUIT = new Circuit(),
 							 CIRCUIT_LARGE = new CircuitLarge(),
-							 
+							 INGOT_STEEL = new IngotSteel(),
 							 MINING_PICKAXE = new MiningPickaxe(),
 							 AGING_GUN_INCR = new AgingGunIncremental(),
 							 AGING_GUN_DECR = new AgingGunDecremantal(),
@@ -41,6 +41,7 @@ public class OverclokedEngineeringItems {
 		itemsList.addAll(EngineManager.itemsList);
 		itemsList.addAll(AFocusManager.itemsList);
 		
+		itemsList.add(INGOT_STEEL);
 		itemsList.add(CIRCUIT);
 		itemsList.add(CIRCUIT_LARGE);
 		itemsList.add(MINING_PICKAXE);
@@ -57,7 +58,8 @@ public class OverclokedEngineeringItems {
 				          
 				          OverclockedEngineeringBlocks.MACHINE_CASING,
 				          OverclockedEngineeringBlocks.MASS_ANVIL,
-				          OverclockedEngineeringBlocks.UNCRAFTING_TABLE
+				          OverclockedEngineeringBlocks.UNCRAFTING_TABLE,
+				          OverclockedEngineeringBlocks.BLOCK_STEEL
 				          );
 	}
 	

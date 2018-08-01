@@ -22,7 +22,8 @@ public class OverclockedEngineeringBlocks {
 							  MACHINE_CASING = new MachineCasing(),
 							  MASS_ANVIL     = new MassAnvil(),
 							  TWO_MODULES_MACHINE = new TwoModulesMachine(),
-							  COBBLE_FORM = new CobbleForm();
+							  COBBLE_FORM = new CobbleForm(),
+							  BLOCK_STEEL = new BlockSteel();
 	
 	public static ArrayList<Block> blockList = new ArrayList<>();
 	
@@ -37,6 +38,7 @@ public class OverclockedEngineeringBlocks {
 		blockList.add(MASS_ANVIL);
 		blockList.add(TWO_MODULES_MACHINE);
 		blockList.add(COBBLE_FORM);
+		blockList.add(BLOCK_STEEL);
 	}
 	
 	public static void setBlockName(Block block, String name) {

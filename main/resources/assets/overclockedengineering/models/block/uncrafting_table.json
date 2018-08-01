@@ -4,7 +4,7 @@
 	"textures": {
 		"0": "overclockedengineering:blocks/uncrafting_table",
 		"1": "overclockedengineering:blocks/machine_block_side_small",
-		"particle": "blocks/uncrafting_table"
+		"particle": "overclockedengineering:blocks/uncrafting_table"
 	},
 	"elements": [
 		{
