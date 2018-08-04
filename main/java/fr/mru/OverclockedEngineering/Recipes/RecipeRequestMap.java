@@ -10,44 +10,40 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class RecipeRequestMap extends HashMap<List<ItemStack>, RecipeRequest> {
 	
-	public void puttCopyOreDict(String value, int count0, String input1, int count1, String input2, int count2) {
+	public void putCopyOredict(String value, int count0, String input1, int count1, String input2, int count2) {
 		
 		if ( OreDictionary.doesOreNameExist(value) && !OreDictionary.getOres(value).isEmpty() ) {
 			ItemStack output = OreDictionary.getOres(value).get(0);
 			for (ItemStack in1 : OreDictionary.getOres(input1)) {
 				for (ItemStack in2 : OreDictionary.getOres(input2)) {
-					puttCopy(output, count0, in1, count1, in2, count2);
-					puttCopy(output, count0, in2, count2, in1, count1);
+					putCopy(output, count0, in1, count1, in2, count2);
+					putCopy(output, count0, in2, count2, in1, count1);
 				}
 			}
 		} else
 			System.out.println("== Object " + value + " as no valide output !!!!!!!!");
 	}
 	
-	public void puttCopyOreDict(String value, int count0, String input1, int count1) {
+	public void putCopyOredict(String value, int count0, String input1, int count1) {
 		
 		if ( OreDictionary.doesOreNameExist(value) && !OreDictionary.getOres(value).isEmpty() ) {
 			ItemStack output = OreDictionary.getOres(value).get(0);
 			for (ItemStack in1 : OreDictionary.getOres(input1)) {
-				puttCopy(output, count0, in1, count1);
+				putCopy(output, count0, in1, count1);
 			}
 		} else
 			System.out.println("== Object " + value + " as no valide output !!!!!!!!");
 	}
 	
-	public RecipeRequest puttCopy(ItemStack value, int count0, ItemStack input1, int count1, ItemStack input2, int count2) {
-		return putt(copycount(value, count0), copycount(input1, count1), copycount(input2, count2));
+	public RecipeRequest putCopy(ItemStack value, int count0, ItemStack input1, int count1, ItemStack input2, int count2) {
+		return put(copycount(value, count0), copycount(input1, count1), copycount(input2, count2));
 	}
 	
-	public RecipeRequest puttCopy(ItemStack value, int count0, ItemStack input1, int count1) {
-		return putt(copycount(value, count0), copycount(input1, count1));
-	}
-	
-	public RecipeRequest putt(ItemStack value, ItemStack... keys) {
-		return this.put(value, keys);
+	public RecipeRequest putCopy(ItemStack value, int count0, ItemStack input1, int count1) {
+		return put(copycount(value, count0), copycount(input1, count1));
 	}
 
-	public RecipeRequest put(ItemStack value, ItemStack[] keys) {
+	public RecipeRequest put(ItemStack value, ItemStack... keys) {
 		
 		List<ItemStack> list = new ArrayList<>();
 		for ( ItemStack i : keys ) {

@@ -6,10 +6,11 @@ import fr.mru.OverclockedEngineering.OverclockedEngineering;
 import fr.mru.OverclockedEngineeringItems.AgingGun.AgingGunDecremantal;
 import fr.mru.OverclockedEngineeringItems.AgingGun.AgingGunIncremental;
 import fr.mru.OverclockedEngineeringItems.Focus.AFocusManager;
+import fr.mru.OverclockedengineeringBlocks.EngineBlockManager;
+import fr.mru.OverclockedengineeringBlocks.FocusBlockManager;
 import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -26,12 +27,11 @@ public class OverclokedEngineeringItems {
 	public static final Item CIRCUIT = new Circuit(),
 							 CIRCUIT_LARGE = new CircuitLarge(),
 							 INGOT_STEEL = new IngotSteel(),
-							 MINING_PICKAXE = new MiningPickaxe(),
+							 //MINING_PICKAXE = new MiningPickaxe(),
 							 AGING_GUN_INCR = new AgingGunIncremental(),
 							 AGING_GUN_DECR = new AgingGunDecremantal(),
 							 
 							 DIMENSIONAL_HOLE = new DHoleItem();
-	
 	 
 	
 	public static ArrayList<Item> itemsList = new ArrayList<>();
@@ -44,7 +44,7 @@ public class OverclokedEngineeringItems {
 		itemsList.add(INGOT_STEEL);
 		itemsList.add(CIRCUIT);
 		itemsList.add(CIRCUIT_LARGE);
-		itemsList.add(MINING_PICKAXE);
+		//itemsList.add(MINING_PICKAXE);
 		itemsList.add(AGING_GUN_INCR);
 		itemsList.add(AGING_GUN_DECR);
 		itemsList.add(DIMENSIONAL_HOLE);
@@ -58,9 +58,10 @@ public class OverclokedEngineeringItems {
 				          
 				          OverclockedEngineeringBlocks.MACHINE_CASING,
 				          OverclockedEngineeringBlocks.MASS_ANVIL,
-				          OverclockedEngineeringBlocks.UNCRAFTING_TABLE,
-				          OverclockedEngineeringBlocks.BLOCK_STEEL
+				          OverclockedEngineeringBlocks.UNCRAFTING_TABLE
 				          );
+		
+		
 	}
 	
 	public static void registerItemBlock(Block... block) {

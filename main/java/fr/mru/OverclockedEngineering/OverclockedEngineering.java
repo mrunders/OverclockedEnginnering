@@ -11,8 +11,8 @@ import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.TileTreeFarmer;
 import fr.mru.OverclockedEngineering.Tiles.TwoModuleMachine.TileTwoModulesMachine;
 import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import fr.mru.OverclockedEngineeringProxy.OverclockedEngineeringCommon;
-import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -44,7 +44,6 @@ public class OverclockedEngineering {
 		
 	    MinecraftForge.EVENT_BUS.register(new RegisteringHandler());
 	    
-	    
 	}
 
 	
@@ -57,12 +56,11 @@ public class OverclockedEngineering {
 		GameRegistry.registerTileEntity(TileDHole.class, MODID + ":tile_dimensional_hole");
 		GameRegistry.registerTileEntity(TileTwoModulesMachine.class	, MODID + ":tile_two_modules_machine");
 		GameRegistry.registerTileEntity(TileCobbleForm.class, MODID + ":tile_cobble_form");
-		
-		OreDictionary.registerOre("ingotSteel", OverclokedEngineeringItems.INGOT_STEEL);
-		OreDictionary.registerOre("blockSteel", OverclockedEngineeringBlocks.BLOCK_STEEL);
-		
+
 		logger = event.getModLog();
 		proxy.preInit(event.getSuggestedConfigurationFile());
+		
+		OreDictionary.registerOre("ingotSteel", new ItemStack(OverclokedEngineeringItems.INGOT_STEEL,1));
 		
 	}
 	

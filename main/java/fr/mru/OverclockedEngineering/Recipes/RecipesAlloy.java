@@ -18,19 +18,19 @@ public class RecipesAlloy extends ARecipeManager {
 	public static boolean initialise() {
 		
 		if ( OreDictionary.doesOreNameExist("ingotElectrum") ) 
-			map.puttCopyOreDict("ingotElectrum", 2, "ingotSilver", 1, "ingotGold", 1);
+			map.putCopyOredict("ingotElectrum", 2, "ingotSilver", 1, "ingotGold", 1);
 		
 		if ( OreDictionary.doesOreNameExist("ingotSteel") )
-			map.puttCopyOreDict("ingotSteel", 1, "ingotIron", 1, "coal", 2);
+			map.putCopyOredict("ingotSteel", 1, "ingotIron", 1, "coal", 2);
 		
 		if ( OreDictionary.doesOreNameExist("ingotInvar") )
-			map.puttCopyOreDict("ingotInvar", 3, "ingotIron", 2, "ingotNickel", 1);
+			map.putCopyOredict("ingotInvar", 3, "ingotIron", 2, "ingotNickel", 1);
 		
 		if ( OreDictionary.doesOreNameExist("ingotBronze") )
-			map.puttCopyOreDict("ingotBronze", 4, "ingotTin", 1, "ingotCopper", 3);
+			map.putCopyOredict("ingotBronze", 4, "ingotTin", 1, "ingotCopper", 3);
 		
 		if ( OreDictionary.doesOreNameExist("ingotConstantan") )
-			map.puttCopyOreDict("ingotConstantan", 2, "ingotNickel", 1, "ingotCopper", 1);
+			map.putCopyOredict("ingotConstantan", 2, "ingotNickel", 1, "ingotCopper", 1);
 		
 		return true;
 	}

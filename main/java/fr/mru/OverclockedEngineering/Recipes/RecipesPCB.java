@@ -18,8 +18,8 @@ public class RecipesPCB extends ARecipeManager {
 	
 	public static boolean initialise() {
 
-		map.puttCopy(new ItemStack(OverclokedEngineeringItems.CIRCUIT), 1, new ItemStack(Items.IRON_INGOT), 1);
-		map.puttCopy(new ItemStack(OverclokedEngineeringItems.CIRCUIT_LARGE), 1, new ItemStack(Blocks.IRON_BLOCK), 1);
+		map.putCopy(new ItemStack(OverclokedEngineeringItems.CIRCUIT), 1, new ItemStack(Items.IRON_INGOT), 1);
+		map.putCopy(new ItemStack(OverclokedEngineeringItems.CIRCUIT_LARGE), 1, new ItemStack(Blocks.IRON_BLOCK), 1);
 		
 		return true;
 	}

@@ -17,22 +17,22 @@ public class RecipesSawmill extends ARecipeManager {
 	
 	public static boolean initialise() {
 		
-		map.putt(new ItemStack(Blocks.PLANKS, 6, 0), new ItemStack(Blocks.LOG, 1, 0));
-		map.putt(new ItemStack(Blocks.PLANKS, 6, 1), new ItemStack(Blocks.LOG, 1, 1));
-		map.putt(new ItemStack(Blocks.PLANKS, 6, 2), new ItemStack(Blocks.LOG, 1, 2));
-		map.putt(new ItemStack(Blocks.PLANKS, 6, 3), new ItemStack(Blocks.LOG, 1, 3));
-		map.putt(new ItemStack(Blocks.PLANKS, 6, 4), new ItemStack(Blocks.LOG2, 1, 0));
-		map.putt(new ItemStack(Blocks.PLANKS, 6, 5), new ItemStack(Blocks.LOG2, 1, 1));
+		map.put(new ItemStack(Blocks.PLANKS, 6, 0), new ItemStack(Blocks.LOG, 1, 0));
+		map.put(new ItemStack(Blocks.PLANKS, 6, 1), new ItemStack(Blocks.LOG, 1, 1));
+		map.put(new ItemStack(Blocks.PLANKS, 6, 2), new ItemStack(Blocks.LOG, 1, 2));
+		map.put(new ItemStack(Blocks.PLANKS, 6, 3), new ItemStack(Blocks.LOG, 1, 3));
+		map.put(new ItemStack(Blocks.PLANKS, 6, 4), new ItemStack(Blocks.LOG2, 1, 0));
+		map.put(new ItemStack(Blocks.PLANKS, 6, 5), new ItemStack(Blocks.LOG2, 1, 1));
 		
-		map.putt(new ItemStack(Items.STICK, 2), new ItemStack(Blocks.SAPLING, 1, 0));
-		map.putt(new ItemStack(Items.STICK, 2), new ItemStack(Blocks.SAPLING, 1, 1));
-		map.putt(new ItemStack(Items.STICK, 2), new ItemStack(Blocks.SAPLING, 1, 2));
-		map.putt(new ItemStack(Items.STICK, 2), new ItemStack(Blocks.SAPLING, 1, 3));
-		map.putt(new ItemStack(Items.STICK, 2), new ItemStack(Blocks.SAPLING, 1, 4));
-		map.putt(new ItemStack(Items.STICK, 2), new ItemStack(Blocks.SAPLING, 1, 5));
+		map.put(new ItemStack(Items.STICK, 2), new ItemStack(Blocks.SAPLING, 1, 0));
+		map.put(new ItemStack(Items.STICK, 2), new ItemStack(Blocks.SAPLING, 1, 1));
+		map.put(new ItemStack(Items.STICK, 2), new ItemStack(Blocks.SAPLING, 1, 2));
+		map.put(new ItemStack(Items.STICK, 2), new ItemStack(Blocks.SAPLING, 1, 3));
+		map.put(new ItemStack(Items.STICK, 2), new ItemStack(Blocks.SAPLING, 1, 4));
+		map.put(new ItemStack(Items.STICK, 2), new ItemStack(Blocks.SAPLING, 1, 5));
 		
-		map.putt(new ItemStack(Blocks.PLANKS, 4, 0), new ItemStack(Blocks.CRAFTING_TABLE));
-		map.putt(new ItemStack(Blocks.PLANKS, 8, 0), new ItemStack(Blocks.CHEST));	
+		map.put(new ItemStack(Blocks.PLANKS, 4, 0), new ItemStack(Blocks.CRAFTING_TABLE));
+		map.put(new ItemStack(Blocks.PLANKS, 8, 0), new ItemStack(Blocks.CHEST));	
 
 		return true;
 	}

@@ -20,11 +20,11 @@ public class RecipesExtraction extends ARecipeManager {
 		for (String ore : recipesOrdict.get("ore") ){
 			
 			if ( blocks.contains(ore) ) {
-				map.puttCopyOreDict("block"+ore, 1, "ore"+ore, 3);
+				map.putCopyOredict("block"+ore, 1, "ore"+ore, 3);
 			}
 		}
 		
-		map.puttCopyOreDict("blockQuartz", 1, "oreQuartz", 1);
+		map.putCopyOredict("blockQuartz", 1, "oreQuartz", 1);
 		
 		return true;
 	}

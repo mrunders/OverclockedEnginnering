@@ -20,17 +20,19 @@ public abstract class ATileMultiblocksManager extends ATileManager {
 	@Override
 	public abstract void update();
 	
-    protected abstract boolean checkStructure();
+    public abstract boolean checkStructure();
     protected abstract void setupStructure();
     protected abstract void resetStructure();
     protected abstract boolean isInstanceOf(TileEntity tile);
     protected abstract boolean isMaster(TileEntity tile);
+    
 	
 	public boolean hasMaster() { return this.hasMaster; }
     public boolean isMaster() { return this.isMaster; }
     public int getMasterX() { return this.masterX; }
     public int getMasterY() { return this.masterY; }
     public int getMasterZ() { return this.masterZ; }
+    public BlockPos getMasterPos() { return this.masterBlockLocation; }
 
     public void setMaster(int x, int y, int z) {
         this.hasMaster = true;
@@ -40,7 +42,11 @@ public abstract class ATileMultiblocksManager extends ATileManager {
         this.masterBlockLocation = new BlockPos(x, y, z);
     }
     
-    private void reset() {
+    protected void setMaster() {
+    	this.isMaster = true;
+    }
+    
+    protected void reset() {
     	this.hasMaster = false;
     	this.masterX = 0;
     	this.masterY = 0;
@@ -48,10 +54,10 @@ public abstract class ATileMultiblocksManager extends ATileManager {
     	this.masterBlockLocation = null;
     }
     
-    private boolean checkForMaster() {
+    protected boolean checkForMaster() {
 
         TileEntity tile = this.getWorld().getTileEntity(masterBlockLocation);
-        return tile != null && isInstanceOf(tile) && isMaster(tile);
+        return isMaster(tile);
     }
 	
 	@Override
@@ -63,6 +69,8 @@ public abstract class ATileMultiblocksManager extends ATileManager {
         this.masterX = compound.getInteger("MasterX");
         this.masterY = compound.getInteger("MasterY");
         this.masterZ = compound.getInteger("MasterZ");
+        
+        this.masterBlockLocation = new BlockPos(this.masterX, this.masterY, this.masterZ);
 	}
 
 	@Override

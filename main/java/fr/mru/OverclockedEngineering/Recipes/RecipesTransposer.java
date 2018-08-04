@@ -19,8 +19,8 @@ public class RecipesTransposer extends ARecipeManager {
 	
 	public static boolean initialise() {
 		
-		map.putt(new ItemStack(Items.WATER_BUCKET), new ItemStack(Blocks.CLAY), new ItemStack(Items.BUCKET));
-		map.putt(new ItemStack(Items.LAVA_BUCKET), new ItemStack(Blocks.MAGMA, 16), new ItemStack(Items.BUCKET));
+		map.put(new ItemStack(Items.WATER_BUCKET), new ItemStack(Blocks.CLAY), new ItemStack(Items.BUCKET));
+		map.put(new ItemStack(Items.LAVA_BUCKET), new ItemStack(Blocks.MAGMA, 16), new ItemStack(Items.BUCKET));
 		
 		return true;
 	}

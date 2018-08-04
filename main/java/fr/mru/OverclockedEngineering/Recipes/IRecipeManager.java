@@ -6,5 +6,6 @@ import java.util.Set;
 import net.minecraft.item.ItemStack;
 
 public interface IRecipeManager {
+	
 
 }

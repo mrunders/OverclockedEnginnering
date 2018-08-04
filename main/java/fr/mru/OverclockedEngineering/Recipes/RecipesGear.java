@@ -20,7 +20,7 @@ public class RecipesGear extends ARecipeManager {
 		for (String gear : recipesOrdict.get("gear") ){
 			
 			if ( ingots.contains(gear) ) {
-				map.puttCopyOreDict("gear"+gear, 1, "ingot"+gear, 4);
+				map.putCopyOredict("gear"+gear, 1, "ingot"+gear, 4);
 			}
 			
 		}
