@@ -63,9 +63,9 @@ public class TileOverclockedFurnace extends ATileManager {
 	public void smelt() {
 	    RecipeRequest result = this.getRecipeResultRequest();
 	    
-	    this.decrStackSize(2, result.getRequiredItemCount(2));
-	    this.decrStackSize(1, result.getRequiredItemCount(1));
-	    this.decrStackSize(0, result.getRequiredItemCount(0));
+	    this.decrStackSize(2, result.getRequiredItemCountByItems(this.getStackInSlot(2)));
+	    this.decrStackSize(1, result.getRequiredItemCountByItems(this.getStackInSlot(1)));
+	    this.decrStackSize(0, result.getRequiredItemCountByItems(this.getStackInSlot(0)));
 
 	    ItemStack stack4 = this.getStackInSlot(SLOT_OUTPUT);
 	   

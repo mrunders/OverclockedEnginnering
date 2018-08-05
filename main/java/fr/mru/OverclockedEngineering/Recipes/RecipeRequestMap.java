@@ -17,7 +17,6 @@ public class RecipeRequestMap extends HashMap<List<ItemStack>, RecipeRequest> {
 			for (ItemStack in1 : OreDictionary.getOres(input1)) {
 				for (ItemStack in2 : OreDictionary.getOres(input2)) {
 					putCopy(output, count0, in1, count1, in2, count2);
-					putCopy(output, count0, in2, count2, in1, count1);
 				}
 			}
 		} else
@@ -89,12 +88,17 @@ public class RecipeRequestMap extends HashMap<List<ItemStack>, RecipeRequest> {
 	private boolean containsStack(List<ItemStack> recipe, ItemStack i) {
 		
 		for ( ItemStack r : recipe ) {
-			if ( r.getItem() == i.getItem() && 
-				 r.getCount() <= i.getCount() && 
-				 r.getMetadata() == i.getMetadata() ) return true;
+			if ( itemStackEqual(r, i) ) return true;
 		}
 		
 		return false;
+	}
+	
+	public static boolean itemStackEqual( ItemStack r, ItemStack i) {
+		return r.getItem() == i.getItem() && 
+			r.getCount() <= i.getCount() && 
+			r.getMetadata() == i.getMetadata() ;
+		
 	}
 
 }

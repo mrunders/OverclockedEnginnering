@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
+import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -16,6 +18,9 @@ public class RecipesAlloy extends ARecipeManager {
 	}
 	
 	public static boolean initialise() {
+		
+		map.putCopy(new ItemStack(OverclokedEngineeringItems.INGOT_STEEL), 1, 
+				    new ItemStack(Items.COAL), 2, new ItemStack(Items.IRON_INGOT), 1);
 		
 		if ( OreDictionary.doesOreNameExist("ingotElectrum") ) 
 			map.putCopyOredict("ingotElectrum", 2, "ingotSilver", 1, "ingotGold", 1);

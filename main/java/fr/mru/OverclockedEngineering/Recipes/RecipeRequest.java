@@ -32,6 +32,16 @@ public class RecipeRequest {
 		return used[index] == null? 0 : used[index].getCount();
 	}
 	
+	public int getRequiredItemCountByItems(ItemStack s) {
+		
+		for ( int i = 0; i < realUsed; ++i) {
+			if ( RecipeRequestMap.itemStackEqual(used[i], s) )
+				return used[i].getCount();
+		}
+		
+		return 0;
+	}
+	
 	public ItemStack[] getRequiredList() {
 		return used;
 	}

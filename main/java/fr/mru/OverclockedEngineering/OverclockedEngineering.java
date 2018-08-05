@@ -9,6 +9,7 @@ import fr.mru.OverclockedEngineering.Tiles.Machine.TileOverclockedFurnace;
 import fr.mru.OverclockedEngineering.Tiles.StackFurnace.TileStackFurnace;
 import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.TileTreeFarmer;
 import fr.mru.OverclockedEngineering.Tiles.TwoModuleMachine.TileTwoModulesMachine;
+import fr.mru.OverclockedEngineeringItems.IngotSteel;
 import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import fr.mru.OverclockedEngineeringProxy.OverclockedEngineeringCommon;
 import net.minecraft.creativetab.CreativeTabs;
@@ -59,9 +60,7 @@ public class OverclockedEngineering {
 
 		logger = event.getModLog();
 		proxy.preInit(event.getSuggestedConfigurationFile());
-		
-		OreDictionary.registerOre("ingotSteel", new ItemStack(OverclokedEngineeringItems.INGOT_STEEL,1));
-		
+
 	}
 	
 	@EventHandler
@@ -69,6 +68,9 @@ public class OverclockedEngineering {
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 		proxy.init();
+		
+		OreDictionary.registerOre("ingotSteel", OverclokedEngineeringItems.INGOT_STEEL);
+		
 		ARecipeManager.initialise();
 
 	}
