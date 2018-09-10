@@ -1,6 +1,7 @@
 package fr.mru.OverclockedEngineering;
 
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileManager;
+import fr.mru.OverclockedEngineering.Tiles.ATileManager.IGuiElement;
 import fr.mru.OverclockedEngineering.Tiles.Cobble_form.ContainerCobbleForm;
 import fr.mru.OverclockedEngineering.Tiles.Cobble_form.GuiCobbleForm;
 import fr.mru.OverclockedEngineering.Tiles.Cobble_form.TileCobbleForm;
@@ -30,12 +31,12 @@ public class GuiHandler implements IGuiHandler {
     @Override
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         TileEntity te = world.getTileEntity(new BlockPos(x, y, z));
-        return ((ATileManager)te).getServerGuiElement(te, player.inventory);
+        return ((IGuiElement)te).getServerGuiElement(te, player.inventory);
     }
 
     @Override
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         TileEntity te = world.getTileEntity(new BlockPos(x, y, z));
-        return ((ATileManager)te).getClientGuiElement(te, player.inventory);
+        return ((IGuiElement)te).getClientGuiElement(te, player.inventory);
     }
 }

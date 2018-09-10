@@ -4,11 +4,13 @@ import java.util.ArrayList;
 
 import fr.mru.OverclockedEngineering.Tiles.Cobble_form.CobbleForm;
 import fr.mru.OverclockedEngineering.Tiles.DimensionalHole.DHole;
+import fr.mru.OverclockedEngineering.Tiles.FilterChest.FilterChest;
 import fr.mru.OverclockedEngineering.Tiles.Machine.MachineBlock;
 import fr.mru.OverclockedEngineering.Tiles.StackFurnace.StackFurnace;
 import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.TreeFarmer;
 import fr.mru.OverclockedEngineering.Tiles.TwoModuleMachine.TwoModulesMachine;
 import fr.mru.OverclockedEngineering.Tiles.UncraftingTable.UncraftingTable;
+import fr.mru.OverclockedEngineering.Tiles.rfbridge.RfBridge;
 import net.minecraft.block.Block;
 
 public class OverclockedEngineeringBlocks {
@@ -21,11 +23,15 @@ public class OverclockedEngineeringBlocks {
 							  MACHINE_CASING = new MachineCasing(),
 							  MASS_ANVIL     = new MassAnvil(),
 							  TWO_MODULES_MACHINE = new TwoModulesMachine(),
-							  COBBLE_FORM = new CobbleForm();
+							  COBBLE_FORM = new CobbleForm(),
+							  FILTER_CHEST = new FilterChest(),
+							  RF_BRIDGE = new RfBridge();
 	
 	public static ArrayList<Block> blockList = new ArrayList<>();
 	
 	static {
+		
+		blockList.addAll(EngineBlockManager.engineList);
 		
 		blockList.add(MACHINE_BLOCK);
 		blockList.add(STACK_FURNACE);
@@ -36,6 +42,8 @@ public class OverclockedEngineeringBlocks {
 		blockList.add(MASS_ANVIL);
 		blockList.add(TWO_MODULES_MACHINE);
 		blockList.add(COBBLE_FORM);
+		blockList.add(FILTER_CHEST);
+		blockList.add(RF_BRIDGE);
 	}
 	
 	public static void setBlockName(Block block, String name) {

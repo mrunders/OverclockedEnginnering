@@ -18,8 +18,10 @@ public class ContainerStackFurnace extends ContainerManager {
 	}
 
 	@Override
-	public void displaySlots(ATileManager tile, InventoryPlayer playerInventory) {
+	public boolean displaySlots(ATileManager tile, InventoryPlayer playerInventory) {
 	    this.addSlotToContainer(new Slot(tile, 0, 44, 30));
 	    this.addSlotToContainer(new SlotOutput(tile, 1, 116, 30));
+	    
+	    return false;
 	}
 }

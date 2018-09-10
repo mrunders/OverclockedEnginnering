@@ -12,10 +12,11 @@ public class ContainerDHole extends ContainerManager {
 	}
 
 	@Override
-	public void displaySlots(ATileManager tile, InventoryPlayer playerInventory) {
+	public boolean displaySlots(ATileManager tile, InventoryPlayer playerInventory) {
 		
 	    this.addSlotToContainer(new Slot(tile, 0, 80, 25));
-		
+
+	    return false;
 	}
 	
 

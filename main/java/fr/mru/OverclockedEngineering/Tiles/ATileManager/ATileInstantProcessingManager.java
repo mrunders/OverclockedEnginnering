@@ -2,7 +2,7 @@ package fr.mru.OverclockedEngineering.Tiles.ATileManager;
 
 import net.minecraft.item.ItemStack;
 
-public abstract class ATileInstantProcessingManager extends ATileManager {
+public abstract class ATileInstantProcessingManager extends ATileManagerMachines {
 
 	public ATileInstantProcessingManager(int stacksLenght, String name) {
 		super(stacksLenght, name);

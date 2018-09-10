@@ -14,6 +14,7 @@ public class AlloyFocus extends AFocusManager {
 	@Override
 	public RecipeRequest getRecipeResult(ItemStack... ingredients) {
 		
+		if (ingredients.length < 2) return RecipeRequest.NULL;
 		if ( ingredients[1].isEmpty() ) return RecipeRequest.NULL;
 		if ( ingredients[2].isEmpty() ) return RecipesAlloy.getRecipeResult(ingredients[0], ingredients[1]);
 		return RecipesAlloy.getRecipeResult(ingredients);

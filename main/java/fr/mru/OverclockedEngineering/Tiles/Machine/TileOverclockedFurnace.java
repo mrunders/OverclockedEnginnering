@@ -2,6 +2,7 @@ package fr.mru.OverclockedEngineering.Tiles.Machine;
 
 import fr.mru.OverclockedEngineering.Recipes.RecipeRequest;
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileManager;
+import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileManagerMachines;
 import fr.mru.OverclockedEngineeringItems.EngineManager;
 import fr.mru.OverclockedEngineeringItems.Focus.AFocusManager;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -9,7 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 
-public class TileOverclockedFurnace extends ATileManager {
+public class TileOverclockedFurnace extends ATileManagerMachines {
 	
 	public TileOverclockedFurnace() {
 		super(6, "tile.overclockedMachine");
@@ -91,10 +92,16 @@ public class TileOverclockedFurnace extends ATileManager {
 	public void update() {
 	    if (!this.world.isRemote) {
 	    	
-	    	if ( redstoneControl ) return;
-	    	
 	    	moveOnSlot(2, 1);
 	    	moveOnSlot(1, 0);
+	    	
+	    	if ( redstoneControl ) return;
+	    	if ( !retriveEnergyFromBridge()) {
+	    		if ( !bridgeExist() ) 
+		    		bridgePos = getBridgeNearby();
+	    		else
+	    			return;
+	    	}
 
 	        if (!this.isBurning() && this.canSmelt() && !this.hasFuelEmpty()) {
 	            this.burningTimeLeft = this.getFullBurnTime();

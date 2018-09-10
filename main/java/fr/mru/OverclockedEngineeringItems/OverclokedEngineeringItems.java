@@ -30,7 +30,6 @@ public class OverclokedEngineeringItems {
 							 //MINING_PICKAXE = new MiningPickaxe(),
 							 AGING_GUN_INCR = new AgingGunIncremental(),
 							 AGING_GUN_DECR = new AgingGunDecremantal(),
-							 
 							 DIMENSIONAL_HOLE = new DHoleItem();
 	 
 	
@@ -55,10 +54,14 @@ public class OverclokedEngineeringItems {
 				          OverclockedEngineeringBlocks.MACHINE_BLOCK,
 				          OverclockedEngineeringBlocks.DIMENSIONAL_HOLE,
 				          OverclockedEngineeringBlocks.COBBLE_FORM,
-				          
+				          OverclockedEngineeringBlocks.FILTER_CHEST,
+				          OverclockedEngineeringBlocks.RF_BRIDGE,
 				          OverclockedEngineeringBlocks.MACHINE_CASING,
 				          OverclockedEngineeringBlocks.MASS_ANVIL,
-				          OverclockedEngineeringBlocks.UNCRAFTING_TABLE
+				          OverclockedEngineeringBlocks.UNCRAFTING_TABLE,
+				          EngineBlockManager.HENGINE_BLOCK1, EngineBlockManager.HENGINE_BLOCK2,
+				          EngineBlockManager.HENGINE_BLOCK3, EngineBlockManager.HENGINE_BLOCK4,
+				          EngineBlockManager.HENGINE_BLOCK5
 				          );
 		
 		

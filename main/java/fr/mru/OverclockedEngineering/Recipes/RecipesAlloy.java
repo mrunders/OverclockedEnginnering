@@ -20,13 +20,10 @@ public class RecipesAlloy extends ARecipeManager {
 	public static boolean initialise() {
 		
 		map.putCopy(new ItemStack(OverclokedEngineeringItems.INGOT_STEEL), 1, 
-				    new ItemStack(Items.COAL), 2, new ItemStack(Items.IRON_INGOT), 1);
+				    new ItemStack(Items.COAL), 3, new ItemStack(Items.IRON_INGOT), 1);
 		
 		if ( OreDictionary.doesOreNameExist("ingotElectrum") ) 
 			map.putCopyOredict("ingotElectrum", 2, "ingotSilver", 1, "ingotGold", 1);
-		
-		if ( OreDictionary.doesOreNameExist("ingotSteel") )
-			map.putCopyOredict("ingotSteel", 1, "ingotIron", 1, "coal", 2);
 		
 		if ( OreDictionary.doesOreNameExist("ingotInvar") )
 			map.putCopyOredict("ingotInvar", 3, "ingotIron", 2, "ingotNickel", 1);

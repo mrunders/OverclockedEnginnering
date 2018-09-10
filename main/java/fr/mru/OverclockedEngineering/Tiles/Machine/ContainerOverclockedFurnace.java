@@ -19,7 +19,7 @@ public class ContainerOverclockedFurnace extends ContainerManager {
 	}
 
 	@Override
-	public void displaySlots(ATileManager tile, InventoryPlayer playerInventory) {
+	public boolean displaySlots(ATileManager tile, InventoryPlayer playerInventory) {
 		
 	    int i;
 	    for(i = 0; i < 3; i++) {
@@ -30,6 +30,8 @@ public class ContainerOverclockedFurnace extends ContainerManager {
 	    this.addSlotToContainer(new SlotEngine(tile, 4, 42, 58));
 
 	    this.addSlotToContainer(new SlotOutput(tile, 5, 116, 17));
+	    
+	    return false;
 		
 	}
 }

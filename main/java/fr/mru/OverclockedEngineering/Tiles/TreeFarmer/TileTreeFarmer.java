@@ -2,6 +2,7 @@ package fr.mru.OverclockedEngineering.Tiles.TreeFarmer;
 
 import fr.mru.OverclockedEngineering.Recipes.RecipesTreeFarm;
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileManager;
+import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileManagerMachines;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Items;
@@ -13,7 +14,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
 
-public class TileTreeFarmer extends ATileManager {
+public class TileTreeFarmer extends ATileManagerMachines {
 	
 	public TileTreeFarmer() {
 		super(4, "tile.treeFarmer");

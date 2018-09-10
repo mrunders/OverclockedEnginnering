@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "overclockedengineering:blocks/hybride_wither_engine_block"
+
+    }
+}

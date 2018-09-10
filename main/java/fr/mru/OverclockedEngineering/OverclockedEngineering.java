@@ -5,10 +5,12 @@ import org.apache.logging.log4j.Logger;
 import fr.mru.OverclockedEngineering.Recipes.ARecipeManager;
 import fr.mru.OverclockedEngineering.Tiles.Cobble_form.TileCobbleForm;
 import fr.mru.OverclockedEngineering.Tiles.DimensionalHole.TileDHole;
+import fr.mru.OverclockedEngineering.Tiles.FilterChest.TileFilterChest;
 import fr.mru.OverclockedEngineering.Tiles.Machine.TileOverclockedFurnace;
 import fr.mru.OverclockedEngineering.Tiles.StackFurnace.TileStackFurnace;
 import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.TileTreeFarmer;
 import fr.mru.OverclockedEngineering.Tiles.TwoModuleMachine.TileTwoModulesMachine;
+import fr.mru.OverclockedEngineering.Tiles.rfbridge.TileRfBridge;
 import fr.mru.OverclockedEngineeringItems.IngotSteel;
 import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import fr.mru.OverclockedEngineeringProxy.OverclockedEngineeringCommon;
@@ -57,6 +59,9 @@ public class OverclockedEngineering {
 		GameRegistry.registerTileEntity(TileDHole.class, MODID + ":tile_dimensional_hole");
 		GameRegistry.registerTileEntity(TileTwoModulesMachine.class	, MODID + ":tile_two_modules_machine");
 		GameRegistry.registerTileEntity(TileCobbleForm.class, MODID + ":tile_cobble_form");
+		GameRegistry.registerTileEntity(TileFilterChest.class, MODID + ":tile_filter_chest");
+		GameRegistry.registerTileEntity(TileRfBridge.class, MODID + ":tile_rf_bridge");
+
 
 		logger = event.getModLog();
 		proxy.preInit(event.getSuggestedConfigurationFile());

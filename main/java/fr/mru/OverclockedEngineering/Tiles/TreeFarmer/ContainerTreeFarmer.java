@@ -18,12 +18,14 @@ public class ContainerTreeFarmer extends ContainerManager {
 	}
 
 	@Override
-	public void displaySlots(ATileManager tile, InventoryPlayer playerInventory) {
+	public boolean displaySlots(ATileManager tile, InventoryPlayer playerInventory) {
 		
 	    this.addSlotToContainer(new Slot(tile, 0, 35, 15));
 	    this.addSlotToContainer(new Slot(tile, 1, 35, 50));
 	    
 	    this.addSlotToContainer(new SlotOutput(tile, 2, 100 , 32));
 	    this.addSlotToContainer(new SlotOutput(tile, 3, 122 , 32));
+	    
+	    return false;
 	}
 }

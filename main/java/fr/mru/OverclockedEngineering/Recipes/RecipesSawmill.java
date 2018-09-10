@@ -16,20 +16,9 @@ public class RecipesSawmill extends ARecipeManager {
 	}
 	
 	public static boolean initialise() {
-		
-		map.put(new ItemStack(Blocks.PLANKS, 6, 0), new ItemStack(Blocks.LOG, 1, 0));
-		map.put(new ItemStack(Blocks.PLANKS, 6, 1), new ItemStack(Blocks.LOG, 1, 1));
-		map.put(new ItemStack(Blocks.PLANKS, 6, 2), new ItemStack(Blocks.LOG, 1, 2));
-		map.put(new ItemStack(Blocks.PLANKS, 6, 3), new ItemStack(Blocks.LOG, 1, 3));
-		map.put(new ItemStack(Blocks.PLANKS, 6, 4), new ItemStack(Blocks.LOG2, 1, 0));
-		map.put(new ItemStack(Blocks.PLANKS, 6, 5), new ItemStack(Blocks.LOG2, 1, 1));
-		
-		map.put(new ItemStack(Items.STICK, 2), new ItemStack(Blocks.SAPLING, 1, 0));
-		map.put(new ItemStack(Items.STICK, 2), new ItemStack(Blocks.SAPLING, 1, 1));
-		map.put(new ItemStack(Items.STICK, 2), new ItemStack(Blocks.SAPLING, 1, 2));
-		map.put(new ItemStack(Items.STICK, 2), new ItemStack(Blocks.SAPLING, 1, 3));
-		map.put(new ItemStack(Items.STICK, 2), new ItemStack(Blocks.SAPLING, 1, 4));
-		map.put(new ItemStack(Items.STICK, 2), new ItemStack(Blocks.SAPLING, 1, 5));
+
+		map.putCopyOredict("plankWood", 5, "logWood", 1);
+		map.putCopyOredict("stickWood", 2, "treeSapling", 1);
 		
 		map.put(new ItemStack(Blocks.PLANKS, 4, 0), new ItemStack(Blocks.CRAFTING_TABLE));
 		map.put(new ItemStack(Blocks.PLANKS, 8, 0), new ItemStack(Blocks.CHEST));	

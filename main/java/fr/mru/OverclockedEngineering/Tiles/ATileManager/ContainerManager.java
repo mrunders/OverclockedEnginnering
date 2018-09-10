@@ -18,12 +18,12 @@ public abstract class ContainerManager extends Container {
 	private int	timePassed = 0;
 	private int	burnTimeLeft = 0;
 	
-	public abstract void displaySlots(ATileManager tile, InventoryPlayer playerInventory);
+	public abstract boolean displaySlots(ATileManager tile, InventoryPlayer playerInventory);
 
 	public ContainerManager(ATileManager tile, InventoryPlayer playerInventory) {
 	    this.tile = tile;
 
-	    displaySlots(tile, playerInventory);
+	    if ( displaySlots(tile, playerInventory) ) return;
 	    
 	    int i;
 	    for(i = 0; i < 3; ++i) {

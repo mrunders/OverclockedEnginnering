@@ -15,14 +15,15 @@ public class ContainerCobbleForm extends ContainerManager {
 	}
 
 	@Override
-	public void displaySlots(ATileManager tile, InventoryPlayer playerInventory) {
+	public boolean displaySlots(ATileManager tile, InventoryPlayer playerInventory) {
 		
 	    this.addSlotToContainer(new SlotOutput(tile, 0, 16, 30));
 	    this.addSlotToContainer(new SlotOutput(tile, 1, 44, 30));
 	    this.addSlotToContainer(new SlotOutput(tile, 2, 72, 30));
 	    this.addSlotToContainer(new SlotOutput(tile, 3, 100, 30));
 	    this.addSlotToContainer(new SlotOutput(tile, 4, 128, 30));
-		
+
+	    return false;
 	}
 
 
