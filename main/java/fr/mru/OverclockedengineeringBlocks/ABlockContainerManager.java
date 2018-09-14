@@ -54,4 +54,12 @@ public abstract class ABlockContainerManager extends BlockContainer {
 
     }
 	
+    public boolean isFullCube(IBlockState state) {
+        return false;
+    }
+
+    public boolean isOpaqueCube(IBlockState state) {
+        return false;
+    }
+	
 }

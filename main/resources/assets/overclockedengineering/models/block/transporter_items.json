@@ -1,10 +1,10 @@
 {
     "parent": "block/block",
+	"credit": "Made with Blockbench",
 	"textures": {
 		"0": "overclockedengineering:blocks/alien_rock",
-		"1": "overclockedengineering:blocks/machine_block_bottom",
-		"2": "overclockedengineering:blocks/cobble_form_off",
-		"4": "overclockedengineering:blocks/machine_light",
+		"1": "overclockedengineering:blocks/machine_block_side",
+		"2": "overclockedengineering:blocks/machine_light",
 		"particle": "overclockedengineering:blocks/alien_rock"
 	},
 	"elements": [
@@ -70,26 +70,26 @@
 		},
 		{
 			"from": [2, 1, 2],
-			"to": [14, 12, 14],
+			"to": [14, 14, 14],
 			"faces": {
-				"north": {"uv": [2, 3, 14, 14], "texture": "#2"},
-				"east": {"uv": [2, 3, 14, 14], "texture": "#2"},
-				"south": {"uv": [2, 3, 14, 14], "texture": "#2"},
-				"west": {"uv": [2, 3, 14, 14], "texture": "#2"},
-				"up": {"uv": [2, 2, 14, 14], "texture": "#2"},
-				"down": {"uv": [0, 0, 12, 12], "texture": "#2"}
+				"north": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#0"}
 			}
 		},
 		{
-			"from": [1, 12, 1],
-			"to": [15, 13, 15],
+			"from": [1, 14, 1],
+			"to": [15, 15, 15],
 			"faces": {
-				"north": {"uv": [0, 0, 16, 3], "texture": "#4"},
-				"east": {"uv": [0, 0, 16, 3], "texture": "#4"},
-				"south": {"uv": [0, 0, 16, 3], "texture": "#4"},
-				"west": {"uv": [0, 0, 16, 3], "texture": "#4"},
-				"up": {"uv": [1, 2, 15, 16], "texture": "#4"},
-				"down": {"uv": [1, 2, 15, 16], "texture": "#4"}
+				"north": {"uv": [0, 0, 16, 3], "texture": "#2"},
+				"east": {"uv": [0, 0, 16, 3], "texture": "#2"},
+				"south": {"uv": [0, 0, 16, 3], "texture": "#2"},
+				"west": {"uv": [0, 0, 16, 3], "texture": "#2"},
+				"up": {"uv": [1, 2, 15, 16], "texture": "#2"},
+				"down": {"uv": [1, 2, 15, 16], "texture": "#2"}
 			}
 		}
 	]

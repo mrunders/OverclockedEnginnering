@@ -7,10 +7,12 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityLockable;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
 
@@ -83,6 +85,11 @@ public class TileTreeFarmer extends ATileManagerMachines {
 	    if (!this.world.isRemote) {
 
 	    	if ( redstoneControl ) return;
+	    	if ( !retriveEnergyFromBridge()) {
+	    		if ( !bridgeExist() ) 
+		    		bridgePos = getBridgeNearby();
+	    		return;
+	    	}
 	    	
 	        if (!this.isBurning() && this.canSmelt() && !this.hasFuelEmpty()) {
 	            this.burningTimeLeft = this.getFullBurnTime();
@@ -93,10 +100,14 @@ public class TileTreeFarmer extends ATileManagerMachines {
 	            if (timePassed >= this.getFullRecipeTime()) {
 	                timePassed = 0;
 	                this.smelt();
-	            }
+	                
+	            }   
+	            
 	        } else {
 	            timePassed = 0;
 	        }
+	        
+	        
 	        
 	        this.markDirty();
 	    }

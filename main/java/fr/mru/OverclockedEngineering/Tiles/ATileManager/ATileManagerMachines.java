@@ -4,7 +4,12 @@ import java.util.stream.IntStream;
 
 import fr.mru.OverclockedEngineering.Tiles.rfbridge.TileRfBridge;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.inventory.ItemStackHelper;
+import net.minecraft.inventory.Slot;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -21,6 +26,43 @@ public abstract class ATileManagerMachines extends ATileManager {
 	public ATileManagerMachines(int stacksLenght, String name) {
 		super(stacksLenght, name);
 		
+	}
+	
+	protected boolean autoOutput(int outputSlot, IInventory inv ) {
+		
+    	for ( int i = 0; i < inv.getSizeInventory(); ++i ) {
+    		if ( inv.isItemValidForSlot(i, getStackInSlot(outputSlot)) ) {
+    			if ( moveOnSlot(outputSlot, inv, i)) {
+    				return true;
+    			}
+    		}
+    	}
+    	
+    	return false;
+	}
+	
+	protected boolean autoOutput(int outputSlot) {
+		
+        TileEntity t = world.getTileEntity(getPos().down());
+        if ( t != null && t instanceof IInventory ) {
+        	IInventory inv = (IInventory)t;
+
+        	return autoOutput(outputSlot, inv);
+        }
+        
+        return false;
+	}
+
+	
+	protected boolean retrieveEnergy() {
+		
+    	if ( !retriveEnergyFromBridge()) {
+    		if ( !bridgeExist() ) 
+	    		bridgePos = getBridgeNearby();
+    		return false;
+    	}
+    	
+    	return true;
 	}
 	
 	protected BlockPos getBridgeNearby() {
@@ -58,15 +100,16 @@ public abstract class ATileManagerMachines extends ATileManager {
 	private TileRfBridge getBridge() {
 		return ((TileRfBridge) world.getTileEntity(this.bridgePos));
 	}
-
-	public boolean moveOnSlot(int from, int to) {
+	
+	public boolean moveOnSlot(int from, IInventory reciver, int to) {
 		
-        ItemStack froms = getStackInSlot(from);
-        ItemStack tos = getStackInSlot(to);
+		ItemStack froms = getStackInSlot(from);
+		ItemStack tos = reciver.getStackInSlot(to);
+		
         int maxdpl = froms.getCount() + tos.getCount();
         
         if ( tos.isEmpty() ) {
-        	setInventorySlotContents(to, removeStackFromSlot(from));
+        	reciver.setInventorySlotContents(to, removeStackFromSlot(from));
         	return true;
         }
         
@@ -85,6 +128,11 @@ public abstract class ATileManagerMachines extends ATileManager {
 	        }
         }
 		return false;
+	}
+
+	public boolean moveOnSlot(int from, int to) {
+		
+        return moveOnSlot(from, this, to);
 	}
 	
 	@Override

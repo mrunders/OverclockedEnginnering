@@ -8,12 +8,14 @@ import fr.mru.OverclockedEngineering.Tiles.DimensionalHole.TileDHole;
 import fr.mru.OverclockedEngineering.Tiles.FilterChest.TileFilterChest;
 import fr.mru.OverclockedEngineering.Tiles.Machine.TileOverclockedFurnace;
 import fr.mru.OverclockedEngineering.Tiles.StackFurnace.TileStackFurnace;
+import fr.mru.OverclockedEngineering.Tiles.TransporterItems.TileTransporterItems;
 import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.TileTreeFarmer;
 import fr.mru.OverclockedEngineering.Tiles.TwoModuleMachine.TileTwoModulesMachine;
 import fr.mru.OverclockedEngineering.Tiles.rfbridge.TileRfBridge;
 import fr.mru.OverclockedEngineeringItems.IngotSteel;
 import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import fr.mru.OverclockedEngineeringProxy.OverclockedEngineeringCommon;
+import fr.mru.OverclockedEngineeringWorld.AlienRockGen;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -61,7 +63,9 @@ public class OverclockedEngineering {
 		GameRegistry.registerTileEntity(TileCobbleForm.class, MODID + ":tile_cobble_form");
 		GameRegistry.registerTileEntity(TileFilterChest.class, MODID + ":tile_filter_chest");
 		GameRegistry.registerTileEntity(TileRfBridge.class, MODID + ":tile_rf_bridge");
+		GameRegistry.registerTileEntity(TileTransporterItems.class, MODID + ":tile_transporter_items");
 
+		GameRegistry.registerWorldGenerator(new AlienRockGen(), 0);
 
 		logger = event.getModLog();
 		proxy.preInit(event.getSuggestedConfigurationFile());

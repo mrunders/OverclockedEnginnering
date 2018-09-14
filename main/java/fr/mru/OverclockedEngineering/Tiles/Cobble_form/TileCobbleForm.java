@@ -10,6 +10,10 @@ import net.minecraft.util.EnumFacing;
 
 public class TileCobbleForm extends ATileInstantProcessingManager {
 	
+	private static final int OUTPUT_ITERATION = 32;
+	private int output_iterator = 0;
+	private int current_output_slot = 0;
+	
 	public static final int COBBLE_SLOT = 0,
 						GRAVEL_SLOT = 1,
 						SAND_SLOT   = 2,
@@ -80,7 +84,8 @@ public class TileCobbleForm extends ATileInstantProcessingManager {
 		
 		if ( !this.world.isRemote ) {
 			
-			if ( redstoneControl ) smelt();
+	    	if ( redstoneControl && retrieveEnergy() ) smelt();
+			
 		}
 		
 	}

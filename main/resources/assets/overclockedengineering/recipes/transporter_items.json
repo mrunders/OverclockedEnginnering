@@ -1,0 +1,31 @@
+{ 
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "SES",
+      "NNN",
+      "SNS"  ],
+    "key": {
+      "N": [
+        {
+          "item": "overclockedengineering:alien_rock_fragment",
+          "data": 0
+        }
+      ],
+      "S": [
+        {
+          "item": "minecraft:obsidian",
+          "data": 0
+        }
+      ],
+      "E": [
+        {
+          "item": "minecraft:ender_pearl",
+          "data": 0
+        }
+      ]
+    },
+    "result": {
+      "item": "overclockedengineering:transporter_items",
+      "data": 0
+    }
+  }

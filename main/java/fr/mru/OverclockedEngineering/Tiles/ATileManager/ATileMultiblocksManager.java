@@ -7,7 +7,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 
-public abstract class ATileMultiblocksManager extends ATileManager {
+public abstract class ATileMultiblocksManager extends ATileManagerMachines {
 	
 	private boolean hasMaster, isMaster;
 	private BlockPos masterBlockLocation;

@@ -74,13 +74,21 @@ public class TileTwoModulesMachine extends ATileInstantProcessingManager {
 	    if (!this.world.isRemote) {
 	    	
 	    	if ( redstoneControl ) return;
+	    	if ( !retriveEnergyFromBridge()) {
+	    		if ( !bridgeExist() ) 
+		    		bridgePos = getBridgeNearby();
+	    		return;
+	    	}
 	    	
 	    	if ( this.canSmeltInSlot(this.getSecondResult().getResult(), OUTPUT_SLOT)) {
 	    		this.smeltInSlot(this.getSecondResult(), MIDDLE_SLOT, OUTPUT_SLOT);
+	    		
+	    		autoOutput(OUTPUT_SLOT);
 	    	}
 	    	
 	    	if ( this.canSmeltInSlot(this.getFirstResult().getResult(), MIDDLE_SLOT)) {
 	    		this.smeltInSlot(this.getFirstResult(), INPUT_SLOT, MIDDLE_SLOT);
+	    		
 	    	}
 	    	
 	    }

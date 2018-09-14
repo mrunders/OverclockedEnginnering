@@ -8,6 +8,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -68,11 +69,21 @@ public class TileStackFurnace extends ATileInstantProcessingManager {
 	@Override
 	public void update() {
 		
-		if ( redstoneControl ) return;
+    	if ( redstoneControl ) return;
+    	if ( !retriveEnergyFromBridge()) {
+    		if ( !bridgeExist() ) 
+	    		bridgePos = getBridgeNearby();
+    		return;
+    	}
 		
 	    if (!this.world.isRemote) {
 	    	
-	    	if ( !getStackInSlot(INPUT_SLOT).isEmpty() && canSmelt() ) smelt();
+	    	if ( !getStackInSlot(INPUT_SLOT).isEmpty() && canSmelt() ) {
+	    		
+	    		smelt();
+	    		autoOutput(OUTPUT_SLOT);
+
+	    	}
 	    }
 	}
 

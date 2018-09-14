@@ -99,8 +99,8 @@ public class TileOverclockedFurnace extends ATileManagerMachines {
 	    	if ( !retriveEnergyFromBridge()) {
 	    		if ( !bridgeExist() ) 
 		    		bridgePos = getBridgeNearby();
-	    		else
-	    			return;
+
+	    		return;
 	    	}
 
 	        if (!this.isBurning() && this.canSmelt() && !this.hasFuelEmpty()) {
@@ -112,6 +112,7 @@ public class TileOverclockedFurnace extends ATileManagerMachines {
 	            if (timePassed >= this.getFullRecipeTime()) {
 	                timePassed = 0;
 	                this.smelt();
+	                autoOutput(SLOT_OUTPUT);
 	            }
 	        } else {
 	            timePassed = 0;

@@ -1,14 +1,18 @@
 package fr.mru.OverclockedEngineering.Tiles.rfbridge;
 
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileRFConsumer;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.EntityEnderCrystal;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.entity.projectile.EntityShulkerBullet;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 
 public class TileRfBridge extends ATileRFConsumer {
 	
-	private static final int MAX_ENERGY_STORED = 100000;
+	private static final int MAX_ENERGY_STORED = 1000000;
+	private boolean entityHasSpawned = false;
+	private Entity enti = null;
 	
 	public TileRfBridge() {
 		super("rf_bridge");
@@ -69,6 +73,11 @@ public class TileRfBridge extends ATileRFConsumer {
 
 	@Override
 	public void update() {
+		
+		if ( !world.isRemote ) {
+			
+			
+		}
 		
 	}
 

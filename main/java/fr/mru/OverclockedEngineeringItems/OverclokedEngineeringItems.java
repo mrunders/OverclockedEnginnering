@@ -30,7 +30,9 @@ public class OverclokedEngineeringItems {
 							 //MINING_PICKAXE = new MiningPickaxe(),
 							 AGING_GUN_INCR = new AgingGunIncremental(),
 							 AGING_GUN_DECR = new AgingGunDecremantal(),
-							 DIMENSIONAL_HOLE = new DHoleItem();
+							 ALIEN_ROCK_FRAGMENT = new AlienRockFragment(),
+							 DIMENSIONAL_HOLE = new DHoleItem(),
+							 LOCATION_CARD = new LocationCard();
 	 
 	
 	public static ArrayList<Item> itemsList = new ArrayList<>();
@@ -47,6 +49,8 @@ public class OverclokedEngineeringItems {
 		itemsList.add(AGING_GUN_INCR);
 		itemsList.add(AGING_GUN_DECR);
 		itemsList.add(DIMENSIONAL_HOLE);
+		itemsList.add(ALIEN_ROCK_FRAGMENT);
+		itemsList.add(LOCATION_CARD);
 		
 		registerItemBlock(OverclockedEngineeringBlocks.TWO_MODULES_MACHINE,
 				          OverclockedEngineeringBlocks.TREE_FARMER,
@@ -54,11 +58,13 @@ public class OverclokedEngineeringItems {
 				          OverclockedEngineeringBlocks.MACHINE_BLOCK,
 				          OverclockedEngineeringBlocks.DIMENSIONAL_HOLE,
 				          OverclockedEngineeringBlocks.COBBLE_FORM,
-				          OverclockedEngineeringBlocks.FILTER_CHEST,
+				          //OverclockedEngineeringBlocks.FILTER_CHEST,
 				          OverclockedEngineeringBlocks.RF_BRIDGE,
+				          OverclockedEngineeringBlocks.ALIEN_ROCK,
 				          OverclockedEngineeringBlocks.MACHINE_CASING,
 				          OverclockedEngineeringBlocks.MASS_ANVIL,
 				          OverclockedEngineeringBlocks.UNCRAFTING_TABLE,
+				          OverclockedEngineeringBlocks.TRANSPORTER_ITEMS,
 				          EngineBlockManager.HENGINE_BLOCK1, EngineBlockManager.HENGINE_BLOCK2,
 				          EngineBlockManager.HENGINE_BLOCK3, EngineBlockManager.HENGINE_BLOCK4,
 				          EngineBlockManager.HENGINE_BLOCK5

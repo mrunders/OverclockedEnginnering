@@ -22,6 +22,7 @@ item.overclockedengineering.aging_gun_incremantal.name=Aging Gun++
 item.overclockedengineering.aging_gun_decremantal.name=Aging Gun--
 item.overclockedengineering.dimensional_hole_item.name=DHole Gateway (WIP)
 item.overclockedengineering.ingot_steel.name=Steel ingot
+item.overclockedengineering.alien_rock_fragment.name=Strange Rock Fragment
 
 tile.overclockedengineering.machine_block.name=Machine Block
 tile.overclockedengineering.stack_furnace.name=Stack Furnace
@@ -33,3 +34,6 @@ tile.overclockedengineering.machine_casing.name=Machine Casing
 tile.overclockedengineering.two_modules_machine.name=2Modules Machine
 tile.overclockedengineering.cobble_form.name=Cobble Form
 tile.overclockedengineering.block_steel.name=Steel Block
+tile.overclockedengineering.alien_rock.name=Strange Rock 
+tile.overclockedengineering.rf_bridge.name=RF Bridge
+tile.overclockedengineering.filter_chest.name=Filter Chest

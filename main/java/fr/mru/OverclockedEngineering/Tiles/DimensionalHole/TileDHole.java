@@ -2,6 +2,7 @@ package fr.mru.OverclockedEngineering.Tiles.DimensionalHole;
 
 import fr.mru.OverclockedEngineering.Recipes.RecipeRequest;
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileManager;
+import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileManagerMachines;
 import fr.mru.OverclockedEngineeringItems.DHoleItem;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -12,7 +13,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 
-public class TileDHole extends ATileManager {
+public class TileDHole extends ATileManagerMachines {
 
 	public TileDHole() {
 		super(1, "tile.dimensional_hole");
@@ -63,7 +64,12 @@ public class TileDHole extends ATileManager {
 		
 	    if (!this.world.isRemote) {
 	      
-	       if ( redstoneControl ) return;
+	    	if ( redstoneControl ) return;
+	    	if ( !retriveEnergyFromBridge()) {
+	    		if ( !bridgeExist() ) 
+		    		bridgePos = getBridgeNearby();
+	    		return;
+	    	}
 
 	        if (this.canSmelt()) {
 	            this.timePassed++;
