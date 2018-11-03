@@ -47,6 +47,7 @@ public class RecipeCompresion extends ARecipeManager {
 		map.putCopyOredict("blockPrismarine", 1, "gemPrismarine", 4);
 		map.putCopy(new ItemStack(Blocks.BRICK_BLOCK), 1, new ItemStack(Items.BRICK), 4);
 		map.putCopy(new ItemStack(OverclokedEngineeringItems.CIRCUIT_LARGE), 1, new ItemStack(OverclokedEngineeringItems.CIRCUIT), 9);
+		map.putCopy(new ItemStack(OverclokedEngineeringItems.ALIEN_ROCK_FRAGMENT), 1, new ItemStack(OverclokedEngineeringItems.ALIEN_ROCK_DUST), 4);
 		
 		reversedmap.putCopyOredict("gemDiamond", 9,"blockDiamond", 1);
 		reversedmap.putCopyOredict("gemEmerald", 9, "blockEmerald", 1);

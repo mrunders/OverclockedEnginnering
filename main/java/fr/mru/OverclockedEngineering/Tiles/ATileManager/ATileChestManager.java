@@ -1,5 +1,6 @@
 package fr.mru.OverclockedEngineering.Tiles.ATileManager;
 
+import fr.mru.OverclockedEngineering.Recipes.RecipeRequestMap;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -25,7 +26,7 @@ public abstract class ATileChestManager extends ATileManagerMachines {
     	for ( int j = stackLenght + updateSlots; j < getSizeInventory(); ++j ) {
     		
     		k = getStackInSlot(j);
-    		if ( !k.isEmpty() && k.getItem() == i.getItem()) return true;
+    		if ( !k.isEmpty() && RecipeRequestMap.itemStackEqual(k, i)) return true;
     	}
     	
     	return false;

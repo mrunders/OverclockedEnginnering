@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "overclockedengineering:items/rf_storage_module"
+    }
+
+}

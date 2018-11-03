@@ -8,9 +8,13 @@ import net.minecraft.util.EnumFacing;
 
 public class TileFilterChest extends ATileChestManager {
 	
-	public TileFilterChest() {
-		super(81, 5, 15, "chest_filter");
+	private int[] INOUT_INDEX = null;
 	
+	public TileFilterChest() {
+		super(81, 5, 18, "chest_filter");
+		INOUT_INDEX = new int[81];
+		for (int i = 0; i < 81; ++i) 
+			INOUT_INDEX[i] = i;
 	}
 
 	@Override
@@ -26,7 +30,9 @@ public class TileFilterChest extends ATileChestManager {
 	@Override
 	public boolean isItemValidForSlot(int index, ItemStack stack) {
 		
-		return getStackInSlot(index).getItem() == stack.getItem() || !isOnFilter(stack);
+		ItemStack ss = getStackInSlot(index);
+		if ( ss == null ) return isOnFilter(stack);
+		return ss.getItem() == stack.getItem() || isOnFilter(stack);
 	}
 
 	@Override
@@ -39,14 +45,12 @@ public class TileFilterChest extends ATileChestManager {
 
 	@Override
 	public int[] getInputSlots() {
-		// TODO Auto-generated method stub
-		return null;
+		return INOUT_INDEX;
 	}
 
 	@Override
 	public int[] getOutputSlots() {
-		// TODO Auto-generated method stub
-		return null;
+		return INOUT_INDEX;
 	}
 
 	

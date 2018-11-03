@@ -1,0 +1,23 @@
+{
+	"forge_marker": 1,
+	"defaults":
+	{
+		"transform": "forge:default-block",
+		"model": "crop",
+		"textures": {"crop": "overclockedengineering:blocks/magium_stage0"}
+	},
+	"variants":
+	{
+		"age":
+		{
+			"0": {"textures": {"crop": "overclockedengineering:blocks/magium_stage0"}},
+			"1": {"textures": {"crop": "overclockedengineering:blocks/magium_stage0"}},
+			"2": {"textures": {"crop": "overclockedengineering:blocks/magium_stage0"}},
+			"3": {"textures": {"crop": "overclockedengineering:blocks/magium_stage1"}},
+            "4": {"textures": {"crop": "overclockedengineering:blocks/magium_stage1"}},
+			"5": {"textures": {"crop": "overclockedengineering:blocks/magium_stage2"}},
+			"6": {"textures": {"crop": "overclockedengineering:blocks/magium_stage2"}},
+			"7": {"textures": {"crop": "overclockedengineering:blocks/magium_stage3"}}
+		}
+	}
+}

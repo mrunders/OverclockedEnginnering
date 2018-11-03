@@ -7,12 +7,16 @@ import net.minecraft.util.ResourceLocation;
 
 public class GuiFilterChest extends GuiContainer {
 	
-	private static final ResourceLocation background = new ResourceLocation(OverclockedEngineering.MODID,"textures/gui/container/filterChest.png");
+	private static final ResourceLocation background = new ResourceLocation(OverclockedEngineering.MODID,"textures/gui/container/filter_chest.png");
 	private TileFilterChest tile;
+	
 
 	public GuiFilterChest(TileFilterChest tile, InventoryPlayer playerInv) {
         super(new ContainerFilterChest(tile, playerInv));
         this.tile = tile;
+        
+        this.xSize += 55;
+        this.ySize += 90;
 	}
 	
 	@Override

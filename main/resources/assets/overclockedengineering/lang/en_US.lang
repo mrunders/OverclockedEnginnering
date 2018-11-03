@@ -23,6 +23,8 @@ item.overclockedengineering.aging_gun_decremantal.name=Aging Gun--
 item.overclockedengineering.dimensional_hole_item.name=DHole Gateway (WIP)
 item.overclockedengineering.ingot_steel.name=Steel ingot
 item.overclockedengineering.alien_rock_fragment.name=Strange Rock Fragment
+item.overclockedengineering.location_card.name=Location Card
+item.overclockedengineering.alien_rock_dust.name=Alien Rock Dust
 
 tile.overclockedengineering.machine_block.name=Machine Block
 tile.overclockedengineering.stack_furnace.name=Stack Furnace
@@ -37,3 +39,5 @@ tile.overclockedengineering.block_steel.name=Steel Block
 tile.overclockedengineering.alien_rock.name=Strange Rock 
 tile.overclockedengineering.rf_bridge.name=RF Bridge
 tile.overclockedengineering.filter_chest.name=Filter Chest
+tile.overclockedengineering.transporter_items.name=Items Transporter
+tile.overclockedengineering.alien_grass.name=Alien Substance infused grass

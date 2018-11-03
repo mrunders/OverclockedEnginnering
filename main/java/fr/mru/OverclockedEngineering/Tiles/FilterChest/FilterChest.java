@@ -17,7 +17,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class FilterChest extends AOrientableBlockContainerManager {
+public class FilterChest extends ABlockContainerManager {
 
 	public FilterChest() {
 		super("filter_chest");

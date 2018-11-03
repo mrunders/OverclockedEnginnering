@@ -20,6 +20,8 @@ import net.minecraft.world.World;
 
 public class RfBridge extends ABlockContainerManager {
 	
+	public static final String DESCRIPTION = "After a long periode of reflection, you have finally found the way to mix alien and human technologie to make a device that transform RF into particules of energy";
+	
 	public RfBridge() {
 		super("rf_bridge");
 	}

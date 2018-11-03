@@ -7,9 +7,14 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 
 public class AlienRock extends OverclockedEngineeringBlocksBase {
+	
+	public static final String DESCRIPTION = "What is it? A strange rock from the space, a bit warm, i should use diamond pickaxe";
 
 	public AlienRock() {
 		super("alien_rock");
+		
+		setHardness(50.0F);
+		setResistance(2000.0F);
 	}
 	
 

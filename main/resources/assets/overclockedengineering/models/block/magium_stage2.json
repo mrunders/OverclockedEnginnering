@@ -1,0 +1,6 @@
+{
+    "parent": "block/crop",
+    "textures": {
+        "crop": "overclockedengineering:blocks/magium_stage2"
+    }
+}

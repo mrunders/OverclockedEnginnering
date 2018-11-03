@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -42,6 +43,8 @@ public class RecipesGrinder extends ARecipeManager {
 		map.put(new ItemStack(Items.DIAMOND, 2), new ItemStack(Blocks.DIAMOND_ORE));
 		map.put(new ItemStack(Items.EMERALD, 2),  new ItemStack(Blocks.EMERALD_ORE));
 		map.put(new ItemStack(Items.QUARTZ, 4), new ItemStack(Blocks.QUARTZ_ORE));
+		
+		map.put(new ItemStack(OverclokedEngineeringItems.ALIEN_ROCK_DUST), new ItemStack(OverclokedEngineeringItems.ALIEN_ROCK_FRAGMENT));
 
 		return true;
 	}

@@ -21,29 +21,30 @@ public class ContainerFilterChest extends ContainerManager {
 	            this.addSlotToContainer(new Slot(tile, j + i * 9, 8 + j * 18, 8 + i * 18));
 	        }
 	    }
-	    
+	    /*
 	    // modules (bottom left side)
 	    for(i = 0; i < 5; ++i) {
 	        this.addSlotToContainer(new Slot(tile, i + 81, 206, i * 18 - 36));
 	    }
+	    */
 	    
-	    // filter (left side)
-	    for(i = 0; i < 3; ++i) {
-	        for(j = 0; j < 9; ++j) {
-	            this.addSlotToContainer(new Slot(tile, j + i * 3 + 86, 188 + i * 18, j * 18 - 72));
+	    // filter (right side)
+	    for(i = 0; i < 9; ++i) {
+	        for(j = 0; j < 2; ++j) {
+	            this.addSlotToContainer(new Slot(tile, 86 + j + i*2, 175 + j * 18, 8 + i * 18));
 	        }
 	    }
 	    
 	    // inventory player
 	    for(i = 0; i < 3; ++i) {
 	        for(j = 0; j < 9; ++j) {
-	            this.addSlotToContainer(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, 188 + i * 18));
+	            this.addSlotToContainer(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, 179 + i * 18));
 	        }
 	    }
 	    
 	    // player hotbar
 	    for(i = 0; i < 9; ++i) {
-	        this.addSlotToContainer(new Slot(playerInventory, i, 8 + i * 18, 260));
+	        this.addSlotToContainer(new Slot(playerInventory, i, 8 + i * 18, 237));
 	    }
 	    
 	    return true;
