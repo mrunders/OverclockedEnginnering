@@ -36,7 +36,8 @@ public class OverclockedEngineeringBlocks {
 							  TRANSPORTER_ITEMS = new TransporterItems(),
 							  ALIEN_GRASS = new AlienGrass(),
 							  RF_STORAGE_BLOCK = new EnergyStorage(),
-							  MAGIUS_BLOCK_SEED = new MagiusBlock();
+							  MAGIUS_BLOCK_SEED = new MagiusBlock(),
+							  STRUCTURE_SHIP_BLOCK = new StructureShipBlock();
 	
 	public static ArrayList<Block> blockList = new ArrayList<>();
 	
@@ -60,6 +61,7 @@ public class OverclockedEngineeringBlocks {
 		blockList.add(ALIEN_GRASS);
 		blockList.add(RF_STORAGE_BLOCK);
 		blockList.add(MAGIUS_BLOCK_SEED);
+		blockList.add(STRUCTURE_SHIP_BLOCK);
 	}
 	
 	public static void setBlockName(Block block, String name) {

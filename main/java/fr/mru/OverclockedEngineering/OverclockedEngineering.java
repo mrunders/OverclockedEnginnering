@@ -16,6 +16,7 @@ import fr.mru.OverclockedEngineering.Tiles.rfbridge.TileRfBridge;
 import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import fr.mru.OverclockedEngineeringProxy.OverclockedEngineeringCommon;
 import fr.mru.OverclockedEngineeringStructure.CrashedSpaceShip;
+import fr.mru.OverclockedEngineeringStructure.WorldGenCustomStructures;
 import fr.mru.OverclockedEngineeringWorld.AlienRockGen;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
@@ -67,6 +68,7 @@ public class OverclockedEngineering {
 		GameRegistry.registerTileEntity(TileRFStorage.class, MODID + ":tile_rf_storage_block");
 
 		GameRegistry.registerWorldGenerator(new AlienRockGen(), 0);
+		GameRegistry.registerWorldGenerator(new WorldGenCustomStructures(), 0);
 
 		logger = event.getModLog();
 		proxy.preInit(event.getSuggestedConfigurationFile());

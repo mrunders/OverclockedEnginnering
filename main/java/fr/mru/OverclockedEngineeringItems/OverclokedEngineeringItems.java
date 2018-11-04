@@ -74,7 +74,8 @@ public class OverclokedEngineeringItems {
 				          OverclockedEngineeringBlocks.MAGIUS_BLOCK_SEED,
 				          EngineBlockManager.HENGINE_BLOCK1, EngineBlockManager.HENGINE_BLOCK2,
 				          EngineBlockManager.HENGINE_BLOCK3, EngineBlockManager.HENGINE_BLOCK4,
-				          EngineBlockManager.HENGINE_BLOCK5
+				          EngineBlockManager.HENGINE_BLOCK5,
+				          OverclockedEngineeringBlocks.STRUCTURE_SHIP_BLOCK
 				          );
 		
 		
