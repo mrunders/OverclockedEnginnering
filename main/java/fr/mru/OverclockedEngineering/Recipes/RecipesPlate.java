@@ -3,6 +3,7 @@ package fr.mru.OverclockedEngineering.Recipes;
 import java.util.List;
 import java.util.Set;
 
+import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
@@ -24,6 +25,8 @@ public class RecipesPlate extends ARecipeManager {
 			}
 			
 		}
+		
+		map.putCopy(new ItemStack(OverclockedEngineeringBlocks.STRUCTURE_SHIP_BLOCK), 8, new ItemStack(Blocks.IRON_BLOCK), 1);
 		
 		return true;
 	}

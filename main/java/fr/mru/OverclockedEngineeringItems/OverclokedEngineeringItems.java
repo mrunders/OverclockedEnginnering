@@ -75,7 +75,10 @@ public class OverclokedEngineeringItems {
 				          EngineBlockManager.HENGINE_BLOCK1, EngineBlockManager.HENGINE_BLOCK2,
 				          EngineBlockManager.HENGINE_BLOCK3, EngineBlockManager.HENGINE_BLOCK4,
 				          EngineBlockManager.HENGINE_BLOCK5,
-				          OverclockedEngineeringBlocks.STRUCTURE_SHIP_BLOCK
+				          OverclockedEngineeringBlocks.STRUCTURE_SHIP_BLOCK,
+				          //OverclockedEngineeringBlocks.WITHER_PLACER,
+				          OverclockedEngineeringBlocks.ONE_ITEM_DROPPER
+				          
 				          );
 		
 		

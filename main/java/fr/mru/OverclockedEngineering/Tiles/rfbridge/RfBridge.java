@@ -39,7 +39,7 @@ public class RfBridge extends ABlockContainerManager {
 	    } else {
 	        TileEntity tileentity = world.getTileEntity(pos);
 	        
-	        player.sendMessage( new TextComponentKeybind("Energy stored: " + ((TileRfBridge)tileentity).getEnergyStored(null)) );
+	        player.sendMessage( new TextComponentKeybind("Energy stored: " + ((TileRfBridge)tileentity).getEnergyStored(null) + " / " + TileRfBridge.MAX_ENERGY_STORED));
 
 	        return true;
 	    }

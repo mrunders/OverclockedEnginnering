@@ -4,52 +4,59 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
+import net.minecraft.block.BlockGrass;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.BiomePlains;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
-import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 import scala.actors.threadpool.Arrays;
 
 public class WorldGenCustomStructures implements IWorldGenerator {
 	
-	public static final CrashedSpaceShip SHIP = new CrashedSpaceShip();
+	public static final Structure SHIP = new Structure("crashedspaceship");
+	
+	private int chance;
+	private Block topBlock;
+	private Structure struct;
+	private ArrayList<Class<?>> classList;
+	
+	public WorldGenCustomStructures(Structure struct, int chance, Block topBlock, ArrayList<Class<?>> classes) {
+		
+		this.struct = struct;
+		this.chance = chance;
+		this.topBlock = topBlock;
+		this.classList = classes;
+	}
+
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator,
 			IChunkProvider chunkProvider) {
 
 		if (world.provider.getDimension() == 0) {
-			generateStructure(SHIP, world, random, chunkX, chunkZ, 200, Blocks.GRASS, BiomePlains.class);
+			generateStructure(world, random, chunkX, chunkZ);
 		}
 		
 	} 
 	
-	private void generateStructure(WorldGenerator generator, World world, Random random, int chunkX, int chunkZ, int chance, Block topBlock, Class<?>... classes ) {
-	
-		ArrayList<Class<?>> classList = new ArrayList<Class<?>>(Arrays.asList(classes));
+	private void generateStructure( World world, Random random, int chunkX, int chunkZ ) {
 		
 		int x = (chunkX * 16) + random.nextInt(15);
 		int z = (chunkZ * 16) + random.nextInt(15);
-		int y = calculateGenerationHeight(world, x, z, topBlock);
+		int y = calculateGenerationHeight(world, x, z, this.topBlock);
 		
-		BlockPos pos = new BlockPos(x,y,z);
-		Class<?> biome = world.provider.getBiomeForCoords(pos).getClass();
-		
-		if (world.getWorldType() != net.minecraft.world.WorldType.FLAT) {
+		if ( random.nextInt(this.chance) == 0) {
 			
-			if ( classList.contains(biome)) {
-				
-				if (random.nextInt(chance) == 0) {
-					
-					generator.generate(world, random, pos);
-				}
-			}
-		}
+			BlockPos pos = new BlockPos(x,y,z);
+			Class<?> biome = world.provider.getBiomeForCoords(pos).getClass();
+			
+			if ( this.classList.contains(biome)) {
 	
+				this.struct.generate(world, random, pos);
+			}	
+		}
 	}
 	
 	private static int calculateGenerationHeight(World world, int x, int z, Block topBlock) {

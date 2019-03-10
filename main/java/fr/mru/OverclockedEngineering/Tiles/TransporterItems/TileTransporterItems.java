@@ -52,8 +52,8 @@ public class TileTransporterItems extends ATileInstantProcessingManager {
 
 	@Override
 	public boolean isItemValidForSlot(int index, ItemStack stack) {
-
-		return getStackInSlot(1).isEmpty() || RecipeRequestMap.itemStackEqual(getStackInSlot(1), stack);
+		
+		return index == 1 && (getStackInSlot(1).isEmpty() || RecipeRequestMap.itemStackEqual(stack, getStackInSlot(1)));
 	}
 
 	@Override

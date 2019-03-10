@@ -1,10 +1,14 @@
 package fr.mru.OverclockedEngineering.Tiles.FilterChest;
 
+import codechicken.lib.inventory.InventoryUtils;
+import fr.mru.OverclockedEngineering.Recipes.RecipeRequestMap;
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileChestManager;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.inventory.InventoryBasic;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class TileFilterChest extends ATileChestManager {
 	
@@ -30,9 +34,8 @@ public class TileFilterChest extends ATileChestManager {
 	@Override
 	public boolean isItemValidForSlot(int index, ItemStack stack) {
 		
-		ItemStack ss = getStackInSlot(index);
-		if ( ss == null ) return isOnFilter(stack);
-		return ss.getItem() == stack.getItem() || isOnFilter(stack);
+		ItemStack targeted = getStackInSlot(index);
+		return index < this.stackLenght && isOnFilter(stack) && targeted.getCount() < targeted.getMaxStackSize();
 	}
 
 	@Override

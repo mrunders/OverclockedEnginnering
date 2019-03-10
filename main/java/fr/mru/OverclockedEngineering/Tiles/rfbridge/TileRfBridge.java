@@ -10,7 +10,7 @@ import net.minecraft.util.EnumFacing;
 
 public class TileRfBridge extends ATileRFConsumer {
 	
-	private static final int MAX_ENERGY_STORED = 1000000;
+	public static final int MAX_ENERGY_STORED = 1000000;
 	private boolean entityHasSpawned = false;
 	private Entity enti = null;
 	

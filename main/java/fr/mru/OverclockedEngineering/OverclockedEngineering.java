@@ -8,6 +8,7 @@ import fr.mru.OverclockedEngineering.Tiles.DimensionalHole.TileDHole;
 import fr.mru.OverclockedEngineering.Tiles.EnergyStorage.TileRFStorage;
 import fr.mru.OverclockedEngineering.Tiles.FilterChest.TileFilterChest;
 import fr.mru.OverclockedEngineering.Tiles.Machine.TileOverclockedFurnace;
+import fr.mru.OverclockedEngineering.Tiles.OneItemDropper.TileOneItemDropper;
 import fr.mru.OverclockedEngineering.Tiles.StackFurnace.TileStackFurnace;
 import fr.mru.OverclockedEngineering.Tiles.TransporterItems.TileTransporterItems;
 import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.TileTreeFarmer;
@@ -15,8 +16,9 @@ import fr.mru.OverclockedEngineering.Tiles.TwoModuleMachine.TileTwoModulesMachin
 import fr.mru.OverclockedEngineering.Tiles.rfbridge.TileRfBridge;
 import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import fr.mru.OverclockedEngineeringProxy.OverclockedEngineeringCommon;
-import fr.mru.OverclockedEngineeringStructure.CrashedSpaceShip;
+import fr.mru.OverclockedEngineeringStructure.Structure;
 import fr.mru.OverclockedEngineeringStructure.WorldGenCustomStructures;
+import fr.mru.OverclockedEngineeringStructure.WorldGenCustomStructuresFactory;
 import fr.mru.OverclockedEngineeringWorld.AlienRockGen;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
@@ -66,9 +68,10 @@ public class OverclockedEngineering {
 		GameRegistry.registerTileEntity(TileRfBridge.class, MODID + ":tile_rf_bridge");
 		GameRegistry.registerTileEntity(TileTransporterItems.class, MODID + ":tile_transporter_items");
 		GameRegistry.registerTileEntity(TileRFStorage.class, MODID + ":tile_rf_storage_block");
+		GameRegistry.registerTileEntity(TileOneItemDropper.class, 	MODID + ":tile_one_item_dropper");
 
 		GameRegistry.registerWorldGenerator(new AlienRockGen(), 0);
-		GameRegistry.registerWorldGenerator(new WorldGenCustomStructures(), 0);
+		GameRegistry.registerWorldGenerator(WorldGenCustomStructuresFactory.generateCrashedSpaceShip(), 0);
 
 		logger = event.getModLog();
 		proxy.preInit(event.getSuggestedConfigurationFile());

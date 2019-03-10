@@ -17,12 +17,13 @@ public class RecipesSawmill extends ARecipeManager {
 	
 	public static boolean initialise() {
 
+		/*
 		map.putCopyOredict("plankWood", 5, "logWood", 1);
 		map.putCopyOredict("stickWood", 2, "treeSapling", 1);
 		
 		map.put(new ItemStack(Blocks.PLANKS, 4, 0), new ItemStack(Blocks.CRAFTING_TABLE));
 		map.put(new ItemStack(Blocks.PLANKS, 8, 0), new ItemStack(Blocks.CHEST));	
-
+		 */
 		return true;
 	}
 	

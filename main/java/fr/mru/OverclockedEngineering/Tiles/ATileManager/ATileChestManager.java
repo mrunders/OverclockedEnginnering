@@ -7,6 +7,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
+import net.minecraftforge.oredict.OreDictionary;
 
 public abstract class ATileChestManager extends ATileManagerMachines {
 	
@@ -25,8 +26,7 @@ public abstract class ATileChestManager extends ATileManagerMachines {
     	ItemStack k = null;
     	for ( int j = stackLenght + updateSlots; j < getSizeInventory(); ++j ) {
     		
-    		k = getStackInSlot(j);
-    		if ( !k.isEmpty() && RecipeRequestMap.itemStackEqual(k, i)) return true;
+    		if ( OreDictionary.itemMatches(getStackInSlot(j), i, true)) return true;
     	}
     	
     	return false;

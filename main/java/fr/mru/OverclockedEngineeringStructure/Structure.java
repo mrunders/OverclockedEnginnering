@@ -16,18 +16,18 @@ import net.minecraft.world.gen.structure.template.Template;
 import net.minecraft.world.gen.structure.template.TemplateManager;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
-public class CrashedSpaceShip extends WorldGenerator implements IStructure {
+public class Structure extends WorldGenerator implements IStructure {
 	
-	public static String structureName = "crashedspaceship";
+	public static String structureName;
 	
-	public CrashedSpaceShip() {
+	public Structure(String structureName) {
 		
+		this.structureName = structureName;
 	}
 
 	public boolean generate(World world, Random rand, BlockPos pos) {
 		
 		this.generateStructure(world, pos);
-		
 		return true;
 	}
 
