@@ -2,17 +2,17 @@ package fr.mru.OverclockedEngineering.Tiles.EnergyStorage;
 
 import cofh.redstoneflux.api.IEnergyProvider;
 import cofh.redstoneflux.api.IEnergyReceiver;
-import cofh.redstoneflux.api.IEnergyStorage;
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileManagerEnergy;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 
-public class TileRFStorage extends ATileManagerEnergy implements IEnergyProvider, IEnergyReceiver {
+public class TileRFStorage extends ATileManagerEnergy implements IEnergyReceiver, IEnergyProvider {
 
 	private static final int PER_UPGRADE = 100000;
 	private int maxEnergyStored = 0;
+	
 
 	public TileRFStorage() {
 		super(0, "rf_storage_module");
@@ -54,10 +54,10 @@ public class TileRFStorage extends ATileManagerEnergy implements IEnergyProvider
 		
 		return false;
 	}
-
+	
 	@Override
-	public void update() {
-
+	public boolean canConnectEnergy(EnumFacing from) {
+		return true;
 	}
 
 	@Override
@@ -78,7 +78,7 @@ public class TileRFStorage extends ATileManagerEnergy implements IEnergyProvider
 	}
 
 	@Override
-	public int extractEnergy(EnumFacing from, int maxExtract, boolean simulate)  {
+	public int extractEnergy(EnumFacing from,int maxExtract, boolean simulate)  {
 		
 		if ( energy_stored - maxExtract < 0) {
 			
@@ -103,10 +103,11 @@ public class TileRFStorage extends ATileManagerEnergy implements IEnergyProvider
 	public int getMaxEnergyStored(EnumFacing from) {
 		return maxEnergyStored;
 	}
+	
 
 	@Override
-	public boolean canConnectEnergy(EnumFacing from) {
-		return true;
-	}
+	public void update() {
+
+	}	
 
 }

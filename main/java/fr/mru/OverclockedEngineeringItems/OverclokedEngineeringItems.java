@@ -70,14 +70,14 @@ public class OverclokedEngineeringItems {
 				          OverclockedEngineeringBlocks.UNCRAFTING_TABLE,
 				          OverclockedEngineeringBlocks.TRANSPORTER_ITEMS,
 				          OverclockedEngineeringBlocks.ALIEN_GRASS,
-				          OverclockedEngineeringBlocks.RF_STORAGE_BLOCK,
+				          //OverclockedEngineeringBlocks.RF_STORAGE_BLOCK,
 				          OverclockedEngineeringBlocks.MAGIUS_BLOCK_SEED,
 				          EngineBlockManager.HENGINE_BLOCK1, EngineBlockManager.HENGINE_BLOCK2,
 				          EngineBlockManager.HENGINE_BLOCK3, EngineBlockManager.HENGINE_BLOCK4,
 				          EngineBlockManager.HENGINE_BLOCK5,
-				          OverclockedEngineeringBlocks.STRUCTURE_SHIP_BLOCK,
+				          OverclockedEngineeringBlocks.STRUCTURE_SHIP_BLOCK
 				          //OverclockedEngineeringBlocks.WITHER_PLACER,
-				          OverclockedEngineeringBlocks.ONE_ITEM_DROPPER
+				          //OverclockedEngineeringBlocks.ONE_ITEM_DROPPER
 				          
 				          );
 		

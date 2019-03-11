@@ -6,16 +6,14 @@ import fr.mru.OverclockedEngineering.Crops.AlienGrass;
 import fr.mru.OverclockedEngineering.Crops.MagiusBlock;
 import fr.mru.OverclockedEngineering.Tiles.Cobble_form.CobbleForm;
 import fr.mru.OverclockedEngineering.Tiles.DimensionalHole.DHole;
-import fr.mru.OverclockedEngineering.Tiles.EnergyStorage.EnergyStorage;
+import fr.mru.OverclockedEngineering.Tiles.EnergyStorage.RFStorage;
 import fr.mru.OverclockedEngineering.Tiles.FilterChest.FilterChest;
 import fr.mru.OverclockedEngineering.Tiles.Machine.MachineBlock;
-import fr.mru.OverclockedEngineering.Tiles.OneItemDropper.OneItemDropper;
 import fr.mru.OverclockedEngineering.Tiles.StackFurnace.StackFurnace;
 import fr.mru.OverclockedEngineering.Tiles.TransporterItems.TransporterItems;
 import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.TreeFarmer;
 import fr.mru.OverclockedEngineering.Tiles.TwoModuleMachine.TwoModulesMachine;
 import fr.mru.OverclockedEngineering.Tiles.UncraftingTable.UncraftingTable;
-import fr.mru.OverclockedEngineering.Tiles.WitherPlacer.WitherPlacer;
 import fr.mru.OverclockedEngineering.Tiles.rfbridge.RfBridge;
 import net.minecraft.block.Block;
 
@@ -35,10 +33,10 @@ public class OverclockedEngineeringBlocks {
 							  RF_BRIDGE = new RfBridge(),
 							  TRANSPORTER_ITEMS = new TransporterItems(),
 							  ALIEN_GRASS = new AlienGrass(),
-							  RF_STORAGE_BLOCK = new EnergyStorage(),
+							  //RF_STORAGE_BLOCK = new RFStorage(),
 							  MAGIUS_BLOCK_SEED = new MagiusBlock(),
-							  STRUCTURE_SHIP_BLOCK = new StructureShipBlock(),
-							  ONE_ITEM_DROPPER = new OneItemDropper()
+							  STRUCTURE_SHIP_BLOCK = new StructureShipBlock()
+							  //ONE_ITEM_DROPPER = new OneItemDropper()
 							  //WITHER_PLACER = new WitherPlacer(),
 							  ;
 	
@@ -62,10 +60,10 @@ public class OverclockedEngineeringBlocks {
 		blockList.add(RF_BRIDGE);
 		blockList.add(TRANSPORTER_ITEMS);
 		blockList.add(ALIEN_GRASS);
-		blockList.add(RF_STORAGE_BLOCK);
+		//blockList.add(RF_STORAGE_BLOCK);
 		blockList.add(MAGIUS_BLOCK_SEED);
 		blockList.add(STRUCTURE_SHIP_BLOCK);
-		blockList.add(ONE_ITEM_DROPPER);
+		//blockList.add(ONE_ITEM_DROPPER);
 		//blockList.add(WITHER_PLACER);
 		
 	}

@@ -1,11 +1,11 @@
 package fr.mru.OverclockedEngineeringStructure;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeHills;
 import net.minecraft.world.biome.BiomePlains;
-import scala.actors.threadpool.Arrays;
 
 public class WorldGenCustomStructuresFactory {
 	

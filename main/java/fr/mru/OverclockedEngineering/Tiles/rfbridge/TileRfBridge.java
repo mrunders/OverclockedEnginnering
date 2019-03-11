@@ -1,14 +1,12 @@
 package fr.mru.OverclockedEngineering.Tiles.rfbridge;
 
-import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileRFConsumer;
+import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileRFNrj;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.item.EntityEnderCrystal;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.entity.projectile.EntityShulkerBullet;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 
-public class TileRfBridge extends ATileRFConsumer {
+public class TileRfBridge extends ATileRFNrj {
 	
 	public static final int MAX_ENERGY_STORED = 1000000;
 	private boolean entityHasSpawned = false;

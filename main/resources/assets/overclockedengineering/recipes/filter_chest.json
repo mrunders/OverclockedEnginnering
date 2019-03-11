@@ -1,0 +1,37 @@
+{ 
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "SOS",
+      "SMS",
+      "CCC"  ],
+    "key": {
+      "C": [
+        {
+          "item": "minecraft:chest",
+          "data": 0
+        }
+      ],
+      "S": [
+        {
+          "type": "forge:ore_dict",
+          "ore": "ingotSteel"
+        }
+      ],
+      "M": [
+        {
+            "item": "overclockedengineering:machine_casing",
+            "data": 0
+        }
+      ],
+      "O": [
+        {
+          "item": "minecraft:hopper",
+          "data": 0
+        }
+      ]
+    },
+    "result": {
+      "item": "overclockedengineering:filter_chest",
+      "data": 0
+    }
+  }

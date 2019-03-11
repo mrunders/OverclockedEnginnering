@@ -1,14 +1,10 @@
 package fr.mru.OverclockedEngineering.Tiles.FilterChest;
 
-import codechicken.lib.inventory.InventoryUtils;
-import fr.mru.OverclockedEngineering.Recipes.RecipeRequestMap;
 import fr.mru.OverclockedEngineering.Tiles.ATileManager.ATileChestManager;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.InventoryBasic;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
-import net.minecraftforge.oredict.OreDictionary;
 
 public class TileFilterChest extends ATileChestManager {
 	

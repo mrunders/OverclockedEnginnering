@@ -12,9 +12,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentKeybind;
 import net.minecraft.world.World;
 
-public class EnergyStorage extends ABlockContainerManager {
+public class RFStorage extends ABlockContainerManager {
 		
-	public EnergyStorage() {
+	public RFStorage() {
 		super("rf_storage_block");
 	}
 

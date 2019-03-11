@@ -16,8 +16,6 @@ import fr.mru.OverclockedEngineering.Tiles.TwoModuleMachine.TileTwoModulesMachin
 import fr.mru.OverclockedEngineering.Tiles.rfbridge.TileRfBridge;
 import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import fr.mru.OverclockedEngineeringProxy.OverclockedEngineeringCommon;
-import fr.mru.OverclockedEngineeringStructure.Structure;
-import fr.mru.OverclockedEngineeringStructure.WorldGenCustomStructures;
 import fr.mru.OverclockedEngineeringStructure.WorldGenCustomStructuresFactory;
 import fr.mru.OverclockedEngineeringWorld.AlienRockGen;
 import net.minecraft.creativetab.CreativeTabs;
