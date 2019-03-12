@@ -3,7 +3,7 @@
     "pattern": [
       "IGI",
       "MCM",
-      "IGI"  ],
+      "ISI"  ],
     "key": {
       "M": [
         {
@@ -14,6 +14,12 @@
       "C": [
         {
           "item": "overclockedengineering:circuit_large",
+          "data": 0
+        }
+      ],      
+      "S": [
+        {
+          "item": "overclockedengineering:supraconductor",
           "data": 0
         }
       ],

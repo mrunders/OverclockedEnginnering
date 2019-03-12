@@ -14,6 +14,7 @@ import fr.mru.OverclockedEngineering.Tiles.TransporterItems.TileTransporterItems
 import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.TileTreeFarmer;
 import fr.mru.OverclockedEngineering.Tiles.TwoModuleMachine.TileTwoModulesMachine;
 import fr.mru.OverclockedEngineering.Tiles.rfbridge.TileRfBridge;
+import fr.mru.OverclockedEngineeringEntity.AVillager;
 import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import fr.mru.OverclockedEngineeringProxy.OverclockedEngineeringCommon;
 import fr.mru.OverclockedEngineeringStructure.WorldGenCustomStructuresFactory;
@@ -85,6 +86,7 @@ public class OverclockedEngineering {
 		OreDictionary.registerOre("ingotSteel", OverclokedEngineeringItems.INGOT_STEEL);
 		
 		ARecipeManager.initialise();
+		
 
 	}
 

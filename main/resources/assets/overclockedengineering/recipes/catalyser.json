@@ -1,0 +1,37 @@
+{ 
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      " E ",
+      "SCS",
+      " G "  ],
+    "key": {
+      "E": [
+        {
+          "item": "overclockedengineering:alien_rock",
+          "data": 0
+        }
+      ],
+      "S": [
+        {
+          "item": "overclockedengineering:ingot_steel",
+          "data": 0
+        }
+      ],
+      "C": [
+          {
+              "item": "overclockedengineering:supraconductor",
+              "data": 0
+          }
+      ],
+      "G": [
+          {
+              "item": "minecraft:glass",
+              "data": 0
+          }
+      ]
+    },
+    "result": {
+      "item": "overclockedengineering:catalyser",
+      "data": 0
+    }
+  }

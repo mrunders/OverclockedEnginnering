@@ -7,7 +7,6 @@ import fr.mru.OverclockedEngineeringItems.AgingGun.AgingGunDecremantal;
 import fr.mru.OverclockedEngineeringItems.AgingGun.AgingGunIncremental;
 import fr.mru.OverclockedEngineeringItems.Focus.AFocusManager;
 import fr.mru.OverclockedengineeringBlocks.EngineBlockManager;
-import fr.mru.OverclockedengineeringBlocks.FocusBlockManager;
 import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -24,17 +23,20 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @EventBusSubscriber(value = Side.CLIENT, modid = OverclockedEngineering.MODID)
 public class OverclokedEngineeringItems {
 	
-	public static final Item CIRCUIT = new Circuit(),
-							 CIRCUIT_LARGE = new CircuitLarge(),
-							 INGOT_STEEL = new IngotSteel(),
+	public static final Item CIRCUIT = new OverclockedEngineeringItemsBase("circuit"),
+							 CIRCUIT_LARGE = new OverclockedEngineeringItemsBase("circuit_large"),
+							 INGOT_STEEL = new OverclockedEngineeringItemsBase("ingot_steel"),
+							 ALIEN_ROCK_FRAGMENT = new OverclockedEngineeringItemsBase("alien_rock_fragment"),
+							 RF_STORAGE_MODULE = new OverclockedEngineeringItemsBase("rf_storage_module"),
+							 CATALYSER = new OverclockedEngineeringItemsBase("catalyser"),
+							 SUPRACONDUCTOR = new OverclockedEngineeringItemsBase("supraconductor"),
+							 
 							 //MINING_PICKAXE = new MiningPickaxe(),
 							 AGING_GUN_INCR = new AgingGunIncremental(),
 							 AGING_GUN_DECR = new AgingGunDecremantal(),
-							 ALIEN_ROCK_FRAGMENT = new AlienRockFragment(),
 							 DIMENSIONAL_HOLE = new DHoleItem(),
 							 LOCATION_CARD = new LocationCard(),
-							 ALIEN_ROCK_DUST = new AlienRockDust(),
-							 RF_STORAGE_MODULE = new RfStorageModule();
+							 ALIEN_ROCK_DUST = new AlienRockDust();
 	 
 	
 	public static ArrayList<Item> itemsList = new ArrayList<>();
@@ -43,11 +45,12 @@ public class OverclokedEngineeringItems {
 
 		itemsList.addAll(EngineManager.itemsList);
 		itemsList.addAll(AFocusManager.itemsList);
-		
+
+		//itemsList.add(MINING_PICKAXE);
+
 		itemsList.add(INGOT_STEEL);
 		itemsList.add(CIRCUIT);
 		itemsList.add(CIRCUIT_LARGE);
-		//itemsList.add(MINING_PICKAXE);
 		itemsList.add(AGING_GUN_INCR);
 		itemsList.add(AGING_GUN_DECR);
 		itemsList.add(DIMENSIONAL_HOLE);
@@ -55,6 +58,8 @@ public class OverclokedEngineeringItems {
 		itemsList.add(LOCATION_CARD);
 		itemsList.add(ALIEN_ROCK_DUST);
 		itemsList.add(RF_STORAGE_MODULE);
+		itemsList.add(CATALYSER);
+		itemsList.add(SUPRACONDUCTOR);
 		
 		registerItemBlock(OverclockedEngineeringBlocks.TWO_MODULES_MACHINE,
 				          OverclockedEngineeringBlocks.TREE_FARMER,
@@ -70,12 +75,14 @@ public class OverclokedEngineeringItems {
 				          OverclockedEngineeringBlocks.UNCRAFTING_TABLE,
 				          OverclockedEngineeringBlocks.TRANSPORTER_ITEMS,
 				          OverclockedEngineeringBlocks.ALIEN_GRASS,
-				          //OverclockedEngineeringBlocks.RF_STORAGE_BLOCK,
+				          OverclockedEngineeringBlocks.RF_STORAGE_BLOCK,
 				          OverclockedEngineeringBlocks.MAGIUS_BLOCK_SEED,
 				          EngineBlockManager.HENGINE_BLOCK1, EngineBlockManager.HENGINE_BLOCK2,
 				          EngineBlockManager.HENGINE_BLOCK3, EngineBlockManager.HENGINE_BLOCK4,
 				          EngineBlockManager.HENGINE_BLOCK5,
-				          OverclockedEngineeringBlocks.STRUCTURE_SHIP_BLOCK
+				          OverclockedEngineeringBlocks.STRUCTURE_SHIP_BLOCK,
+				          OverclockedEngineeringBlocks.HEAVY_SHIP_BLOCK,
+				          OverclockedEngineeringBlocks.CATALYSER_SLOT
 				          //OverclockedEngineeringBlocks.WITHER_PLACER,
 				          //OverclockedEngineeringBlocks.ONE_ITEM_DROPPER
 				          

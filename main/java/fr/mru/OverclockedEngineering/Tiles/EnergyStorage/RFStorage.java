@@ -1,23 +1,14 @@
 package fr.mru.OverclockedEngineering.Tiles.EnergyStorage;
 
-import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
-import fr.mru.OverclockedengineeringBlocks.ABlockContainerManager;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentKeybind;
-import net.minecraft.world.World;
+import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocksBase;
 
-public class RFStorage extends ABlockContainerManager {
+public class RFStorage extends OverclockedEngineeringBlocksBase {
 		
 	public RFStorage() {
 		super("rf_storage_block");
 	}
 
+	/*
 	@Override
 	public TileEntity createNewTileEntity(World world, int metadata)  {
 	    return new TileRFStorage();
@@ -54,6 +45,8 @@ public class RFStorage extends ABlockContainerManager {
 	    	}
 	        return true;
 	    }
-	}
+		
+		return true;
+	}*/
 
 }

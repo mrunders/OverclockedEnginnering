@@ -33,9 +33,11 @@ public class OverclockedEngineeringBlocks {
 							  RF_BRIDGE = new RfBridge(),
 							  TRANSPORTER_ITEMS = new TransporterItems(),
 							  ALIEN_GRASS = new AlienGrass(),
-							  //RF_STORAGE_BLOCK = new RFStorage(),
+							  RF_STORAGE_BLOCK = new RFStorage(),
 							  MAGIUS_BLOCK_SEED = new MagiusBlock(),
-							  STRUCTURE_SHIP_BLOCK = new StructureShipBlock()
+							  STRUCTURE_SHIP_BLOCK = new StructureShipBlock(),
+							  HEAVY_SHIP_BLOCK = new OverclockedEngineeringBlocksBase("heavy_ship_block").setBlockUnbreakable(),
+							  CATALYSER_SLOT = new CatalyserSlot()
 							  //ONE_ITEM_DROPPER = new OneItemDropper()
 							  //WITHER_PLACER = new WitherPlacer(),
 							  ;
@@ -60,9 +62,11 @@ public class OverclockedEngineeringBlocks {
 		blockList.add(RF_BRIDGE);
 		blockList.add(TRANSPORTER_ITEMS);
 		blockList.add(ALIEN_GRASS);
-		//blockList.add(RF_STORAGE_BLOCK);
+		blockList.add(RF_STORAGE_BLOCK);
 		blockList.add(MAGIUS_BLOCK_SEED);
 		blockList.add(STRUCTURE_SHIP_BLOCK);
+		blockList.add(HEAVY_SHIP_BLOCK);
+		blockList.add(CATALYSER_SLOT);
 		//blockList.add(ONE_ITEM_DROPPER);
 		//blockList.add(WITHER_PLACER);
 		
