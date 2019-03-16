@@ -18,7 +18,7 @@ import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class Structure extends WorldGenerator implements IStructure {
 	
-	public static String structureName;
+	public String structureName;
 	
 	public Structure(String structureName) {
 		
@@ -27,15 +27,15 @@ public class Structure extends WorldGenerator implements IStructure {
 
 	public boolean generate(World world, Random rand, BlockPos pos) {
 		
-		this.generateStructure(world, pos);
+		this.generateStructure(world, pos.up());
 		return true;
 	}
 
-	public static void generateStructure(World world, BlockPos pos) {
+	public void generateStructure(World world, BlockPos pos) {
 		
 		MinecraftServer mcserv = world.getMinecraftServer();
 		TemplateManager manager = worldserver.getStructureTemplateManager();
-		ResourceLocation location = new ResourceLocation(OverclockedEngineering.MODID, structureName);
+		ResourceLocation location = new ResourceLocation(OverclockedEngineering.MODID, this.structureName);
 		Template template = manager.get(mcserv, location);
 		
 		if (template != null) {

@@ -1,9 +1,9 @@
 { 
     "type": "minecraft:crafting_shaped",
     "pattern": [
-      "ICI",
+      " C ",
       "LGL",
-      "ICI"  ],
+      " C "  ],
     "key": {
       "C": [
         {
@@ -11,15 +11,9 @@
             "data": 0
         }
       ],
-      "I": [
-        {
-          "item": "minecraft:iron_ingot",
-          "data": 0
-        }
-      ],
       "G": [
         {
-          "item": "minecraft:gold_block",
+          "item": "overclockedengineering:ingot_ship",
           "data": 0
         }
       ],

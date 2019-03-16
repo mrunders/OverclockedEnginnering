@@ -8,7 +8,9 @@ import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -17,25 +19,15 @@ public class TileWitherPlacer extends ATileInstantProcessingManager {
 	
 	private int[] inputs_slots = {0,1};
 	public static final ItemStack soulsand = new ItemStack(Blocks.SOUL_SAND, 4),
-					  				skull    = new ItemStack(Blocks.SKULL, 3, 1);
+					  				skull    = new ItemStack(Items.SKULL, 3, 1);
 	
+	private static final int MAX_WAIT = 50;
+	private int wait = 0;
 	
-	private BlockPos[] soulsandpos = {},
-			           skullpos = {};
 
 	public TileWitherPlacer() {
 		super(2, "tile.wither_placer");
 		
-		BlockPos pos = getPos();
-		
-		/*soulsandpos[0] = pos.up();
-		soulsandpos[1] = pos.up(2);
-		soulsandpos[2] = pos.up().west();
-		soulsandpos[3] = pos.up().east();
-		
-		skullpos[0] = pos.up(3);
-		skullpos[1] = pos.up(3).west();
-		skullpos[2] = pos.up(3).east();*/
 	}
 
 	@Override
@@ -76,14 +68,16 @@ public class TileWitherPlacer extends ATileInstantProcessingManager {
 		decrStackSize(0, 4);
 		decrStackSize(1, 3);
 
-		Entity entity = new EntityWither(world);
-		EntityLiving entityliving = (EntityLiving)entity;
-		entity.setLocationAndAngles(this.getPos().getX(), this.getPos().getY()+1, this.getPos().getZ(), 0, 0.0F);
-		entityliving.rotationYawHead = entityliving.rotationYaw;
-		entityliving.renderYawOffset = entityliving.rotationYaw;
-		entityliving.onInitialSpawn(this.getWorld().getDifficultyForLocation(new BlockPos(entityliving)), (IEntityLivingData)null);
-		this.getWorld().spawnEntity(entity);
-		entityliving.playLivingSound();
+		if ( !world.isRemote) {
+			Entity entity = new EntityWither(world);
+			EntityLiving entityliving = (EntityLiving)entity;
+			entity.setLocationAndAngles(this.getPos().getX(), this.getPos().getY()+1, this.getPos().getZ(), 0, 0.0F);
+			entityliving.rotationYawHead = entityliving.rotationYaw;
+			entityliving.renderYawOffset = entityliving.rotationYaw;
+			entityliving.onInitialSpawn(this.getWorld().getDifficultyForLocation(new BlockPos(entityliving)), (IEntityLivingData)null);
+			this.getWorld().spawnEntity(entity);
+			entityliving.playLivingSound();
+		}
 	}
 
 	@Override
@@ -104,9 +98,15 @@ public class TileWitherPlacer extends ATileInstantProcessingManager {
 	@Override
 	public void update() {
 		
-		if (canSmelt())
-			smelt();
 		
+		if (canSmelt() && !redstoneControl) {
+			if (this.wait == MAX_WAIT) {
+				smelt();
+				this.wait = 0;
+			}
+			else 
+				++this.wait;
+		}
 	}
 
 }

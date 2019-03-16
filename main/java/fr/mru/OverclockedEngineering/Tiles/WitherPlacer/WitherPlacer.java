@@ -28,6 +28,7 @@ public class WitherPlacer extends ABlockContainerManager {
 	        TileEntity tileentity = world.getTileEntity(pos);
 
 	        if (tileentity instanceof TileWitherPlacer) {
+	        	
 	            player.openGui(OverclockedEngineering.instance, 0, world, pos.getX(),
 	                    pos.getY(), pos.getZ());
 	        }

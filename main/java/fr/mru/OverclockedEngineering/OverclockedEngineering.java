@@ -13,12 +13,14 @@ import fr.mru.OverclockedEngineering.Tiles.StackFurnace.TileStackFurnace;
 import fr.mru.OverclockedEngineering.Tiles.TransporterItems.TileTransporterItems;
 import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.TileTreeFarmer;
 import fr.mru.OverclockedEngineering.Tiles.TwoModuleMachine.TileTwoModulesMachine;
+import fr.mru.OverclockedEngineering.Tiles.WitherPlacer.TileWitherPlacer;
 import fr.mru.OverclockedEngineering.Tiles.rfbridge.TileRfBridge;
-import fr.mru.OverclockedEngineeringEntity.AVillager;
+import fr.mru.OverclockedEngineeringEntity.AlienVillagers;
 import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import fr.mru.OverclockedEngineeringProxy.OverclockedEngineeringCommon;
+import fr.mru.OverclockedEngineeringStructure.AlienRockGen;
+import fr.mru.OverclockedEngineeringStructure.WorldGenCustomStructures;
 import fr.mru.OverclockedEngineeringStructure.WorldGenCustomStructuresFactory;
-import fr.mru.OverclockedEngineeringWorld.AlienRockGen;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -67,10 +69,14 @@ public class OverclockedEngineering {
 		GameRegistry.registerTileEntity(TileRfBridge.class, MODID + ":tile_rf_bridge");
 		GameRegistry.registerTileEntity(TileTransporterItems.class, MODID + ":tile_transporter_items");
 		GameRegistry.registerTileEntity(TileRFStorage.class, MODID + ":tile_rf_storage_block");
+		GameRegistry.registerTileEntity(TileWitherPlacer.class, MODID + ":tile_wither_placer");
 		GameRegistry.registerTileEntity(TileOneItemDropper.class, 	MODID + ":tile_one_item_dropper");
 
-		GameRegistry.registerWorldGenerator(new AlienRockGen(), 0);
-		GameRegistry.registerWorldGenerator(WorldGenCustomStructuresFactory.generateCrashedSpaceShip(), 0);
+		GameRegistry.registerWorldGenerator(WorldGenCustomStructuresFactory.generateStrangeRock(), 0);
+		GameRegistry.registerWorldGenerator(WorldGenCustomStructuresFactory.generateCapsule(), 8);
+		GameRegistry.registerWorldGenerator(WorldGenCustomStructuresFactory.generateCrashedSpaceShip(), 6);
+		
+		WorldGenCustomStructuresFactory.init();
 
 		logger = event.getModLog();
 		proxy.preInit(event.getSuggestedConfigurationFile());

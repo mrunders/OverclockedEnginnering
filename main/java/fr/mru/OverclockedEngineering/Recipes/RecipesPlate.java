@@ -26,8 +26,6 @@ public class RecipesPlate extends ARecipeManager {
 			
 		}
 		
-		map.putCopy(new ItemStack(OverclockedEngineeringBlocks.STRUCTURE_SHIP_BLOCK), 8, new ItemStack(Blocks.IRON_BLOCK), 1);
-		
 		return true;
 	}
 	

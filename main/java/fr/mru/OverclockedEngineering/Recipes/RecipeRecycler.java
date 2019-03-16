@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
+import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
+import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -36,6 +38,8 @@ public class RecipeRecycler extends ARecipeManager {
 		Chestplate, 8
 		Helmet, 5
 		*/
+		
+		map.putCopy(new ItemStack(OverclokedEngineeringItems.INGOT_SHIP), 4, new ItemStack(OverclockedEngineeringBlocks.STRUCTURE_SHIP_BLOCK), 1);
 		
 		return true;
 	}

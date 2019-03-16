@@ -16,6 +16,7 @@ import scala.actors.threadpool.Arrays;
 public class WorldGenCustomStructures implements IWorldGenerator {
 	
 	public static final Structure SHIP = new Structure("crashedspaceship");
+	public static final Structure CAPSULE = new Structure("capsule");
 	
 	private int chance;
 	private Block topBlock;
@@ -50,6 +51,7 @@ public class WorldGenCustomStructures implements IWorldGenerator {
 		if ( random.nextInt(this.chance) == 0) {
 			
 			BlockPos pos = new BlockPos(x,y,z);
+			
 			Class<?> biome = world.provider.getBiomeForCoords(pos).getClass();
 			
 			if ( this.classList.contains(biome)) {

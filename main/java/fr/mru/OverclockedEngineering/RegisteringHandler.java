@@ -1,6 +1,6 @@
 package fr.mru.OverclockedEngineering;
 
-import fr.mru.OverclockedEngineeringEntity.AVillager;
+import fr.mru.OverclockedEngineeringEntity.AlienVillagers;
 import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
 import net.minecraft.block.Block;
@@ -31,9 +31,10 @@ public class RegisteringHandler
     @SubscribeEvent
     public void registerVillagers(RegistryEvent.Register<VillagerProfession> event) {
 
-		AVillager.init();
+		AlienVillagers.init();
 		
-    	event.getRegistry().register(AVillager.alien_passive);
+		for (VillagerProfession v : AlienVillagers.getVillagers())
+			event.getRegistry().register(v);
     	
     }
 	

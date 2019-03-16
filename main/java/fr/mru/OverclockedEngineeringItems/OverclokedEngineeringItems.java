@@ -30,6 +30,7 @@ public class OverclokedEngineeringItems {
 							 RF_STORAGE_MODULE = new OverclockedEngineeringItemsBase("rf_storage_module"),
 							 CATALYSER = new OverclockedEngineeringItemsBase("catalyser"),
 							 SUPRACONDUCTOR = new OverclockedEngineeringItemsBase("supraconductor"),
+							 INGOT_SHIP = new OverclockedEngineeringItemsBase("ingot_ship"),
 							 
 							 //MINING_PICKAXE = new MiningPickaxe(),
 							 AGING_GUN_INCR = new AgingGunIncremental(),
@@ -60,6 +61,7 @@ public class OverclokedEngineeringItems {
 		itemsList.add(RF_STORAGE_MODULE);
 		itemsList.add(CATALYSER);
 		itemsList.add(SUPRACONDUCTOR);
+		itemsList.add(INGOT_SHIP);
 		
 		registerItemBlock(OverclockedEngineeringBlocks.TWO_MODULES_MACHINE,
 				          OverclockedEngineeringBlocks.TREE_FARMER,
@@ -82,9 +84,10 @@ public class OverclokedEngineeringItems {
 				          EngineBlockManager.HENGINE_BLOCK5,
 				          OverclockedEngineeringBlocks.STRUCTURE_SHIP_BLOCK,
 				          OverclockedEngineeringBlocks.HEAVY_SHIP_BLOCK,
-				          OverclockedEngineeringBlocks.CATALYSER_SLOT
-				          //OverclockedEngineeringBlocks.WITHER_PLACER,
-				          //OverclockedEngineeringBlocks.ONE_ITEM_DROPPER
+				          OverclockedEngineeringBlocks.CATALYSER_SLOT,
+				          OverclockedEngineeringBlocks.HEAVY_SHIP_GLASS,
+				          OverclockedEngineeringBlocks.WITHER_PLACER,
+				          OverclockedEngineeringBlocks.ONE_ITEM_DROPPER
 				          
 				          );
 		

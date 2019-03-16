@@ -11,19 +11,19 @@
             "data": 0
         }
       ],
+      "L": [
+        {
+          "type": "forge:ore_dict",
+          "ore": "ingotSteel"
+        }
+      ],
       "I": [
         {
-          "item": "minecraft:iron_ingot",
+          "item": "overclockedengineering:ingot_ship",
           "data": 0
         }
       ],
       "G": [
-        {
-          "item": "minecraft:gold_block",
-          "data": 0
-        }
-      ],
-      "L": [
         {
           "item": "minecraft:nether_star",
           "data": 0

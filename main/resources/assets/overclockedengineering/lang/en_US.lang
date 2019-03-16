@@ -26,6 +26,9 @@ item.overclockedengineering.alien_rock_fragment.name=Strange Rock Fragment
 item.overclockedengineering.location_card.name=Location Card
 item.overclockedengineering.alien_rock_dust.name=Alien Rock Dust
 item.overclockedengineering.rf_storage_module.name=Storage Cell
+item.overclockedengineering.catalyser.name=Catalyser 
+item.overclockedengineering.supraconductor.name=Supraconductor Wire
+item.overclockedengineering.ingot_ship.name=Structure Ship Alloy
 
 tile.overclockedengineering.machine_block.name=Machine Block
 tile.overclockedengineering.stack_furnace.name=Stack Furnace
@@ -49,4 +52,11 @@ tile.overclockedengineering.hybride_engine_block3.name=Wither Engine Block
 tile.overclockedengineering.hybride_engine_block4.name=Mega Engine Block
 tile.overclockedengineering.hybride_engine_block5.name=Ultimate Engine Block
 tile.overclockedengineering.magius_block_seed.name=Magius Seed 
-tile.overclockedengineering.structure_ship_block.name=Low Space Ship Metal Cover
+tile.overclockedengineering.structure_ship_block.name=Space Ship Metal Cover
+tile.overclockedengineering.heavy_ship_block.name=Crash Resistance Metal Cover
+tile.overclockedengineering.catalyser_slot.name=Catalyser Slot 
+tile.overclockedengineering.heavy_ship_glass.name=CrashResistance Glass Cover
+tile.overclockedengineering.wither_placer.name=Wither Placer 
+tile.overclockedengineering.one_item_dropper.name=One of each Dropper
+
+entity.Villager.overclockedengineering.strange_stuff.name=Passive Alien

@@ -1,0 +1,25 @@
+{ 
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "S S",
+      " G ",
+      "S S"  ],
+    "key": {
+      "S": [
+        {
+            "item": "overclockedengineering:ingot_ship",
+            "data": 0
+        }
+      ],
+      "G": [
+        {
+          "item": "overclockedengineering:hybride_engine5",
+          "data": 0
+        }
+      ]
+    },
+    "result": {
+      "item": "overclockedengineering:hybride_engine_block5",
+      "data": 0
+    }
+  }

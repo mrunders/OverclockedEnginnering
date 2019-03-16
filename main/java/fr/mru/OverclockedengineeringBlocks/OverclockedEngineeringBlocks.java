@@ -9,11 +9,13 @@ import fr.mru.OverclockedEngineering.Tiles.DimensionalHole.DHole;
 import fr.mru.OverclockedEngineering.Tiles.EnergyStorage.RFStorage;
 import fr.mru.OverclockedEngineering.Tiles.FilterChest.FilterChest;
 import fr.mru.OverclockedEngineering.Tiles.Machine.MachineBlock;
+import fr.mru.OverclockedEngineering.Tiles.OneItemDropper.OneItemDropper;
 import fr.mru.OverclockedEngineering.Tiles.StackFurnace.StackFurnace;
 import fr.mru.OverclockedEngineering.Tiles.TransporterItems.TransporterItems;
 import fr.mru.OverclockedEngineering.Tiles.TreeFarmer.TreeFarmer;
 import fr.mru.OverclockedEngineering.Tiles.TwoModuleMachine.TwoModulesMachine;
 import fr.mru.OverclockedEngineering.Tiles.UncraftingTable.UncraftingTable;
+import fr.mru.OverclockedEngineering.Tiles.WitherPlacer.WitherPlacer;
 import fr.mru.OverclockedEngineering.Tiles.rfbridge.RfBridge;
 import net.minecraft.block.Block;
 
@@ -37,9 +39,10 @@ public class OverclockedEngineeringBlocks {
 							  MAGIUS_BLOCK_SEED = new MagiusBlock(),
 							  STRUCTURE_SHIP_BLOCK = new StructureShipBlock(),
 							  HEAVY_SHIP_BLOCK = new OverclockedEngineeringBlocksBase("heavy_ship_block").setBlockUnbreakable(),
-							  CATALYSER_SLOT = new CatalyserSlot()
-							  //ONE_ITEM_DROPPER = new OneItemDropper()
-							  //WITHER_PLACER = new WitherPlacer(),
+							  HEAVY_SHIP_GLASS = new OverclockedEngineeringGlassBase("heavy_ship_glass").setBlockUnbreakable(),
+							  CATALYSER_SLOT = new CatalyserSlot(),
+							  ONE_ITEM_DROPPER = new OneItemDropper(),
+							  WITHER_PLACER = new WitherPlacer()
 							  ;
 	
 	public static ArrayList<Block> blockList = new ArrayList<>();
@@ -67,8 +70,9 @@ public class OverclockedEngineeringBlocks {
 		blockList.add(STRUCTURE_SHIP_BLOCK);
 		blockList.add(HEAVY_SHIP_BLOCK);
 		blockList.add(CATALYSER_SLOT);
-		//blockList.add(ONE_ITEM_DROPPER);
-		//blockList.add(WITHER_PLACER);
+		blockList.add(HEAVY_SHIP_GLASS);
+		blockList.add(ONE_ITEM_DROPPER);
+		blockList.add(WITHER_PLACER);
 		
 	}
 	

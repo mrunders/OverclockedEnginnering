@@ -19,8 +19,8 @@
       ],
       "I": [
         {
-          "type": "forge:ore_dict",
-          "ore": "ingotSteel"
+          "item": "overclockedengineering:ingot_ship",
+          "data": 0
         }
       ],
       "G": [

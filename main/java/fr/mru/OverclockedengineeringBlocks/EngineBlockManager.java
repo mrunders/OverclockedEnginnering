@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.block.Block;
+import net.minecraft.item.crafting.CraftingManager;
+import net.minecraftforge.common.crafting.CraftingHelper;
 
 public class EngineBlockManager extends OverclockedEngineeringBlocksBase {
 	
@@ -22,6 +24,7 @@ public class EngineBlockManager extends OverclockedEngineeringBlocksBase {
 		engineList.add(HENGINE_BLOCK3);
 		engineList.add(HENGINE_BLOCK4);
 		engineList.add(HENGINE_BLOCK5);
+		
 	}
 	
 	public EngineBlockManager(String name) {

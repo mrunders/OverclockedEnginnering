@@ -2,7 +2,7 @@
     "type": "minecraft:crafting_shaped",
     "pattern": [
       "SES",
-      "NNN",
+      "NIN",
       "SNS"  ],
     "key": {
       "N": [
@@ -20,6 +20,12 @@
       "E": [
         {
           "item": "minecraft:ender_pearl",
+          "data": 0
+        }
+      ],
+      "I": [
+        {
+          "item": "overclockedengineering:ingot_ship",
           "data": 0
         }
       ]

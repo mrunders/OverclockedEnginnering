@@ -1,4 +1,4 @@
-package fr.mru.OverclockedEngineeringWorld;
+package fr.mru.OverclockedEngineeringStructure;
 
 import java.util.Random;
 

@@ -4,7 +4,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import cofh.thermalexpansion.util.managers.machine.FurnaceManager.FurnaceRecipe;
+import fr.mru.OverclockedEngineeringItems.OverclockedEngineeringItemsBase;
+import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
+import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.oredict.OreDictionary;
 
 public abstract class ARecipeManager implements IRecipeManager {
@@ -56,6 +61,8 @@ public abstract class ARecipeManager implements IRecipeManager {
 		RecipesExtraction.initialise();
 		RecipesPCB.initialise();
 		RecipesSawmill.initialise();
+		
+		FurnaceRecipes.instance().addSmeltingRecipeForBlock(OverclockedEngineeringBlocks.STRUCTURE_SHIP_BLOCK, new ItemStack(OverclokedEngineeringItems.INGOT_SHIP), 2.0f);
 		
 		return true;
 	}
