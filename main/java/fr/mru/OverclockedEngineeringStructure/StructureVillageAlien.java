@@ -1,9 +1,11 @@
 package fr.mru.OverclockedEngineeringStructure;
 
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Random;
 
 import fr.mru.OverclockedEngineeringEntity.AlienVillagers;
+import fr.mru.OverclockedEngineeringEntity.EntityMadVillager;
 import fr.mru.OverclockedengineeringBlocks.EngineBlockManager;
 import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
 import net.minecraft.block.BlockSlab;
@@ -25,6 +27,7 @@ import net.minecraft.world.gen.structure.StructureVillagePieces.PieceWeight;
 import net.minecraft.world.gen.structure.StructureVillagePieces.Start;
 import net.minecraft.world.gen.structure.StructureVillagePieces.Village;
 import net.minecraftforge.fml.common.registry.VillagerRegistry.IVillageCreationHandler;
+import net.minecraftforge.fml.common.registry.VillagerRegistry.VillagerProfession;
 
 public class StructureVillageAlien {
 	
@@ -53,6 +56,10 @@ public class StructureVillageAlien {
 	public static class StructureVillageAlienPassiveHouse extends Village {
 		
 		private int groundLevel = -1;
+		
+		public StructureVillageAlienPassiveHouse() {
+			
+		}
 	
 		public StructureVillageAlienPassiveHouse(Start startPiece, int p5, Random random, StructureBoundingBox box,
 				EnumFacing facing) {
@@ -134,20 +141,33 @@ public class StructureVillageAlien {
 			this.fillWithBlocks(world, box, 8, 1, 1, 8, 3, 1, log, log, false);
 
 			//spawn png
-            this.spawnAlien(world, 4, 2, 3);
-            if ( rand.nextBoolean() ) this.spawnAlien(world, 4, 2, 4);
+            this.spawnPassiveAlien(world, 4, 2, 3);
+            if ( rand.nextBoolean() ) {
+            	if ( rand.nextInt(2) == 0)
+            		this.spawnMadAlien(world, 4, 2, 4); 
+            	else this.spawnPassiveAlien(world, 4, 2, 4);
+            }
             
 			return false;
 		}
 		
-		public void spawnAlien(World world, int px, int py, int pz) {
+		public void spawnMadAlien(World world, int px, int py, int pz) {
+			
+			spawnAlien(world, px, py, pz, new EntityMadVillager(world), AlienVillagers.alien_mad);
+		}
+		
+		public void spawnPassiveAlien(World world, int px, int py, int pz) {
+			
+			spawnAlien(world, px, py, pz, new EntityVillager(world), AlienVillagers.alien_passive);
+		}
+		
+		public void spawnAlien(World world, int px, int py, int pz, EntityVillager entityvillager, VillagerProfession profession) {
 			
 			int j = this.getXWithOffset(px, pz);
             int k = this.getYWithOffset(py);
             int l = this.getZWithOffset(px, pz);
-            EntityVillager entityvillager = new EntityVillager(world);
             entityvillager.setLocationAndAngles((double)j + 0.5D, (double)k, (double)l + 0.5D, 0.0F, 0.0F);
-            entityvillager.setProfession(AlienVillagers.alien_passive);
+            entityvillager.setProfession(profession);
             entityvillager.finalizeMobSpawn(world.getDifficultyForLocation(new BlockPos(entityvillager)), (IEntityLivingData)null, false);
             world.spawnEntity(entityvillager);
 		}

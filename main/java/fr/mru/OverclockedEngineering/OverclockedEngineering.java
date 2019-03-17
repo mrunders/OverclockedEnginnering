@@ -73,7 +73,7 @@ public class OverclockedEngineering {
 		GameRegistry.registerTileEntity(TileOneItemDropper.class, 	MODID + ":tile_one_item_dropper");
 
 		GameRegistry.registerWorldGenerator(WorldGenCustomStructuresFactory.generateStrangeRock(), 0);
-		GameRegistry.registerWorldGenerator(WorldGenCustomStructuresFactory.generateCapsule(), 8);
+		//GameRegistry.registerWorldGenerator(WorldGenCustomStructuresFactory.generateCapsule(), 8);
 		GameRegistry.registerWorldGenerator(WorldGenCustomStructuresFactory.generateCrashedSpaceShip(), 6);
 		
 		WorldGenCustomStructuresFactory.init();
