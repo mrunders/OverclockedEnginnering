@@ -1,7 +1,7 @@
 package fr.mru.OverclockedEngineering.Tiles.OneItemDropper;
 
 import fr.mru.OverclockedEngineering.OverclockedEngineering;
-import fr.mru.OverclockedengineeringBlocks.AOrientableBlockContainerManager;
+import fr.mru.OverclockedengineeringBlocks.ABlockContainerManager;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.InventoryHelper;
@@ -11,7 +11,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class OneItemDropper extends AOrientableBlockContainerManager {
+public class OneItemDropper extends ABlockContainerManager {
 
 	public OneItemDropper() {
 		super("one_item_dropper");

@@ -6,7 +6,7 @@ import net.minecraft.world.storage.loot.LootTableList;
 
 public class LootTableAlien extends LootTableList {
 
-    public static final ResourceLocation ENTITIES_MAD_VILLAGER = register("entities/villager");
+    public static final ResourceLocation ENTITIES_MAD_VILLAGER = register("entities/mad_villager");
     
     private static ResourceLocation register(String id) {
         return register(new ResourceLocation(OverclockedEngineering.MODID, id));

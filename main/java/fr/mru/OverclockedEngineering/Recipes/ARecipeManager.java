@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import cofh.thermalexpansion.util.managers.machine.FurnaceManager.FurnaceRecipe;
-import fr.mru.OverclockedEngineeringItems.OverclockedEngineeringItemsBase;
 import fr.mru.OverclockedEngineeringItems.OverclokedEngineeringItems;
 import fr.mru.OverclockedengineeringBlocks.OverclockedEngineeringBlocks;
 import net.minecraft.item.ItemStack;

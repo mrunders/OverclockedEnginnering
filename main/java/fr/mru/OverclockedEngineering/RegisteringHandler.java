@@ -46,12 +46,8 @@ public class RegisteringHandler
     public void registerEntitys(RegistryEvent.Register<EntityEntry> event) {
     	
     	EntityEntry entry = EntityEntryBuilder.create()
-    		    .entity(EntityMadVillager.class)
-    		    .id(new ResourceLocation("madvillager"), EntityMadVillager.getId())
-    		    .name("Mad Villager")
-    		    .egg(0xFFFFFF, 0xAAAAAA)
-    		    .tracker(64, 20, false)
-    		    .build();
+    		    .entity(EntityMadVillager.class).id(new ResourceLocation("madvillager"), EntityMadVillager.getId())
+    		    .name("mad_villager").egg(0x8CAA7D, 0xB486AA).tracker(64, 20, false).build();
     	
     	event.getRegistry().register(entry);
     }

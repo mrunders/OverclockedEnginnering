@@ -1,0 +1,43 @@
+{ 
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "IDI",
+      "CBC",
+      "IGI"  ],
+    "key": {
+      "B": [
+        {
+          "item": "overclockedengineering:machine_casing",
+          "data": 0
+        }
+      ],
+      "D": [
+        {
+          "item": "overclockedengineering:dimensional_hole",
+          "data": 0
+        }
+      ],
+      "C": [
+        {
+          "item": "overclockedengineering:catalyser",
+          "data": 0
+        }
+      ],
+      "I": [
+        {
+          "type": "forge:ore_dict",
+          "ore": "ingotSteel"
+        }
+      ],
+      "G": [
+        {
+          "item": "minecraft:skull",
+          "data": 1
+        }
+      ]
+    },
+    "result": {
+      "item": "overclockedengineering:wither_placer",
+      "data": 0
+    }
+  }

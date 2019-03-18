@@ -1,0 +1,43 @@
+{ 
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "IDI",
+      "CBC",
+      "IGI"  ],
+    "key": {
+      "B": [
+        {
+          "item": "overclockedengineering:machine_casing",
+          "data": 0
+        }
+      ],
+      "D": [
+        {
+          "item": "overclockedengineering:alien_rock",
+          "data": 0
+        }
+      ],
+      "C": [
+        {
+          "item": "overclockedengineering:catalyser",
+          "data": 0
+        }
+      ],
+      "I": [
+        {
+          "item": "overclockedengineering:ingot_ship",
+          "data": 0
+        }
+      ],
+      "G": [
+        {
+          "item": "overclockedengineering:transporter_items",
+          "data": 0
+        }
+      ]
+    },
+    "result": {
+      "item": "overclockedengineering:dimensional_hole",
+      "data": 0
+    }
+  }
